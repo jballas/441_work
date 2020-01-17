@@ -1,0 +1,32 @@
+body {
+  background-color:#b3cccc;
+    font-family: 'Roboto Slab', serif;
+}
+
+h1 {
+  font-family: 'Paprika', cursive;
+}
+
+.main {
+  padding:5%;
+}
+
+
+.topleft {
+  border: 2px black solid;
+  float:left;
+  margin-left: 200px;
+  padding: 15%;
+}
+
+.topright{
+  float: right;
+  margin-right: 20px;
+  padding: 10%
+}
+
+
+/*button{
+  background-color: #00ffaa;
+
+}*/

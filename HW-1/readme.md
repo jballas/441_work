@@ -22,6 +22,7 @@ The first week begins with the setup of a new github repo and reintroduction to 
 
 
 ## Problems or Issues this week
+Like any new language, which you stop using it, or learning new words you will quickly forget details. I can read html and css, but I can't remember it at all. 
 
 ## Specific questions/concerns for next week
 
