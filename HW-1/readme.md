@@ -29,10 +29,21 @@ I'm building myself a portfolio website to feature coding art and website design
 
 I need a section to highlight my skills and inspirations, and a section to describe what makes my designs uniquely mine.
 
-## Problems or Issues this week
-Like any new language, when you stop using it, or learning new words you will quickly forget details. I can read html and css, but I can't remember specifics. This week I ended up looking up simple things, like how to make comments in both HTML and CSS.
+Since my coding artwork tends to be simple and block-like, I'm going to have a simple illustration-style with trees and my favorite colors, ranging from light greens to blues.
 
-Buttons are convenient, but styling them was a struggle. I basically had to reference W3 schools to see how to style, and size them evenly. It feels like I don't know how to do anything without looking up details.
+![Tree website with footer](./images/first-attempt.png)
+
+
+## Problems or Issues this week
+Like any new language, when you stop using it, or learning new words you will quickly forget details. Everything I tried took twice as long, since I had to look up information. Even if I can  html and css, I can't remember any specifics, so it was very frustrating to do even the most simple tasks. 
+
+Everything I forgot
+- Buttons
+- linking my css file
+- linking images
+- padding
+-
+
 
 ## Specific questions/concerns for next week
 
