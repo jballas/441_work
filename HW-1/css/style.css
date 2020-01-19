@@ -3,8 +3,22 @@ body {
   margin: 0;
 }
 
+h1{
+  font-family: 'Paprika', cursive;
+  padding: 50px;
+
+}
+.main {
+  padding: 50px;
+}
+.footer {
+  background-image: url('../images/bg_trees.png');
+  background-size: contain;
+  padding: 50px;
+  }
 
 
+/*
 button{
   background-color: red;
   border: none;
@@ -13,3 +27,4 @@ button{
   font-size: 16px;
   display: block;
 }
+*/
