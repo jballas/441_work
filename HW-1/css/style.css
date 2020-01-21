@@ -1,30 +1,78 @@
 body {
   font-family: 'Roboto Slab', serif;
   margin: 0;
+  background-image: url('../images/background.png');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size:100%;
 }
 
 h1{
   font-family: 'Paprika', cursive;
   padding: 50px;
+}
+
+/* Sections */
+
+.main {
+  margin: 20px;
+  padding: 50px;
+  background-color: rgb(153,255,202, 0.60);
+}
+
+.about {
+  margin: 20px;
+  padding: 50px;
+    background-color: rgb(153,255,202, 0.80);
+}
+
+.unique {
+  padding: 50 50 150 50;
+  margin: 20px;
+  background-color: rgb(153,255,202, 0.90);
 
 }
-.main {
-  padding: 50px;
-}
+
+
 .footer {
   background-image: url('../images/bg_trees.png');
   background-size: contain;
   padding: 50px;
-  }
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
 
+/* MENU */
 
-/*
+a:link{
+  color: gray;
+  text-decoration: none;
+}
+
+a:visited {
+  color: green;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+}
+
 button{
-  background-color: red;
+  background-color: #71D19F;
   border: none;
+  cursor: pointer;
   padding: 15px 20px;
   font-family: 'Paprika', cursive;
   font-size: 16px;
-  display: block;
+  display: inline-block;
 }
-*/
+
+button:hover {
+  background-color: #33FF95;
+}
+
+button:active {
+  background-color: #99FFCA;
+}
