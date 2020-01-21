@@ -1,6 +1,8 @@
 body {
   font-family: 'Roboto Slab', serif;
   margin: 0;
+
+  /* This part creates the fixed background so the other items can slide above it. For a parallax effect, I'd need to have other images moving at a different speed. I can't seem to get my artwork to fit that aesthetic, so I'm going to leave it as is. */
   background-image: url('../images/background.png');
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -17,20 +19,20 @@ h1{
 /* Sections */
 
 .main {
-  margin: 20px;
+  margin: 120 20 20 20;
   padding: 50px;
   background-color: rgb(153,255,202, 0.60);
 }
 
 .about {
-  margin: 20px;
+  margin: 120 20 20 20;
   padding: 50px;
     background-color: rgb(153,255,202, 0.80);
 }
 
 .unique {
   padding: 50 50 150 50;
-  margin: 20px;
+  margin: 120 20 20 20;
   background-color: rgb(153,255,202, 0.90);
 
 }
