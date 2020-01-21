@@ -35,7 +35,7 @@ Since my coding artwork tends to be simple and block-like, I'm going to have a s
 
 
 ## Problems or Issues this week
-Like any new language, when you stop using it, or learning new words you will quickly forget details. Everything I tried took twice as long, since I had to look up information. Even if I can  html and css, I can't remember any specifics, so it was very frustrating to do even the most simple tasks. 
+Like any new language, when you stop using it, or learning new words you will quickly forget details. Everything I tried took twice as long, since I had to look up information. Even if I can read html and css, I can't remember any specifics, so it was very frustrating to do even the most simple tasks.
 
 Everything I forgot
 - Buttons
