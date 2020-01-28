@@ -9,8 +9,8 @@ This week included an introduction to Javascript's console log, as well as explo
 ## Projects
 
 - javascript rules!
-- script.js
-
+- New script.js
+- Live Website: https://jballas.github.io/441_work/HW-2/index.html
 
 ## Assignment Details
 Create a simple javascript program with the `console.log` function
@@ -23,7 +23,7 @@ As we begin to learn about javascript and its uses in web design, I started spec
 
 Some of my favorite interactive artists include Martin Silvestre, specifically for his Drink Cann (http://www.drinkcann.com/). The website uses parallax scrolling and the animations with a  bubbly fun feeling. The design perfectly captures the product it features, which makes it so appealing.
 
-Jon Way's website(Jonway.studio) for the overall design aestheitc. The images and type feel oldschool, yet the design is very modern. And lastly, Sacha Touroulou (sachatourtoulou.com), who is a young designer in France. His portfolio site is very inspiring, from the loading screen to the menu and
+Jon Way's website( http://jonway.studio) for the overall design aestheitc. The images and type feel oldschool, yet the design is very modern. And lastly, Sacha Touroulou (http://sachatourtoulou.com), who is a young designer in France. His portfolio site is very inspiring, from the loading screen to the menu and
 
 ## Problems or Issues this week
 Nothing to report. This was a fairly easy week so we could continue to study html and css in more detail, and getting comfortable with the web console and console.log function. I will be curious to see how we use the console.log in practice.
