@@ -6,4 +6,6 @@ console.log("Favorite Websites 3: https://www.crunchyroll.com");
 console.log("Favorite Games 1: Legend of Zelda- all of them!");
 console.log("Favorite Games 2: Kingdom Hearts 2");
 console.log("Favorite Games 3: Portal and Portal 2");
-console.log("Favrite Artist, interactive web art:")
+console.log("Favorite Artist, interactive web art: Martin Silvestre");
+console.log("Favorite Artist, interactive web art: Sacha Tourtoulou");
+console.log("Favorite Artist, interactive web art: Jon Way");
