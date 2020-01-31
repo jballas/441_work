@@ -25,15 +25,16 @@ This week we are creating a choose your own Adventure game, using javascript.
   1. divs
   2. float and position
   3. images?
+  4. menu at top
 4. Css style
   1. `:hover` preview feature and font changes
-  2.
+  2.  button
   3.  Add fonts
 
 5. testing the game
 6. finalize
 
-My first step in making my Adventure Game was pre-production. I knew the code was going to challenge me, so I wanted the story and art ready to impliment. This way I could focus on the code.
+My first step in making my Adventure Game was pre-production. I knew the code was going to challenge me, so I wanted the story and art selected fast. This way I could focus on the code.
 
 ### Coding
 My first success was a simple JS script.
@@ -47,14 +48,22 @@ My first success was a simple JS script.
 It works! I added text to DOM with document.write.
 Now, how do I make the choices? I'll need to use an if statement, or if/else statement, or if/if/else statements.
 
+### Progression
+
+so.. okay. I got my if statements to work, sorta. I'm still getting and error when you don't type the correct word. Mostly, I don't like using the window.prompt because it loads before my text. So you don't even see the text before it prompts you... Is this really how its going to play out? -- Can I make a button instead? Use a do.while()
+
+So I did some research on the `<button>` tag and learned there is a `onclick` action. (reference: https://www.w3schools.com/jsref/dom_obj_pushbutton.asp) So now when you click the button it updates the DOM and adds text to a `<div>`. Unfortunately, when I added a second button, for my second choice. The same message is printed. So...I think I need to use more variables. At least I'm closer...
+ ![First version of title game screen with text only](./images/title_gamescreen.png)
 ###
 
-1.
-
-### Screenshot of
 
 
 ## Problems or Issues this week
+Do I need a loop?
+
+I have an if statement, so that if someone doesn't put the correct choice I need to keep asking until they do. Will a loop work? Or will they get stuck in it. And to unstuck them, do I need my if-statement as a function?
+
+All my errors so far are because I misspelled: device, function
 
 ## Specific questions/concerns for next week
 
