@@ -5,16 +5,37 @@
     <meta charset="uft-8"/>
     <meta name="description" content="Choose your own Adventure Game: Glitch and Multiverse"
     <meta name="author" content="Julia Ballas" />
-    <meta name="viewport" content="width="devise-width, intital-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- function to reset the DOM -->
+
 
   </head>
   <body>
     <h1>An Adventure Game by Julia Ballas</h1>
 
+    <button id="changeme"> Restart </button>
+
     <script>
       document.write("It begins");
       document.write("<h2>Title?</h2>");
+      var pick_title = window.prompt("Choose one: Glitch or Multiverse");
+
+    if (pick_title==="Glitch" || "glitch"){
+        document.write("You picked Glitch");
+      }
+
+      else if (pick_title==="multiverse" || "Multiverse"){
+        document.write("You picked Multiverse");
+      }
+
+      if ( pick_title !="Glitch" || "glitch" || "multiverse" || "Multiverse"){
+        window.prompt("Spell your choice carefully: Glitch or Multiverse");
+      }
+
+
+
     </script>
   </body>
 </html>
