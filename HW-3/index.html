@@ -8,18 +8,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" type="text/css" href="style.css">
 
-    <!-- function to reset the DOM -->
+    <!-- function to pick the title-->
 
 
   </head>
   <body>
     <h1>An Adventure Game by Julia Ballas</h1>
 
-    <button id="changeme"> Restart </button>
+    <p> It begins </p>
+    <h2>Title?</h2>
+    <button type="button" id="title_btn" onclick="title_name()">Glitch</button>
+    <button type="button" id="title_btn" onclick="title_name()">Multiverse</button>
+
+    <div id="story" class="story_box"> </div>
 
     <script>
-      document.write("It begins");
-      document.write("<h2>Title?</h2>");
+
+
+      function title_name () {
+          var pick_title = document.getElementById("story").innerHTML = "Glitch, featuring Zee Q";
+}
+
+
+        // This section uses window.prompt to ask which title you want to play
+        /*
       var pick_title = window.prompt("Choose one: Glitch or Multiverse");
 
     if (pick_title==="Glitch" || "glitch"){
@@ -33,8 +45,7 @@
       if ( pick_title !="Glitch" || "glitch" || "multiverse" || "Multiverse"){
         window.prompt("Spell your choice carefully: Glitch or Multiverse");
       }
-
-
+      */
 
     </script>
   </body>

@@ -4,3 +4,9 @@ body {
   font-size: 200%;
   font-family: monospace;
 }
+
+#story_box {
+  width: deice-width;
+  height: 500px;
+  background-color: #00aaff;
+}
