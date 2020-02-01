@@ -105,14 +105,15 @@
         // Second Storyline
       function pick_title2() {
           title2 = "multiverse";
+          explore = "<button onclick=picked_explore()>Explore</button>";
+          sell = "<button onclick=pick_desire3()>Sell</button>";
+
           if (title2==="multiverse"){
-            document.getElementById("multi_act1").innerHTML = "Multiverse, featuring Sundra Dee. <p>Sundra Dee visits the amusement park named Quarkland, riding the most boring ride in the world. She falls into a trace. When she leaves the ride she discovers she is in a new universe!</p>";
+            document.getElementById("multi_act1").innerHTML = "Multiverse, featuring Sundra Dee. <p>Sundra Dee visits the amusement park named Quarkland, riding the most boring ride in the world. She falls into a trace. When she leaves the ride she discovers she is in a new universe!</p>" + explore + sell ;
             }
           }
 
-
-
-/* This is a function that write information to the DOM, only it can't write the button. Can document.write make a button appear? no...
+/* Below is a function that write information to the DOM, only it can't write the button. Can document.write make a button appear? no...
        function desire_button(){
             document.getElementById("second-act").innerHTML = "<h2>Next Chapter</h2> <button>Explore</button>"; // I can't get this button to work. That's where I'm stuck.
 
@@ -123,15 +124,17 @@
             if (title2=== "multiverse"){
               document.write("Testing");
             }
+
+            when I make the button a variable, that works...
         }
 */
 
 
 // This function uses window.prompt to ask which desire you want
-        function pick_desire2(){
-          var desire2 = window.prompt("You are exploring the universe, but now you're poor and lonely. What will you do? Give up earthly desires and become a monk? Or start dating? Choose: monk or date");
+        function picked_explore(){
+          var desire2 = window.prompt("You are exploring the universe, but now you're poor and lonely. What will you do? Give up earthly desires and become a hermit? Or start dating? Choose: hermit or date");
 
-          if (desire2=== "monk"){
+          if (desire2=== "hermit"){
             document.getElementById("multi_act2").innerHTML = " You decided to be a " + desire2;
           }
 
@@ -145,7 +148,6 @@
         function pick_desire3(){
           var desire3 = window.prompt("You decided to sell your discover. Now you're rich and bored. What will you do next? Shutdown? Or Escape into the multiverse? Choose shutdown or escape ")
 
-          test = document.getElementById("test").innerHTML = "<button onclick=pick_desire2()>Test</button>";
 
           if ( desire3 === "shutdown" ){
             document.getElementById("multi_act2").innerHTML = " You decided to" + desire2;
