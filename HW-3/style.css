@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "aftershok";
+  src: url("./fonts/After_Shok-webfont.woff") format("woff");
+}
+
 body {
   background-color: #10374a;
   color: white;
@@ -7,16 +12,31 @@ body {
 }
 
 
-
 button {
   color: white;
   background-color: #00aaff;
-  padding: 5px;
-  margin: 5px;
   border: 0;
   font-family: monospace;
+  font-size: 1em;
+  margin: 5px;
   min-width: 200px;
+  padding: 5px;
+
 }
+
+button:hover {
+  font-family: Courier, monospace;
+}
+
+button:active{
+    background-color: #00aacc;
+}
+
+#title_btn:hover, #title2_btn:hover {
+  font-family: 'aftershok', Courier, monospace;
+  letter-spacing: .01em;
+}
+
 
 div {
   /* border: 1px solid white; */
@@ -25,14 +45,15 @@ div {
 
 /* Classes */
 .story_box {
-
+  margin-bottom: 50px;
 }
+
 
 .glitch_story {
   float:left;
   max-width:40%;
   min-width: 300px;
-
+  border-right: 1px solid white;
 }
 
 .multi_story {
@@ -41,4 +62,13 @@ div {
   min-width:300px;
   border-left: 1px solid white;
   padding-left: 20px;
+}
+
+#glitch_title:hover{
+  background-image: url("./images/retro-Zee.jpg");
+  background-repeat: no-repeat;
+  background-position: right top;
+  overflow: visible;
+  width: inherit;
+
 }
