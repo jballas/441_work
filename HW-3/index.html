@@ -18,9 +18,9 @@
     <button type="button" id="title_btn" onclick="pick_title2()">Multiverse</button>
 
     <div id="story" class="story_box"> </div>
-    <div id="desire" class="story_box"> </div>
-    <div id="action" class="story_box"> </div>
-    <div id="end" class="story_box"> </div>
+    <div id="first-act" class="story_box"> </div>
+    <div id="second-act" class="story_box"> </div>
+    <div id="third-act" class="story_box"> </div>
 
     <script>
       var title;
@@ -37,18 +37,36 @@
 
             desire = window.prompt("What does Zee want? to Protect her family? Or Will she leave for the Big City on her own? Choose: Protect or Leave.");
 
-            document.getElementById("desire").innerHTML = "Zee decides to stay with Jim and protect her family. Unfortuantely, there is a glitch during their move and instead of ending up in the 1950s era, they end up in 1980s era: Cyberpunk City 2020. Luckily, Zee's pies are still a big hit with the punks.";
+            document.getElementById("first-act").innerHTML = "Zee decides to stay with Jim and protect her family. Unfortuantely, there is a glitch during their move and instead of ending up in the 1950s era, they end up in 1980s era: Cyberpunk City 2020. Luckily, Zee's pies are still a big hit with the punks.";
             }
 
             if (desire ==="protect") {
-
                 action = window.prompt("Will Zee join the rebels? Or Will she hide in the Bunker? Choose Rebels or Bunker.")
-                document.getElementById("action").innerHTML = " Unfortunately, the computers in cyberpunk city achieve sentience and war breaks out in the streets. Zee much choose what to do next.";
+                document.getElementById("second-act").innerHTML = " Unfortunately, the computers in cyberpunk city achieve sentience and war breaks out in the streets. Zee much choose what to do next.";
             }
 
             if (action ==="rebels"){
-              document.getElementById("end").innerHTML = "After joining the rebels, Zee and her family ... The End";
+              document.getElementById("third-act").innerHTML = "After joining the rebels, Zee and her family ... The End";
             }
+
+            if (action ==="bunker"){
+              document.getElementById("third-act").innerHTML = "Zee and her family decide to hide inside the Bunker. They spend the rest of their lives underground without sunlight, eating protein packets and vitamins. ... The End";
+            }
+
+            if (desire ==="leave") {
+               action = window.prompt ("Zee must take action, will she join the scientists and enter cryogenic sleep? Or Escape the city? Choose sleep or escape!")
+               document.getElementById("second-act").innerHTML = "Zee decides not to follow Jim to his new job in the 1950s era. She takes her son Tommy to the big city. Luckily, Zee begins a pie-baking business, and with Jim's help its a success! Unfortunately, the city is invaded by sentient AIs, who have escaped from Cyberpunk City. They are intent on destroying the world. Zee has to act fast. What will she do next?";
+            }
+
+            if (action === sleep){
+              document.getElementById("third-act").innerHTML = "Zee and her son enter cryogenic sleep, to wait until the war is finished. Unfortunately, there is a glitch in the system and Zee can't be woken up. It isn't until the year 3030 that she is returned to life. Tommy died years ago. Lonely, Zee decides to take a vacation at a themepark called Quarkland. To see more of her adventures, play the story <em>Multiverse</em>";
+            }
+
+            if (action === "escape"){
+              document.getElementById("third-act").innerHTML = "Zee and her son escape from the city into the countryside. Unfortunately, they are captured by the AI. Tommy is injured and dying, and Zee makes deal wit the AI in order to save his life. She becomes a cyborg. The End.
+            }
+
+
 
         }
 
@@ -56,14 +74,14 @@
       function pick_title2() {
           var title2 = "multiverse";
           if (title2==="multiverse"){
-              document.getElementById("story").innerHTML = "Multiverse, featuring Sundra Dee. <p>Sundra Dee is in an amusement park, riding the most boring ride in the world. She falls into a trace. When she leaves the ride she discovers she is in a new universe!</p>";
+            document.getElementById("first-act").innerHTML = "Multiverse, featuring Sundra Dee. <p>Sundra Dee visits the amusement park named Quarkland, riding the most boring ride in the world. She falls into a trace. When she leaves the ride she discovers she is in a new universe!</p>";
 
             }
           }
 
 
        function desire_button(){
-            document.getElementById("desire").innerHTML = "<h2>Next Chapter</h2> <button>Explore</button>"; // I can't get this button to work. That's where I'm stuck.
+            document.getElementById("second-act").innerHTML = "<h2>Next Chapter</h2> <button>Explore</button>"; // I can't get this button to work. That's where I'm stuck.
         }
 
 
