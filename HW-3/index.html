@@ -15,25 +15,29 @@
     <p> Instructions: Pick your story below, then select a character want and character action from the prompts. (case sensitive)</p>
     <h2>Title?</h2>
 
-    <!-- First choice is which story to play, click the button and prompts appear-->
+    <!-- Story Generator, click the button and prompts appear. Story is generated based on answers and appears in the divs below-->
     <button type="button" id="title_btn" onclick="pick_title()">Glitch</button>
-
-
     <div id="story" class="story_box"> </div>
     <div id="first-act" class="story_box"></div>
 
     <div id="second-act" class="story_box"> </div>
     <div id="third-act" class="story_box"> </div>
 
+    <!-- Button Game, click the button and other buttons to play... Only I can't figure out how to make my buttons appear after you make a selection. -->
     <div class="multi_story">
       <button type="button" id="title_btn" onclick="pick_title2()">Multiverse</button>
+      <div id="multi_act1" class="story_box"></div>
       <h2>Act 2</h2>
       <button type="button" id="want_btn" onclick="pick_desire2()">Explore</button>
       <button type="button" id="want_btn" onclick="pick_desire2()">Sell</button>
       <h2> Act 3 </h2>
-      <button type="button" id="action_btn" onclick="pick_desire2()">Explore</button>
-      <button type="button" id="action_btn" onclick="pick_desire2()">Sell</button>
+      <button type="button" id="action_btn" onclick="pick_action2()">Monk</button>
+      <button type="button" id="action_btn" onclick="pick_action2()">Dating</button>
+
+      <button type="button" id="action_btn" onclick="pick_action3()">Shutdown</button>
+      <button type="button" id="action_btn" onclick="pick_action3()">Escape</button>
     </div>
+
     <script>
       var title;
       var title2;
@@ -42,7 +46,7 @@
       var action;
       var action2;
 
-    // when you click the buttons this function is called and the window.prompts appear. The if statements decide what text is written to the website, based on your choices.
+    // when you click the buttons it calls this function, which makes the window.prompts appear. The if statements decide what text is written to the website, based on your choices.
 
       function pick_title() {
           title = "glitch";
@@ -80,36 +84,37 @@
             if (action === "escape"){
               document.getElementById("third-act").innerHTML = "<h2> Act Three </h2> Zee and her son escape from the city into the countryside. Unfortunately, they are captured by the AI. Tommy is injured and dying, and Zee makes deal wit the AI in order to save his life. She becomes a cyborg. The End.";
             }
-
-
-
         }
+
 
         // Second Storyline
       function pick_title2() {
           title2 = "multiverse";
           if (title2==="multiverse"){
-            document.getElementById("first-act").innerHTML = "Multiverse, featuring Sundra Dee. <p>Sundra Dee visits the amusement park named Quarkland, riding the most boring ride in the world. She falls into a trace. When she leaves the ride she discovers she is in a new universe!</p>";
-
+            document.getElementById("multi_act1").innerHTML = "Multiverse, featuring Sundra Dee. <p>Sundra Dee visits the amusement park named Quarkland, riding the most boring ride in the world. She falls into a trace. When she leaves the ride she discovers she is in a new universe!</p>";
             }
           }
 
-/*
+          if (title2=== "multiverse"){
+            document.write("Testing");
+          }
+
+/* This is a function that write information to the DOM, only it can't write the button. Can document.write make a button appear? no...
        function desire_button(){
             document.getElementById("second-act").innerHTML = "<h2>Next Chapter</h2> <button>Explore</button>"; // I can't get this button to work. That's where I'm stuck.
+
+            document.write("<button>Testing</button>"); // it appeared on a new screen, not the same. Oh, I get it. Because its in a function it overwrites all the html in the document. Which made a blank screen and only the button.
+
+            What about in an if statement? Nope. nothing appeared.
         }
 */
 
+
+// This function uses window.prompt to ask which desire you want
         function pick_desire2(){
           var desire2 = window.prompt("Will you explore more universes? Or sell your new discover. Choose Explore or Sell")
         }
 
-        // This section uses window.prompt to ask which title you want to play
-/*
-    function pick_want() {
-      title = window.prompt("What do you want to do? Protect or Leave");
-    }
-*/
 
 
     </script>
