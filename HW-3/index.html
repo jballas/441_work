@@ -18,7 +18,7 @@
     <button type="button" id="title_btn" onclick="pick_title2()">Multiverse</button>
 
     <div id="story" class="story_box"> </div>
-      <div id="desire" class="story_box"> </div>
+    <div id="desire" class="story_box"> </div>
 
     <script>
       var title;
@@ -36,17 +36,16 @@
           var title2 = "multiverse";
           if (title2==="multiverse"){
               document.getElementById("story").innerHTML = "Multiverse, featuring Sundra Dee. <p>Sundra Dee is in an amusement park, riding the most boring ride in the world. She falls into a trace. When she leaves the ride she discovers she is in a new universe!</p>";
+              desire_button();
             }
           }
 
 
-/*
        function desire_button(){
-            document.getElementById("desire").innerHTML = "<button type="button" id="title_btn" onclick="pick_title2()">What Next?</button>"
-            ;
+            document.getElementById("desire").innerHTML = "<h2>Next Chapter</h2> <button>Explore</button>"; // I can't get this button to work. That's where I'm stuck.
         }
-*/
-/*
+
+
         function pick_desire(){
           var desire2 = window.prompt("Will you explore more universes? Or sell your new discover. Choose Explore or Sell")
         }
