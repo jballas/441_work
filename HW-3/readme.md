@@ -63,8 +63,20 @@ So, I may have to just have a start button, that prompts the first choice, which
 
 I created a story generator, not a choose your adventure game. I can make prompts appear, and based on choices, then the story appears all at once. That's the story generator. But I'm trying to build a game. This will require more buttons, and since I can't made the buttons appear, I'll just have to have the buttons already there. The last option can be a prompt, maybe.
 
-Have I achieve button sucess? I was struggling to get a button to appear after a choice, and also allow me to click on it. The `onclick` kept giving me an error. But somehow I managed to make the button a variable and it appeared, and I could click on it and a prompt appears. So, partial success. Now, I have to figure out how I did this and replicated it. 
+Have I achieve button sucess? I was struggling to get a button to appear after a choice, and also allow me to click on it. The `onclick` kept giving me an error. But somehow I managed to make the button a variable and it appeared, and I could click on it and a prompt appears. So, partial success. Now, I have to figure out how I did this and replicated it.
 
+ ![screenshot of text game, with 2 test buttson](./images/confusing_success.png)
+I am so silly. I needed to make a variable and assign it a string that I could call inside the document.getElementById.
+
+That was so much harder than it should have been. But I figured it out. Successful code is below.
+```
+explore = "<button onclick=picked_explore()>Explore</button>";
+sell = "<button onclick=pick_desire3()>Sell</button>";
+
+if (title2==="multiverse"){
+  document.getElementById("multi_act1").innerHTML = "Multiverse, featuring Sundra Dee. <p>Sundra Dee visits the amusement park named Quarkland, riding the most boring ride in the world. She falls into a trace. When she leaves the ride she discovers she is in a new universe!</p>" + explore + sell ;
+  }
+  ```
 
 ## Problems or Issues this week
 Do I need a loop?
