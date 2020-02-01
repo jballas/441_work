@@ -25,17 +25,31 @@
 
     <!-- Button Game, click the button and other buttons to play... Only I can't figure out how to make my buttons appear after you make a selection. -->
     <div class="multi_story">
-      <button type="button" id="title_btn" onclick="pick_title2()">Multiverse</button>
-      <div id="multi_act1" class="story_box"></div>
-      <h2>Act 2</h2>
-      <button type="button" id="want_btn" onclick="pick_desire2()">Explore</button>
-      <button type="button" id="want_btn" onclick="pick_desire2()">Sell</button>
-      <h2> Act 3 </h2>
-      <button type="button" id="action_btn" onclick="pick_action2()">Monk</button>
+      <div id="multi_act1" class="story_box"><button type="button" id="title_btn" onclick="pick_title2()">Multiverse</button>
+      </div>
+
+      <div id="multi_act2" class="story_box">
+        <h2>Act 2</h2>
+        <button type="button" id="want_btn" onclick="pick_desire2()">Explore</button>
+        <button type="button" id="want_btn" onclick="pick_desire3()">Sell</button>
+      </div>
+
+      <div id="multi_act3" class="story_box">
+        <h2> Act 3 </h2>
+      </div>
+
+      <!--Testing-->
+      <br>
+      <br>
+      <br>
+      <div id="test"></div>
+
+      <!--<button type="button" id="action_btn" onclick="pick_action2()">Monk</button>
       <button type="button" id="action_btn" onclick="pick_action2()">Dating</button>
 
       <button type="button" id="action_btn" onclick="pick_action3()">Shutdown</button>
-      <button type="button" id="action_btn" onclick="pick_action3()">Escape</button>
+      <button type="button" id="action_btn" onclick="pick_action3()">Escape</button>-->
+
     </div>
 
     <script>
@@ -45,6 +59,7 @@
       var desire2;
       var action;
       var action2;
+      var test;
 
     // when you click the buttons it calls this function, which makes the window.prompts appear. The if statements decide what text is written to the website, based on your choices.
 
@@ -95,9 +110,7 @@
             }
           }
 
-          if (title2=== "multiverse"){
-            document.write("Testing");
-          }
+
 
 /* This is a function that write information to the DOM, only it can't write the button. Can document.write make a button appear? no...
        function desire_button(){
@@ -106,14 +119,44 @@
             document.write("<button>Testing</button>"); // it appeared on a new screen, not the same. Oh, I get it. Because its in a function it overwrites all the html in the document. Which made a blank screen and only the button.
 
             What about in an if statement? Nope. nothing appeared.
+
+            if (title2=== "multiverse"){
+              document.write("Testing");
+            }
         }
 */
 
 
 // This function uses window.prompt to ask which desire you want
         function pick_desire2(){
-          var desire2 = window.prompt("Will you explore more universes? Or sell your new discover. Choose Explore or Sell")
+          var desire2 = window.prompt("You are exploring the universe, but now you're poor and lonely. What will you do? Give up earthly desires and become a monk? Or start dating? Choose: monk or date");
+
+          if (desire2=== "monk"){
+            document.getElementById("multi_act2").innerHTML = " You decided to be a " + desire2;
+          }
+
+          if ( desire2 === "date" ){
+            document.getElementById("multi_act2").innerHTML = " You decided to " + desire2;
+
+          }
         }
+
+// This is function if you pick Sell in Act 2 of Multiverse Story
+        function pick_desire3(){
+          var desire3 = window.prompt("You decided to sell your discover. Now you're rich and bored. What will you do next? Shutdown? Or Escape into the multiverse? Choose shutdown or escape ")
+
+          test = document.getElementById("test").innerHTML = "<button onclick=pick_desire2()>Test</button>";
+
+          if ( desire3 === "shutdown" ){
+            document.getElementById("multi_act2").innerHTML = " You decided to" + desire2;
+            document.getElementById("multi_act3").innerHTML = test;
+          }
+
+          if (desire3 === "Escape"){
+            document.getElementById("multi_act3").innerHTML = " You decided to" + desire2;
+          }
+        }
+
 
 
 
