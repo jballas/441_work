@@ -3,10 +3,40 @@ body {
   color: white;
   font-size: 200%;
   font-family: monospace;
+  margin-left: 20px;
 }
 
-#story_box {
-  width: deice-width;
-  height: 500px;
+
+
+button {
+  color: white;
   background-color: #00aaff;
+  padding: 5px;
+  margin: 5px;
+  border: 0;
+  font-family: monospace;
+}
+
+div {
+  /* border: 1px solid white; */
+  overflow: auto;
+}
+
+/* Classes */
+.story_box {
+
+}
+
+.glitch_story {
+  float:left;
+  max-width:40%;
+  min-width: 300px;
+
+}
+
+.multi_story {
+  float: right;
+  width:40%;
+  border-left: 1px solid white;
+  padding-left: 20px;
 }

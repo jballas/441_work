@@ -23,13 +23,14 @@ This week we are creating a choose your own Adventure game, using javascript.
 2. Coding
 3. HTML structure
   1. divs
-  2. float and position
-  3. images?
-  4. menu at top
+  2. images?
+  3. navigation with 'about' hover
 4. Css style
   1. `:hover` preview feature and font changes
   2.  button
   3.  Add fonts
+  4.  images?
+  2. float and position
 
 5. testing the game
 6. finalize

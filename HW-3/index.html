@@ -15,17 +15,19 @@
     <p> Instructions: Pick your story below, then select your action from the prompts or buttons. (prompts are case sensitive)</p>
 
     <!-- More of a Story Generator, click the button and prompts appear. Story is generated based on answers and appears in the divs below-->
-    <h2> Glitch</h2>
-    <button type="button" id="title_btn" onclick="pick_title()">Glitch</button>
-    <div id="story" class="story_box">        </div>
-      <div id="first-act" class="story_box"></div>
+    <div class="glitch_story">
+        <h2> Glitch</h2>
+        <button type="button" id="title_btn" onclick="pick_title()">Glitch</button>
+        <div id="glitch_title" class="story_box">        </div>
+          <div id="first-act" class="story_box"></div>
 
-      <div id="second-act" class="story_box"> </div>
-      <div id="third-act" class="story_box"> </div>
-
+          <div id="second-act" class="story_box"> </div>
+          <div id="third-act" class="story_box"> </div>
+      </div>
     <!-- Multiverse Button Game, click a button and text appears -->
-    <h2> Multiverse</h2>
+
       <div class="multi_story">
+           <h2> Multiverse</h2>
         <div id="multi_act1" class="story_box">
             <button type="button" id="title2_btn" onclick="pick_title2()">Multiverse</button>
         </div>
@@ -48,7 +50,7 @@
       function pick_title() {
           title = "glitch";
           if (title==="glitch"){
-            document.getElementById("story").innerHTML = "Glitch, featuring Zee Q";
+            document.getElementById("glitch_title").innerHTML = "Glitch, featuring Zee Q";
 
             desire = window.prompt("What does Zee want? To Protect her family? Or Will she leave for the Big City on her own? Choose: protect or leave.");
 
