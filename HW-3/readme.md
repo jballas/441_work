@@ -59,6 +59,24 @@ Small success today. I have 2 buttons when you click one, text appears. So the b
 
 Also, I've run into a problem on the second level of choices. I can't use the button prompt anymore. There is an error whenever I try to put another button inside. No idea why. So I can't get to the second choice. window.prompt has the same problem. it shows up before the text.
 
+```
+/* Below is a function that write information to the DOM, only it can't write the button. Can document.write make a button appear? no...
+       function desire_button(){
+            document.getElementById("second-act").innerHTML = "<h2>Next Chapter</h2> <button>Explore</button>"; // I can't get this button to work. That's where I'm stuck.
+
+            document.write("<button>Testing</button>"); // it appeared on a new screen, not the same. Oh, I get it. Because its in a function it overwrites all the html in the document. Which made a blank screen and only the button.
+
+            What about in an if statement? Nope. nothing appeared.
+
+            if (title2=== "multiverse"){
+              document.write("Testing");
+            }
+
+            when I make the button a variable, that works...
+        }
+*/
+```
+
 So, I may have to just have a start button, that prompts the first choice, which lays out text, and then how do I get the second prompt after the text is shown? hmmm. puzzling.
 
 I created a story generator, not a choose your adventure game. I can make prompts appear, and based on choices, then the story appears all at once. That's the story generator. But I'm trying to build a game. This will require more buttons, and since I can't made the buttons appear, I'll just have to have the buttons already there. The last option can be a prompt, maybe.
