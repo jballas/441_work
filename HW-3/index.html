@@ -30,8 +30,8 @@
 
       <div id="multi_act2" class="story_box">
         <h2>Act 2</h2>
-        <button type="button" id="want_btn" onclick="pick_desire2()">Explore</button>
-        <button type="button" id="want_btn" onclick="pick_desire3()">Sell</button>
+        <!--<button type="button" id="want_btn" onclick="pick_desire2()">Explore</button>
+        <button type="button" id="want_btn" onclick="pick_desire3()">Sell</button>-->
       </div>
 
       <div id="multi_act3" class="story_box">
@@ -58,8 +58,7 @@
       var desire;
       var desire2;
       var action;
-      var action2;
-      var test;
+      var dee_action;
 
     // when you click the buttons it calls this function, which makes the window.prompts appear. The if statements decide what text is written to the website, based on your choices.
 
@@ -105,8 +104,8 @@
         // Second Storyline
       function pick_title2() {
           title2 = "multiverse";
-          explore = "<button onclick=picked_explore()>Explore</button>";
-          sell = "<button onclick=pick_desire3()>Sell</button>";
+          let explore = "<button onclick=picked_explore()>Explore</button>";
+          let sell = "<button onclick=picked_sell()>Sell</button>";
 
           if (title2==="multiverse"){
             document.getElementById("multi_act1").innerHTML = "Multiverse, featuring Sundra Dee. <p>Sundra Dee visits the amusement park named Quarkland, riding the most boring ride in the world. She falls into a trace. When she leaves the ride she discovers she is in a new universe!</p>" + explore + sell ;
@@ -130,37 +129,63 @@
 */
 
 
-// This function uses window.prompt to ask which desire you want
+// Function needs to write information to multi_act2, and have 2 buttons appear
         function picked_explore(){
-          var desire2 = window.prompt("You are exploring the universe, but now you're poor and lonely. What will you do? Give up earthly desires and become a hermit? Or start dating? Choose: hermit or date");
 
-          if (desire2=== "hermit"){
-            document.getElementById("multi_act2").innerHTML = " You decided to be a " + desire2;
+          dee_desire = "explore";
+          let hermit = "<button onclick=action_hermit()>Be Hermit</button>";
+          let date = "<button onclick=action_date()>Start Dating</button>";
+
+          if (dee_desire == "explore"){ document.getElementById("multi_act2").innerHTML = "You are exploring the universe, but now you're poor and lonely. What will you do? Give up earthly desires and become a hermit? Or start dating?" + hermit + date;
           }
+      }
 
-          if ( desire2 === "date" ){
-            document.getElementById("multi_act2").innerHTML = " You decided to " + desire2;
+      function action_hermit(){
+        dee_action = "hermit";
 
+        if (dee_action=== "hermit"){
+          document.getElementById("multi_act3").innerHTML = " <h2> Act 3 </h2> You decided to be a " + dee_action + "Unfortunately, your adventures have attracted the attention of the Interdimentional Police. You end up in prison.";
+        }
+
+      }
+
+      function action_date(){
+        dee_action = "date";
+
+        if ( dee_action === "date" ){
+          document.getElementById("multi_act3").innerHTML = "<h2> Act 3 </h2> You decided to " + dee_action + "Soon you meet a nice man named Jim Q and have a son named Tommy. For more of your adventures see Glitch.";
+        }
+      }
+
+
+
+
+// This is function if you pick 'Sell' button in Act 2 of Multiverse Story
+        function picked_sell(){
+
+          dee_desire = "sell";
+          let shutdown = "<button onclick=action_shutdown()>Shutdown</button>";
+          let date = "<button onclick=action_escape()>Escape</button>";
+
+          if (dee_desire == "sell"){ document.getElementById("multi_act2").innerHTML = "You decided to sell your discovery. You build a company called Multiverse Inc. Now you're rich but bored. What will you do next? Shutdown the corporation you built? Or Escape into the multiverse with all your money?" + shutdown + escape;
           }
         }
 
-// This is function if you pick Sell in Act 2 of Multiverse Story
-        function pick_desire3(){
-          var desire3 = window.prompt("You decided to sell your discover. Now you're rich and bored. What will you do next? Shutdown? Or Escape into the multiverse? Choose shutdown or escape ")
+        function action_shutdown(){
+          dee_action = "shutdown";
 
-
-          if ( desire3 === "shutdown" ){
-            document.getElementById("multi_act2").innerHTML = " You decided to" + desire2;
-            document.getElementById("multi_act3").innerHTML = test;
-          }
-
-          if (desire3 === "Escape"){
-            document.getElementById("multi_act3").innerHTML = " You decided to" + desire2;
+          if (dee_action=== "shutdown"){
+            document.getElementById("multi_act3").innerHTML = " <h2> Act 3 </h2> You decided to " + dee_action + "the evil coporation you built. Unfortunately, multiple-versions of yourself appear to stop you. They are members of the interdimentional police and their job is to protec the multiverse. They are here to recuit you. Life won't be boring anymore!";
           }
         }
 
+          function action_escape(){
+            dee_action = "escape";
 
-
+            if (dee_action=== "escape"){
+              document.getElementById("multi_act3").innerHTML = " <h2> Act 3 </h2> You decided to " + dee_action + "with all the money. Unfortunately, before you can the Interdimentional police appear to arrest you. You somehow manage to escape, but you have to change your name and go into hiding in a nice suburban where you bake pies. For more of your adventures see Glitch.";
+            }
+          }
 
     </script>
   </body>
