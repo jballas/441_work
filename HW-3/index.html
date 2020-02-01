@@ -19,24 +19,45 @@
 
     <div id="story" class="story_box"> </div>
     <div id="desire" class="story_box"> </div>
+    <div id="action" class="story_box"> </div>
+    <div id="end" class="story_box"> </div>
 
     <script>
       var title;
       var title2;
+      var desire;
+      var action;
 
-    // a function to pick the title. Needs a variable, or something...
+    // a function to pick the title of the story you want to play. All the story window.prompts and if statements are inside this function. Is it too crowded?
+
       function pick_title() {
           title = "glitch";
           if (title==="glitch"){
-              document.getElementById("story").innerHTML = "Glitch, featuring Zee Q";
+            document.getElementById("story").innerHTML = "Glitch, featuring Zee Q";
+
+            desire = window.prompt("What does Zee want? to Protect her family? Or Will she leave for the Big City on her own? Choose: Protect or Leave.");
+
+            document.getElementById("desire").innerHTML = "Zee decides to stay with Jim and protect her family. Unfortuantely, there is a glitch during their move and instead of ending up in the 1950s era, they end up in 1980s era: Cyberpunk City 2020. Luckily, Zee's pies are still a big hit with the punks.";
             }
+
+            if (desire ==="protect") {
+
+                action = window.prompt("Will Zee join the rebels? Or Will she hide in the Bunker? Choose Rebels or Bunker.")
+                document.getElementById("action").innerHTML = " Unfortunately, the computers in cyberpunk city achieve sentience and war breaks out in the streets. Zee much choose what to do next.";
+            }
+
+            if (action ==="rebels"){
+              document.getElementById("end").innerHTML = "After joining the rebels, Zee and her family ... The End";
+            }
+
         }
 
+        // Second Storyline
       function pick_title2() {
           var title2 = "multiverse";
           if (title2==="multiverse"){
               document.getElementById("story").innerHTML = "Multiverse, featuring Sundra Dee. <p>Sundra Dee is in an amusement park, riding the most boring ride in the world. She falls into a trace. When she leaves the ride she discovers she is in a new universe!</p>";
-              desire_button();
+
             }
           }
 
