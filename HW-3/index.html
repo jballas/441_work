@@ -20,14 +20,21 @@
     <div id="story" class="story_box"> </div>
 
     <script>
-    var title_name;
+    var title;
+    var title2;
 
     // a function to pick the title. Needs a variable, or something...
       function pick_title() {
-          var title = document.getElementById("story").innerHTML = "Glitch, featuring Zee Q";
+          title = "glitch";
+          if (title==="glitch"){
+              document.getElementById("story").innerHTML = "Glitch, featuring Zee Q";
+            }
         }
       function pick_title2() {
-            var title = document.getElementById("story").innerHTML = "Multiverse, featuring Sun Dee";
+          title2 = "multiverse";
+          if (title2==="multiverse"){
+              document.getElementById("story").innerHTML = "Multiverse, featuring Sun Dee";
+            }
   }
 
 
@@ -36,21 +43,14 @@
     function pick_title() {
       title = window.prompt("Choose one: Glitch or Multiverse");
     }
+*/
 
-    if (title==="Glitch" || "glitch"){
-        document.write("picked Glitch");
-      }
 
-      else if (title==="multiverse" || "Multiverse"){
-        document.write("You picked Multiverse");
-      }
 
-      else {
-        window.prompt("Choose one: Glitch or Multiverse");
-      }
+
 
       console.log(title);
-
+/*
       // This if statement gives you a second window, if you fail to write the correct word. Unfortunately, it doesn't work if you mis-spell twice. Do I need a loop? Until the correct word is spelled? How do I keep asking this until I get correct input?
       if (title !="Glitch" || "glitch" || "multiverse" || "Multiverse"){
         window.prompt("Spell your choice carefully: Glitch or Multiverse");
