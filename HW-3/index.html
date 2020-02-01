@@ -14,36 +14,48 @@
 
     <p> It begins </p>
     <h2>Title?</h2>
-    <button type="button" id="title_btn" onclick="title_name()">Glitch</button>
-    <button type="button" id="title_btn" onclick="title_name()">Multiverse</button>
+    <button type="button" id="title_btn" onclick="pick_title()">Glitch</button>
+    <button type="button" id="title_btn" onclick="pick_title2()">Multiverse</button>
 
     <div id="story" class="story_box"> </div>
 
     <script>
+    var title_name;
 
     // a function to pick the title. Needs a variable, or something...
-      function title_name () {
-          var pick_title = document.getElementById("story").innerHTML = "Glitch, featuring Zee Q";
-}
+      function pick_title() {
+          var title = document.getElementById("story").innerHTML = "Glitch, featuring Zee Q";
+        }
+      function pick_title2() {
+            var title = document.getElementById("story").innerHTML = "Multiverse, featuring Sun Dee";
+  }
 
 
         // This section uses window.prompt to ask which title you want to play
-        /*
-      var pick_title = window.prompt("Choose one: Glitch or Multiverse");
+/*
+    function pick_title() {
+      title = window.prompt("Choose one: Glitch or Multiverse");
+    }
 
-    if (pick_title==="Glitch" || "glitch"){
-        document.write("You picked Glitch");
+    if (title==="Glitch" || "glitch"){
+        document.write("picked Glitch");
       }
 
-      else if (pick_title==="multiverse" || "Multiverse"){
+      else if (title==="multiverse" || "Multiverse"){
         document.write("You picked Multiverse");
       }
 
-      // This if statement gives you a second window, if you fail to write the correct word. Unfortunately, it doesn't work if you mis-spell twice. Do I need a loop? Until the correct word is spelled? How do I keep asking this until I get correct input?
-      if ( pick_title !="Glitch" || "glitch" || "multiverse" || "Multiverse"){
-        window.prompt("Spell your choice carefully: Glitch or Multiverse");
+      else {
+        window.prompt("Choose one: Glitch or Multiverse");
       }
-      */
+
+      console.log(title);
+
+      // This if statement gives you a second window, if you fail to write the correct word. Unfortunately, it doesn't work if you mis-spell twice. Do I need a loop? Until the correct word is spelled? How do I keep asking this until I get correct input?
+      if (title !="Glitch" || "glitch" || "multiverse" || "Multiverse"){
+        window.prompt("Spell your choice carefully: Glitch or Multiverse");
+      } */
+
 
     </script>
   </body>
