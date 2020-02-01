@@ -68,6 +68,28 @@ div {
   height: 400px;
   background-image: url("./images/retro-Zee.jpg");
   background-repeat: no-repeat;
-  background-position: right top;
-  z-index: -10;
+}
+
+#second-act:hover{
+  height: 800px;
+  background-image: url("./images/cyberpunk.jpg");
+  background-repeat: no-repeat;
+}
+
+#third-act:hover{
+  height: 800px;
+  background-image: url("./images/bunker.jpg");
+  background-repeat: no-repeat;
+}
+
+#multi_act2:hover{
+  height: 800px;
+  background-image: url("./images/future.jpg");
+  background-repeat: no-repeat;
+}
+
+#multi_act3:hover{
+  height: 800px;
+  background-image: url("./images/cyborg.jpg");
+  background-repeat: no-repeat;
 }
