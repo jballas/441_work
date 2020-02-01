@@ -65,10 +65,9 @@ div {
 }
 
 #glitch_title:hover{
+  height: 400px;
   background-image: url("./images/retro-Zee.jpg");
   background-repeat: no-repeat;
   background-position: right top;
-  overflow: visible;
-  width: inherit;
-
+  z-index: -10;
 }
