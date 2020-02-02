@@ -11,6 +11,9 @@ body {
   margin-left: 20px;
 }
 
+img {
+  overflow: hidden;
+}
 
 button {
   color: white;
@@ -39,8 +42,8 @@ button:active{
 
 
 div {
-  /* border: 1px solid white; */
-  overflow: auto;
+  /* border: 1px solid white;
+  overflow: auto;*/
 }
 
 /* Classes */
@@ -63,7 +66,7 @@ div {
   border-left: 1px solid white;
   padding-left: 20px;
 }
-
+/*
 #glitch_title:hover{
   height: 400px;
   background-image: url("./images/retro-Zee.jpg");
@@ -93,3 +96,4 @@ div {
   background-image: url("./images/cyborg.jpg");
   background-repeat: no-repeat;
 }
+*/
