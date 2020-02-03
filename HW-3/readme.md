@@ -1,19 +1,19 @@
 # Week 3 Response
-## Date
+## Date 2-2-20
 ## MART441.50, Julia Ballas
 
 
 ## Overview
+We delved into javascript programming this week, tackling our first project, using variables and if statements to create branching paths in our program.
 
 ## Projects
 
 - Choose Your Own Adventure: Glitch and Multiverse
 
 ## Assignment Details
-This week we are creating a choose your own Adventure game, using javascript.
+This week we created a choose your own Adventure game, using javascript.
 
-
-## Step by Step Weekly Report
+## Process
 
 1. Pre-production:
   1. Story
@@ -23,18 +23,17 @@ This week we are creating a choose your own Adventure game, using javascript.
 2. Coding
 3. HTML structure
   1. divs
-  2. images?
-  3. navigation with 'about' hover
-
+  2. images
 4. Css style
-  1. `:hover` font changes
+  1. add fonts with `:hover` font changes
   2.  button
-  3.  Add fonts
-  4. float and position
-  5.  images? hover? preview?
+  3. float and position
+  4. margins and borders
 
 5. testing the game
-6. finalize
+  1. Did I get all the elements required by the homework?
+  2. Does it work on other browsers, etc
+6. finalize readme and submit
 
 My first step in making my Adventure Game was pre-production. I knew the code was going to challenge me, so I wanted the story and art ready to impliment. This way I could focus on the code.
 
@@ -52,48 +51,60 @@ Now, how do I make the choices? I'll need to use an if statement, or if/else sta
 
 ### Progression
 
-I didn't really know where to start, I began experimenting and failing, and experimenting some more. I got distracted by wanting to put buttons into my story. At one point I had too many buttons. It felt like taking one step forward and facing an impossibly huge wall, sometimes I was going backwards and my code was ugly. )(Luckily, I discovered this website called https://beautifier.io/. It was supposed to make your code beautiful and make it easier to see errors.)
+I didn't really know where to start, I began experimenting and failing, and experimenting some more. I got distracted adding in buttons. It felt like taking one step forward and facing an impossibly huge wall, or sometimes I was going backwards and my code was ugly. (Luckily, I discovered this website called https://beautifier.io/. It was supposed to make your code beautiful and make it easier to see errors.)
 
-###
-Mostly, I don't like using the window.prompt because it loads before my text. So you don't even see the text before it prompts you... Is this really how the game plays out? -- Can I make a button instead?
+### Prompt vs buttons
+I didn't like using the window.prompt because it loaded first. So you don't even see any text before it prompts you.
+So I emailed my teacher, and I did some research on the `<button>` tag and learned about the `onclick` event. (reference: https://www.w3schools.com/jsref/dom_obj_pushbutton.asp)
 
-So I emailed my teacher, and I did some research on the `<button>` tag and learned there is a `onclick` action. (reference: https://www.w3schools.com/jsref/dom_obj_pushbutton.asp) Now when you click the button it updates the DOM and adds text to a `<div>`. Unfortunately, when I added a second button, for my second choice. The same message is printed. So...I think I need to use more variables. At least I'm closer...
+Now when you click my button it updates the DOM and adds text to a `<div>`. Unfortunately, when I added a second button, for my second choice. The same message printed. So... I'm stuck, but at least I am a little  closer...
+
+
  ![First version of title game screen with text only](./images/title_gamescreen.png)
 
 ### Day 2
 Small success today. I made 2 buttons when you click one, text appears. So the button work, but I only fixed it by making 2 functions with different text. That is not efficent at all. I don't know how to fix it.
 
-Also, I've run into a problem on the second level of choices. I can't use the button anymore. There is an error whenever I try to put another button inside. No idea why. So I can't get to the second choice.
+Also, I've run into a problem on the second level of choices, I can't use my button anymore. There is an error whenever I try to put another button. I have no idea why. So I can't get past the second choice.
 
-So, I may have to just have a start button, that prompts for the first choice, which lays out text, and then how do I get the second prompt after the text is shown? hmmm. puzzling.
+I may have to just have a start button, that prompts for the first choice, which lays out text, and then how do I get the second prompt after the text is shown? hmmm. puzzling.
 
 ### Prompts and Text generation, one step forward
 
-I created a story generator, but its not a choose your adventure game. I can make prompts appear, and based on your choices, then a story appears all at once. I'm calling the story Glitch. Its a story generator, though, and I'm trying to build a game. This will require more buttons, and since I can't made the buttons appear, what if I already have the buttons in the HTML? (nope.)
+I created a story generator, which is not a choose your adventure game. I can make prompts appear, and based on your choices, then a story appears all at once. I'm calling the story *Glitch*.
+
+Meanwhile, I still want to solve the button problem.
 
 Below is supposed to be a function that writes information to the DOM, only it can't write the button. What if I use document.write make a button appear? no...
 
 ```JS
        function desire_button(){
-            document.getElementById("second-act").innerHTML = "<h2>Next Chapter</h2> <button>Explore</button>"; // I can't get this button to work. That's where I'm stuck.
+            document.getElementById("second-act").innerHTML = "<h2>Next Chapter</h2> <button>Explore</button>";
+            // I can't get this button to work. That's where I'm stuck.
 
-            document.write("<button>Testing</button>"); // This doesn't work either. It appeared on a new screen, not the same. Oh, I get it. Because it's in a function it overwrites all the html in the document. Which makes a blank screen and only the button.
+            document.write("<button>Testing</button>");
+            // This doesn't work either.
+            //It appeared on a new screen, not the same.
+            //Oh, I get it. Because it's in a function it overwrites all the html in the document. Which makes a blank screen and only the button.
           }
-```
-            What about using an if statement?
+
+            // What about using an if statement?
+
 ```JS
             if (title2=== "multiverse"){
               document.write("Testing");
             }                                   // Nope. nothing appeared.
+
+// Could I make the button a variable? Would that works?
 ```
-Could I make the button a variable? Would that works?
 
-### Successful code?
+### Successful button code
 
-Have I achieve button sucess? I was struggling to get a flickable button to appear after a choice. The `onclick` kept giving me an error. But somehow I managed to make the button a variable and it appeared, and I could click on it and a prompt appears. So, partial success. Now, I have to figure out how I did this and replicated it.
+Have I achieve button sucess? I was struggling to get a clickable button to appear. The `onclick` kept giving me an error. Finally, I realized I needed to make the button a variable.
 
  ![screenshot of text game, with 2 test buttons](./images/confusing_success.png)
-The button appears successfull, except there are 2 buttons.
+
+The button appears successfully in the screenshot above, except there are 2 buttons. I still had some work to do.
 
 I am so silly. It turns out all I needed to do was to make a variable that I could call inside the document.getElementById.
 
@@ -105,10 +116,12 @@ let sell = "<button onclick=pick_desire3()>Sell</button>";
 if (title2==="multiverse"){
   document.getElementById("multi_act1").innerHTML = "Multiverse, featuring Sundra Dee. <p>Sundra Dee visits the amusement park named Quarkland, riding the most boring ride in the world. She falls into a trace. When she leaves the ride she discovers she is in a new universe!</p>" + explore + sell ;
   }
-``` ![screenshot of text game with correct buttons](./images/button_example.png)
+```
+
+![screenshot of text game with correct buttons](./images/button_example.png)
 
 ## Problems or Issues this week
-Somehow the idea of using a variable inside the `document.getElementById` kept eluding me, but I came around to the realization eventually. After that breakthrough it was just replicating that throughout the story-tree, finishing up my css and cleaning up my code.
+Somehow the idea of using a variable inside the `document.getElementById` kept eluding me, but I came around to the realization eventually. After that breakthrough it was just replicating the code throughout my story-tree, finishing up my css and cleaning up my code.
 
 ## Conclusion
 I kept my first attempt, *Glitch*, because it uses prompts and writes information to the DOM, but I prefer the *Multiverse* story. The buttons feel more like a game.
