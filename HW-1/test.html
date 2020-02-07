@@ -24,20 +24,36 @@
       </div>
 
       <div class=topright>
-        <button>Discover More </button>
-        <button>Skills</button>
-        <button>Contact</button>
-        </button>
+
+<button id="addName" onclick="addName()">missing someone?</button>
       </div>
 
       <div class=left><h2>leftX</h2></div>
-      <div class=right><h2>rightX</h2></div>
+      <div class=right><h2>rightX</h2>
+        <span Id="nameReplace" class="black">Empty </span>
+          <span Id="secondName" class="black">Sam</span>
+            <span Id="thirdName" class="black">Sam</span>
+                  <span Id="fourthName" class="black">Sam</span>
+                        <span Id="fifthName" class="black">Sam</span>
+                                <span Id="sixthName" class="black">Sam</span>
+
     </div>
 
-    <div class=whyMe>
-      <p> I am a non-traditional student having returned to school after 15 years to study Media and Visual arts. I am inspired by my surroundings, by the breathtaking beauty of the Northwest and Montana landscapes, but I also have a passion for traveling. I surround myself with bright bold colors in the indigo-blue and jade green spectrum.</p>
+    <script>
+    var name;
 
-      <p>I'm a self-published author my pen name is Ava Clary. This is not a secret, because I keep telling people about it. I blog about writing and my books at <a href="https://www.avaclary.com">AvaClary.com</a> and <a href="https://jballas.wordpress.com/">So Easily Distracted</a> </p>
-    </div>
+
+    function addName() {
+      name = window.prompt("enter their name here, if you want.");
+
+      var elements=document.getElementsByClassName('black');
+                  for (var i = 0; i < elements.length; i++) {
+                  elements[i].innerHTML = name;
+                  }
+    }
+
+
+
+    </script>
   </body>
 </html>
