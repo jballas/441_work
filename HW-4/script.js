@@ -80,7 +80,7 @@ function pick_title2() {
     let sell = "<button onclick=picked_sell()>Sell</button>";
 
     if (title2==="multiverse"){
-      document.getElementById("multi_act1").innerHTML = "Multiverse, featuring Sandra Dee!"+ dee_image + " <p>You visit the amusement park named Quarkland, while riding the most boring ride in the world you fall into a trace. When you leaves the ride you discover you are in a new universe! What will you do next? Continue to explore or sell your discovery?</p>" + explore + sell ;
+      document.getElementById("multi_act1").innerHTML = "Multiverse, featuring " + name + dee_image + " <p>You visit the amusement park named Quarkland, while riding the most boring ride in the world you fall into a trace. When you leaves the ride you discover you are in a new universe! What will you do next? Continue to explore or sell your discovery?</p>" + explore + sell ;
       }
     }
 
