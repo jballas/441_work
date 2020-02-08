@@ -35,19 +35,21 @@ What about a 'start screen' So I can use the 'do while'?
 Do I need to add IDs to all my buttons.. (is that important?)
 
 
-### Fixing Pick Title Function
-I'm interested in fixing the 2 functions that do the same thing- pick title. Would an if statement work better?
-
-Pick title functions should work like this:
+### Fixing Pick Title Function / simplying with functions and parameters
+I'm interested in fixing the 2 functions problem I had. last time I had `pick_title()` and `pick_title2()` So, click on one button and 1 function ran, or click on another button and a seperate function ran. it worked, but made the code cluttered.
+I needed a title function to
 
 click button glitch to start glitch story.
 or click button multiverse to start
 
-Then if you click the button those buttons disappear?
+I use a switch statement and parameters to make this work. Now. there is 1 variable called 'title' and I use it throughout. I think I can replicated this so there is 1 variable for desire, and one for action too.
 
-If I use a switch statement and have the stories appear in only 1 div, instead of being divided into 2 seperate....
 
-### Adding name
+
+Next I want to make the stories appear in only 1 central div, instead of being divided into 2 seperate columns....
+
+
+
 
 
 
