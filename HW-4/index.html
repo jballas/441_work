@@ -16,10 +16,13 @@
     <p> Instructions: Pick your story below, then select your action from the prompts or buttons. (prompts are case sensitive)</p>
 
     <label id="ch_name"> Character Name </label>
-    <input id="enter_name" type="text"></br>
-    <button id="btn_name">Enter</button>
+    <input id="entered_name" type="text"></br>
+    <button id="btn_name" onclick="enter_name()">Enter</button>
 
     <!-- More of a Story Generator, click the button and prompts appear. Story is generated based on answers and appears in the divs below-->
+
+    <div id="title"></div>
+
     <div class="glitch_story">
         <h2> Glitch</h2>
         <button type="button" id="title_btn" onclick="pick_title()">Glitch</button>
@@ -29,6 +32,8 @@
           <div id="second-act" class="story_box"> </div>
           <div id="third-act" class="story_box"> </div>
       </div>
+
+
     <!-- Multiverse Button Game, click a button and text appears -->
 
       <div class="multi_story">

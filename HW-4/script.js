@@ -1,3 +1,4 @@
+var name;
 var title;
 var title2;
 var desire;
@@ -7,18 +8,27 @@ var dee_action;
 
 // Image Variables
 var zeeQ_image = " <img src='../HW-3/images/retro-Zee.jpg' alt='woman in retro 1950's dress'> ";
-var dee_image = " <img src='../HW-3images/Dee.png' alt='sci-fi woman in wormhole'> ";
-var bunker_image = " <img src='../HW-3images/bunker.jpg' alt='underground stairs leading down'> ";
-var cyber_image =" <img src='../HW-3images/cyberpunk.jpg' alt='neon-lit city street ca 1980's cyberpunk mystic'> ";
-var cyborg_image =" <img src='../HW-3images/cyborg.jpg' alt='robotic woman'>";
-var dating_image =" <img src='../HW-3images/dating.png' alt='silhouette of man and woman facing each other hearts in background'> ";
+var dee_image = " <img src='../HW-3/images/Dee.png' alt='sci-fi woman in wormhole'> ";
+var bunker_image = " <img src='../HW-3/images/bunker.jpg' alt='underground stairs leading down'> ";
+var cyber_image =" <img src='../HW-3/images/cyberpunk.jpg' alt='neon-lit city street ca 1980's cyberpunk mystic'> ";
+var cyborg_image =" <img src='../HW-3/images/cyborg.jpg' alt='robotic woman'>";
+var dating_image =" <img src='../HW-3/images/dating.png' alt='silhouette of man and woman facing each other hearts in background'> ";
 var exploring_image =" <img src='../HW-3images/explore.png' alt='sci-fi woman on bridge above a planet'> ";
-var bored_image =" <img src='../HW-3images/bored.jpg' alt='woman staring out the window toward foggy sunset over the city'> ";
-var multi_image = " <img src='../HW-3images/multiverse.jpg' alt='closeup on woman's robotic eye'> ";
+var bored_image =" <img src='../HW-3/images/bored.jpg' alt='woman staring out the window toward foggy sunset over the city'> ";
+var multi_image = " <img src='../HW-3/images/multiverse.jpg' alt='closeup on woman's robotic eye'> ";
 
-//function for entering a name
+//function for entering a name, and if you don't enter a name a window alert appears.
 
-//function enter_name
+function enter_name (){
+    name = document.getElementById("entered_name").value;
+
+    if (name == ""){
+        window.alert("Enter Name to continue!")
+      }
+    else{
+        document.getElementById("title").innerHTML = "featuring " + name + " Q"
+      }
+}
 
 
 // when you click the buttons it calls this function, which makes the window.prompts appear. The if statements decide what text is written to the website, based on your choices.
@@ -27,15 +37,15 @@ function pick_title() {
     title = "glitch";
 
     if (title==="glitch"){
-      document.getElementById("glitch_title").innerHTML = "Glitch, featuring Zee Q" + zeeQ_image;
 
-      desire = window.prompt("What does Zee want? To Protect her family? Or Will she leave for the Big City on her own? Choose: protect or leave.");
 
-      document.getElementById("first-act").innerHTML = " <h2>Act one</h2> Zee Q is a pessimist, but her husband Jim is an optimist. Jim has gotten a job offer to time travel to the 1950s era. In prepration, Zee has become a fantastic pie baker. Her son Tommy is excited to eat jello all the time. Zee is feeling a little doubtful about their big move. What does Zee want?";
+      desire = window.prompt("What does " + name + " want? To Protect her family? Or Will she leave for the Big City on her own? Choose: protect or leave.");
+
+      document.getElementById("first-act").innerHTML = " <h2>Act one</h2>" + name + " Q is a pessimist, but your husband Jim is an optimist. Jim has gotten a job offer to time travel to the 1950s era. In prepration, You have become a fantastic pie baker. Her son Tommy is excited to eat jello all the time. You are feeling a little doubtful about their big move. What does you want to do?";
       }
 
       if (desire ==="protect") {
-          action = window.prompt("Will Zee join the rebels? Or will she hide in the Bunker? Choose rebels or bunker");
+          action = window.prompt("Will " + name + " join the rebels? Or will she hide in the Bunker? Choose rebels or bunker");
 
           document.getElementById("second-act").innerHTML = cyber_image + "<h2> Act Two</h2> Zee decides to stay with Jim and protect her family. Unfortuantely, there is a glitch during their move and instead of ending up in the 1950s era, they end up in the 1980s era: Cyberpunk City 2020. Luckily, Zee's pies are still a big hit. Unfortunately, the computers in cyberpunk city achieve sentience and war breaks out in the streets. Zee much choose what to do next.";
       }
