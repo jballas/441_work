@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TEST for WEEK 1</title>
+    <title>TEST for MART441</title>
     <meta charset="utf-8">
     <meta name="description" contents="A portfolio website concept for Julia Ballas">
     <meta name="author" content="Julia Ballas">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Paprika|Roboto+Slab&display=swap" rel="stylesheet">
+
+    <script>
+               // I am defining my method here
+               function theWhileLoop(letsKeepLooping)
+               {
+                   var count = 0;
+                   while(letsKeepLooping)
+                   {
+                       document.write("I love JavaScript!<br>");
+                       count++;
+                       if(count >= 5)
+                       {
+                           letsKeepLooping = false;
+                       }
+                   }
+               }
+           </script>
   </head>
   <body>
     <header>
@@ -41,6 +58,8 @@
 
     <script>
     var name;
+
+      theWhileLoop(true); // remember I am calling my method here
 
 
     function addName() {

@@ -1,0 +1,99 @@
+@font-face {
+  font-family: "aftershok";
+  src: url("./fonts/After_Shok-webfont.woff") format("woff");
+}
+
+body {
+  background-color: #10374a;
+  color: white;
+  font-size: 200%;
+  font-family: monospace;
+  margin-left: 20px;
+}
+
+img {
+  overflow: hidden;
+}
+
+button {
+  color: white;
+  background-color: #00aaff;
+  border: 0;
+  font-family: monospace;
+  font-size: 1em;
+  margin: 5px;
+  min-width: 200px;
+  padding: 5px;
+
+}
+
+button:hover {
+  font-family: Courier, monospace;
+}
+
+button:active{
+    background-color: #00aacc;
+}
+
+#title_btn:hover, #title2_btn:hover {
+  font-family: 'aftershok', Courier, monospace;
+  letter-spacing: .01em;
+}
+
+
+div {
+  /* border: 1px solid white;
+  overflow: auto;*/
+}
+
+/* Classes */
+.story_box {
+  margin-bottom: 50px;
+}
+
+
+.glitch_story {
+  float:left;
+  max-width:40%;
+  min-width: 300px;
+  border-right: 1px solid white;
+}
+
+.multi_story {
+  float: right;
+  max-width:40%;
+  min-width:300px;
+  border-left: 1px solid white;
+  padding-left: 20px;
+}
+/*
+#glitch_title:hover{
+  height: 400px;
+  background-image: url("./images/retro-Zee.jpg");
+  background-repeat: no-repeat;
+}
+
+#second-act:hover{
+  height: 800px;
+  background-image: url("./images/cyberpunk.jpg");
+  background-repeat: no-repeat;
+}
+
+#third-act:hover{
+  height: 800px;
+  background-image: url("./images/bunker.jpg");
+  background-repeat: no-repeat;
+}
+
+#multi_act2:hover{
+  height: 800px;
+  background-image: url("./images/future.jpg");
+  background-repeat: no-repeat;
+}
+
+#multi_act3:hover{
+  height: 800px;
+  background-image: url("./images/cyborg.jpg");
+  background-repeat: no-repeat;
+}
+*/
