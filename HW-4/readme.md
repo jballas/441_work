@@ -44,7 +44,7 @@ or click button multiverse to start
 
 I use a switch statement and parameters to make this work. Now. there is 1 variable called 'title' and I use it throughout. I think I can replicated this so there is 1 variable for desire, and one for action too.
 
-
+I hate using numbers for my parameter values. I'm trying to figure out if I can use strings?
 
 Next I want to make the stories appear in only 1 central div, instead of being divided into 2 seperate columns....
 

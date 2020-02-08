@@ -1,6 +1,6 @@
 var name;
 var title;
-var title2;
+
 var desire;
 var dee_desire;
 var action;
@@ -45,43 +45,48 @@ function pick_title(title) {
             multiverse_story(title);
             break;
   }
-
+}
 function glitch_story(title){
-  let protect = "<button onclick=picked_desire('protect')>Protect</button>";
-  let leave = "<button onclick=picked_desire('leave')>Leave</button>";
+    let protect = "<button onclick=picked_desire(1)>Protect</button>";
+    let leave = "<button onclick=picked_desire(2)>Leave</button>";
 
-  document.getElementById("first-act").innerHTML = " <h2>Act one</h2>" + name + " Q is a pessimist, but your husband Jim is an optimist. Jim has gotten a job offer to time travel to the 1950s era. In prepration, You have become a fantastic pie baker. Her son Tommy is excited to eat jello all the time. You are feeling a little doubtful about their big move. What does " + name + " want? To protect her family? Or Will she leave for the Big City on her own?" + protect + leave;
-  }
+    if (title== 1){
+      document.getElementById("first-act").innerHTML = " <h2>Act one</h2>" + name + " Q is a pessimist, but your husband is an optimist. Your husband has gotten a job offer to time travel to the 1950s era. In prepration, You have become a fantastic pie baker. Your son Tommy is excited to eat jello all the time. You are feeling a little doubtful about the big move. What do you, " + name + " want? To protect the family? Or will you leave for the Big City on your own?" + protect + leave;
+    }
+}
 
 function picked_desire(desire){
+  let rebel = "<button onclick=picked_action(1)>Rebel</button>";
+  let bunker = "<button onclick=picked_action(2)>Bunker</button>";
+  let sleep = "<button onclick=picked_action(3)>Sleep</button>";
+  let escape_city = "<button onclick=picked_action(4)>Escape City</button>";
 
-        if (desire ==='protect') {
-            action = window.prompt("Will " + name + " join the rebels? Or will she hide in the Bunker? Choose rebels or bunker");
+        if (desire ==1) {
 
-            document.getElementById("second-act").innerHTML = cyber_image + "<h2> Act Two</h2> Zee decides to stay with Jim and protect her family. Unfortuantely, there is a glitch during their move and instead of ending up in the 1950s era, they end up in the 1980s era: Cyberpunk City 2020. Luckily, Zee's pies are still a big hit. Unfortunately, the computers in cyberpunk city achieve sentience and war breaks out in the streets. Zee much choose what to do next.";
+            document.getElementById("second-act").innerHTML = cyber_image + "<h2> Act Two</h2> Zee decides to stay with Jim and protect her family. Unfortuantely, there is a glitch during their move and instead of ending up in the 1950s era, they end up in the 1980s era: Cyberpunk City 2020. Luckily, Zee's pies are still a big hit. Unfortunately, the computers in cyberpunk city achieve sentience and war breaks out in the streets. You must choose what to do next. Will " + name + " join the rebels? Or will " + name + " hide in the Bunker?" + rebel + bunker;
       }
 
-      if (desire ==='leave') {
-         action = window.prompt("Zee must take action, will she join the scientists and enter cryogenic sleep? Or Escape the city? Choose sleep or escape!");
-         document.getElementById("second-act").innerHTML = bored_image + " <h2>Act Two</h2> Zee decides not to follow Jim to his new job in the 1950s era. She takes her son Tommy to the big city. Luckily, Zee begins a pie-baking business, and it's a success! <p> Unfortunately, the city is invaded by sentient AIs, who have escaped from Cyberpunk City. They are intent on destroying the world. Zee has to act fast. What will she do next?</p>";
-      }
-    }
+      else if (desire ==2) {
 
-  if (action ==="rebels"){
+         document.getElementById("second-act").innerHTML = bored_image + " <h2>Act Two</h2> Zee decides not to follow Jim to his new job in the 1950s era. She takes her son Tommy to the big city. Luckily, Zee begins a pie-baking business, and it's a success! <p> Unfortunately, the city is invaded by sentient AIs, who have escaped from Cyberpunk City. They are intent on destroying the world. Zee has to act fast. What will she do next?</p> Will you join the scientists and enter cryogenic sleep? Or Escape the city?" + sleep + escape_city;
+      }
+  }
+
+function picked_action(action){
+
+  if (action ===1){
     document.getElementById("third-act").innerHTML = cyborg_image +  "<h2> Act Three </h2>After joining the rebels, Zee and her family suffer many hardships during the war against the cyborgs but at least they are together....The End";
   }
 
-  if (action ==="bunker"){
+  else if (action ===2){
     document.getElementById("third-act").innerHTML = "<h2> Act Three </h2>Zee and her family decide to hide inside the Bunker. They spend the rest of their lives underground without sunlight, eating protein packets and vitamins.... The End" + bunker_image;
   }
 
-
-
-  if (action === "sleep"){
+  else if (action === 3){
     document.getElementById("third-act").innerHTML = " <h2> Act Three </h2> Zee and her son enter cryogenic sleep, to wait until the war is finished. Unfortunately, there is a glitch in the system and Zee can't be woken up. It isn't until the year 3030 that she is returned to life. Tommy died years ago. Lonely, Zee decides to take a vacation at a themepark called Quarkland. To see more of her adventures, play the story <em>Multiverse</em>" + multi_image;
   }
 
-  if (action === "escape"){
+  else if (action === 4){
     document.getElementById("third-act").innerHTML = cyborg_image + "<h2> Act Three </h2> Zee and her son escape from the city into the countryside. Unfortunately, they are captured by the AI. Tommy is injured and dying, and Zee makes deal with the AI in order to save his life. Tommy becomes a cyborg and Zee must work for the AI in the themepark Quarkland. For more of your adventures see <em>Multiverse</em>." + multi_image;
   }
 }
@@ -89,7 +94,7 @@ function picked_desire(desire){
 
   // Second Storyline
 function multiverse_story(title) {
-    //title2 = "multiverse";
+
     let explore = "<button onclick=picked_explore()>Explore</button>";
     let sell = "<button onclick=picked_sell()>Sell</button>";
 
@@ -106,7 +111,8 @@ function multiverse_story(title) {
     let hermit = "<button onclick=action_hermit()>Be Hermit</button>";
     let date = "<button onclick=action_date()>Start Dating</button>";
 
-    if (dee_desire == "explore"){ document.getElementById("multi_act2").innerHTML = exploring_image + "You are exploring the universe, but now you're poor and lonely. <p>What will you do? Give up earthly desires and become a hermit? Or start dating?</p>" + hermit + date;
+    if (dee_desire == "explore"){
+      document.getElementById("multi_act2").innerHTML = exploring_image + "You are exploring the universe, but now you're poor and lonely. <p>What will you do? Give up earthly desires and become a hermit? Or start dating?</p>" + hermit + date;
     }
 }
 
