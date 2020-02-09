@@ -22,16 +22,16 @@ What to add
       1. Add a text input box to input the charcter's name
 2. add a for loop, or while loop
       3. Add an if/else if/ else or switch statements
-4. add a parameter within a function
-5. return a value from a function
+      4. add a parameter within a function
+      5. return a value from a function
 7. add a restart button to restart the story
+  - Change where they story appears. So the buttons disappear!! One div Story box!!
 6. update the style/images with javascript function
 8. Make sure there are 5 choices to the story
 
 ### Process
 I'm not even sure where to start with this one. With inputting character name?
 
-What about a 'start screen' So I can use the 'do while'?
 Do I need to add IDs to all my buttons.. (is that important?)
 
 
@@ -48,7 +48,8 @@ I hate using numbers for my parameter values. I'm trying to figure out if I can 
 
 Next I want to make the stories appear in only 1 central div, instead of being divided into 2 seperate columns....
 
-
+### Layout update
+Previously, I had two columns, so one story appeared on the left and one on the right. Now, I've combined the stories and I want to have them only show up in one main story box. Time to fix some HTML, then update my script.js.
 
 
 
