@@ -11,43 +11,15 @@
 
   </head>
   <body>
-    <h1>A Sci-fi Adventure Text Game by Julia Ballas</h1>
+    <h1>A Sci-fi Adventure Text Game <span id ="featuring"></span></h1>
 
-    <p> Instructions: Pick your story below, then select your action from the prompts or buttons. (prompts are case sensitive)</p>
+    <!-- Story Box where All the Story Text and images will appear -->
+    <div id="story" class="story">
+        <label id="ch_name"> Character Name </label>
+        <input id="entered_name" type="text"></br>
+        <button id="btn_name" onclick="enter_name()">Enter</button></div>
 
-    <label id="ch_name"> Character Name </label>
-    <input id="entered_name" type="text"></br>
-    <button id="btn_name" onclick="enter_name()">Enter</button>
-
-    <!-- More of a Story Generator, click the button and prompts appear. Story is generated based on answers and appears in the divs below-->
-
-    <div id="title"></div>
-
-    <div class="glitch_story">
-        <h2> Glitch</h2>
-        <button type="button" id="title_btn" onclick="pick_title(1)">Glitch</button>
-
-
-          <div id="glitch_title" class="story_box">        </div>
-          <div id="first-act" class="story_box"></div>
-
-          <div id="second-act" class="story_box"> </div>
-          <div id="third-act" class="story_box"> </div>
-      </div>
-
-
-    <!-- Multiverse Button Game, click a button and text appears -->
-
-      <div class="multi_story">
-           <h2> Multiverse</h2>
-        <div id="multi_act1" class="story_box">
-            <button type="button" id="title2_btn" onclick="pick_title(2)">Multiverse</button>
-        </div>
-
-        <div id="multi_act2" class="story_box"> </div>
-
-        <div id="multi_act3" class="story_box"> </div>
-    </div>
+      <div id="images"></div>
 
     <script src="script.js"></script>
   </body>

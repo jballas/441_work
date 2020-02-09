@@ -47,53 +47,18 @@ div {
 }
 
 /* Classes */
-.story_box {
-  margin-bottom: 50px;
-}
 
-
-.glitch_story {
+.story {
   float:left;
   max-width:40%;
   min-width: 300px;
   border-right: 1px solid white;
 }
 
-.multi_story {
+img {
   float: right;
-  max-width:40%;
+  max-width:100%;
+  height: auto;
   min-width:300px;
-  border-left: 1px solid white;
   padding-left: 20px;
 }
-/*
-#glitch_title:hover{
-  height: 400px;
-  background-image: url("./images/retro-Zee.jpg");
-  background-repeat: no-repeat;
-}
-
-#second-act:hover{
-  height: 800px;
-  background-image: url("./images/cyberpunk.jpg");
-  background-repeat: no-repeat;
-}
-
-#third-act:hover{
-  height: 800px;
-  background-image: url("./images/bunker.jpg");
-  background-repeat: no-repeat;
-}
-
-#multi_act2:hover{
-  height: 800px;
-  background-image: url("./images/future.jpg");
-  background-repeat: no-repeat;
-}
-
-#multi_act3:hover{
-  height: 800px;
-  background-image: url("./images/cyborg.jpg");
-  background-repeat: no-repeat;
-}
-*/
