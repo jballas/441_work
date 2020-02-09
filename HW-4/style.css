@@ -35,7 +35,6 @@ button:active{
     background-color: #00aacc;
 }
 
-}
 img {
   float: left;
   max-width:100%;
@@ -49,8 +48,11 @@ img {
 .title_btn:hover {
   font-family: 'aftershok', Courier, monospace;
   letter-spacing: .01em;
+}
 
 .story {
+    background-color: #10374a;
+    color: white;
   float:left;
   max-width:40%;
   min-width: 300px;
