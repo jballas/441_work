@@ -3,6 +3,16 @@
   src: url("./fonts/After_Shok-webfont.woff") format("woff");
 }
 
+@font-face{
+  font-family: "atomic";
+  src:url("./fonts/atomicage-regular-webfont.woff") format("woff");
+}
+
+@font-face{
+  font-family: "carbontype";
+  src: url("./fonts/carbontype-webfont.woff") format("woff");
+}
+
 body {
   background-color: #10374a;
   color: white;
@@ -53,6 +63,7 @@ img {
 .story {
     background-color: #10374a;
     color: white;
+    font-family: monospace;
   float:left;
   max-width:40%;
   min-width: 300px;
