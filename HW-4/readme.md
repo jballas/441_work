@@ -24,9 +24,9 @@ What to add
       3. Add an if/else if/ else or switch statements
       4. add a parameter within a function
       5. return a value from a function
-    7. add a restart button to restart the story
-      - & Change where they story appears. So the buttons disappear!! One div Story box!!
-6. update the style/images with javascript function
+      7. add a restart button to restart the story
+      - & Change where the story appears. So the buttons disappear!! One div Story box!!
+    6. update the style/images with javascript function
 8. Make sure there are 5 choices to the story
 
 ### Process
@@ -52,7 +52,10 @@ Next I want to make the stories appear in only 1 central div, instead of being d
 Previously, I had two columns, so one story appeared on the left and one on the right. Now, I've combined the stories and I want to have them only show up in one main story box. Time to fix some HTML, then update my script.js.
 
 
+### Style changes
+  I created a new_universe function so that whenever the player enters a new universe in the story the style is updated. The style change is also random between two numbers. I used Math.random, and made sure it rounded the number, so it was 0 or 1.
 
+  Next up, adding a loop somewhere. How though...
 
 
 ## Problems or Issues this week
