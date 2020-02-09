@@ -1,9 +1,9 @@
 var name;
 var title;
-
 var desire;
-var dee_desire;
 var action;
+
+var dee_desire;
 var dee_action;
 
 // Image Variables
@@ -60,6 +60,10 @@ function picked_desire(desire){
   let bunker = "<button onclick=picked_action(2)>Bunker</button>";
   let sleep = "<button onclick=picked_action(3)>Sleep</button>";
   let escape_city = "<button onclick=picked_action(4)>Escape City</button>";
+  let hermit = "<button onclick=action_hermit()>Be Hermit</button>";
+  let date = "<button onclick=action_date()>Start Dating</button>";
+  let shutdown = "<button onclick=action_shutdown()>Shutdown</button>";
+  let run = "<button onclick=action_run_away()>Run away</button>";
 
         if (desire ==1) {
 
@@ -69,6 +73,13 @@ function picked_desire(desire){
       else if (desire ==2) {
 
          document.getElementById("second-act").innerHTML = bored_image + " <h2>Act Two</h2> Zee decides not to follow Jim to his new job in the 1950s era. She takes her son Tommy to the big city. Luckily, Zee begins a pie-baking business, and it's a success! <p> Unfortunately, the city is invaded by sentient AIs, who have escaped from Cyberpunk City. They are intent on destroying the world. Zee has to act fast. What will she do next?</p> Will you join the scientists and enter cryogenic sleep? Or Escape the city?" + sleep + escape_city;
+      }
+
+      else if (desire == 3){
+        document.getElementById("multi_act2").innerHTML = exploring_image + "You are exploring the universe, but now you're poor and lonely. <p>What will you do? Give up earthly desires and become a hermit? Or start dating?</p>" + hermit + date;
+      }
+
+      else if (desire == 4){ document.getElementById("multi_act2").innerHTML = bored_image + "You decided to sell your discovery. You build a company called Multiverse Inc. Now you're rich but bored. <p>What will you do next? Shutdown the corporation you built? Or escape into the multiverse with all your money?</p>" + shutdown + run;
       }
   }
 
@@ -95,8 +106,8 @@ function picked_action(action){
   // Second Storyline
 function multiverse_story(title) {
 
-    let explore = "<button onclick=picked_explore()>Explore</button>";
-    let sell = "<button onclick=picked_sell()>Sell</button>";
+    let explore = "<button onclick=picked_desire(3)>Explore</button>";
+    let sell = "<button onclick=picked_desire(4)>Sell</button>";
 
     if (title===2){
       document.getElementById("multi_act1").innerHTML = "Multiverse, featuring " + name + dee_image + " <p>You visit the amusement park named Quarkland, while riding the most boring ride in the world you fall into a trace. When you leaves the ride you discover you are in a new universe! What will you do next? Continue to explore or sell your discovery?</p>" + explore + sell ;
@@ -105,6 +116,7 @@ function multiverse_story(title) {
 
 
 // Function writes information to <div> with ID=multi_act2, and 2 buttons appear
+/*
   function picked_explore(){
 
     dee_desire = "explore";
@@ -114,7 +126,7 @@ function multiverse_story(title) {
     if (dee_desire == "explore"){
       document.getElementById("multi_act2").innerHTML = exploring_image + "You are exploring the universe, but now you're poor and lonely. <p>What will you do? Give up earthly desires and become a hermit? Or start dating?</p>" + hermit + date;
     }
-}
+}*/
 
 function action_hermit(){
   dee_action = "hermit";
@@ -133,11 +145,8 @@ function action_date(){
   }
 }
 
-
-
-
 // This is function if you pick 'Sell' button in Act 2 of Multiverse Story
-  function picked_sell(){
+/*  function picked_sell(){
 
     dee_desire = "sell";
     let shutdown = "<button onclick=action_shutdown()>Shutdown</button>";
@@ -145,7 +154,7 @@ function action_date(){
 
     if (dee_desire == "sell"){ document.getElementById("multi_act2").innerHTML = bored_image + "You decided to sell your discovery. You build a company called Multiverse Inc. Now you're rich but bored. <p>What will you do next? Shutdown the corporation you built? Or escape into the multiverse with all your money?</p>" + shutdown + run;
     }
-  }
+  } */
 
   function action_shutdown(){
     dee_action = "shutdown";
