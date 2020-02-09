@@ -82,10 +82,14 @@ function story(title){
 // Style changes which occur during your Multiverse and Glitch Adventures
 function new_universe(){
 
-    let changes = 1;
+    let changes = Math.round(Math.random());
+
+    if (changes == 0 ){
+            document.getElementById("story").style.backgroundColor = '#2c96c9';
+    }
 
     if (changes == 1){
-            document.getElementById("story").style.backgroundColor = 'green';
+            document.getElementById("story").style.backgroundColor = '#98c0d4';
     }
 }
 
