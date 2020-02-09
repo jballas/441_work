@@ -123,7 +123,8 @@ function picked_desire(desire){
 
       else if (desire ==2) {
 
-         document.getElementById("story").innerHTML ="<h2 class='act'>Act Two</h2> You decide not to follow your husband to his new job in the 1950s era. Instead you takes your son Tommy to the big city. Luckily, you begin a business<span class='business'>making pies </span>, and it's a success! <p> Unfortunately, the city is invaded by sentient AIs, who have escaped from Cyberpunk City. They are intent on destroying the world. You have to act fast. What will you do next?</p> Will you join the scientists and enter cryogenic sleep? Or escape the city with other refugees?<br>" + sleep + escape_city;
+         document.getElementById("story").innerHTML ="<h2 class='act'>Act Two</h2> You decide not to follow your husband to his new job in the 1950s era. Instead you takes your son Tommy to the big city. Luckily, you begin a business<span class='business'> making pies </span>, and it's a success! <p> Unfortunately, the city is invaded by sentient AIs, who have escaped from Cyberpunk City. They are intent on destroying the world. You have to act fast. What will you do next?</p>" + next + " Will you join the scientists and enter cryogenic sleep? Or escape the city with other refugees?<br>" + sleep + escape_city;
+
          document.getElementById("images").innerHTML= bored_image;
          new_universe();
       }
@@ -137,6 +138,7 @@ function picked_desire(desire){
       document.getElementById("images").innerHTML= bored_image;
       }
   }
+
 
 // Creates Act 3 of Glitch's storyline
 function picked_action(action){
@@ -157,7 +159,7 @@ function picked_action(action){
   }
 
   else if (action === 3){
-    document.getElementById("story").innerHTML = "<h2 class='act'> Act Three </h2>" + name + " and Tommy enter cryogenic sleep, to wait until the war is finished. Unfortunately, there is a glitch in the system and " + name + " can't be woken up. It isn't until the year 3030 that you are returned to life. Tommy died years ago. Lonely, you decides to take a vacation at a themepark called Quarkland. To see more of your adventures, play the story <em>Multiverse</em>.<br>";
+    document.getElementById("story").innerHTML = "<h2 class='act'> Act Three </h2>" + name + " and Tommy enter cryogenic sleep, to wait until the war is finished. Unfortunately, there is a glitch in the system and " + name + " can't be woken up. It isn't until the year 3030 that you are returned to life. Tommy died years ago. Lonely, you decide to take a vacation at a themepark called Quarkland. To see more of your adventures, play the story <em>Multiverse</em>.<br>";
     new_universe();
 
     start_button();
