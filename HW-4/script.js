@@ -61,7 +61,7 @@ function story(title){
     let sell = "<button onclick=picked_desire(4)>Sell</button>";
 
     if (title== 1){
-      document.getElementById("story").innerHTML = "<h2> Glitch Act one</h2>" + name + " Q is a pessimist, but your husband is an optimist. Your husband has gotten a job offer to time travel to the 1950s era. In prepration, You have become a fantastic pie baker. Your son Tommy is excited to eat jello all the time. You are feeling a little doubtful about the big move. What do you, " + name + " want? To protect the family? Or will you leave for the Big City on your own?" + protect + leave;
+      document.getElementById("story").innerHTML = "<h2> Glitch Act one</h2>" + name + " Q is a pessimist, but your husband is an optimist. Your husband has gotten a job offer to time travel to the 1950s era. In prepration, you have become a fantastic pie baker. Your son Tommy is excited to eat jello all the time. You are feeling a little doubtful about the big move. What do you, " + name + " want? To protect the family? Or will you leave for the Big City on your own? <br>" + protect + leave;
       document.getElementById("images").innerHTML= zeeQ_image;
     }
 
@@ -70,6 +70,8 @@ function story(title){
       document.getElementById("images").innerHTML= dee_image;
       }
 }
+
+
 
 function picked_desire(desire){
   let rebel = "<button onclick=picked_action(1)>Rebel</button>";
@@ -136,7 +138,6 @@ function picked_action(action){
   // Second Storyline Functions. Right now I'm keeping these as seperate functions, because I'm using strings inside the story and that would get ruined.
 
 // These are Functions if you Pick Explore in Part 2 of Mulitverse story
-
 function action_hermit(){
     action = "hermit";
 
@@ -160,7 +161,6 @@ function action_date(){
 }
 
 // These are functions if you pick 'Sell' button in Act 2 of Multiverse Story
-
 function action_shutdown(){
       action = "shutdown";
 
@@ -176,8 +176,8 @@ function action_shutdown(){
       action = "run";
 
       if (action=== "run"){
-        document.getElementById("story").innerHTML = " <h2> Act 3 </h2> You decided to " + action + " with all the money. Unfortunately, the Interdimentional police appear to arrest you. You somehow manage to escape, but you have to change your name and go into hiding in a nice suburban where you bake pies. For more of your adventures see <em>Glitch</em>.";
-        document.getElementById("startover").innerHTML= start;
-        document.getElementById("images").innerHTML= zeeQ_image ;
+          document.getElementById("story").innerHTML = " <h2> Act 3 </h2> You decided to " + action + " with all the money. Unfortunately, the Interdimentional police appear to arrest you. You somehow manage to escape, but you have to change your name and go into hiding in a nice suburban where you bake pies. For more of your adventures see <em>Glitch</em>.";
+          document.getElementById("startover").innerHTML= start;
+          document.getElementById("images").innerHTML= zeeQ_image ;
       }
   }
