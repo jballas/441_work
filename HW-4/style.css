@@ -39,11 +39,13 @@ button:active{
   font-family: 'aftershok', Courier, monospace;
   letter-spacing: .01em;
 }
-
-
-div {
-  /* border: 1px solid white;
-  overflow: auto;*/
+img {
+  float: left;
+  max-width:100%;
+  height: auto;
+  min-width:300px;
+  padding-left: 20px;
+  border-left: 1px solid white;
 }
 
 /* Classes */
@@ -53,12 +55,4 @@ div {
   max-width:40%;
   min-width: 300px;
   border-right: 1px solid white;
-}
-
-img {
-  float: right;
-  max-width:100%;
-  height: auto;
-  min-width:300px;
-  padding-left: 20px;
 }
