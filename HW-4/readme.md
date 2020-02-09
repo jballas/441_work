@@ -24,8 +24,8 @@ What to add
       3. Add an if/else if/ else or switch statements
       4. add a parameter within a function
       5. return a value from a function
-7. add a restart button to restart the story
-  - Change where they story appears. So the buttons disappear!! One div Story box!!
+    7. add a restart button to restart the story
+      - & Change where they story appears. So the buttons disappear!! One div Story box!!
 6. update the style/images with javascript function
 8. Make sure there are 5 choices to the story
 
