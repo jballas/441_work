@@ -3,8 +3,6 @@ var title;
 var desire;
 var action;
 
-var dee_desire;
-var dee_action;
 
 // Image Variables
 var zeeQ_image = " <img src='../HW-3/images/retro-Zee.jpg' alt='woman in retro 1950's dress'> ";
@@ -73,12 +71,12 @@ function picked_desire(desire){
 
       if (desire ==1) {
 
-            document.getElementById("second-act").innerHTML = cyber_image + "<h2> Act Two</h2> Zee decides to stay with Jim and protect her family. Unfortuantely, there is a glitch during their move and instead of ending up in the 1950s era, they end up in the 1980s era: Cyberpunk City 2020. Luckily, Zee's pies are still a big hit. Unfortunately, the computers in cyberpunk city achieve sentience and war breaks out in the streets. You must choose what to do next. Will " + name + " join the rebels? Or will " + name + " hide in the Bunker?" + rebel + bunker;
+            document.getElementById("second-act").innerHTML = cyber_image + "<h2> Act Two</h2>" + name + " decides to stay with Jim and protect her family. Unfortuantely, there is a glitch during their move and instead of ending up in the 1950s era, they end up in the 1980s era: Cyberpunk City 2020. Luckily, Zee's pies are still a big hit. Unfortunately, the computers in cyberpunk city achieve sentience and war breaks out in the streets. You must choose what to do next. Will " + name + " join the rebels? Or will " + name + " hide in the Bunker?" + rebel + bunker;
       }
 
       else if (desire ==2) {
 
-         document.getElementById("second-act").innerHTML = bored_image + " <h2>Act Two</h2> Zee decides not to follow Jim to his new job in the 1950s era. She takes her son Tommy to the big city. Luckily, Zee begins a pie-baking business, and it's a success! <p> Unfortunately, the city is invaded by sentient AIs, who have escaped from Cyberpunk City. They are intent on destroying the world. Zee has to act fast. What will she do next?</p> Will you join the scientists and enter cryogenic sleep? Or Escape the city?" + sleep + escape_city;
+         document.getElementById("second-act").innerHTML = bored_image + " <h2>Act Two</h2> You decide not to follow your husband to his new job in the 1950s era. Instead you takes your son Tommy to the big city. Luckily, you begins a pie-baking business, and it's a success! <p> Unfortunately, the city is invaded by sentient AIs, who have escaped from Cyberpunk City. They are intent on destroying the world. You have to act fast. What will you do next?</p> Will you join the scientists and enter cryogenic sleep? Or Escape the city?" + sleep + escape_city;
       }
 
       else if (desire == 3){
@@ -92,80 +90,57 @@ function picked_desire(desire){
 function picked_action(action){
 
   if (action ===1){
-    document.getElementById("third-act").innerHTML = cyborg_image +  "<h2> Act Three </h2>After joining the rebels, Zee and her family suffer many hardships during the war against the cyborgs but at least they are together....The End";
+    document.getElementById("third-act").innerHTML = cyborg_image +  "<h2> Act Three </h2> After joining the rebels, Zee and her family suffer many hardships during the war against the cyborgs but at least they are together....The End";
   }
 
   else if (action ===2){
-    document.getElementById("third-act").innerHTML = "<h2> Act Three </h2>Zee and her family decide to hide inside the Bunker. They spend the rest of their lives underground without sunlight, eating protein packets and vitamins.... The End" + bunker_image;
+    document.getElementById("third-act").innerHTML = "<h2> Act Three </" + name + " and family decide to hide inside the Bunker. They spend the rest of their lives underground without sunlight, eating protein packets and vitamins.... The End" + bunker_image;
   }
 
   else if (action === 3){
-    document.getElementById("third-act").innerHTML = " <h2> Act Three </h2> Zee and her son enter cryogenic sleep, to wait until the war is finished. Unfortunately, there is a glitch in the system and Zee can't be woken up. It isn't until the year 3030 that she is returned to life. Tommy died years ago. Lonely, Zee decides to take a vacation at a themepark called Quarkland. To see more of her adventures, play the story <em>Multiverse</em>" + multi_image;
+    document.getElementById("third-act").innerHTML = " <h2> Act Three </h2>" + name + " and Tommy enter cryogenic sleep, to wait until the war is finished. Unfortunately, there is a glitch in the system and " + name + " can't be woken up. It isn't until the year 3030 that you are returned to life. Tommy died years ago. Lonely, you decides to take a vacation at a themepark called Quarkland. To see more of your adventures, play the story <em>Multiverse</em>" + multi_image;
   }
 
   else if (action === 4){
-    document.getElementById("third-act").innerHTML = cyborg_image + "<h2> Act Three </h2> Zee and her son escape from the city into the countryside. Unfortunately, they are captured by the AI. Tommy is injured and dying, and Zee makes deal with the AI in order to save his life. Tommy becomes a cyborg and Zee must work for the AI in the themepark Quarkland. For more of your adventures see <em>Multiverse</em>." + multi_image;
+    document.getElementById("third-act").innerHTML = cyborg_image + "<h2> Act Three </h2>" + name + " and Tommy escape from the city into the countryside. Unfortunately, they are captured by the AI. Tommy is injured and dying, and you makes deal with the AI in order to save his life. Tommy becomes a cyborg and you must work for the AI in the themepark Quarkland. For more of your adventures see <em>Multiverse</em>." + multi_image;
   }
 }
 
 
-  // Second Storyline Functions
+  // Second Storyline Functions. Right now I'm keeping these as seperate functions, because I'm using strings inside the story and that would get ruined.
 
-
-
-// Function writes information to <div> with ID=multi_act2, and 2 buttons appear
-/*
-  function picked_explore(){
-
-    dee_desire = "explore";
-    let hermit = "<button onclick=action_hermit()>Be Hermit</button>";
-    let date = "<button onclick=action_date()>Start Dating</button>";
-
-    if (dee_desire == "explore"){
-      document.getElementById("multi_act2").innerHTML = exploring_image + "You are exploring the universe, but now you're poor and lonely. <p>What will you do? Give up earthly desires and become a hermit? Or start dating?</p>" + hermit + date;
-    }
-}*/
+// These are Functions if you Pick Explore in Part 2 of Mulitverse story
 
 function action_hermit(){
-  dee_action = "hermit";
+    action = "hermit";
 
-  if (dee_action=== "hermit"){
-    document.getElementById("multi_act3").innerHTML = " <h2> Act 3 </h2> You decided to be a " + dee_action + ". Unfortunately, your adventures have attracted the attention of the Interdimentional Police. You end up in an underground prison. The End." + bunker_image;
-  }
-
+    if (action=== "hermit"){
+      document.getElementById("multi_act3").innerHTML = " <h2> Act 3 </h2> You decided to be a " + action + ". Unfortunately, your adventures have attracted the attention of the Interdimentional Police. You end up in an underground prison. The End." + bunker_image;
+    }
 }
 
 function action_date(){
-  dee_action = "date";
+    action = "date";
 
-  if ( dee_action === "date" ){
-    document.getElementById("multi_act3").innerHTML = dating_image + "<h2> Act 3 </h2> You decided to " + dee_action + ". Soon you meet a nice man named Jim Q and have a son named Tommy. For more of your adventures see <em>Glitch</em>.";
-  }
+    if ( action === "date" ){
+      document.getElementById("multi_act3").innerHTML = dating_image + "<h2> Act 3 </h2> You decided to " + action + ". Soon you meet a nice man named Jim Q and have a son named Tommy. For more of your adventures see <em>Glitch</em>.";
+    }
 }
 
-// This is function if you pick 'Sell' button in Act 2 of Multiverse Story
-/*  function picked_sell(){
+// These are functions if you pick 'Sell' button in Act 2 of Multiverse Story
 
-    dee_desire = "sell";
-    let shutdown = "<button onclick=action_shutdown()>Shutdown</button>";
-    let run = "<button onclick=action_run_away()>Run away</button>";
+function action_shutdown(){
+      action = "shutdown";
 
-    if (dee_desire == "sell"){ document.getElementById("multi_act2").innerHTML = bored_image + "You decided to sell your discovery. You build a company called Multiverse Inc. Now you're rich but bored. <p>What will you do next? Shutdown the corporation you built? Or escape into the multiverse with all your money?</p>" + shutdown + run;
-    }
-  } */
-
-  function action_shutdown(){
-    dee_action = "shutdown";
-
-    if (dee_action=== "shutdown"){
-      document.getElementById("multi_act3").innerHTML = cyborg_image + " <h2> Act 3 </h2> You decided to " + dee_action + " the evil coporation you built. Unfortunately, multiple-versions of yourself appear to stop you. They are members of the interdimentional police and their job is to protect the multiverse. They are here to recuit you. Life won't be boring anymore! The End.";
-    }
+      if (action=== "shutdown"){
+        document.getElementById("multi_act3").innerHTML = cyborg_image + " <h2> Act 3 </h2> You decided to " + action + " the evil coporation you built. Unfortunately, multiple-versions of yourself appear to stop you. They are members of the interdimentional police and their job is to protect the multiverse. They are here to recuit you. Life won't be boring anymore! The End.";
+      }
   }
 
-    function action_run_away(){
-      dee_action = "run";
+  function action_run_away(){
+      action = "run";
 
-      if (dee_action=== "run"){
-        document.getElementById("multi_act3").innerHTML = " <h2> Act 3 </h2> You decided to " + dee_action + " with all the money. Unfortunately, the Interdimentional police appear to arrest you. You somehow manage to escape, but you have to change your name and go into hiding in a nice suburban where you bake pies. For more of your adventures see <em>Glitch</em>." + zeeQ_image;
+      if (action=== "run"){
+        document.getElementById("multi_act3").innerHTML = " <h2> Act 3 </h2> You decided to " + action + " with all the money. Unfortunately, the Interdimentional police appear to arrest you. You somehow manage to escape, but you have to change your name and go into hiding in a nice suburban where you bake pies. For more of your adventures see <em>Glitch</em>." + zeeQ_image;
       }
-    }
+  }
