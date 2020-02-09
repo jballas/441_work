@@ -35,9 +35,6 @@ button:active{
     background-color: #00aacc;
 }
 
-#title_btn:hover, #title2_btn:hover {
-  font-family: 'aftershok', Courier, monospace;
-  letter-spacing: .01em;
 }
 img {
   float: left;
@@ -49,10 +46,14 @@ img {
 }
 
 /* Classes */
+.title_btn:hover {
+  font-family: 'aftershok', Courier, monospace;
+  letter-spacing: .01em;
 
 .story {
   float:left;
   max-width:40%;
   min-width: 300px;
   border-right: 1px solid white;
+  padding-right: 10px;
 }
