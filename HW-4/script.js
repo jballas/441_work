@@ -38,21 +38,27 @@ function pick_title(title) {
     switch (title){
 
         case 1:
-            glitch_story(title);
+            story(title);
             break;
 
         case 2:
-            multiverse_story(title);
+            story(title);
             break;
   }
 }
-function glitch_story(title){
+function story(title){
     let protect = "<button onclick=picked_desire(1)>Protect</button>";
     let leave = "<button onclick=picked_desire(2)>Leave</button>";
+    let explore = "<button onclick=picked_desire(3)>Explore</button>";
+    let sell = "<button onclick=picked_desire(4)>Sell</button>";
 
     if (title== 1){
       document.getElementById("first-act").innerHTML = " <h2>Act one</h2>" + name + " Q is a pessimist, but your husband is an optimist. Your husband has gotten a job offer to time travel to the 1950s era. In prepration, You have become a fantastic pie baker. Your son Tommy is excited to eat jello all the time. You are feeling a little doubtful about the big move. What do you, " + name + " want? To protect the family? Or will you leave for the Big City on your own?" + protect + leave;
     }
+
+    else if (title===2){
+      document.getElementById("multi_act1").innerHTML = "Multiverse, featuring " + name + dee_image + " <p>You visit the amusement park named Quarkland, while riding the most boring ride in the world you fall into a trace. When you leaves the ride you discover you are in a new universe! What will you do next? Continue to explore or sell your discovery?</p>" + explore + sell ;
+      }
 }
 
 function picked_desire(desire){
@@ -65,7 +71,7 @@ function picked_desire(desire){
   let shutdown = "<button onclick=action_shutdown()>Shutdown</button>";
   let run = "<button onclick=action_run_away()>Run away</button>";
 
-        if (desire ==1) {
+      if (desire ==1) {
 
             document.getElementById("second-act").innerHTML = cyber_image + "<h2> Act Two</h2> Zee decides to stay with Jim and protect her family. Unfortuantely, there is a glitch during their move and instead of ending up in the 1950s era, they end up in the 1980s era: Cyberpunk City 2020. Luckily, Zee's pies are still a big hit. Unfortunately, the computers in cyberpunk city achieve sentience and war breaks out in the streets. You must choose what to do next. Will " + name + " join the rebels? Or will " + name + " hide in the Bunker?" + rebel + bunker;
       }
@@ -103,16 +109,8 @@ function picked_action(action){
 }
 
 
-  // Second Storyline
-function multiverse_story(title) {
+  // Second Storyline Functions
 
-    let explore = "<button onclick=picked_desire(3)>Explore</button>";
-    let sell = "<button onclick=picked_desire(4)>Sell</button>";
-
-    if (title===2){
-      document.getElementById("multi_act1").innerHTML = "Multiverse, featuring " + name + dee_image + " <p>You visit the amusement park named Quarkland, while riding the most boring ride in the world you fall into a trace. When you leaves the ride you discover you are in a new universe! What will you do next? Continue to explore or sell your discovery?</p>" + explore + sell ;
-      }
-    }
 
 
 // Function writes information to <div> with ID=multi_act2, and 2 buttons appear
