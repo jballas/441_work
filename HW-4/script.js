@@ -123,14 +123,16 @@ function picked_desire(desire){
 
       else if (desire ==2) {
 
-         document.getElementById("story").innerHTML ="<h2 class='act'>Act Two</h2> You decide not to follow your husband to his new job in the 1950s era. Instead you takes your son Tommy to the big city. Luckily, you begin a business<span class='business'> making pies </span>, and it's a success! <p> Unfortunately, the city is invaded by sentient AIs, who have escaped from Cyberpunk City. They are intent on destroying the world. You have to act fast. What will you do next?</p>" + next + " Will you join the scientists and enter cryogenic sleep? Or escape the city with other refugees?<br>" + sleep + escape_city;
+         document.getElementById("story").innerHTML ="<h2 class='act'>Act Two</h2> You decide not to follow your husband to his new job in the 1950s era. Instead you takes your son Tommy to the big city. Luckily, you begin a business<span class='business'> making pies </span>, and it's a success! <p> Unfortunately, the city is invaded by sentient AIs, who have escaped from Cyberpunk City. They are intent on destroying the world. You have to act fast. What will you do next?</p> Will you join the scientists and enter cryogenic sleep? Or escape the city with other refugees?<br>" + sleep + escape_city;
 
          document.getElementById("images").innerHTML= bored_image;
          new_universe();
       }
 
       else if (desire == 3){
-        document.getElementById("story").innerHTML = "<h2 class='act'> Act Two</h2>You are exploring the universe, but now you're poor and lonely. <p>What will you do? Give up earthly desires and become a hermit? Or start dating?</p>" + hermit + date;
+        document.getElementById("story").innerHTML = "<h2 class='act'> Act Two</h2>You are exploring the universe. How many did you find? Only now you realize you're poor and lonely. <p>What will you do? Give up earthly desires and become a hermit? Or start dating?</p>" + hermit + date;
+
+        fancy_loop();
         document.getElementById("images").innerHTML= exploring_image;
       }
 
@@ -138,6 +140,13 @@ function picked_desire(desire){
       document.getElementById("images").innerHTML= bored_image;
       }
   }
+//Because I needed a loop. I can't figure out how else to implement one into the story. If I try to put a loop withh a document.getElementById you don't see it change 7 times. If I try to do it by document.getByClassName I already have to have information for it to change. But my information doesn't appear until you click a button, so I just get an error.
+
+function fancy_loop(){
+  for (var i = 0; i < 7; i++ ){
+    window.alert("You discovered a new universe!");
+  }
+}
 
 
 // Creates Act 3 of Glitch's storyline
