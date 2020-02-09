@@ -64,6 +64,10 @@ img {
     background-color: #10374a;
     color: white;
     font-family: monospace;
+    transform: none;
+    position: relative;
+    left: 0px;
+
   float:left;
   max-width:40%;
   min-width: 300px;

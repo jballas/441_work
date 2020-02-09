@@ -37,6 +37,9 @@ function start_game(){
   document.getElementById("story").innerHTML = "<h2>Pick your Path</h2>" + glitch + multi;
   document.getElementById("images").innerHTML="";
   document.getElementById("startover").innerHTML= "";
+  document.getElementById('story').style.backgroundColor = '#10374a';
+  document.getElementById('story').style.transform = 'none';
+  document.getElementById('title').style.fontFamily = 'monospace';
 }
 
 // Create Start Over game button
@@ -85,11 +88,17 @@ function new_universe(){
     let changes = Math.round(Math.random());
 
     if (changes == 0 ){
-            document.getElementById("story").style.backgroundColor = '#2c96c9';
+            document.getElementById('story').style.backgroundColor = '#2c96c9';
+            document.getElementById('story').style.left = '100px';
+            document.getElementById('story').style.transform = 'rotate(10deg)';
+            document.getElementById('title').style.fontFamily = 'carbontype, serif';
     }
 
     if (changes == 1){
-            document.getElementById("story").style.backgroundColor = '#98c0d4';
+            document.getElementById('story').style.backgroundColor = '#98c0d4';
+                        document.getElementById('story').style.left = '100px';
+            document.getElementById('story').style.transform = 'rotate(-10deg)';
+            document.getElementById('title').style.fontFamily = 'atomic, serif';
     }
 }
 
@@ -107,24 +116,24 @@ function picked_desire(desire){
 
       if (desire ==1) {
 
-            document.getElementById("story").innerHTML = "<h2> Act Two</h2> You decide to stay with and protect your family. Unfortunately, there is a glitch during the move and instead of ending up in the 1950s era, you end up in the 1980s era: Cyberpunk City 2020. Luckily, you start a business <span class='business'>making pies</span>. It is a big hit. Unfortunately, the computers in cyberpunk city achieve sentience and war breaks out in the streets. You must choose what to do next. Will " + name + " join the rebels? Or will " + name + " hide in the Bunker?<br>" + rebel + bunker;
+            document.getElementById("story").innerHTML = "<h2 class='act'> Act Two</h2> You decide to stay with and protect your family. Unfortunately, there is a glitch during the move and instead of ending up in the 1950s era, you end up in the 1980s era: Cyberpunk City 2020. Luckily, you start a business <span class='business'>making pies</span>. It is a big hit. Unfortunately, the computers in cyberpunk city achieve sentience and war breaks out in the streets. You must choose what to do next. Will " + name + " join the rebels? Or will " + name + " hide in the Bunker?<br>" + rebel + bunker;
             document.getElementById("images").innerHTML= cyber_image;
             new_universe();
       }
 
       else if (desire ==2) {
 
-         document.getElementById("story").innerHTML ="<h2>Act Two</h2> You decide not to follow your husband to his new job in the 1950s era. Instead you takes your son Tommy to the big city. Luckily, you begin a business<span class='business'>making pies </span>, and it's a success! <p> Unfortunately, the city is invaded by sentient AIs, who have escaped from Cyberpunk City. They are intent on destroying the world. You have to act fast. What will you do next?</p> Will you join the scientists and enter cryogenic sleep? Or escape the city with other refugees?<br>" + sleep + escape_city;
+         document.getElementById("story").innerHTML ="<h2 class='act'>Act Two</h2> You decide not to follow your husband to his new job in the 1950s era. Instead you takes your son Tommy to the big city. Luckily, you begin a business<span class='business'>making pies </span>, and it's a success! <p> Unfortunately, the city is invaded by sentient AIs, who have escaped from Cyberpunk City. They are intent on destroying the world. You have to act fast. What will you do next?</p> Will you join the scientists and enter cryogenic sleep? Or escape the city with other refugees?<br>" + sleep + escape_city;
          document.getElementById("images").innerHTML= bored_image;
          new_universe();
       }
 
       else if (desire == 3){
-        document.getElementById("story").innerHTML = "You are exploring the universe, but now you're poor and lonely. <p>What will you do? Give up earthly desires and become a hermit? Or start dating?</p>" + hermit + date;
+        document.getElementById("story").innerHTML = "<h2 class='act'> Act Two</h2>You are exploring the universe, but now you're poor and lonely. <p>What will you do? Give up earthly desires and become a hermit? Or start dating?</p>" + hermit + date;
         document.getElementById("images").innerHTML= exploring_image;
       }
 
-      else if (desire == 4){ document.getElementById("story").innerHTML = "You decided to sell your discovery. You build a company called Multiverse Inc. Now you're rich but bored. <p>What will you do next? Shutdown the corporation you built? Or escape into the multiverse with all your money?</p>" + shutdown + run;
+      else if (desire == 4){ document.getElementById("story").innerHTML = "<h2 class='act'> Act Two</h2> You decided to sell your discovery. You build a company called Multiverse Inc. Now you're rich but bored. <p>What will you do next? Shutdown the corporation you built? Or escape into the multiverse with all your money?</p>" + shutdown + run;
       document.getElementById("images").innerHTML= bored_image;
       }
   }
@@ -133,14 +142,14 @@ function picked_desire(desire){
 function picked_action(action){
 
   if (action ===1){
-    document.getElementById("story").innerHTML = "<h2> Act Three </h2> After joining the rebels, the Q family suffer many hardships during the war against the cyborgs but at least they are together....The End. <br>";
+    document.getElementById("story").innerHTML = "<h2 class= 'act'> Act Three </h2> After joining the rebels, the Q family suffer many hardships during the war against the cyborgs but at least they are together....The End. <br>";
 
     start_button();
     document.getElementById("images").innerHTML= cyborg_image;
   }
 
   else if (action ===2){
-    document.getElementById("story").innerHTML = "<h2> Act Three </h2>" + name + " and the Q family decide to hide inside the Bunker. They spend the rest of their lives underground without sunlight, eating protein packets and vitamins.... The End. <br>";
+    document.getElementById("story").innerHTML = "<h2 class='act'> Act Three </h2>" + name + " and the Q family decide to hide inside the Bunker. They spend the rest of their lives underground without sunlight, eating protein packets and vitamins.... The End. <br>";
     new_universe();
 
     start_button();
@@ -148,7 +157,7 @@ function picked_action(action){
   }
 
   else if (action === 3){
-    document.getElementById("story").innerHTML = "<h2> Act Three </h2>" + name + " and Tommy enter cryogenic sleep, to wait until the war is finished. Unfortunately, there is a glitch in the system and " + name + " can't be woken up. It isn't until the year 3030 that you are returned to life. Tommy died years ago. Lonely, you decides to take a vacation at a themepark called Quarkland. To see more of your adventures, play the story <em>Multiverse</em>.<br>";
+    document.getElementById("story").innerHTML = "<h2 class='act'> Act Three </h2>" + name + " and Tommy enter cryogenic sleep, to wait until the war is finished. Unfortunately, there is a glitch in the system and " + name + " can't be woken up. It isn't until the year 3030 that you are returned to life. Tommy died years ago. Lonely, you decides to take a vacation at a themepark called Quarkland. To see more of your adventures, play the story <em>Multiverse</em>.<br>";
     new_universe();
 
     start_button();
@@ -156,7 +165,7 @@ function picked_action(action){
   }
 
   else if (action === 4){
-    document.getElementById("story").innerHTML = "<h2> Act Three </h2>" + name + " and Tommy escape from the city into the countryside. Unfortunately, they are captured by the AI. Tommy is injured and dying, and you makes deal with the AI in order to save his life. Tommy becomes a cyborg and you must work for the AI in the themepark Quarkland. For more of your adventures see <em>Multiverse</em>.<br>";
+    document.getElementById("story").innerHTML = "<h2 class='act'> Act Three </h2>" + name + " and Tommy escape from the city into the countryside. Unfortunately, they are captured by the AI. Tommy is injured and dying, and you makes deal with the AI in order to save his life. Tommy becomes a cyborg and you must work for the AI in the themepark Quarkland. For more of your adventures see <em>Multiverse</em>.<br>";
     new_universe();
 
     start_button();
@@ -172,7 +181,7 @@ function action_hermit(){
     action = "hermit";
 
     if (action=== "hermit"){
-      document.getElementById("story").innerHTML = "<h2> Act 3 </h2> You decided to be a " + action + ". Unfortunately, your adventures have attracted the attention of the Interdimentional Police. You end up in an underground prison. The End.<br>";
+      document.getElementById("story").innerHTML = "<h2 class='act'> Act 3 </h2> You decided to be a " + action + ". Unfortunately, your adventures have attracted the attention of the Interdimentional Police. You end up in an underground prison. The End.<br>";
 
       start_button();
       document.getElementById("images").innerHTML= bunker_image;
@@ -183,7 +192,7 @@ function action_date(){
     action = "date";
 
     if ( action === "date" ){
-      document.getElementById("story").innerHTML = "<h2> Act 3 </h2> You decided to " + action + ". Soon you meet a nice man named Jim Q and have a son named Tommy. For more of your adventures see <em>Glitch</em>.<br>";
+      document.getElementById("story").innerHTML = "<h2 class='act'> Act 3 </h2> You decided to " + action + ". Soon you meet a nice man named Jim Q and have a son named Tommy. For more of your adventures see <em>Glitch</em>.<br>";
       new_universe();
 
       start_button();
@@ -196,7 +205,7 @@ function action_shutdown(){
       action = "shutdown";
 
       if (action=== "shutdown"){
-        document.getElementById("story").innerHTML = " <h2> Act 3 </h2> You decided to " + action + " the evil coporation you built. Unfortunately, multiple-versions of yourself appear to stop you. They are members of the interdimentional police and their job is to protect the multiverse. They are here to recuit you. Life won't be boring anymore! The End.<br>" ;
+        document.getElementById("story").innerHTML = " <h2 class='act'> Act 3 </h2> You decided to " + action + " the evil coporation you built. Unfortunately, multiple-versions of yourself appear to stop you. They are members of the interdimentional police and their job is to protect the multiverse. They are here to recuit you. Life won't be boring anymore! The End.<br>" ;
         new_universe();
 
         start_button();
@@ -208,7 +217,7 @@ function action_shutdown(){
       action = "run";
 
       if (action=== "run"){
-          document.getElementById("story").innerHTML = " <h2> Act 3 </h2> You decided to " + action + " with all the money. Unfortunately, the Interdimentional police appear to arrest you. You somehow manage to escape, but you have to change your name and go into hiding in a nice suburban where you bake pies. For more of your adventures see <em>Glitch</em>.";
+          document.getElementById("story").innerHTML = " <h2 class='act'> Act 3 </h2> You decided to " + action + " with all the money. Unfortunately, the Interdimentional police appear to arrest you. You somehow manage to escape, but you have to change your name and go into hiding in a nice suburban where you bake pies. For more of your adventures see <em>Glitch</em>.";
           new_universe();
 
           start_button();
