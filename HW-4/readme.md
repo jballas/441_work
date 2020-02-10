@@ -13,53 +13,67 @@ We continue our study of functions, variables and
 
 ## Assignment Details
 
-Add to the Adventure Text Game created during week 3, expanding the choices, and include text input from the player.
+Add to the Adventure Text Game created during week 3, including text input from the player and more functions.
+
+
+### Homework requirements
+1. Add a text input box to input the charcter's name
+2. add a for loop, or while loop
+3. Add an if/else if/ else or switch statements
+4. add a parameter within a function
+5. return a value from a function
+6. add a restart button to restart the story
+  - & Change where the story appears. So the buttons disappear!! One div Story box!!
+7. update the style/images with javascript function
+8. Make sure there are 5 choices to the story
+  - I have a total of 8 endings already, its just each path doesn't include 5 choices, but the way I laid out my story that would mean 32 endings and I don't think that's fessible.
 
 ## Weekly Report
-### Steps
-
-What to add
-      1. Add a text input box to input the charcter's name
-2. add a for loop, or while loop
-      3. Add an if/else if/ else or switch statements
-      4. add a parameter within a function
-      5. return a value from a function
-      7. add a restart button to restart the story
-      - & Change where the story appears. So the buttons disappear!! One div Story box!!
-    6. update the style/images with javascript function
-8. Make sure there are 5 choices to the story
-
-### Process
-I'm not even sure where to start with this one. With inputting character name?
-
-Do I need to add IDs to all my buttons.. (is that important?)
+This week intimidated me for a weird reason. I didn't know where to begin, since I already had created a game. I had a list of things I needed to impliment, but I wasn't sure where I could add them. I think I was afraid of breaking the game. So, I started with an issue I had last week with inefficent code.
 
 
 ### Fixing Pick Title Function / simplying with functions and parameters
-I'm interested in fixing the 2 functions problem I had. last time I had `pick_title()` and `pick_title2()` So, click on one button and 1 function ran, or click on another button and a seperate function ran. it worked, but made the code cluttered.
-I needed a title function to
+Last time I had two functions that basically did the same thing. `pick_title()` and `pick_title2()`. When you clicked on a title button then one of functions ran. Click on the other button and a differen function ran. It worked, but made the code cluttered.
 
-click button glitch to start glitch story.
-or click button multiverse to start
+I needed one `pick_title()` function to go to the *Glitch* story or *Multiverse* story.
 
-I use a switch statement and parameters to make this work. Now. there is 1 variable called 'title' and I use it throughout. I think I can replicated this so there is 1 variable for desire, and one for action too.
+My solution was the switch statement and parameters.
 
-I hate using numbers for my parameter values. I'm trying to figure out if I can use strings?
+```JS
+function pick_title(title) {
 
-Next I want to make the stories appear in only 1 central div, instead of being divided into 2 seperate columns....
+    switch (title){
+
+        case 1:
+            story(title);
+            break;
+
+        case 2:
+            story(title);
+            break;
+  }
+}
+```
+I also replicated this idea so there was 1 variable for desire and one for action too. The code looked much cleaner afterward.
 
 ### Layout update
-Previously, I had two columns, so one story appeared on the left and one on the right. Now, I've combined the stories and I want to have them only show up in one main story box. Time to fix some HTML, then update my script.js.
-
+Previously, I had two columns, so one story appeared on the left and one on the right. Now, I've combined the stories so they only show up in one main story box. This involved fixing cleaning up the HTML and updating my script.js.
 
 ### Style changes
-  I created a new_universe function so that whenever the player enters a new universe in the story the style is updated. The style change is also random between two numbers. I used Math.random, and made sure it rounded the number, so it was 0 or 1.
+![screenshot of text game, with 2 test buttons](./images/style_update.png)
 
-  Next up, adding a loop somewhere. How though...
+I created a `new_universe()` function so that whenever the player enters a new universe in the story the style is updated. It rotated and changed fonts and background colors. The style change is also randomized. I used `Math.random` and made sure it rounded the number, so it was 0 or 1.
 
+## Problems or Issues this week: one word Loops
 
-## Problems or Issues this week
+I designed my text game to have all the text appear from Javascript. I don't have anything that repeats. So I didn't need to use a loop. I struggled to come with any creative way of add a loop or a whole or do whole. No useful ideas.
 
-## Specific questions/concerns for next week
+It is very useful when you need to repeat an action, or image or whatever. I attempted to add loops with a `document.getElementById` and you don't see it change 7 times, because it is changing the same innerHTML. I also tried to use `document.getByClassName` because you need to have the information already available to update it. But my information isn't available until after you click a button, so I just get an error with that code.
+
+I ended up adding a loop that makes an alert popup 7 times. It is perhaps the most annoying loop I could have imagined, but it also perfectly reflects how annoyed I felt trying to impliment a loop into my text game.
+
+## Questions
+Do I need to add IDs to all my buttons. Is it important to have an id even if I'm never going to reference that individual id?
 
 ## Conclusion
+Cleaner code is easier to work with, not just having the spacing and line breaks, but having logical code helps too. It was very satisfying to have functions sleeker. I felt like I didn't really expand my game. I'm curious how other people made their games, so I'm going to share my game for Week 4 along with my resources in this week's forum.
