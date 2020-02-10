@@ -72,8 +72,19 @@ It is very useful when you need to repeat an action, or image or whatever. I att
 
 I ended up adding a loop that makes an alert popup 7 times. It is perhaps the most annoying loop I could have imagined, but it also perfectly reflects how annoyed I felt trying to impliment a loop into my text game.
 
+## Changing HTML with Class Name
+
+On the forum @wattse13 and I were discussing his struggle to change the name in his story. I did some research into it, because I wanted to be able to do the same thing in my story, and at first I couldn't get `document.getByClassName` to change anything.
+
+I found a helpful hint from
+https://www.geeksforgeeks.org/html-dom-getelementsbyclassname-method/
+
+Then I created 2 funtions. One creates a text input box and the other changes the text that is already on the page. That was very important. I think I was struggling because my story is entirely in the script and not in my HTML. I can only change anything after it appears. So, that's why I implimented the two new funtions. `extra_choices()` and `food()`
+
+But it isn't very effective, and changes don't carry over into the next section. I'm leaving it there, as my attempt to change HTML and get more user input.
+
 ## Questions
 Do I need to add IDs to all my buttons. Is it important to have an id even if I'm never going to reference that individual id?
 
 ## Conclusion
-Cleaner code is easier to work with, not just having the spacing and line breaks, but having logical code helps too. It was very satisfying to have functions sleeker. I felt like I didn't really expand my game. I'm curious how other people made their games, so I'm going to share my game for Week 4 along with my resources in this week's forum.
+Cleaner code is easier to work with, not just having the spacing and line breaks, but having logical flow helps too. It was very satisfying to make my functions work better. I felt like I didn't really expand my game, just tided it up. I'm curious how other people made their games, so I'm going to share my game for Week 4 along with my resources in this week's forum.
