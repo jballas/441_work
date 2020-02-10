@@ -1,15 +1,14 @@
 # Week 4 Response
-## Date
-## MART441.50, Julia Ballas
+## Date 2-9-20
+## MART4-41.50, Julia Ballas
 
 
 ## Overview
-We continue our study of functions, variables and
+We continue our study of functions, adding in parameters this week and more variables with loops.
 
 ## Projects
 
 - Adventure Text Game, expanded
--
 
 ## Assignment Details
 
