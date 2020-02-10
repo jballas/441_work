@@ -36,7 +36,7 @@ function start_game(){
 
   document.getElementById("story").innerHTML = "<h2>Pick your Path</h2>" + glitch + multi;
   document.getElementById("images").innerHTML="";
-  document.getElementById("startover").innerHTML= "";
+  document.getElementById("middle").innerHTML= "";
   document.getElementById('story').style.backgroundColor = '#10374a';
   document.getElementById('story').style.transform = 'none';
   document.getElementById('title').style.fontFamily = 'monospace';
@@ -45,7 +45,7 @@ function start_game(){
 // Create Start Over game button
 function start_button(){
   var start = "<button id='btn_start' onclick=start_game()>Start Over</button>";
-    document.getElementById("startover").innerHTML= start;
+    document.getElementById("middle").innerHTML= start;
 }
 
 // The first choice is which 'story' to play.
@@ -102,6 +102,26 @@ function new_universe(){
     }
 }
 
+function extra_choices(){
+  let choice_label = "<label id='ch_name'> Favorite Food? </label>";
+  let choice_input = "<input id='fav_food' type='text'>";
+  let choice_btn = "</br><button id='btn_food' onclick='food()'>Change</button>"
+
+  document.getElementById("middle").innerHTML = choice_label + choice_input + choice_btn;
+
+}
+
+function food(){
+  fav_food = document.getElementById('fav_food').value;
+
+  var elements=document.getElementsByClassName('food');
+              for (var i = 0; i < elements.length; i++) {
+              elements[i].innerHTML = fav_food;
+              }
+  console.log(fav_food);
+}
+
+
 // Creates Act 2 in stories, includes all the options
 
 function picked_desire(desire){
@@ -116,17 +136,19 @@ function picked_desire(desire){
 
       if (desire ==1) {
 
-            document.getElementById("story").innerHTML = "<h2 class='act'> Act Two</h2> You decide to stay with and protect your family. Unfortunately, there is a glitch during the move and instead of ending up in the 1950s era, you end up in the 1980s era: Cyberpunk City 2020. Luckily, you start a business <span class='business'>making pies</span>. It is a big hit. Unfortunately, the computers in cyberpunk city achieve sentience and war breaks out in the streets. You must choose what to do next. Will " + name + " join the rebels? Or will " + name + " hide in the Bunker?<br>" + rebel + bunker;
+            document.getElementById("story").innerHTML = "<h2 class='act'> Act Two</h2> You decide to stay with and protect your family. Unfortunately, there is a glitch during the move and instead of ending up in the 1950s era, you end up in the 1980s era: Cyberpunk City 2020. Luckily, you start a business making <span class='food'> pies </span>. It is a big hit. Unfortunately, the computers in cyberpunk city achieve sentience and war breaks out in the streets. You must choose what to do next. Will " + name + " join the rebels? Or will " + name + " hide in the Bunker?<br>" + rebel + bunker;
             document.getElementById("images").innerHTML= cyber_image;
             new_universe();
+            extra_choices();
       }
 
       else if (desire ==2) {
 
-         document.getElementById("story").innerHTML ="<h2 class='act'>Act Two</h2> You decide not to follow your husband to his new job in the 1950s era. Instead you takes your son Tommy to the big city. Luckily, you begin a business<span class='business'> making pies </span>, and it's a success! <p> Unfortunately, the city is invaded by sentient AIs, who have escaped from Cyberpunk City. They are intent on destroying the world. You have to act fast. What will you do next?</p> Will you join the scientists and enter cryogenic sleep? Or escape the city with other refugees?<br>" + sleep + escape_city;
+         document.getElementById("story").innerHTML ="<h2 class='act'>Act Two</h2> You decide not to follow your husband to his new job in the 1950s era. Instead you takes your son Tommy to the big city. Luckily, you begin a business making <span class='food'>pies </span>, and it's a success! <p> Unfortunately, the city is invaded by sentient AIs, who have escaped from Cyberpunk City. They are intent on destroying the world. You have to act fast. What will you do next?</p> Will you join the scientists and enter cryogenic sleep? Or escape the city with other refugees?<br>" + sleep + escape_city;
 
          document.getElementById("images").innerHTML= bored_image;
          new_universe();
+         extra_choices();
       }
 
       else if (desire == 3){
