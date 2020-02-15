@@ -12,14 +12,15 @@
 
   </head>
 
-  <body>
+  <body onload="blank_array(); image_array();">
     <nav>
       <h1>Memory Matching Game</h1>
       <p id="score">Score</p>
     </nav>
 
     <div id="main_game">
-      <div id="deck" onload="blank_array;"></div>
+      <div id="deck" ></div>
+      <div id="blank_deck" class="cards" ></div>
 
 <!--      <div id="first" class="cards"><img src="./images/blank.png" onclick="flip_card()"> <br>first</div>
       <div id="second" class="cards">

@@ -27,14 +27,15 @@ h1{
   border: 5px solid black;
   position: relative;
   top: 100px;
-  width: 50%;
+  width: 80%;
   overflow: auto;
 }
+ .cards{
+   background-color: #669966;
+ }
 
 img{
   padding: 20px;
-  /*float: left;*/
-  display: inline;
 }
 
 img:hover{
