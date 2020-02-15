@@ -34,6 +34,10 @@ h1{
    background-color: #669966;
  }
 
+ #deck{
+   background-color: red;
+ }
+
 img{
   padding: 20px;
 }

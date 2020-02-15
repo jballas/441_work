@@ -1,9 +1,13 @@
-//A very Simple start, I made a function to change an image to another when you click on it. But it relies on IDs to change the images. How to I add IDs to my displayed images below???
-var img = "<img src='./images/placeholder-01.png'>";
+// image is not flipping anymore. WHY????
+
+var flipped = "<img src='./images/placeholder-01.png'>";
 
 function flip_card(){
-  document.getElementById("first").innerHTML = img;
+  document.getElementById("second").innerHTML = flipped ;
+  console.log(flipped);
+
 }
+
 
 // Second goal is to make an array
 // I created a function with a for loop to display this array
@@ -24,7 +28,7 @@ function image_array(){
 
 function blank_array(){
     var blanks = [];
-    var blank_card ="<img src='./images/blank.png'>";
+    var blank_card ="<img src='./images/blank.png' onclick='flip_card()'>";
 
     //push the same image to empty array
     var blank_deck="";
