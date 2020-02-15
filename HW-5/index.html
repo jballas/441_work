@@ -19,8 +19,9 @@
     </nav>
 
     <div id="main_game">
-      <div id="deck"></div>
-      <div id="first" class="cards"><img src="./images/blank.png" onclick="flip_card()"> <br>first</div>
+      <div id="deck" onload="blank_array;"></div>
+
+<!--      <div id="first" class="cards"><img src="./images/blank.png" onclick="flip_card()"> <br>first</div>
       <div id="second" class="cards">
         <img type=button src="./images/blank.png" onclick="flip_card()">
       <br> second
@@ -35,16 +36,11 @@
       <div class="cards"><img src="./images/blank.png"></div>
       <div class="cards"><img src="./images/blank.png"></div>
       <div class="cards"><img src="./images/blank.png"></div>
-
+-->
     </div>
 
-    <script>
-      var img = "<img src='./images/placeholder-01.png'>";
+    <script src="script.js">
 
-      function flip_card(){
-        document.getElementById("first").innerHTML = img;
-      }
-      console.log(img)
 
     </script>
   </body>
