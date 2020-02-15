@@ -8,24 +8,24 @@ We continue our study of functions, adding in parameters this week and more vari
 
 ## Projects
 
-- Adventure Text Game, expanded
+- Adventure Text Game 2.0
 
 ## Assignment Details
 
-Add to the Adventure Text Game created during week 3, including text input from the player and more functions.
+Add to the Adventure Text Game created during week 3, including text input from the player.
 
 
 ### Homework requirements
 1. Add a text input box to input the charcter's name
-2. add a for loop, or while loop
-3. Add an if/else if/ else or switch statements
-4. add a parameter within a function
-5. return a value from a function
-6. add a restart button to restart the story
-  - & Change where the story appears. So the buttons disappear!! One div Story box!!
-7. update the style/images with javascript function
+2. add a for loop ( or while loop)
+3. Add one of these: if/else, if/ if else, or switch statements
+4. Add a parameter within a function
+5. Return a value from a function
+6. Add a restart button for player to restart the story
+- & Change where the story appears. So the buttons disappear!! One div Story box!!
+7. Update the style/images with javascript function
 8. Make sure there are 5 choices to the story
-  - I have a total of 8 endings already, its just each path doesn't include 5 choices, but the way I laid out my story that would mean 32 endings and I don't think that's fessible.
+  - I have a total of 8 endings already, its just each path doesn't include 5 choices, but the way I laid out my story that would mean 32 endings and I don't think that's feasible.
 
 ## Weekly Report
 This week intimidated me for a weird reason. I didn't know where to begin, since I already had created a game. I had a list of things I needed to impliment, but I wasn't sure where I could add them. I think I was afraid of breaking the game. So, I started with an issue I had last week with inefficent code.
