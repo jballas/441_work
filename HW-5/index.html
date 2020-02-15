@@ -5,20 +5,47 @@
     <meta charset="UTF-8">;
     <meta name="description" content ="A memory matching game designed for Week 5 of MART 441">
     <meta name="author" content="Julia Ballas">
-    <meta name="viewport" content=" width=devise-width, initial-scale=1.0">
+    <meta name="viewport" content=" width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Joti+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+
 
   </head>
 
   <body>
     <nav>
       <h1>Memory Matching Game</h1>
-      <p>Score <span id="score"></span></p>
+      <p id="score">Score</p>
     </nav>
 
-    <div id="game"></div>
+    <div id="main_game">
+      <div id="deck"></div>
+      <div id="first" class="cards"><img src="./images/blank.png" onclick="flip_card()"> <br>first</div>
+      <div id="second" class="cards">
+        <img type=button src="./images/blank.png" onclick="flip_card()">
+      <br> second
+      </div>
 
-    <script src="script.js"></script>
+      <div class="cards">
+        <img src="./images/blank.png" onlick=flip_card()></div>
+      <div class="cards"><img src="./images/blank.png"></div>
+      <div class="cards"><img src="./images/blank.png"></div>
+      <div class="cards"><img src="./images/blank.png"></div><br>
+      <div class="cards"><img src="./images/blank.png"></div>
+      <div class="cards"><img src="./images/blank.png"></div>
+      <div class="cards"><img src="./images/blank.png"></div>
+      <div class="cards"><img src="./images/blank.png"></div>
+
+    </div>
+
+    <script>
+      var img = "<img src='./images/placeholder-01.png'>";
+
+      function flip_card(){
+        document.getElementById("first").innerHTML = img;
+      }
+      console.log(img)
+
+    </script>
   </body>
 </html>

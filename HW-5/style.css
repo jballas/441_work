@@ -1,20 +1,43 @@
 body {
   font-family: 'Joti One', cursive;
   background-color: #33cccc;
+  font-size: 200%;
 }
 
 p{
   font-family: open sans, sans-serif;
+  display: inline;
 }
+
 nav {
   position: fixed;
   top: 0px;
   left: 0px;
   background-color: #33ccff;
   width: 100%;
-  display: inline-block;
+  z-index: 2;
 }
 
-.main_game {
-  border: 5px black solid;
+h1{
+  display: inline;
+}
+
+
+#main_game {
+  border: 5px solid black;
+  position: relative;
+  top: 100px;
+  width: 50%;
+  overflow: auto;
+}
+
+img{
+  padding: 20px;
+  /*float: left;*/
+  display: inline;
+}
+
+img:hover{
+  border: 1px dotted white;
+
 }
