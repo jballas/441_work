@@ -1,16 +1,16 @@
 # Week 5 Response
-## Date
+## Date 2-17-20
 ## MART441.50, Julia Ballas
 
 
 ## Overview
 
-Week 5 we begin to explore arrays and we'll be making a memory matching game.
+Week 5 we begin to explore arrays and we'll start making a memory matching game.
 
 ## Projects
 
+- test.js
 - Memory Game part 1
--
 
 ## Assignment Details
 
@@ -47,38 +47,42 @@ I feel like I have pieces, but they don't connect.
 
 I have functions that create 10 blanks, and if you click on them random images appear, but you can't click on them to make the blanks reappear, and more importantly I can't figure out how to make sure an image doesn't appear twice.
 
-I'm going to dive into the example for week 5, because I think that will give me the answer. Well, it sort of helps and sorta doesn't. The example only has 2 images, and I think its pushing the images into a new array.
+I tried looking at the example for week 5, however it only has 2 images, and I can't quite figure out how that would work for 10 images. I think, maybe it's pushing the images into a new array.
 
-But, what I'm trying to do is get a random number 1-5, but also repeat that number. It seems to me that we could just put the image in my array twice and then shuffle the order around randomly and place them.
+### A shuffling solution, sorta
+I don't need random numbers. What I'm actually trying to do is get 5 images to repeat twice. It seems to me that we could just put the duplicate images in my array and then shuffle the order around randomly and place them in that order.
 
-There is no easy solution for shuffling in javascript. There is a fancy math solution involving the Fisher-Yates Shuffle. I can just barely understand what it is doing. Shuffling numbers.
+Unfortunately, after some research into randomness and shuffling, I've discovered there is no easy solution for shuffling in javascript. According to *Go Make Things*, shuffling arrays is already available in PHP and Ruby. (https://gomakethings.com/how-to-shuffle-an-array-with-vanilla-js/) So the only solution I found involves the *Fisher-Yates Shuffle*. The code is shown below.
 
-Source https://bost.ocks.org/mike/shuffle/
 ```js
+// Fisher Yates Shuffle
 // Source https://bost.ocks.org/mike/shuffle/
+// variable names modified by JBallas
+
 function shuffle(array) {
-  var m = array.length, t, i;
+  var change = array.length, first, second; // This creates three variables to use below.
 
-  // While there remain elements to shuffle…
-  while (m) {
+  while (change) { //
 
-    // Pick a remaining element…
-    i = Math.floor(Math.random() * m--);
+    first = Math.floor(Math.random() * change--); // We take a variable and multiple it by another variable, then subtract 1.
 
-    // And swap it with the current element.
-    t = array[m];
-    array[m] = array[i];
-    array[i] = t;
+    second = array[change]; // the swap begins. One goes into the next.
+    array[change] = array[first]; // and the next goes in the first.
+    array[first] = second; // and the first goes into the second.
   }
 
-  return array;
 }
+
+shuffle(images); //  this calls the function above and will shuffle around all my images.
 ```
-
-Apparently, shuffling arrays is already available in PHP and Ruby. (https://gomakethings.com/how-to-shuffle-an-array-with-vanilla-js/)
-
-
+Except, I'm not implimenting this code, because I can't even really explain how it works. All I understand is it's taking variables and adding randomness and swapping all the numbers around in a highly effective mathematical way. I can't modify the code either, because I basically need the code exactly as it is, in order to shuffle my images. So, rather than plagerize and since I don't have time anymore to ask about this. I'm going to leave it out.
 
 ## Specific questions/concerns for next week
 
+I ran out of time this week, so I'm just submitting the homework as is and I'll continue to work on it next week. I'm still puzzled by the `function createRandomImageArray()` from the Week 5 example. Are you randomly pushing images from one Array to another? Is this to keep track of how many images you have?
+
 ## Conclusion
+
+Arrays might make it easier to group things, but they also add in so many complications. Thank goodness we learned about debugging this week, because I encountered so many logical errors, where I the console was just blank and I had no idea what I'd done wrong, but at least I knew not to panic.
+
+We're starting to get deeper into the logic and math part of coding. I'm trying to keep an open mind about that, and not feel intimidated by it.
