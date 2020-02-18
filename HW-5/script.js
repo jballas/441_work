@@ -15,33 +15,14 @@ function blank_array(){
 
   }
 
-  // Source https://bost.ocks.org/mike/shuffle/
-  function shuffle(array) {
-    var change = array.length, first, second;
-
-    // While there remain elements to shuffle…
-    while (change) {
-
-      // Pick a remaining element…
-      first = Math.floor(Math.random() * change--);
-
-      // And swap it with the current element.
-      second = array[change];
-      array[change] = array[first];
-      array[first] = second;
-    }
-
-  }
-
-  shuffle(images);
-
-// Flips a blank card to an image, but it is tied to the IDs of the DIVs, and not the actual blank image.
+// This function flips a blank card to an image, but it is tied to the IDs of the DIVs, and not the actual blank image.
 // How do I keep from repeating a random number? And yet still show that number twice?
   function flip_card(number){
 
-    document.getElementById("display"+number).innerHTML = images[number];
+    // This just displays the images in order.
+    //document.getElementById("display"+number).innerHTML = images[number];
 
     // My first attempt to just randomize the numbers. I couldn't figure out how to prevent repeat numbers, or make sure I got 2 pairs from this.
-    //document.getElementById("display"+number).innerHTML = images[Math.floor(Math.random() * 5)]
+    document.getElementById("display"+number).innerHTML = images[Math.floor(Math.random() * 5)]
 
 }
