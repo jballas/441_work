@@ -17,21 +17,20 @@ function blank_array(){
 
   // Source https://bost.ocks.org/mike/shuffle/
   function shuffle(array) {
-    var m = array.length, t, i;
+    var change = array.length, first, second;
 
     // While there remain elements to shuffle…
-    while (m) {
+    while (change) {
 
       // Pick a remaining element…
-      i = Math.floor(Math.random() * m--);
+      first = Math.floor(Math.random() * change--);
 
       // And swap it with the current element.
-      t = array[m];
-      array[m] = array[i];
-      array[i] = t;
+      second = array[change];
+      array[change] = array[first];
+      array[first] = second;
     }
 
-    return array;
   }
 
   shuffle(images);
@@ -42,5 +41,7 @@ function blank_array(){
 
     document.getElementById("display"+number).innerHTML = images[number];
 
+    // My first attempt to just randomize the numbers. I couldn't figure out how to prevent repeat numbers, or make sure I got 2 pairs from this.
+    //document.getElementById("display"+number).innerHTML = images[Math.floor(Math.random() * 5)]
+
 }
-//document.getElementById("display"+number).innerHTML = images[Math.floor(Math.random() * 5)]

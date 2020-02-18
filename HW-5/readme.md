@@ -30,18 +30,54 @@ Make a button with a background image. Or you could use the `<img>` tag and atta
 
 I added some css to have a `:hover` effect, to show when you're over the image. Then I fixed my syntax adding the `onclick` event, thanks to W3Schools (https://www.w3schools.com/jsref/event_onclick.asp)
 
-### goal 2 make arrays with images
+### Goal 2 make arrays with images
 
-So, I have only 1 image with blank, how do I fill the array with ten of these blank images. Using a for loop inside the array. Let's make the array with 2 images first.
+Next I tackled the array. How do I fill the array with ten of these blank images? I used a for loop inside the array. Then I made a array to show the images images.
 
 ![two arrays with images and blank cards](./images/screenshot_arrays.png)
-Success! The code is a little messy, but I have two arrays. one for images and one for blanks. For the blanks I added 2 loops. one to push the same image to the array and another to display all items in the array.
+Success! The code is a little messy, but I have two arrays. One for images and one for blanks. For the blanks I added 2 loops. One to push the same image to the array and another to display all items in the array.
 
 ### Goal 3 Make images from array clickable
 
-Now I just need to combine the clickable part with my arrays. I used IDs in my images... before. Maybe I have to rethink how to make them clickable....
+Now I just need to combine the clickable part with my arrays. I used IDs in my images, and if I associate them with an div in the HTML. That may not be the best option, but I can't think of how else to add in the IDs I need to switch things out.
 
 ## Problems or Issues this week
+
+I feel like I have pieces, but they don't connect.
+
+I have functions that create 10 blanks, and if you click on them random images appear, but you can't click on them to make the blanks reappear, and more importantly I can't figure out how to make sure an image doesn't appear twice.
+
+I'm going to dive into the example for week 5, because I think that will give me the answer. Well, it sort of helps and sorta doesn't. The example only has 2 images, and I think its pushing the images into a new array.
+
+But, what I'm trying to do is get a random number 1-5, but also repeat that number. It seems to me that we could just put the image in my array twice and then shuffle the order around randomly and place them.
+
+There is no easy solution for shuffling in javascript. There is a fancy math solution involving the Fisher-Yates Shuffle. I can just barely understand what it is doing. Shuffling numbers.
+
+Source https://bost.ocks.org/mike/shuffle/
+```js
+// Source https://bost.ocks.org/mike/shuffle/
+function shuffle(array) {
+  var m = array.length, t, i;
+
+  // While there remain elements to shuffle…
+  while (m) {
+
+    // Pick a remaining element…
+    i = Math.floor(Math.random() * m--);
+
+    // And swap it with the current element.
+    t = array[m];
+    array[m] = array[i];
+    array[i] = t;
+  }
+
+  return array;
+}
+```
+
+Apparently, shuffling arrays is already available in PHP and Ruby. (https://gomakethings.com/how-to-shuffle-an-array-with-vanilla-js/)
+
+
 
 ## Specific questions/concerns for next week
 
