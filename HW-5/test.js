@@ -2,7 +2,7 @@
 var blank_card;
 
 //ARRAYS
-var images = ["<img src='./images/placeholder-01.png'>", "<img src='./images/placeholder-02.png'>", "<img src='./images/placeholder-03.png'>", "<img src='./images/placeholder-04.png'>", "<img src='./images/placeholder-05.png'>", "<img src='./images/placeholder-06.png'>", "<img src='./images/placeholder-07.png'>", "<img src='./images/placeholder-08.png'>", "<img src='./images/placeholder-09.png'>", "<img src='./images/placeholder-10.png'>"];
+var images = ["<img src='./images/placeholder-01.png'>", "<img src='./images/placeholder-02.png'>", "<img src='./images/placeholder-03.png'>", "<img src='./images/placeholder-04.png'>", "<img src='./images/placeholder-05.png'>"];
 
 function blank_array(){
 
@@ -17,6 +17,5 @@ function blank_array(){
 
     function flip_card(number){
 
-            document.getElementById("display"+number).innerHTML = images[Math.floor(Math.random() * 11)] ;
-
-    }
+            document.getElementById("display"+number).innerHTML = images[Math.floor(Math.random() * 5)] ;
+}
