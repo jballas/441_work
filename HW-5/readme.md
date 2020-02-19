@@ -75,14 +75,15 @@ function shuffle(array) {
 
 shuffle(images); //  this calls the function above and will shuffle around all my images.
 ```
-Except, I'm not implimenting this code, because I can't explain how it works. All I understand is it's taking variables and adding randomness and swapping all the numbers around in a highly effective mathematical way. I can't modify the code either, because I basically need the code exactly as it is, in order to shuffle my images. So, rather than plagerize and since I don't have time anymore to ask about this. I'm going to leave it out.
+Except, I'm not implimenting this code, because I can't explain how it works. All I understand is it's taking variables and adding randomness and swapping all the numbers around in a highly effective mathematical way. I can't modify the code either, because I basically need the code exactly as it is, in order to shuffle my images. It's disappointing, but I'll have to try something else.
 
-## Specific questions/concerns for next week
+However, even after studying the example for Week 5, and having it explained to me, it's not helping fix my code. Since, I'm not using image paths I can't I was trying to modify the code to keep my images from repeating, but it never worked.
+While, I was able to push random numbers and images into a new array, I wasn't able to make that new array appear. Then, basically, I ran out of time this week, so I'm just submitting the homework as it is and I'll continue to mess with it next week.  I was also reaching a point where I would just copy the example exactly and that is not helpful.
 
-I ran out of time this week, so I'm just submitting the homework as is and I'll continue to work on it next week. I'm still puzzled by the `function createRandomImageArray()` from the Week 5 example. Are you randomly pushing images from one Array to another? Is this to keep track of how many images you have?
+I learned something important this week about my process. I take baby steps when I code. I make one part work, then I add on to it. So, whenever there is code that demands more complexity in order to work, I immidiately get lost. The example has a function that uses both an `if` statement and a `while` statement, and they are intriquitely tied to each other. You can't make one work without the other, that's where I ran into trouble.
 
 ## Conclusion
 
-Arrays might make it easier to group things, but they also add in so many complications. Thank goodness we learned about debugging this week, because I encountered so many logical errors, where I the console was just blank and I had no idea what I'd done wrong, but at least I knew not to panic.
+Arrays might make it easier to group things, but as soon as you have multiple arrays interacting, the complexity of it makes my head spin. Thank goodness we learned about debugging this week, because I encountered so many logical errors, Whenever the console was blank and nothing was happening, at least I knew not to panic.
 
-We're starting to get deeper into the logic and math part of coding. I'm trying to keep an open mind about that, and not feel intimidated by it.
+We're starting to get deeper into the logical and math aspects of coding. I'm trying to keep an open mind about that, and not feel intimidated by it.
