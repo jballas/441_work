@@ -1,0 +1,45 @@
+body {
+  font-family: 'Joti One', cursive;
+  background-color: #33cccc;
+  font-size: 200%;
+}
+
+p{
+  font-family: open sans, sans-serif;
+  display: inline;
+}
+
+nav {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: #33ccff;
+  width: 100%;
+  z-index: 2;
+}
+
+h1{
+  display: inline;
+}
+
+
+#main_game {
+  position: relative;
+  top: 100px;
+  width: 80%;
+  overflow: auto;
+}
+ .cards{
+   background-color: #669966;
+ }
+
+img{
+  padding: 20px;
+  border: 2px solid black;
+  float: left;
+}
+
+img:hover{
+  border: 2px dotted white;
+
+}
