@@ -19,9 +19,13 @@
       <h1>Memory Matching Game</h1>
     </nav>
       <div class="player">
-        <p>Player's Name <input type="player-name">
-        </p>
-
+        <fieldset>
+          <legend>Player One</legend>
+          <label>First name <input type="text" name="first_name" id="first" /> </label><br>
+          <label>Last name <input type="text" name="last_name" id="last" /> </label><br>
+          <label>Age <input type="text" name="age" id="age" maxlength="3" /> </label> <br>
+          <input type="submit" name="Submit" value="submit" id="btn_submit"/>
+        </fieldset>
       </div>
 
     <div id="main_game">

@@ -4,11 +4,10 @@ body {
   font-size: 200%;
 }
 
-p{
+p {
   font-family: open sans, sans-serif;
   display: inline;
 }
-
 nav {
   position: fixed;
   top: 0px;
@@ -22,6 +21,32 @@ h1{
   display: inline;
 }
 
+fieldset {
+  border-color:black;
+}
+
+label {
+    font-family: open sans, sans-serif;
+    margin-right: 20px;
+}
+
+.player {
+  position: relative;
+  top: 50px;
+}
+
+#btn_submit {
+  border-style: none;
+  border-radius: 10px;
+  background-color: #33aaff;
+  margin: 20px;
+  padding: 10px;
+  font-family: 'Joti One', cursive;
+}
+
+#btn_submit:hover{
+  background-color: #33ccff;
+}
 
 #main_game {
   position: relative;
