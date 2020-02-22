@@ -2,7 +2,7 @@
 var blank_card;
 
 //ARRAYS
-var images = ["<img src='./images/placeholder-01.png'>", "<img src='./images/placeholder-02.png'>", "<img src='./images/placeholder-03.png'>", "<img src='./images/placeholder-04.png'>", "<img src='./images/placeholder-05.png'>"];
+var images = ["<img src='../HW-5/images/placeholder-01.png'>", "<img src='../HW-5/images/placeholder-02.png'>", "<img src='../HW-5/images/placeholder-03.png'>", "<img src='../HW-5/images/placeholder-04.png'>", "<img src='../HW-5/images/placeholder-05.png'>"];
 var new_array = new Array();
 //var actualArray = [];
 // this array determines how many times the image has been entered into the actual image array
@@ -10,7 +10,7 @@ var exists = [0, 0, 0, 0, 0];
 // A loop that displays the blank image inside the
 function blank_array() {
     for (i = 0; i < 10; i++) {
-        blank_card = "<img src='./images/blank.png' onclick='flip_card(" + i + ")'>";
+        blank_card = "<img src='../HW-5/images/blank.png' onclick='flip_card(" + i + ")'>";
         //console.log(blank_card); // For testing purposes only so I can see what is in the blank card variable.
         document.getElementById("display" + i).innerHTML = blank_card;
     }

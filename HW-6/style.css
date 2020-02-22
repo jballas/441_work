@@ -32,7 +32,7 @@ label {
 
 .player {
   position: relative;
-  top: 50px;
+  top: 100px;
 }
 
 #btn_submit {

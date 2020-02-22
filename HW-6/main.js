@@ -4,44 +4,61 @@ var blank_card;
 //ARRAYS
 var images = ["<img src='../HW-5/images/placeholder-01.png'>", "<img src='../HW-5/images/placeholder-02.png'>", "<img src='../HW-5/images/placeholder-03.png'>", "<img src='../HW-5/images/placeholder-04.png'>", "<img src='../HW-5/images/placeholder-05.png'>"];
 var new_array = new Array();
+var check_images = [0, 0, 0, 0, 0];
 
-// A loop that displays the blank image inside the
 function blank_array(){
 
+      // A loop that displays the blank image inside the blank_array
       for (i = 0; i < 10; i ++){
           blank_card ="<img src='../HW-5/images/blank.png' onclick='flip_card(" + i + ")'>";
           //console.log(blank_card); // For testing purposes only so I can see what is in the blank card variable.
           document.getElementById("display" + i).innerHTML = blank_card;
       }
-
+      // We have to call the function here, in order to get images to display. Otherwise the images are undefined.
+      display_actual_images();
   }
 
-// This function flips a blank card to an image, but it is tied to the IDs of the DIVs, and not the actual blank image.
-// How do I keep from repeating a random number? And yet still show that number twice?
-function flip_card(number){
+// Function to get actual images from a new Array
 
-    /* This just displays the images in order.
-    document.getElementById("display"+number).innerHTML = images[number];*/
+function display_actual_images(){
 
-    // This randomizes the numbers, but it also repeats numbers.
+  //This will loop through the entire images array.
+  for (var i = 0; i < 10; i++){
+
+    // This randomizes the numbers, but it also repeats numbers, unless we use a if/else statement.
     var random_number = Math.floor(Math.random() * images.length);
 
-    // this displays the images
-    document.getElementById("display"+number).innerHTML = images[random_number]
+    // Now we need to check if the there are 2 images repeated.
+    if (check_images[random_number] < 2 ){
+      // This pushes the random number into an array.
+          new_array.push(images[random_number]);
+          // This shows me all the numbers in the new array.
+              console.log(new_array);
+    }
+    // AND if the random number isn't repeated, then we need two things happen. First, we create another random number, while the index of our check images array is still at 0. AND we push the first image into the array.
+      else {
 
-    console.log(random_number); // testing
+        // This checks the images array to see if there is 1 or more images in that array.
+        while (check_images[random_number] > 1) {
+                random_number = Math.floor(Math.random() * images.length);
+      }
 
-    // This pushing the random number into an array.
-    new_array.push(random_number);
-
-    console.log(new_array); // This shows me all the numbers in the new array.
-
-// But I still need to keep the images from repeating I'm going to try to push the image into an array.
-// Now the images are in the new array, but it still repeats.... because even if I push them into the new array, they still exist in the old array. Pushing them doesn't remove them.
-    if (new_array[random_number] < 2){
-
-      new_array.push(images[random_number]);
+          new_array.push(images[random_number]);
 
     }
+    // This will add numbers to the check_number array and increase the array by 1, until we get all 10 images.
+          check_images[random_number] = check_images[random_number] + 1;
+          console.log(check_images);
+  }
+
+
+}
+
+
+function flip_card(number){
+
+    // this displays the images
+    document.getElementById("display"+number).innerHTML = new_array[number]
+
 
 }
