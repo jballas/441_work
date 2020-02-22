@@ -14,17 +14,17 @@
   </head>
 
 
-  <body onload="blank_array();">
+  <body onload="set_player_info();">
     <nav>
       <h1>Memory Matching Game</h1>
     </nav>
-      <div class="player">
+      <div class="player" id="details">
         <fieldset>
           <legend>Player One</legend>
           <label>First name <input type="text" name="first_name" id="first" /> </label><br>
           <label>Last name <input type="text" name="last_name" id="last" /> </label><br>
           <label>Age <input type="text" name="age" id="age" maxlength="3" /> </label> <br>
-          <input type="submit" name="Submit" value="submit" id="btn_submit"/>
+          <input type="submit" name="Submit" value="submit" id="btn_submit" onclick="show_score();"/>
         </fieldset>
       </div>
 

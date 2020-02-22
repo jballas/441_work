@@ -6,6 +6,42 @@ var images = ["<img src='../HW-5/images/placeholder-01.png'>", "<img src='../HW-
 var new_array = new Array();
 var check_images = [0, 0, 0, 0, 0];
 
+// JSON object
+var player = {"first": "", "last": "", "age": ""};
+
+// PLAYER Details
+
+function set_player_info(){
+ var first = document.getElementById("first").value;
+
+  var last = document.getElementById("last").value;
+
+  var age = document.getElementById("age").value;
+
+// We had to add the value into JSON
+player.first = first;
+player.last = last;
+player.age = age;
+
+//document.getElementById("details").innerHTML= player.first + ":" + player.last + ":" + player.age;
+  localStorage.setItem("player", JSON.stringify(player));
+}
+
+// temporary function to test my player_information JSON and practice using local Storage
+function show_score(){
+    window.location="score.html";
+}
+
+// This will load Player Details from Local Storage to the Second SCORE.html page
+function player_details(){
+
+    player = localStorage.getItem("player");
+    document.getElementById("player_details").innerHTML = "<p>" + JSON.parse(player).first + " " + JSON.parse(player).last + "<br>" + JSON.parse(player).age + "</p>";
+
+}
+
+
+// MEMORY GAME
 function blank_array(){
 
       // A loop that displays the blank image inside the blank_array
@@ -32,8 +68,7 @@ function display_actual_images(){
     if (check_images[random_number] < 2 ){
       // This pushes the random number into an array.
           new_array.push(images[random_number]);
-          // This shows me all the numbers in the new array.
-              console.log(new_array);
+          // This shows me all the numbers in the new array.   console.log(new_array);
     }
     // AND if the random number isn't repeated, then we need two things happen. First, we create another random number, while the index of our check images array is still at 0. AND we push the first image into the array.
       else {
@@ -48,7 +83,7 @@ function display_actual_images(){
     }
     // This will add numbers to the check_number array and increase the array by 1, until we get all 10 images.
           check_images[random_number] = check_images[random_number] + 1;
-          console.log(check_images);
+          //console.log(check_images);
   }
 
 
