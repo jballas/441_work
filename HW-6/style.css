@@ -30,6 +30,27 @@ label {
     margin-right: 20px;
 }
 
+a{
+  color: #1c1844;
+  float: right;
+}
+
+a:visited{
+  color: #c35200;
+}
+
+img{
+    padding: 20px;
+    border: 2px solid black;
+    float: left;
+    width: 100px;
+    height: 100px;
+  }
+
+img:hover{
+    border: 2px dotted white;
+
+  }
 .player {
   position: relative;
   top: 100px;
@@ -48,7 +69,7 @@ label {
   background-color: #33ccff;
 }
 
-#main_game {
+.main {
   position: relative;
   top: 100px;
   width: 80%;
@@ -57,16 +78,3 @@ label {
  .cards{
    background-color: #669966;
  }
-
-img{
-  padding: 20px;
-  border: 2px solid black;
-  float: left;
-  width: 100px;
-  height: 100px;
-}
-
-img:hover{
-  border: 2px dotted white;
-
-}
