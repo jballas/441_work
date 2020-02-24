@@ -3,7 +3,7 @@ var blank_card;
 var first_number;
 
 //ARRAYS
-var images = ["<img src='../HW-5/images/placeholder-01.png'>", "<img src='../HW-5/images/placeholder-02.png'>", "<img src='../HW-5/images/placeholder-03.png'>", "<img src='../HW-5/images/placeholder-04.png'>", "<img src='../HW-5/images/placeholder-05.png'>"];
+var images = ["../HW-5/images/placeholder-01.png", "../HW-5/images/placeholder-02.png", "../HW-5/images/placeholder-03.png", "../HW-5/images/placeholder-04.png", "../HW-5/images/placeholder-05.png"];
 var new_array = new Array();
 var check_images = [0, 0, 0, 0, 0];
 
@@ -50,12 +50,13 @@ function blank_array(){
 
       // A loop that displays the blank image inside the blank_array
       for (i = 0; i < 10; i ++){
-          blank_card ="<img src='../HW-5/images/blank.png' onclick='flip_card(" + i + ")'>";
+          blank_card ="../HW-5/images/blank.png";
           //console.log(blank_card); // For testing purposes only so I can see what is in the blank card variable.
-          document.getElementById("display" + i).innerHTML = blank_card;
+          document.getElementById("display" + i).src = blank_card;
       }
       // We have to call the function here, in order to get images to display. Otherwise the images are undefined.
       display_actual_images();
+
   }
 
 // Function to get actual images from a new Array
@@ -67,7 +68,7 @@ function display_actual_images(){
 
     // This randomizes the numbers, but it also repeats numbers, unless we use a if/else statement.
     var random_number = Math.floor(Math.random() * images.length);
-
+      console.log(random_number);
     // Now we need to check if the there are 2 images repeated.
     if (check_images[random_number] < 2 ){
       // This pushes the random number into an array.
@@ -86,7 +87,7 @@ function display_actual_images(){
 
     // This will add numbers to the check_number array and increase the array by 1, until we get all 10 images.
           check_images[random_number] = check_images[random_number] + 1;
-          //console.log(check_images);
+          console.log(check_images);
   }
 }
 
@@ -96,7 +97,7 @@ function flip_card(number){
     first_number = number;
 
     // this displays the images
-    document.getElementById("display"+first_number).innerHTML = new_array[first_number]
+    document.getElementById("display" + first_number).src = new_array[first_number]
 
     console.log(first_number);
     setTimeout(flip_blank, 1000);
@@ -105,7 +106,7 @@ function flip_card(number){
 
 function flip_blank(){
 
-    document.getElementById("display" + first_number).innerHTML = "<img src='../HW-5/images/blank.png'";
+    document.getElementById("display" + first_number).src = "../HW-5/images/blank.png";
 
 
 }
