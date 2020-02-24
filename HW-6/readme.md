@@ -34,13 +34,15 @@ Finish your Memory Game and use local storage to display player info and the sco
 
 It sounds like we're going to connect 3 pages. The Player enters their details, they play the game and then in goes to a third page to display them.
 
-I'm not exactly sure why we have to make 3 pages, when you could have the player's information on the same page as the game, but maybe it is so we could understand more about local storage. You have to connect the each page with the final score page using the same JSON. The tricky part came when I had to send all the information to last page. For a while the names didn't show up, but the score did. Then after studying our sample it made sense, you have to send the information to page 2, and then again update it and send it to page 3. Otherwise, it doesn't transfer over to the third page.
+I'm not exactly sure why we have to make 3 pages, when you could have the player's information on the same page as the game, but maybe it is so we could understand more about local storage. I will figure this out!
+
+Ahha, so I've discovered that you must connect each page with the final score page using the same JSON. The tricky part came when I had to send all the information to last page. For a while the names didn't show up, but the score did. Then after studying our sample it made sense, you have to send the information to page 2, and then again update it and send it to page 3. Otherwise, it doesn't transfer over to the third page.
 
 ## Tracking the SCORE
 
-In order to display the score at the end, you have to track it. I did this by creating a variable that will increase in count whenever the player clicks on the second image. I wasn't quite sure where to put it in the `flip_card()` function, but I settled on the first if statement, which keeps track if a player has picked a second card. I used a `console.log(score)` to test it.
+In order to display the score at the end, you have to track it. I did this by creating a variable that will increase in count whenever the player clicks on the second image. I wasn't quite sure where to put it in the `flip_card()` function, but I settled on the first `if statement`, which keeps track of whether a player has picked a second card. I used a `console.log(score)` to test it.
 
-However, the other tricky part was figuring out how to know when they player matched all the cards. I made a couple of unsuccessful attempts. First, I tried counting the clicks on the cards, but this was not reliable. My new_array already had ten images in it when I start my game, so I can't track the images. So, instead I made an array called `pair[]`.
+The other tricky part was figuring out how to know when the player matched all the cards. I made a couple of unsuccessful attempts. First, I tried counting the clicks on the cards, but this was not viable. My new_array already has ten images in it when I start my game, so I couldn't track the images. So, instead I made an array called `pair[]`.
 
 Successful Code
 ```JS
@@ -57,7 +59,7 @@ This array takes in a variable. The numbers assigned to the array don't matter, 
 
 In Week 5 I created my memory game to display images inside of various `<div>` tags. Then I could access each `<div>` tag by its Id. Unfortunately, that was causing problems when I tried to flip the cards back to the blank image. I could put a blank image back but then the random image previously used didn't appear. I'm sure there is a way past this. I can't figure it out.
 
-Instead, I considered maybe using some boolean logic, so if the image is clicked it is considered true and displays the random image, but then if it doesn't match it is considered falase, which makes it blank again. Maybe I'd run into the same problem as before, maybe not. However, I get the impression we're approaching this memory game using different logic, which means we need to have our image sources in the arrays and we'll flip images around using JavaScript's `setTimeout`. So, I rearranged all my code again, to make images display from the `.src`, rather than `.innerHTML`.
+Instead, I considered maybe using some boolean logic, so if the image is clicked it is considered true and displays the random image, but then if it doesn't match it is considered false, which makes it blank again. Maybe I'd run into the same problem as before, maybe not. However, I get the impression we're approaching this memory game using different logic, which means we need to have our image sources in the arrays and we'll flip images around using JavaScript's `setTimeout`. So, I rearranged all my code again, to make images display from the `.src`, rather than `.innerHTML`.
 
 Now that I'm finished I'm wondering if I really did have to switch my image code around, or if I was just not understanding how to make it work. I have no idea.
 
