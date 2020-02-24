@@ -1,6 +1,7 @@
 //VARIABLES
 var blank_card;
-var first_number;
+var first_number = -1;
+var second_number = -1;
 
 //ARRAYS
 var images = ["../HW-5/images/placeholder-01.png", "../HW-5/images/placeholder-02.png", "../HW-5/images/placeholder-03.png", "../HW-5/images/placeholder-04.png", "../HW-5/images/placeholder-05.png"];
@@ -68,7 +69,7 @@ function display_actual_images(){
 
     // This randomizes the numbers, but it also repeats numbers, unless we use a if/else statement.
     var random_number = Math.floor(Math.random() * images.length);
-      console.log(random_number);
+
     // Now we need to check if the there are 2 images repeated.
     if (check_images[random_number] < 2 ){
       // This pushes the random number into an array.
@@ -87,26 +88,38 @@ function display_actual_images(){
 
     // This will add numbers to the check_number array and increase the array by 1, until we get all 10 images.
           check_images[random_number] = check_images[random_number] + 1;
-          console.log(check_images);
+          //console.log(check_images);
   }
 }
 
 
 function flip_card(number){
 
-    first_number = number;
+    if (first_number >= 0){
+        second_number = number;
+        document.getElementById("display" + number).src = images[second_number];
 
-    // this displays the images
-    document.getElementById("display" + first_number).src = new_array[first_number]
+    // This will change the image back after half a second
+        setTimeout(flip_blank, 500);
+    }
 
-    console.log(first_number);
-    setTimeout(flip_blank, 1000);
+    else if (first_number < 0) {
+      first_number = number;
+      // this displays the images
+      document.getElementById("display" + first_number).src = new_array[first_number]
+
+    }
+
+    //console.log(first_number);
+
+
 
 }
 
 function flip_blank(){
 
+    // This will switch the image src back to blank
     document.getElementById("display" + first_number).src = "../HW-5/images/blank.png";
-
+    document.getElementById("display" + second_number).src = "../HW-5/images/blank.png";
 
 }
