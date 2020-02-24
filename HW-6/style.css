@@ -51,10 +51,6 @@ img:hover{
     border: 2px dotted white;
 
   }
-.player {
-  position: relative;
-  top: 100px;
-}
 
 #btn_submit {
   border-style: none;
