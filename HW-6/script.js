@@ -3,48 +3,16 @@ var blank_card ="../HW-5/images/blank.png";
 var number;
 var first_number = -1;
 var second_number = -1;
+var score = 0;
 
 //ARRAYS
 var images = ["../HW-5/images/placeholder-01.png", "../HW-5/images/placeholder-02.png", "../HW-5/images/placeholder-03.png", "../HW-5/images/placeholder-04.png", "../HW-5/images/placeholder-05.png"];
 var new_array = new Array();
 var check_images = [0, 0, 0, 0, 0];
+var pair = new Array();
 
 // JSON object
-var player = {"first": "", "last": "", "age": ""};
-
-// PLAYER Details
-
-function set_player_info(){
-    var first = document.getElementById("first").value;
-
-    var last = document.getElementById("last").value;
-
-    var age = document.getElementById("age").value;
-
-    // We had to add the value into JSON
-    player.first = first;
-    player.last = last;
-    player.age = age;
-
-  //document.getElementById("details").innerHTML= player.first + ":" + player.last + ":" + player.age;
-    localStorage.setItem("player", JSON.stringify(player));
-
-
-}
-
-// temporary function to test my player_information JSON and practice using local Storage
-function show_score(){
-    window.location="score.html";
-}
-
-// This will load Player Details from Local Storage to the Second SCORE.html page
-function player_details(){
-
-    player_details = localStorage.getItem("player");
-    player = JSON.parse(player_details);
-    document.getElementById("player_details").innerHTML = "<p>" + player.first + " " + player.last + "<br>" + player.age + "</p>";
-
-}
+var player = {"first": "", "last": "", "age": "", "score": ""};
 
 
 // MEMORY GAME
@@ -96,15 +64,20 @@ function display_actual_images(){
 
 function flip_card(number){
 
-
+console.log(score);
+    // This keeps track if a player has clicked a second card.
     if (first_number >= 0){
         second_number = number;
         document.getElementById("display" + number).src = new_array[second_number];
 
-    // This will change the image back after half a second
+    // This will change the image back after half a second, unless the cards match!
         setTimeout(flip_blank, 500);
+    // This will add up our score, so we can display it on the 3rd page.
+        score ++;
+        console.log(score);
     }
 
+    // If no cards are flipped, then clicking a card displays the image.
     else if (first_number < 0) {
       first_number = number;
       // this displays the images
@@ -112,12 +85,23 @@ function flip_card(number){
 
     }
 
+    // This checks if the second card flipped is not equal to the first, and if that is true then it flips the cards back over
     if(new_array[second_number] != new_array[first_number] && first_number >=0 && second_number >=0) {
               setTimeout(flip_blank, 500);
     }
+    // This checks if the second card if the same as the first card and if so it doesn't do anything, except reset the variables so we can keep playing the game
     else if (new_array[second_number] == new_array[first_number] && first_number >=0 && second_number >=0) {
       first_number = -1;
       second_number = -1;
+
+
+        // This will push the second number into an array, so when that array has 5 numbers in it, then we'll have 5 pairs and it will switch to the 3rd page.
+        pair.push(second_number);
+        //console.log(pair);
+
+        if (pair.length ==5 ){
+          show_score();
+        }
     }
 
 
@@ -130,4 +114,47 @@ function flip_blank(){
     document.getElementById("display" + second_number).src = blank_card;
     first_number = -1;
     second_number = -1;
+}
+
+
+// PLAYER Details
+
+function set_player_info(){
+    var first = document.getElementById("first").value;
+
+    var last = document.getElementById("last").value;
+
+    var age = document.getElementById("age").value;
+
+
+    // We have to add the values into the JSON
+    player.first = first;
+    player.last = last;
+    player.age = age;
+
+  // This will send the player information from the 1st page
+    localStorage.setItem("player", JSON.stringify(player));
+
+}
+
+function set_score(){
+      player.score = score; // This is added from the game page.
+
+      // This will send the player score
+        localStorage.setItem("player", JSON.stringify(player.score));
+}
+
+// function to go to score page after the player wins
+function show_score(){
+    window.location="score.html";
+}
+
+// This will load Player Details from Local Storage to the Second SCORE.html page
+function player_details(){
+
+    player_details = localStorage.getItem("player");
+    player = JSON.parse(player_details);
+    document.getElementById("player_details").innerHTML = "<p> Name: " + player.first + " " + player.last + "<br> Age: " + player.age + "</p>";
+    document.getElementById("score").innerHTML = "<p> Score: " + player.score + "</p>";
+
 }

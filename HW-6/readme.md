@@ -33,7 +33,22 @@ Finish Memory Game, using local storage to display player info and the score.
 
 Sounds like we're going to connect 3 pages. The Player enters their details, they play the game and then in goes to a third page to display them.
 
-I'm not exactly sure why 3 pages, when you can have the player's information on the same page as the game, but maybe it is so we can understand that local storage isn't limited. You can connect Player page, with the score page, and the game page with the score page.
+I'm not exactly sure why 3 pages, when you can have the player's information on the same page as the game, but maybe it is so we can understand that local storage isn't limited. You can connect Player page, with the score page, and the game page with the score page. But in order to make this work, you have to call the function onload for both pages. Otherwise, it doesn't store any information.
+
+## Tracking the SCORE
+
+In order to display the score at the end, you have to track it. I did this by creating a variable that will increase in count whenever the player clicks on the second image. This probably will work. But the trickier part is how to know when they player has matched all the cards.
+
+I can't do this by counting how many clicks. The new_array already has ten images in it by the time I start the game, so I can't track images. So, instead I made an array.
+```JS
+pair.push(second_number);
+console.log(pair);
+
+if (pair.length ==5 ){
+  show_score();
+```
+
+This array takes in a variable. What that variable is doesn't matter, instead, I'm tracking the length of the array and once I have 5 pairs, the score page appears!
 
 
 
