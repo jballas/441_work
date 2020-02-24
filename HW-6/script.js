@@ -29,7 +29,7 @@ function blank_array(){
 
   }
 
-// Function to get actual images from a new Array
+// Function to get actual images into a new Array and displays them
 
 function display_actual_images(){
 
@@ -43,7 +43,7 @@ function display_actual_images(){
     if (check_images[random_number] < 2 ){
       // This pushes the random number into an array.
           new_array.push(images[random_number]);
-          // This shows me all the numbers in the new array.   console.log(new_array);
+          // This shows me all the numbers in the new array. console.log(new_array);
     }
     // AND if the random number isn't repeated, then we need two things happen. First, we create another random number, while the index of our check images array is still at 0. AND we push the first image into the array.
       else {
@@ -72,8 +72,8 @@ function flip_card(number){
 
     // This will change the image back after half a second, unless the cards match!
         setTimeout(flip_blank, 500);
-    // This will add up our score, so we can display it on the 3rd page.
 
+    // This will add up our score, so we can display it on the 3rd page.
         score ++;
         console.log(score);
     }
@@ -113,7 +113,7 @@ function flip_blank(){
     document.getElementById("display" + first_number).src = blank_card;
     document.getElementById("display" + second_number).src = blank_card;
 
-    // Reset our variables, so that it will continue to look for 2 images
+    // We reset our variables, so that it will continue to look for 2 images
     first_number = -1;
     second_number = -1;
 }
@@ -122,6 +122,7 @@ function flip_blank(){
 // PLAYER Details
 
 function set_player_info(){
+  // These variables get the values from the input boxes.
     var first = document.getElementById("first").value;
 
     var last = document.getElementById("last").value;
@@ -133,19 +134,18 @@ function set_player_info(){
         window.alert("Enter your Name and age to continue!")
       }
     else {
-        // We have to add the values into the JSON
+        // We also have to add the values into the JSON. Very Important!
         player.first = first;
         player.last = last;
         player.age = age;
 
-        //This will send the player information from the 1st page
+        //This will send the player information from the 1st page to 2nd page
         localStorage.setItem("player_details", JSON.stringify(player));
-        // This send player to 2nd page
+        // This sends player to 2nd page
         window.location='game.html';
     }
 
 }
-
 
 // function to go to score page after the player wins
 function show_score(){
@@ -154,7 +154,7 @@ function show_score(){
     window.location="score.html";
 }
 
-// This will load player details from Local Storage to the SCORE.html page
+// This will load player details from Local Storage on 2nd page to the 3rd and final SCORE page
 function player_details(){
 
     var player_one = localStorage.getItem("player_details");
