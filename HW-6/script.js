@@ -11,8 +11,8 @@ var new_array = new Array();
 var check_images = [0, 0, 0, 0, 0];
 var pair = new Array();
 
-// JSON object
-var player = {"first": "", "last": "", "age": "", "score": ""};
+// JSON
+var player = {"first":"", "last":"", "age":0, "score":0};
 
 
 // MEMORY GAME
@@ -64,7 +64,7 @@ function display_actual_images(){
 
 function flip_card(number){
 
-console.log(score);
+
     // This keeps track if a player has clicked a second card.
     if (first_number >= 0){
         second_number = number;
@@ -73,6 +73,7 @@ console.log(score);
     // This will change the image back after half a second, unless the cards match!
         setTimeout(flip_blank, 500);
     // This will add up our score, so we can display it on the 3rd page.
+
         score ++;
         console.log(score);
     }
@@ -94,7 +95,6 @@ console.log(score);
       first_number = -1;
       second_number = -1;
 
-
         // This will push the second number into an array, so when that array has 5 numbers in it, then we'll have 5 pairs and it will switch to the 3rd page.
         pair.push(second_number);
         //console.log(pair);
@@ -112,6 +112,8 @@ function flip_blank(){
     // This will switch the image src back to blank
     document.getElementById("display" + first_number).src = blank_card;
     document.getElementById("display" + second_number).src = blank_card;
+
+    // Reset our variables, so that it will continue to look for 2 images
     first_number = -1;
     second_number = -1;
 }
@@ -133,28 +135,24 @@ function set_player_info(){
     player.age = age;
 
   // This will send the player information from the 1st page
-    localStorage.setItem("player", JSON.stringify(player));
+    localStorage.setItem("player_details", JSON.stringify(player));
 
 }
 
-function set_score(){
-      player.score = score; // This is added from the game page.
-
-      // This will send the player score
-        localStorage.setItem("player", JSON.stringify(player.score));
-}
 
 // function to go to score page after the player wins
 function show_score(){
+    player.score = score;
+    localStorage.setItem("player_details", JSON.stringify(player));
     window.location="score.html";
 }
 
-// This will load Player Details from Local Storage to the Second SCORE.html page
+// This will load player details from Local Storage to the SCORE.html page
 function player_details(){
 
-    player_details = localStorage.getItem("player");
-    player = JSON.parse(player_details);
-    document.getElementById("player_details").innerHTML = "<p> Name: " + player.first + " " + player.last + "<br> Age: " + player.age + "</p>";
+    var player_one = localStorage.getItem("player_details");
+    player = JSON.parse(player_one);
+    document.getElementById("display_all_player_info").innerHTML = "<p> Name: " + player.first + " " + player.last + "<br> Age: " + player.age + "</p>";
     document.getElementById("score").innerHTML = "<p> Score: " + player.score + "</p>";
 
 }
