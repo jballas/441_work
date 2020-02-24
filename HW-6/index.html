@@ -14,7 +14,7 @@
   </head>
 
 
-  <body onload="blank_array(); set_player_info();">
+  <body onload="set_player_info();">
     <nav>
       <h1>Memory Matching Game</h1>
     </nav>
@@ -24,23 +24,10 @@
           <label>First name <input type="text" name="first_name" id="first" /> </label><br>
           <label>Last name <input type="text" name="last_name" id="last" /> </label><br>
           <label>Age <input type="text" name="age" id="age" maxlength="3" /> </label> <br>
-          <input type="submit" name="Submit" value="submit" id="btn_submit" onclick="show_score();"/>
+          <input type="submit" name="Submit" value="submit" id="btn_submit" onclick="game.html"/>
         </fieldset>
       </div>
 
-    <div id="main_game">
-      <div><img src ="" id="display0" onclick="flip_card(0)"> </div>
-      <div><img src ="" id="display1" onclick="flip_card(1)"> </div>
-      <div><img src ="" id="display2" onclick="flip_card(2)"> </div>
-      <div><img src ="" id="display3" onclick="flip_card(3)"> </div>
-      <div><img src ="" id="display4" onclick="flip_card(4)"> </div>
-      <div><img src ="" id="display5" onclick="flip_card(5)"> </div>
-      <div><img src ="" id="display6" onclick="flip_card(6)"> </div>
-      <div><img src ="" id="display7" onclick="flip_card(7)"> </div>
-      <div><img src ="" id="display8" onclick="flip_card(8)"> </div>
-      <div><img src ="" id="display9" onclick="flip_card(9)">  </div>
-
-    </div>
 
     <script src="script.js">
 

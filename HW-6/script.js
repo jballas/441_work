@@ -1,5 +1,6 @@
 //VARIABLES
-var blank_card;
+var blank_card ="../HW-5/images/blank.png";
+var number;
 var first_number = -1;
 var second_number = -1;
 
@@ -51,7 +52,7 @@ function blank_array(){
 
       // A loop that displays the blank image inside the blank_array
       for (i = 0; i < 10; i ++){
-          blank_card ="../HW-5/images/blank.png";
+
           //console.log(blank_card); // For testing purposes only so I can see what is in the blank card variable.
           document.getElementById("display" + i).src = blank_card;
       }
@@ -65,7 +66,7 @@ function blank_array(){
 function display_actual_images(){
 
   //This will loop through the entire images array.
-  for (var i = 0; i < images.length; i++){
+  for (var i = 0; i < 10; i++){
 
     // This randomizes the numbers, but it also repeats numbers, unless we use a if/else statement.
     var random_number = Math.floor(Math.random() * images.length);
@@ -95,9 +96,10 @@ function display_actual_images(){
 
 function flip_card(number){
 
+
     if (first_number >= 0){
         second_number = number;
-        document.getElementById("display" + number).src = images[second_number];
+        document.getElementById("display" + number).src = new_array[second_number];
 
     // This will change the image back after half a second
         setTimeout(flip_blank, 500);
@@ -110,8 +112,13 @@ function flip_card(number){
 
     }
 
-    //console.log(first_number);
-
+    if(new_array[second_number] != new_array[first_number] && first_number >=0 && second_number >=0) {
+              setTimeout(flip_blank, 500);
+    }
+    else if (new_array[second_number] == new_array[first_number] && first_number >=0 && second_number >=0) {
+      first_number = -1;
+      second_number = -1;
+    }
 
 
 }
@@ -119,7 +126,8 @@ function flip_card(number){
 function flip_blank(){
 
     // This will switch the image src back to blank
-    document.getElementById("display" + first_number).src = "../HW-5/images/blank.png";
-    document.getElementById("display" + second_number).src = "../HW-5/images/blank.png";
-
+    document.getElementById("display" + first_number).src = blank_card;
+    document.getElementById("display" + second_number).src = blank_card;
+    first_number = -1;
+    second_number = -1;
 }
