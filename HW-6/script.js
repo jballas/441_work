@@ -128,14 +128,21 @@ function set_player_info(){
 
     var age = document.getElementById("age").value;
 
+    //This will check to see if anything has been entered.
+    if (first == "" || last == "" || age == 0){
+        window.alert("Enter your Name and age to continue!")
+      }
+    else {
+        // We have to add the values into the JSON
+        player.first = first;
+        player.last = last;
+        player.age = age;
 
-    // We have to add the values into the JSON
-    player.first = first;
-    player.last = last;
-    player.age = age;
-
-  // This will send the player information from the 1st page
-    localStorage.setItem("player_details", JSON.stringify(player));
+        //This will send the player information from the 1st page
+        localStorage.setItem("player_details", JSON.stringify(player));
+        // This send player to 2nd page
+        window.location='game.html';
+    }
 
 }
 
