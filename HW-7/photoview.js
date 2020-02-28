@@ -6,7 +6,7 @@ class Photo {
 
     //  this.author;
     //  this.location;
-      this.image = "<img src='../HW-5/images/placeholder-01.png'> ";
+      this.image = "../HW-5/images/placeholder-02.png";
 
     }
 
@@ -30,8 +30,8 @@ class Photo {
 function display() {
   let photo = new Photo();
 
-  document.getElementById('photo').innerHTML = photo.toString();
-
+  document.getElementById('photo').src = photo.toString();
+console.log(photo);
 }
 
 display();
