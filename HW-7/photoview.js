@@ -6,14 +6,14 @@ class Photo {
 
     //  this.author;
     //  this.location;
-      this.image = "../HW-5/images/placeholder-02.png";
+      this.image = ["../HW-5/images/placeholder-02.png", "../HW-5/images/placeholder-02.png", "../HW-5/images/placeholder-03.png"];
 
     }
 
     //method to display Photos
     toString(){
       let str;
-      str = this.image;
+      str = this.image[2];
       return str;
     }
 
