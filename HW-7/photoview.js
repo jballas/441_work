@@ -21,42 +21,26 @@ class Photo {
       this.author = author;
       this.location = location;
       this.year = year;
-    //  this.description = descrip;
-    //  this.src = src;
-      //this.random = Math.floor(Math.random() * this.images.length);
+      this.description = description;
+      //this.image = display_image;
 
     }
 
-    //method to display Photos, randomly
-    toString(){
-      let str;
-      //str = this.image[this.random];
-      str = "Author: " + this.author + "<br> Location: " + this.location;
-      return str;
-    }
-
+    //method to display Photos
       display(){
 
         //for(let i = 0; i < images.length; i++){}
         let random_num = Math.floor(Math.random() * images.length);
 
-
             this.title = document.getElementById('title').innerHTML = titles[random_num]
-            this.src = document.getElementById('photo').src = images[random_num];
+
             this.author = document.getElementById('author').innerHTML = authors[random_num];
             this.location = document.getElementById('location').innerHTML = locations[random_num];
             this.year = document.getElementById('year').innerHTML = years[random_num];
-            this.descript = document.getElementById('description').innerHTML = descriptions[random_num];
-
+            this.description = document.getElementById('description').innerHTML = descriptions[random_num];
+            this.image = document.getElementById('photo').src = images[random_num];
       }
 
-
-    // method to switch between photos
-    /*switch(){
-
-    }
-
-    */
 }
 
 // Create new photo and display it
@@ -66,6 +50,6 @@ function new_photo() {
 
   new_photo.display();
 
-console.log(photo);
+console.log(new_photo);
 
 }
