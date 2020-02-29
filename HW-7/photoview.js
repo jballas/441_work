@@ -13,6 +13,8 @@ var descriptions = new Array("desc0", "des1", "des2", "des3", "des4" )
 
 var images = new Array("../HW-5/images/placeholder-06.png", "../HW-5/images/placeholder-07.png", "../HW-5/images/placeholder-08.png", "../HW-5/images/placeholder-09.png", "../HW-5/images/placeholder-10.png");
 
+var photos = new Array();
+
 class Photo {
 
     constructor(){
@@ -50,6 +52,9 @@ function new_photo() {
 
   new_photo.display();
 
+          photos.push(new_photo);
+
 console.log(new_photo);
+console.log(photos);
 
 }
