@@ -32,22 +32,6 @@ class Photo {
       }
   }
 
-/*
-          document.getElementById('author').innerHTML = this.author[i];
-
-          document.getElementById('location').innerHTML = this.location[i];
-
-          document.getElementById('year').innerHTML = this.year[i];
-
-          document.getElementById('description').innerHTML = this.description[i];
-
-          document.getElementById('photo').src = this.image[i];
-*/
-
-// IMAGES SRC
-/*new Array("../HW-5/images/placeholder-06.png", "../HW-5/images/placeholder-07.png", "../HW-5/images/placeholder-08.png", "../HW-5/images/placeholder-09.png", "../HW-5/images/placeholder-10.png");*/
-
-
 function display(){
 //Create a new object with following parameters (title, author, location, date, des, image)
   let new_photo = new Photo("Montana Sunset","Julia Ballas","Montana", "2020", "A sunset showing off the Spanish Peaks in Central Montana", "../HW-5/images/placeholder-06.png" );
@@ -64,7 +48,8 @@ function display(){
 function new_photo() {
 
   // But this continues to push them into the array???
-
+  // I Had it in the wrong place. We needed to load it once, using the <body onload="" > Otherwise, yest, it will continue to push the images into the array every single time I click a button.
+  // display();
 
   let random_num = Math.floor(Math.random() * 2);
 
