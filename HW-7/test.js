@@ -47,11 +47,12 @@ function display(){
 // Create new photo and display it
 function new_photo() {
 
-  // But this continues to push them into the array???
-  // I Had it in the wrong place. We needed to load it once, using the <body onload="" > Otherwise, yest, it will continue to push the images into the array every single time I click a button.
   // display();
+  // Problem: calling the display() function here continues to push them into the array???
+  // Solution: I Had it in the wrong place. We needed to load it once, using the <body onload="" > Otherwise, yest, it will continue to push the images into the array every single time I click a button.
 
-  let random_num = Math.floor(Math.random() * 2);
+  // create a variable with random number.
+  let random_num = Math.floor(Math.random() * photos.length);
 
   document.getElementById('title').innerHTML = photos[random_num];
   photos[random_num].display_image();
