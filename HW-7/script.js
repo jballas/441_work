@@ -23,6 +23,7 @@ class Photo {
         return str;
       }
 
+      // Rather than 5 getters I combined them into one.
       get details(){
         return "Title: " + this.title + "<br> Author: " + this.author + "<br> Location: " + this.location + "<br> Year: " + this.year + "<br> Description: " + this.description +"<br>";
       }
