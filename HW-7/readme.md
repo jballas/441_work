@@ -9,7 +9,9 @@ We begin our study of Javascript Objects this week, studying classes, constructo
 
 ## Projects
 
-- Photoviewer
+- Photoviewer.js
+- script.js
+- CSS experiments
 -
 
 ## Assignment Details
@@ -61,9 +63,9 @@ Luckily, it was an easy solution. I needed to call my display fuction once insid
 
 ## Problems or Issues this week
 
-There must be an easily way to create objects and push them into an array.
+There must be an easily way to create objects and push them into an array. Rather than having 5 different variables.
 
-The random images often don't change. So, I'm sure we could add if statements to make sure it changese each time. 
+The random images often don't change. This bugs me. So, I'm sure we could add if statements to make sure it changese each time. What kind of if statements?
 
 
 ## Specific questions/concerns for next week
