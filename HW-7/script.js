@@ -35,14 +35,23 @@ class Photo {
 
 function display(){
 //Create a new object with following parameters (title, author, location, date, des, image)
-  let new_photo = new Photo("Montana Sunset","Julia Ballas","Montana", "2020", "A sunset showing off the Spanish Peaks in Central Montana", "../HW-5/images/placeholder-06.png" );
+  let new_photo = new Photo("Bannack Ghost Town","Julia Ballas","Montana", "Summer, 2019", "Beautiful Summer afternoon in Bannack State Park", "./images/Bannack.png" );
 
- let second_photo = new Photo("City Sunset","Julia Ballas","New York", "2020", "A sunset showing off New York", "../HW-5/images/placeholder-07.png" );
+ let second = new Photo("Gallatin Valley","Julia Ballas","Montana", "Spring, 2019", "A snowy spring in Gallatin Valley", "./images/gallatin.png" );
+
+let third = new Photo("Fly Fishing","Julia Ballas","Montana", "Summer, 2019", "Hylite Lake fly fishing", "./images/Hylite.png" );
+
+let fourth = new Photo("Mount Sentinel","Julia Ballas","Montana", "Summer, 2018", "View of Missoula from Mount Sentinel", "./images/msla-valley.png" );
+
+let fifth = new Photo("Warm Water","Julia Ballas","Montana", "May, 2019", "West Thumb Geyser in Yellowstone National Park", "./images/yellowstone.png" );
+
 
 // push them into an array
   photos.push(new_photo);
-  photos.push(second_photo);
-
+    photos.push(second);
+      photos.push(third);
+        photos.push(fourth);
+          photos.push(fifth);
 }
 
 // Create new photo and display it
