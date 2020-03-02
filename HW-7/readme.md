@@ -1,18 +1,17 @@
 # Week 7 Response
-## Date
+## Date 3-1-20
 ## MART441.50, Julia Ballas
 
 
 ## Overview
 
-We begin our study of Javascript Objects this week, studying classes, constructors.
+We begin our study of Javascript Objects this week, studying classes, and constructors.
 
 ## Projects
 
 - Photoviewer.js
 - script.js
-- CSS animation experiments
--
+- CSS animation experiment
 
 ## Assignment Details
 
@@ -21,17 +20,15 @@ Create a class and photoviewer to display and switch between photos.
 ## Process
 
 1. Basic HTMl
-  - Use placeholder images for now.
+  - Use -placeholder images for now.-
 2. Coding
   - Create class
   - constructors
   - methods
-  -
 3. CSS
    - Add images
-   - Menu
-   - SVG
-   - clip-path
+   - research clip-path and SVG
+   - research animation
 
 ### Class and Object study
 
@@ -84,7 +81,7 @@ The screenshot above shows how I struggled to get the information to appear from
 
 There must be an easier way to create objects and push them into an array. Rather than having 5 different variables.
 
-Sometimes the random images don't change. This bugs me. How can you prevent this from happening? This kind of problem is where I struggle with javascript. 
+Sometimes the random images don't change. This bugs me. How can you prevent this from happening? This kind of problem is where I struggle with javascript.
 
 ## Conclusion
 
