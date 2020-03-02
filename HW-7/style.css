@@ -11,13 +11,13 @@ h1{
 img {
   max-width: 100%;
   height: auto;
-  clip-path: circle(50%)  ;
+  clip-path: url("./images/trees.svg");
+  /*clip-path: circle(50%)  ;*/
 }
 
 button{
   color: white;
   background-color: black;
-  border-bottom-color: #F0F0F0;
   border-radius: 115px;
   padding: 15px;
 }
@@ -26,10 +26,24 @@ button{
   background-color: white;
   padding: 20px;
   text-align: center;
-  
+
 }
 
+#sidebar{
+  background-color: black;
+  animation-name: movement;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in;
+  margin: auto;
+}
 #header{
   background-color: #00FCCC;
-  padding: 20px;
+  padding: 2px;
+}
+
+@keyframes movement{
+  from{clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);}
+    to{ clip-path: polygon(50% 0%, 100% 100%, 100% 50%, 60% 50%);}
 }
