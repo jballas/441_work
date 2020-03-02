@@ -77,11 +77,11 @@ When I began the project, I gave myself a simple task, create a class and displa
 ![Arrays](./images/screenshot_array_mistake.png)
 The screenshot above shows how I struggled to get the information to appear from my arrays. I realize I was tackling the homework wrong now, but I I got some practice debugging and using Arrays. In this case, instead showing of displaying the entire string, it only did the first letter from the string. It was truly bizarre and amusing to see that happen.
 
-## Specific questions/concerns for next week
+## Specific questions/concerns 
 
 There must be an easier way to create objects and push them into an array. Rather than having 5 different variables.
 
-Sometimes the random images don't change. This bugs me. How can you prevent this from happening? This kind of problem is where I struggle with javascript.
+Sometimes the random images don't change. This bugs me. How can you prevent this from happening? This is where I struggle with Javascript, when I have to tackle a logic problem like this. I don't know where to start.
 
 ## Conclusion
 
