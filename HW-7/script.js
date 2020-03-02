@@ -66,5 +66,5 @@ function new_photo() {
 
   document.getElementById('details').innerHTML = photos[random_num];
   photos[random_num].display_image();
-  console.log(random_num);
+  //console.log(random_num);
 }
