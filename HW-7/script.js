@@ -55,7 +55,7 @@ function new_photo() {
   // create a variable with random number.
   let random_num = Math.floor(Math.random() * photos.length);
 
-  document.getElementById('title').innerHTML = photos[random_num];
+  document.getElementById('details').innerHTML = photos[random_num];
   photos[random_num].display_image();
   console.log(random_num);
 }

@@ -1,9 +1,35 @@
 body{
-  background-color: #ffcccc;
+  background-color: #C0C0C0;
+  font-family: 'Montserrat',Arial, sans serif ;
+}
+
+h1{
+    font-family: 'Trade Winds', cursive;
+    text-align: center;
 }
 
 img {
-  width: 300px;
-  height: 300px;
-  clip-path: circle(50%);
+  max-width: 100%;
+  height: auto;
+  clip-path: circle(50%)  ;
+}
+
+button{
+  color: white;
+  background-color: black;
+  border-bottom-color: #F0F0F0;
+  border-radius: 115px;
+  padding: 15px;
+}
+
+.main{
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  
+}
+
+#header{
+  background-color: #00FCCC;
+  padding: 20px;
 }

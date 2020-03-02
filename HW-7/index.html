@@ -2,29 +2,27 @@
 <html>
   <head>
     <title>
-            Travel Photos of Montana
+            Travel Photos
     </title>
     <meta charset="utf-8" />
     <meta name="description" content="Homework website with a custom built photoviewer for MART441.50" />
     <meta name="author" content="Julia Ballas" />
-    <meta name="viewport" content=" width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content=" width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" tpe="text/css" href="style.css">
-
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Trade+Winds&display=swap" rel="stylesheet">
   </head>
   <body onload="display();">
 
-    <div>
-      <img src='' id="photo">
-      <div id="title"></div>
-      <div id="author"></div>
-      <div id="location"></div>
-      <div id="year"></div>
-      <div id="description"></div>
-    </div>
-    <div id="main"></div>
-    <button onclick="new_photo();">Next Image</button>
+    <div id="header"> <h1>Travel Photos</h1> </div>
 
-    <script src= "script".js">     </script>
+    <div class="main">
+          <img src='' id="photo">
+          <div id="details"></div>
+    </div>
+    <div class="main">
+        <button onclick="new_photo();">Next Image</button>
+    </div>
+    <script src= "script.js">     </script>
   </body>
 </html>
