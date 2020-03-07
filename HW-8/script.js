@@ -15,14 +15,17 @@ $(document).ready(function(){
 
 */
 
-//If you hide the button before the stars finishing their fadding.
+//the star are strange if you hide the button before the stars finishing their fadding.
       $('button').click(function(){
         $('.star').hide( function(){
           $('button').hide( function(){
 
             // Movie begins
-              $('#title_card').text("Watch out!").delay(1000).fadeOut("slow", function(){
-                $('#title_card2').html("<img src='mary-pickford.jpg'").delay(1000).fadeOut();
+              $('#title_card').text("Watch out!").delay(500).fadeOut("slow", function(){
+                $('#title_card2').text("Stop Thief!").delay(500).fadeOut("slow", function(){
+                  $('#movie_image').attr("src", "./images/mary-pickford.jpg").delay(1000).fadeOut(2000);
+
+                });
 
               });
 

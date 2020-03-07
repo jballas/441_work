@@ -32,6 +32,12 @@ background-color: red;
   position: relative;
 }
 
+#movie_image{
+  width: 200px;
+  height: auto;
+  position: relative;
+}
+
 button{
 color: white;
 background-color: black;

@@ -36,6 +36,11 @@ I think that works.
 
 Mostly, I think I need to work on my logic.
 
+
+### Images
+I added basic text into my 'movie'
+Adding in an image gave me trouble. I found a solution at stack overflow. By using jquery's .attr, and accessing the source, I can just change an empty image. ( https://stackoverflow.com/questions/554273/changing-the-image-source-using-jquery)
+
 ## Problems or Issues this week
 
 ## Specific questions/concerns for next week
