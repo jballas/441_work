@@ -34,9 +34,11 @@ I can make a loop that will continue to made the star `fadeIn()` and `fadeOut()`
 
 The logic: The star is flickering while we wait, and then fades out when the button is pushed.
 
-I think that works. It didn't... Instead I have a row of stars that fade in and out like a wave.
+I think that works. It didn't work, it just go stuck... Instead I have a row of stars that fade in and out like a wave.
 
 Mostly, I think I need to work on my logic.
+
+I tried using the `mouseenter()`, but that creaed a weird bug, that would allow stars to reappear if the mouse enters during the movie. I still want to see a repeating loop. At the very least I can have a loop that plays it 5 times. It should have a delay between loops though... Another tricky problem.
 
 
 ### Images
