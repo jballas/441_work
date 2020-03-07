@@ -45,7 +45,8 @@ I tried using the `mouseenter()`, but that creaed a weird bug, that would allow 
 I added basic text into my 'movie'
 Adding in an image gave me trouble. I found a solution at stack overflow. By using jquery's .attr, and accessing the source, I can just change an empty image. ( https://stackoverflow.com/questions/554273/changing-the-image-source-using-jquery)
 
-I have a crazy animated images appearing and movie and text appearing. Now I need to have an array with images to rotate betwen them.
+I have a crazy animated images appearing and movie and text appearing. Now I need to have an array with images to rotate betwen them. I randomized the images, but it only picks one random number from the array. So all the images come out the same, even though it is a random image. Huh...
+
 
 ## Problems or Issues this week
 
