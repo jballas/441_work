@@ -20,10 +20,11 @@ background-color: red;
 #screen{
   background-image: url('../images/frame.png');
   background-color: #000000;
-  height: 400px;
+  height: 500px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  margin-right: 25%;
 }
 
 .star{
@@ -32,10 +33,17 @@ background-color: red;
   position: relative;
 }
 
-#movie_image{
-  width: 200px;
+.movie_image{
+  width: 20px;
   height: auto;
   position: relative;
+  top: 10px;
+  left: 50px;
+
+}
+
+#title_card{
+  z-index: 10;
 }
 
 button{

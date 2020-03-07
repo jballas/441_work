@@ -23,6 +23,8 @@ Create a jQuery based art project, with shapes, words, images that are animated 
   - add jquery to make the star flicker
 
 
+### Goal Twinkling stars
+
   Getting my CSS and html layout always takes longer than I expect, but once I had it, I got my first start to fade in and out. It doens't do this continuously though. I want the efffect to keep happening until the button is pushed.
 
 I can make a loop that will continue to made the star `fadeIn()` and `fadeOut()` for 5 times, and then it will `fadeToggle()` when you push the button. But that's not what I want. I want it to keep flickering, until you push the button.
@@ -32,7 +34,7 @@ I can make a loop that will continue to made the star `fadeIn()` and `fadeOut()`
 
 The logic: The star is flickering while we wait, and then fades out when the button is pushed.
 
-I think that works.
+I think that works. It didn't... Instead I have a row of stars that fade in and out like a wave.
 
 Mostly, I think I need to work on my logic.
 
@@ -40,6 +42,8 @@ Mostly, I think I need to work on my logic.
 ### Images
 I added basic text into my 'movie'
 Adding in an image gave me trouble. I found a solution at stack overflow. By using jquery's .attr, and accessing the source, I can just change an empty image. ( https://stackoverflow.com/questions/554273/changing-the-image-source-using-jquery)
+
+I have a crazy animated images appearing and movie and text appearing. Now I need to have an array with images to rotate betwen them.
 
 ## Problems or Issues this week
 
