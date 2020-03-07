@@ -13,10 +13,12 @@
 ## Assignment Details
 
 
-## Step by Step Weekly Report
-###
+## Process
 
-1.
+- HTML and CSS
+  - create main page with border and play movie button
+- Coding
+  - add jquery to make the star flicker
 
 ## Problems or Issues this week
 

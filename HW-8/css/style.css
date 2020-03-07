@@ -1,5 +1,6 @@
 body{
   background-color: black;
+
 }
 
 #screen{
@@ -23,9 +24,15 @@ background-color: black;
 border: 1px black solid;
 border-left: 2px white solid;
 border-right: 2px white solid;
-padding: 10px;
+padding: 20px;
+  font-family: 'Libre Caslon Display', serif;
+  font-size: 2em;
+  text-transform: uppercase;
 }
 
+button:hover{
+  background-color: gray;
+}
 .center{
   display: block;
   text-align: center;
