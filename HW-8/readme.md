@@ -25,6 +25,9 @@ Create a jQuery based art project, with shapes, words, images that are animated 
 
   Getting my CSS and html layout always takes longer than I expect, but once I had it, I got my first start to fade in and out. It doens't do this continuously though. I want the efffect to keep happening until the button is pushed.
 
+I can make a loop that will continue to made the star `fadeIn()` and `fadeOut()` for 5 times, and then it will `fadeToggle()` when you push the button. But that's not what I want. I want it to keep flickering, until you push the button.
+
+
   So, I'm going to try a while statement.
 
 The logic: The star is flickering while we wait, and then fades out when the button is pushed.
