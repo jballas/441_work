@@ -1,6 +1,3 @@
-var movie_stars = new Array('./images/mary-pickford.jpg', './images/buster-keaton.jpg', './images/chaplin, jpg', './images/john-gilbert.jpg', './images/dancer.gif');
-
-
 $(document).ready(function(){
 
 stars();
@@ -20,8 +17,7 @@ function stars(){
     $('#star10').delay(2600).fadeOut("slow").fadeIn("slow");
 }
 
-// Display About using jQuery slideToggle()
-
+// Display hidden 'About' using jQuery slideToggle()
   $('#btn_about').click(function(){
     $('#about').slideToggle();
     })
@@ -32,33 +28,24 @@ function stars(){
         $('.star').hide( function(){
           $('#btn_play').hide( function(){
 
-            let random_image = movie_stars[Math.floor(Math.random() * movie_stars.length)];
-            console.log(random_image)
 
             // Movie begins
-            $('#title').text("Amazing! Bizarre! Adventures Begin Now!");
-              $('#title_card').text("Watch out!").delay(500).fadeOut("slow", function(){
-                $('#movie_image').attr("src", random_image).animate({width: "400px"}).fadeOut(2000, function(){
+            // Text to use  "Watch out!" "Stop Thief" "Facing a terrible dilemma, our hero..." "My Hero!"
 
-                  // image 1 sequence
-                  $('#title_card2').text("Stop Thief!").delay(500).fadeOut("slow", function(){
-                      $('#movie_image').fadeIn().attr("src", random_image).delay(1500).animate({width: "150px", top: "150px", right: "150px"}).delay(2000, function(){
-                        $('#title_card').fadeIn().text("My Hero!").delay(1500);
+            $('#title').text("Amazing! Bizarre! The Adventures Begins now!").delay(2000).fadeOut("slow", function(){
 
-                  });
+              var image = new Array("<img src='./images/mary-pickford.jpg'>");
+              var text= "Watch out!";
 
-                  // image 2 sequence
-                  $('#movie_image2').attr("src", random_image).animate({width: "100px", right: "125px", top: "25px", width: "200px"}).delay(1000).fadeOut("slow");
-                    $('#title_card2').fadeIn().text("Facing a terrible dilemma, our hero...").delay(1500).fadeOut("slow");
-                });
+              $('#title_card').html(text).delay(1000).animate({fontSize: "2em"}, "slow");
 
-              });
+              $('#title_card2').html(image[0]);
+
+
+            });
 
           }); // movie ends
-
-
 
         });
       });
     });
-  });
