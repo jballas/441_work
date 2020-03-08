@@ -17,6 +17,16 @@ a:hover {
 background-color: red;
 }
 
+nav{
+  display: block;
+}
+
+#about{
+  display: none;
+  width: 50%;
+  font-size: 1em;
+}
+
 #screen{
   background-image: url('../images/frame.png');
   background-color: #000000;
@@ -34,36 +44,43 @@ background-color: red;
 }
 
 .movie_image{
-  width: 20px;
-  height: auto;
-  position: relative;
-  top: 10px;
-  left: 50px;
 
 }
 
-#title_card{
-  z-index: 10;
-}
-
-button{
-color: white;
-background-color: black;
-border: 1px black solid;
-border-left: 2px white solid;
-border-right: 2px white solid;
-padding: 20px;
-  font-family: 'Libre Caslon Display', serif;
-  font-size: 2em;
-  text-transform: uppercase;
-}
-
-button:hover{
-  background-color: gray;
-}
 .center{
   display: block;
   text-align: center;
   position: relative;
   top: 100px;
+}
+
+
+/* BUTTON */
+button{
+border: none;
+color: white;
+background-color: black;
+    font-family: 'Libre Caslon Display', serif;
+    font-size: 1em;
+}
+
+button:hover{
+  background-color: gray;
+}
+
+
+#btn_about:hover {
+  background-color: red;
+    text-decoration: none;
+}
+
+
+#btn_play{
+  border: 1px black solid;
+  border-left: 2px white solid;
+  border-right: 2px white solid;
+  padding: 20px;
+
+    font-size: 2em;
+    text-transform: uppercase;
 }
