@@ -40,13 +40,18 @@ Mostly, I think I need to work on my logic.
 
 I tried using the `mouseenter()`, but that creaed a weird bug, that would allow stars to reappear if the mouse enters during the movie. I still want to see a repeating loop. At the very least I can have a loop that plays it 5 times. It should have a delay between loops though... Another tricky problem.
 
+`setInterval()` worked. It will run through the stars every so many seconds. Except, I will have to use one of the div's with my 'movie' otherwise, the stars reappear later on. So, it sorta works with `setInterval()` and sorta doesn't.
 
 ### Images
-I added basic text into my 'movie'
-Adding in an image gave me trouble. I found a solution at stack overflow. By using jquery's .attr, and accessing the source, I can just change an empty image. ( https://stackoverflow.com/questions/554273/changing-the-image-source-using-jquery)
+After I added basic text into my 'movie', adding the image gave me trouble. I found a solution at stack overflow. By using jquery's .attr, and accessing the source, I can just change an empty image. ( https://stackoverflow.com/questions/554273/changing-the-image-source-using-jquery)
 
-I have a crazy animated images appearing and movie and text appearing. Now I need to have an array with images to rotate betwen them. I randomized the images, but it only picks one random number from the array. So all the images come out the same, even though it is a random image. Huh...
+Now, I have a crazy animated images appearing and movie and text appearing. However, they don't rotate through the array. I randomized the images, but it only picks one random number from the array. So all the images come out the same, even though it is a random image. Huh...
 
+
+
+### Hidden About div
+
+During my struggle with the images, I took a short break and created a hidden about button. The jQuery made it easy, using the `slideToggle()` The hardest part of getting the button to match my other home link.
 
 ## Problems or Issues this week
 
