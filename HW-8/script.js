@@ -2,9 +2,10 @@ $(document).ready(function(){
 
 stars();
 // stars function will run again after a delay
-setInterval(function(){   stars()  }, 4000);
+//setInterval(function(){stars()}, 4000);
 
 function stars(){
+    $('#star1').delay(800).fadeOut("slow").fadeIn("slow");
     $('#star2').delay(1000).fadeOut("slow").fadeIn("slow");
     $('#star3').delay(1200).fadeOut("slow").fadeIn("slow");
     $('#star4').delay(1400).fadeOut("slow").fadeIn("slow");
@@ -13,7 +14,6 @@ function stars(){
     $('#star7').delay(2000).fadeOut("slow").fadeIn("slow");
     $('#star8').delay(2200).fadeOut("slow").fadeIn("slow");
     $('#star9').delay(2400).fadeOut("slow").fadeIn("slow");
-    $('#star1').delay(800).fadeOut("slow").fadeIn("slow");
     $('#star10').delay(2600).fadeOut("slow").fadeIn("slow");
 }
 
@@ -28,24 +28,33 @@ function stars(){
         $('.star').hide( function(){
           $('#btn_play').hide( function(){
 
-
             // Movie begins
-            // Text to use  "Watch out!" "Stop Thief" "Facing a terrible dilemma, our hero..." "My Hero!"
+            $('#title').text("Amazing! Bizarre! The Adventures Begins now!").delay(2000).fadeOut(function(){
 
-            $('#title').text("Amazing! Bizarre! The Adventures Begins now!").delay(2000).fadeOut("slow", function(){
-
-              var image = new Array("<img src='./images/mary-pickford.jpg'>");
-              var text= "Watch out!";
-
-              $('#title_card').html(text).delay(1000).animate({fontSize: "2em"}, "slow");
-
-              $('#title_card2').html(image[0]);
-
-
-            });
-
-          }); // movie ends
-
+            play_movie();
         });
       });
     });
+  });
+    // Text to use  "Watch out!" "Stop Thief" "Facing a terrible dilemma, our hero..."
+
+      var image = new Array("<img src='./images/mary-pickford.jpg'>", "<img src='./images/john-gilbert.jpg'>", "<img src='./images/buster-keaton.jpg'>", "<img src='./images/chaplin.jpg'>", "<img src='./images/dancer.gif'>", "<img src='./images/the-good-sport.gif'>");
+      var text= "Watch out!";
+      var text2 = "My Hero!";
+
+      var image_src = new Array("./images/mary-pickford.jpg", "./images/john-gilbert.jpg", "./images/chaplin.jpg", "./images/buster-keaton.jpg")
+
+
+
+  function play_movie(){
+
+                $('#title_card').html(text).animate({fontSize: "2em"}, "slow").fadeOut(2000, function(){
+                    $('#title_card2').html(text2).animate({fontSize: "2em"}, "slow").fadeOut(2000);
+                });
+                $('#movie_image').attr('src', './images/mary-pickford.jpg').fadeOut(2000, function(){
+                  $('#movie_image2').delay(2000).fadeIn(4000).attr('src', './images/john-gilbert.jpg');
+                });
+
+    }
+
+});

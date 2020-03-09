@@ -44,7 +44,13 @@ nav{
 }
 
 .movie_image{
+  width: 300px;
+  height: auto;
+  border: 1px white solid;
 
+  position: relative;
+  top: 100px;
+  left: 250px;
 }
 
 .center{
