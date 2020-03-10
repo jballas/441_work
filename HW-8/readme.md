@@ -9,7 +9,7 @@ This week begins our exploration into the javascript library known as jQuery. Us
 ## Projects
 
 - jQuery art project: silent movie
--
+- practice animating shapes
 
 ## Assignment Details
 
@@ -21,9 +21,10 @@ Create a jQuery based art project, with shapes, words, images that are animated 
   - create main page with border and play movie button
 - Coding
   - add jquery to make the star flicker
+  - images that fade in and out
+  - animated shapes
 
-
-### Attempt to make Twinkling stars
+### Making those Twinkling stars
 
 This week I was suprised how much time I spent getting my css established, but it makes sense since jQuery relies on manipulating the css. I set up stars in my project and started with one fading in and out. But they didn't do this continuously. I want the efffect to keep happening until the button is pushed.
 
@@ -33,7 +34,7 @@ I tried using the `mouseenter()`, but that created a weird bug that would allow 
 
 `setInterval()` worked best. It runs contiuously, then clicking the button with class jQuery's `.hide()`. However, it is not ideal, since pushing the button in the middle of the star's flicking sequence they'll keep at it, and eventually disappear. The stars are located inside `<div>` tags I'm using in my movie. Sometimes they reappear. So, it sorta works with `setInterval()` and sorta doesn't.
 
-### Images
+### Images from an Array
 After I added basic text into my 'movie', adding the images gave me trouble. I found the solution for adding images at Stack Overflow. By using jquery's `.attr` and accessing the source, I can just change an empty image, like we did during week 5 and 6. ( https://stackoverflow.com/questions/554273/changing-the-image-source-using-jquery)
 
 ![screenshot of movie](./images/screenshot_movie.png)
@@ -43,32 +44,31 @@ In order to move forward, I tried taking a step back and removed all my animatio
 
 The animation gets out of control so quickly. Several times I just stared at my screen wondering why I had one  image fading in and out 10 tens. That was not in my code, not that I could tell, anyway.
 
-### Hidden About div
+### Hidden code
 
-During my struggle with the images, I took a short break and created a hidden about button. The jQuery made it easy, using the `slideToggle()` The hardest part was getting the button to match my other home link, which involved changing my css
+During my struggle with the images, I took a short break and created a hidden section about my website. The jQuery made it so easy, using the `slideToggle()` The hardest part was getting the button to match my other home link, which involved changing my css
 
 ## Problems or Issues this week
 
-Using an array to rotate through my images didn't work this week. I believe I was struggling because there was no click event to rotate them. In our previous projects we used an event to change things. Whether it was clicking on a blank image to reveal the acutal image, or clicking on a button to reveal another random object. But my movie is 'automated' in a way. After you click the button once it 'plays' and the sequence of images and words appear in various `div` tags with Ids.
+Using an array to rotate through my images didn't work this week. I believe I was struggling because there was no click event to rotate them. In our previous projects we used an event to change things. Whether it was clicking on a blank image to reveal the actual image, or clicking on a button to reveal another random object. But my movie is 'automated'. After you click the button once it 'plays' and the sequence of images and words appear in various `div` tags with Ids.
 ```
     // image appears from the array
       $('#title_card2').html(image[0]);
 
 ```
-
+Experiment # 2
 ```
-    // only one image appears from the array
+    // The problem is only one image appears from the array
       $('#title_card2').html(image[0]).fadeOut(2000, function(){
         $('#title_card2').html(image[2])
         });
 ```
-Experiment # 3, causing a strobe effect, where both images flashed one screen one after the other.
+Experiment # 3 caused a strobe effect, where both images flashed one screen one after the other.
 ```
 $('#movie_image').attr('src', './images/mary-pickford.jpg').fadeOut( function(){
   $('#movie_image').attr('src', './images/john-gilbert.jpg').fadeIn();
   });
 ```
-
 
 Experiment # 4
 ```
@@ -77,10 +77,8 @@ $('#title_card').html("<img src='./images/mary-pickford.jpg' id='movie'>").fadeO
   });
 ```
 
-fadeToggle, just made the images fade in and out over and over.
-
-
-
-## Specific questions/concerns for next week
+So ultimately, my experiments didn't get me what I wanted. I settled on just putting each new image and each piece of text into its own `<div`.
 
 ## Conclusion
+
+jQuery makes certain aspects of coding easier, but it also has its limitations. This week gave me a taste for how I could and couldn't do and where I need to go in the future. More experimenting, more studying and above all iteration.
