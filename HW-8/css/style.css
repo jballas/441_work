@@ -46,11 +46,9 @@ nav{
 .movie_image{
   width: 300px;
   height: auto;
-  border: 1px white solid;
-
   position: relative;
   top: 100px;
-  left: 250px;
+  left: 200px;
 }
 
 .center{
@@ -102,19 +100,19 @@ button:hover{
 
 #top_line{
   position: absolute;
-  top: 400px;
+  top: 550px;
   left: 0px;
 }
 
 #middle_line{
   position: absolute;
-  top: 500px;
+  top: 600px;
   left: 0px;
 }
 
 #bottom_line{
   position: absolute;
-  top: 600px;
+  top: 650px;
   left: 0px;
 }
 
@@ -123,8 +121,8 @@ button:hover{
   width: 20px;
   height: 20px;
   position: absolute;
-  top: 385px;
-  left: 0px;
+  top: 535px;
+  left: 5%;
 }
 
 #circle{
@@ -133,8 +131,8 @@ button:hover{
   height: 30px;
   clip-path: circle(50%);
   position: absolute;
-  top: 490px;
-  left: 0px;
+  top: 590px;
+  left: 5%;
 }
 
 #diamond{
@@ -143,6 +141,6 @@ button:hover{
   height: 50px;
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
   position: absolute;
-  top: 575px;
-  left: -5px;
+  top: 625px;
+  left: -5%;
 }
