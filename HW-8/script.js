@@ -22,6 +22,13 @@ function stars(){
     $('#about').slideToggle();
     })
 
+// Animated Shapes
+
+$("#square").animate({left: '200px'}, "slow").animate({top: '400px'}, "slow").animate({left: '0px'}, "slow").animate({top: '385px'}, "slow");
+$("#circle").animate({left: '200px'}, "slow").animate({left: '0px'}, "slow");
+$("#diamond").animate({left: '250px'}, "20000").animate({left: '0px'}, "200"); 
+
+
       var image = new Array("<img src='./images/mary-pickford.jpg' id='movie'>", "<img src='./images/john-gilbert.jpg'>", "<img src='./images/buster-keaton.jpg'>", "<img src='./images/chaplin.jpg'>", "<img src='./images/dancer.gif'>", "<img src='./images/the-good-sport.gif'>");
 //When you click the button, the 'movie' begins
       $('#btn_play').click(function(){
