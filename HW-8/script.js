@@ -22,7 +22,7 @@ function stars(){
     $('#about').slideToggle();
     })
 
-
+      var image = new Array("<img src='./images/mary-pickford.jpg' id='movie'>", "<img src='./images/john-gilbert.jpg'>", "<img src='./images/buster-keaton.jpg'>", "<img src='./images/chaplin.jpg'>", "<img src='./images/dancer.gif'>", "<img src='./images/the-good-sport.gif'>");
 //When you click the button, the 'movie' begins
       $('#btn_play').click(function(){
         $('.star').hide( function(){
@@ -31,14 +31,18 @@ function stars(){
             // Movie begins
             $('#title').text("Amazing! Bizarre! The Adventures Begins now!").delay(2000).fadeOut(function(){
 
-            play_movie();
+          //  play_movie();
+
+          $('#movie_image').attr('src', './images/mary-pickford.jpg').fadeOut( function(){
+            $('#movie_image').attr('src', './images/john-gilbert.jpg').fadeIn();
+            });
         });
       });
     });
   });
     // Text to use  "Watch out!" "Stop Thief" "Facing a terrible dilemma, our hero..."
 
-      var image = new Array("<img src='./images/mary-pickford.jpg'>", "<img src='./images/john-gilbert.jpg'>", "<img src='./images/buster-keaton.jpg'>", "<img src='./images/chaplin.jpg'>", "<img src='./images/dancer.gif'>", "<img src='./images/the-good-sport.gif'>");
+
       var text= "Watch out!";
       var text2 = "My Hero!";
 
