@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>
+      Practicing my HTML
+    </title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+      $("button").click(function(){
+        $("#square").animate({left: '200px'}, "slow").animate({top: '400px'}, "slow").animate({left: '0px'}, "slow").animate({top: '385px'}, "slow");
+        $("#circle").animate({left: '200px'}, "slow").animate({left: '0px'}, "slow");
+        $("#diamond").animate({left: '250px'}, "20000").animate({left: '0px'}, "200");
+      });
+
+    })
+
+    </script>
+
+  </head>
+  <body>
+    <button>Click here</button>
+
+    <div class="long" id="top_line"></div>
+      <div id="square"></div>
+
+    <div class="long" id="middle_line"></div>
+      <div id="circle"></div>
+
+    <div class="long" id="bottom_line"></div>
+        <div id="diamond"></div>
+  </body>
+</html>

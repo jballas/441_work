@@ -1,0 +1,57 @@
+body{
+  background-color: black;
+  color: white;
+}
+
+.long {
+  background-color:white;
+  width: 100%;
+  height: 5px;
+}
+
+#top_line{
+  position: absolute;
+  top: 400px;
+  left: 0px;
+}
+
+#middle_line{
+  position: absolute;
+  top: 500px;
+  left: 0px;
+}
+
+#bottom_line{
+  position: absolute;
+  top: 600px;
+  left: 0px;
+}
+
+#square{
+    background-color:white;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 385px;
+  left: 0px;
+}
+
+#circle{
+    background-color:white;
+  width: 30px;
+  height: 30px;
+  clip-path: circle(50%);
+  position: absolute;
+  top: 490px;
+  left: 0px;
+}
+
+#diamond{
+    background-color:white;
+  width: 50px;
+  height: 50px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  position: absolute;
+  top: 575px;
+  left: -5px;
+}
