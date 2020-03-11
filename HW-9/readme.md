@@ -1,5 +1,5 @@
-# Week 9 Response
-## Date
+# Week 10 Response
+## Date 3-23-20
 ## MART441.50, Julia Ballas
 
 
@@ -10,13 +10,14 @@
 -
 -
 
-## Assignment Details
+## Process
 
-
-## Step by Step Weekly Report
-###
-
-1.
+- simple html
+- Coding
+  - Add jQuery to show JSON
+- Brainstorm Ideas for showing Data meaningfully/JQuery plug-in ideas
+- Add CSS style
+- JQuery Plug-in
 
 
 ## Problems or Issues this week
