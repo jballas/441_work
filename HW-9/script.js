@@ -1,13 +1,15 @@
 $(document).ready(function(){
-  $("button").click(function(){
-    $.getJSON("https://jballas.github.io/441_work/HW-9/data/small.json", function(result){
-      $.each(result, function(i, field){
+  $("#btn_info").click(function(){
+    $.getJSON("https://jballas.github.io/441_work/HW-9/data/small.json", function(data){
+      $.each(data, function(i, field){
         $("#show_information").append(field + " ");
       });
-        });
-      });
+     });
+    });
 
-//  $("#show_information").hide();
+$("#button2").click(function(){
+  $("#show_information").toggle();
+})
 
 
 
