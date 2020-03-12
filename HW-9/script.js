@@ -8,7 +8,7 @@ $(document).ready(function(){
         });
        });
 
-       var jqxhr = $.getJSON( "https://jballas.github.io/441_work/HW-9/data/meterorite.json", function() {
+       var jqxhr = $.getJSON( "https://jballas.github.io/441_work/HW-9/data/meteorite.json", function() {
          console.log( "success" );
        })
          .done(function() {
