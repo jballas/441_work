@@ -1,43 +1,31 @@
 $(document).ready(function(){
 
-var rock = new Array();
+var more_rocks = new Array();
+
+// When the document is ready, this function is called which gathers our data from the json file.
+//Then a new object is created with that newly called data.
 
   $.getJSON("https://jballas.github.io/441_work/HW-9/data/small.json", function(data){
 
         $.each(data, function(i, field){
 
-        //  $("#show_information").append("Name: " + field.name + " Mass: " + field.mass + " Year: " + field.year.substr(0,4) + " Geolocation: " + field.geolocation.coordinates + "<br>" );
-
         var names = new Rock(field.name, field.mass, field.year, field.geolocation.coordinates);
 
-        rock.push(names);
+        more_rocks.push(names);
       });
     });
 
-
+// When you click the button it selects a random num and pulls the information from the array we create above.
   $("#btn_info").click(function(){
 
+  let random_num = Math.floor(Math.random() * more_rocks.length);
 
-    /*         $("#show_information").html(rock[0].toString());
-          console.log(rock.length);
+          console.log(more_rocks.length);
+          $("#name").text("Name: " + more_rocks[random_num].name);
+          $("#mass").text(" Mass: " + more_rocks[random_num].mass);
+          $("#year").text(" Year: " + more_rocks[random_num].year.substr(0,4));
+          $("#geolocation").text(" Geolocation: " + more_rocks[random_num].location);
 
-
-
-       $("#name").text("Name: " + field.name);
-          $("#mass").text(" Mass: " + field.mass);
-          $("#year").text(" Year: " + field.year.substr(0,4));
-          $("#geolocation").text(" Geolocation: " + field.geolocation.coordinates);
-*/
-
-  let random_num = Math.floor(Math.random() * rock.length);
-
-        for(i = 0; i < rock.length; i ++){
-          console.log(rock.length);
-          $("#name").text("Name: " + rock[random_num].name);
-          $("#mass").text(" Mass: " + rock[random_num].mass);
-          $("#year").text(" Year: " + rock[random_num].year.substr(0,4));
-          $("#geolocation").text(" Geolocation: " + rock[random_num].location);
-        }
     });
 
     $("#button2").click(function(){
