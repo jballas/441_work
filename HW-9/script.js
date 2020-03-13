@@ -29,12 +29,14 @@ var rock = new Array();
           $("#geolocation").text(" Geolocation: " + field.geolocation.coordinates);
 */
 
-
   let random_num = Math.floor(Math.random() * rock.length);
 
         for(i = 0; i < rock.length; i ++){
           console.log(rock.length);
-          $("#name").text(rock[random_num].toString());
+          $("#name").text("Name: " + rock[random_num].name);
+          $("#mass").text(" Mass: " + rock[random_num].mass);
+          $("#year").text(" Year: " + rock[random_num].year.substr(0,4));
+          $("#geolocation").text(" Geolocation: " + rock[random_num].location);
         }
     });
 
@@ -62,6 +64,6 @@ class Rock {
     }
 
     get details(){
-      return "Name: " + this.name + " Mass: " + this.mass + " Year: " + this.year.substr(0,4) + " Geolocation: " + this.location + "<br>";
+      return "Name: " + this.name + " Mass: " + this.mass + " Year: " + this.year + " Geolocation: " + this.location + "<br>";
     }
 }
