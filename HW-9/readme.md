@@ -45,7 +45,7 @@ Initially, I could only get a wall of text to appear, but as took our teacher's 
 After that small success, I moved on to my css and figureing out a jquery plugin.
 
 
-References
+## References
 1) https://www.w3schools.com/jquery/ajax_getjson.asp
 2) https://api.jquery.com/jQuery.getJSON/
 3) https://api.jquery.com/jquery.each/
