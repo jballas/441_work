@@ -6,6 +6,16 @@ $(document).ready(function(){
   });
 */
 
+var circle = "<svg height='5' width='5'><circle cx='2' cy='2' r='2' fill='black'/></svg>"
+
+  for (i = 0; i < 20; i ++){
+    $("#border").append(circle);
+
+  }
+
+
+
+/* IMAGE TESTING
 var img_width = $("#test").width();
 var img_height = $("#test").height();
 var img_src = $("#test").attr("src");
@@ -18,5 +28,5 @@ $("#btn_change").click( function(){
     $("#image_box").append(img_src);
 
   });
-
+*/
 })
