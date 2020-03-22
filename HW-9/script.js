@@ -30,7 +30,7 @@ var more_rocks = new Array();
 
     $("#button2").click(function(){
       $("#show_information").toggle();
-    })
+    });
 })
 
 

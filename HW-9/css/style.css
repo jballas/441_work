@@ -1,4 +1,16 @@
+*{
+  padding: 10px;
+}
 
 #show_information {
   background-color: teal;
+  line-height: 2em;
+  border: 1px solid black;
+  width: 50%;
+}
+
+img{
+  border: 1px solid red;
+  width: 400px;
+  height: 240px;
 }
