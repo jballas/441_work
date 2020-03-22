@@ -2,11 +2,18 @@
   padding: 10px;
 }
 
+h1{
+  font-family: 'Codystar', cursive;
+}
+
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+
 #show_information {
-  background-color: teal;
   line-height: 2em;
   border: 1px solid black;
-  width: 50%;
+  width: 80%;
 }
 
 img{
