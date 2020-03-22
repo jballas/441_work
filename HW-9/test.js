@@ -8,8 +8,8 @@ $(document).ready(function(){
 
 var circle = "<svg height='5' width='5'><circle cx='2' cy='2' r='2' fill='black'/></svg>"
 
-  for (i = 0; i < 20; i ++){
-    $("#border").append(circle);
+  for (i = 0; i < 20 ; i ++){
+    $(".border").append(circle);
 
   }
 
