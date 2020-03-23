@@ -28,3 +28,10 @@ img{
   width: 50%;
   height: 50%;
 }
+
+button {
+  margin: 10px;
+  background-color: rgb(244, 178, 75);
+  border: none;
+  padding: 5px;
+}
