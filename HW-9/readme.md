@@ -46,18 +46,31 @@ After that small success, I moved on to my css and figureing out a jquery plugin
 
 ### Plugin Testing
 
-I started experimenting for a plugin, first I was trying things with images, changing the size, etc. I tried to duplicate the image, but wasn't having much luck.
+I started experimenting for a plugin and at first I was trying things with images, changing the size, etc. I tried to duplicate the image, but wasn't having much luck.
 
-Taking a break I decided to add in a different font and get my meteorite information to look better. I used a dotted font, and then I tried changing my border to a dotted and discovered it is very ugly dotted border. So, I did some research into changing the dotted border and found out it isn't really possible to change with css.
+Taking a break, I decided to add in a different font and get my meteorite information to look better. I used a dotted font, and then I tried changing my border to a dotted and discovered it is very ugly dotted border.
 
-Ahha, a project for a plugin. I found an article on medium.com which gave a solution for using a svg image file for your border. But updating the color is only possible if you go back and change for image, so it is not ideal. It is possible to create svg images directly in html. Borrowing some svg circle code from W3 schools, I adjusted the size and spacing to look more like a border. Then I used a for loop to make it repeat inside the `<div>` tag 20 times.
+So, I did some research into changing the dotted border and found out it isn't really possible to change with css.
+
+Ahha, a project for a plugin.
+![screenshot of dotted lines](./images/screenshot_dotted.png)
+
+The image above show the font I wanted to base my project around. The second arrow points to the standard thick dotted border, however you can't change sizing or spacing. Third is a line of dots I created in jquery and css.
+
+Ultimately, I settled on creating a dot border as my plugin. It simple displays a row of dots. I was curious how I could change the color and size of the dots and spacing of my dots. You could do it with a class. Or its possible to add options to your plugin (8)
+
+
+## Problems or Issues this week
+
+My dotted border create all kinds of problems, mostly because I had to keep researching every little detail about it.
+
+I found an article on medium.com which gave a solution for using a svg image file for your border.(5) But updating the color is only possible if you go back and change for image, so it is not ideal. Since it is possible to create svg images directly in html, I'm going to try to create my own border I can manipulate. Borrowing some svg circle code from W3 schools, I adjusted the size and spacing to look more like a border. Then I used a `for` loop to make it repeat inside the `<div>` tag 50 times.
 
 It should be possible to control the size of the dot, the spacing and the color.
 
-But I also need to have the dot repeat however long it needs to fill the space, and I need it to be a border, not just a line... So I'll try to figure out these next.
+I also made attempts to have the dot pattern appear only in the border, like a repeating image, but this didn't work out.
 
-
-
+I tried to use the border-image-source to create a border image with my `<svg>`. However, it didn't work. The code is more designed to use an image file that you can slice and repeat.(7) I was trying to take one round image that you repeat over and over. Using a repeating background-image also did not work. So I had just left it as  50 images hardcoded and used `overflow: hidden` to hide the excess. It is not a good solution, but I'm at a loss at what else to try, so I'm going to leave it for now.
 
 ## References
 1) https://www.w3schools.com/jquery/ajax_getjson.asp
@@ -68,10 +81,11 @@ But I also need to have the dot repeat however long it needs to fill the space, 
 
 5) https://medium.com/@luclemo/creating-true-dotted-borders-with-css-233f296d8145
 6) https://www.w3schools.com/graphics/svg_circle.asp
-7)
-
-## Problems or Issues this week
+7) https://www.w3schools.com/cssref/css3_pr_border-image.asp
+8) https://learn.jquery.com/plugins/basic-plugin-creation/
 
 ## Specific questions/concerns for next week
+
+I think I missed the point of the plugin assignment. I wanted to make a complex class-based function, but I really didn't see how to make that happen.
 
 ## Conclusion

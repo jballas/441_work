@@ -1,5 +1,10 @@
 $(document).ready(function(){
 
+  // this display a row of dots per my plugin in my border. I hardcoded the amount of images, otherwise I created too many and had to hide them with css.
+    $(".border").dots();
+
+
+
 var more_rocks = new Array();
 
 // When the document is ready, this function is called which gathers our data from the json file.

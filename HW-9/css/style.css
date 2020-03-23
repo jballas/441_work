@@ -10,24 +10,17 @@ body{
 
 #show_information {
   line-height: 2em;
-/*  border: 1px dotted black;
-  border-width: thick;*/
   width: 80%;
-/*  border: 10px solid transparent;
-  border-image-source: url("");
-  border-image-slice: 10%;
-  border-image-width: 5px;
-  border-image-repeat: repeat;*/
-
-}
-
-.border{
-  height: 20px;
-  overflow: hidden;
+  background-color: white;
 }
 
 svg{
   padding: 5px;
+}
+
+.border{
+  height: 10px;
+  overflow: hidden;
 }
 
 img{
