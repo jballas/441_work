@@ -18,15 +18,11 @@ svg{
   padding: 5px;
 }
 
-.border{
-  height: 10px;
-  overflow: hidden;
-}
 
 img{
   border: 1px solid red;
-  width: 50%;
-  height: 50%;
+  width: 80%;
+  height: 80%;
 }
 
 button {
