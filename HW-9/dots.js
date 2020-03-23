@@ -6,11 +6,13 @@ $(document).ready(function(){
 (function ($){
 
   $.fn.dots = function(){
+    // SVG circle code adjusted from W3Schools tutorial: www.w3schools.com/graphics/svg_circle.asp
+
     var circle = "<svg height='5' width='5'><circle cx='2' cy='2' r='2' fill='black'/></svg>"
 
     for (i = 0; i < 50 ; i ++){
         this.append(circle);
-        this.css("height", "10px")
+        this.css("height", "20px")
         this.css("overflow", "hidden")
     }
     return this;
@@ -23,7 +25,7 @@ $(document).ready(function(){
 
 class Circle {
   constructor (spacing, cx, cy, radius, fill){
-    this.height = cy*2;
+    this.height = spacing;
     this.width = spacing;
     this.cx = cx;
     this.cy = cy;

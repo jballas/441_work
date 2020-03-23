@@ -17,7 +17,7 @@ Databases. This week we are collecting information from a datasource and display
 - simple html
 - Coding
   - Add jQuery to show JSON
-- Brainstorm Ideas for showing Data meaningfully/JQuery plug-in ideas
+- Brainstorm Ideas for showing Data meaningfully
 - Add CSS style
 - JQuery Plug-in
 
@@ -57,8 +57,6 @@ Ahha, a project for a plugin.
 
 The image above show the font I wanted to base my project around. The second arrow points to the standard thick dotted border, however you can't change sizing or spacing. Third is a line of dots I created in jquery and css.
 
-Ultimately, I settled on creating a dot border as my plugin. It simple displays a row of dots. I was curious how I could change the color and size of the dots and spacing of my dots. You could do it with a class. Or its possible to add options to your plugin (8)
-
 
 ## Problems or Issues this week
 
@@ -71,6 +69,9 @@ It should be possible to control the size of the dot, the spacing and the color.
 I also made attempts to have the dot pattern appear only in the border, like a repeating image, but this didn't work out.
 
 I tried to use the border-image-source to create a border image with my `<svg>`. However, it didn't work. The code is more designed to use an image file that you can slice and repeat.(7) I was trying to take one round image that you repeat over and over. Using a repeating background-image also did not work. So I had just left it as  50 images hardcoded and used `overflow: hidden` to hide the excess. It is not a good solution, but I'm at a loss at what else to try, so I'm going to leave it for now.
+
+
+Ultimately, I settled on creating a dot border as my plugin. It simple displays a row of dots. I was curious how I could change the color and size of the dots and spacing of my dots. You could do it with a class. Or its possible to add options to your plugin (8)
 
 ## References
 1) https://www.w3schools.com/jquery/ajax_getjson.asp
@@ -86,6 +87,23 @@ I tried to use the border-image-source to create a border image with my `<svg>`.
 
 ## Specific questions/concerns for next week
 
-I think I missed the point of the plugin assignment. I wanted to make a complex class-based function, but I really didn't see how to make that happen.
+I think I missed the point of the plugin assignment. I wanted to make my border customizable, like below:
+
+```jQuery
+$("div:).dots({
+  spacing: 10;
+  radius: 5;
+  color: 'rgb(244, 178, 75)';
+})
+```
+![screenshot of dotted lines](./images/screenshot_yellow_dot.png)
+
+I have no idea if that's possible.
 
 ## Conclusion
+
+This week was hard because we had two very different tasks to work on and I was torn between which one to focus on. Displaying data in a meaningful way is much harder than I ever realized. I saw wonderful examples on youtube,(https://www.youtube.com/watch?v=qVh2Qw5KSFg) but I could only get the my data to display in a readable format. It is not exciting or meaningful.
+
+The plugin was another difficult task, not so much the code part, but figuring out a useful plugin. I didn't want to make a meaningless update to my css. The idea behind plugins is that you take a complex idea and simpfly it to make it easier to code now or in other projects. I really liked my idea of making a dotted border you can customize. The customizing part was really hard to impliment. It's not a very useful plugin as is.
+
+![screenshot of final site ](./images/screenshot_final.png)
