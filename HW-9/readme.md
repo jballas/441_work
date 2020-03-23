@@ -93,13 +93,13 @@ The plugin was another difficult task, especially figuring out a useful plugin. 
 ![screenshot of final site ](./images/screenshot_final.png)
 
 ## References
-1) https://www.w3schools.com/jquery/ajax_getjson.asp
-2) https://api.jquery.com/jQuery.getJSON/
-3) https://api.jquery.com/jquery.each/
+1) "jQuery getJSON() Method" w3schools.com. www.w3schools.com/jquery/ajax_getjson.asp
+2) "jQuery.getJSON()" jQuery.com. api.jquery.com/jQuery.getJSON/
+3) "jQuery.each()". jQuery.com. api.jquery.com/jquery.each/
 
 4) To only display part of a string, I used the `.substr(0,4)`, which I discovered at StackOverFlow: stackoverflow.com/questions/3414916/display-only-10-characters-of-a-long-string
 
-5) https://medium.com/@luclemo/creating-true-dotted-borders-with-css-233f296d8145
-6) https://www.w3schools.com/graphics/svg_circle.asp
-7) https://www.w3schools.com/cssref/css3_pr_border-image.asp
-8) https://learn.jquery.com/plugins/basic-plugin-creation/
+5) "Creating True Dotted Borders with CSS" Medium.com. medium.com/@luclemo/creating-true-dotted-borders-with-css-233f296d8145
+6) "SVG <circle>" w3schools.com. "www.w3schools.com/graphics/svg_circle.asp
+7) "CSS border-image Property" w3schools.com. www.w3schools.com/cssref/css3_pr_border-image.asp
+8) "How to Create a Basic Pluin" Jquery.com. learn.jquery.com/plugins/basic-plugin-creation/
