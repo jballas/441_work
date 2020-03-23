@@ -20,7 +20,7 @@ var more_rocks = new Array();
 
   let random_num = Math.floor(Math.random() * more_rocks.length);
 
-          console.log(more_rocks.length);
+        //  console.log(more_rocks.length);
           $("#name").text("Name: " + more_rocks[random_num].name);
           $("#mass").text(" Mass: " + more_rocks[random_num].mass);
           $("#year").text(" Year: " + more_rocks[random_num].year.substr(0,4));
