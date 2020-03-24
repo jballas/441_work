@@ -2,7 +2,7 @@ $(document).ready(function(){
 
 
 // jQuery plugin to create a dot
-
+/*
 (function ($){
 
   $.fn.dots = function(){
@@ -18,17 +18,52 @@ $(document).ready(function(){
     return this;
   };
 }(jQuery));
+*/
 
+(function ($){
+
+
+
+  $.fn.dotted = function(options){
+    // SVG circle code adjusted from W3Schools tutorial: www.w3schools.com/graphics/svg_circle.asp
+
+
+    var settings = $.extend({
+      spacing: 5,
+      radius: 2,
+      color: "black"
+    }, options);
+
+
+    var spacing;
+    var radius;
+    var color;
+    var circle = "<svg height='" + settings.spacing + "' width='" + settings.spacing + "'><circle cx='"+ settings.radius + "' cy='" + settings.radius+"' r='" + settings.radius+"' fill='"+ settings.color+"'/></svg>";
+
+    for (i = 0; i < 50 ; i ++){
+        this.append(circle);
+    }
+
+    return this.css({
+      spacing: settings.spacing,
+      radius: settings.radius,
+      color: settings.color,
+      height: settings.spacing + settings.radius,
+      overflow: "hidden"
+    });
+
+  };
+}(jQuery));
 
 // Let's create a Class for the svg_circle
 // Unfortunately, I can't seem to connect it to the plugin...
 
 class Circle {
-  constructor (spacing, cx, cy, radius, fill){
+  constructor (spacing, cx, radius, fill){
     this.height = spacing;
     this.width = spacing;
     this.cx = cx;
-    this.cy = cy;
+    this.cy = cx;
     this.radius = radius;
     this.fill = fill;
   }
@@ -47,16 +82,28 @@ class Circle {
 
 }
 
+
+// Testing that the new function works
+
+$("#test_button").click( function(){
+  $("#trial").html(display).dotted({
+    spacing: 50,
+    radius: 5,
+    color: "rgb(168, 25, 230)"
+  });
+
+})
+
 // Testing that the class works, and displays different circles
-var small_circle = new Circle(10,2,2,5, "pink")
-var big_circle = new Circle(100, 150, 150, 150, "red");
+var small_circle = new Circle(50,5,5, "pink")
+var big_circle = new Circle(100, 150,  150, "red");
 var display = small_circle.toString();
 
-
+/*
   $("#test_button").click( function(){
     $("#trial").html(display).dots();
 
   })
-
+*/
 
 })
