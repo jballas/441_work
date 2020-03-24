@@ -105,13 +105,13 @@ $("div:).dots({
 
 According to a jQuery tutorial, there is a way to add options to your plugin. (8) So that was my next attempt.
 
-I added the 3 options using jQuery's`.extend()`. Then I had to figure out where to put my variables, and where to put my circle and my `.append(circle)`
+I added the 3 options using jQuery's`.extend()`. Then I had to figure out where to put my variables, and the SVG circle.
 
-Finally, something clicked and I knew right away I needed to have `setting.spacing` `setting.color` and `setting.radius` in my variable and in the `this.return.css` section. I added comments throughout. There is still one major issues with it: controlling how many dots appear. That's where I'm stuck and I have no idea how to fix it, but I'm very happy to see my `dotted()` plugin customizable.
+Finally, something clicked and I knew right away I needed to have `setting.spacing`, `setting.color` and `setting.radius` in my variable and in the `this.return.css` section. I added comments throughout. There is still one major issues with it: controlling how many dots appear. That's where I'm stuck and I have no idea how to fix it, but I'm very happy to see my `dotted()` plugin customizable.
 
 ## Conclusion
 
-This week was hard because we had two very different tasks to work on and I was torn between them. Displaying data in a meaningful way is much harder than I ever realized. I saw wonderful examples on youtube,(https://www.youtube.com/watch?v=qVh2Qw5KSFg) but I could only get the my data to display in a readable format, which is not exciting or meaningful.
+This week was hard because we had two very different tasks to work on and I was torn between them. Displaying data in a meaningful way is much harder than I ever realized. I saw wonderful examples on youtube,(https://www.youtube.com/watch?v=qVh2Qw5KSFg) but I could only get my data to display in a readable format, which is not exciting or meaningful.
 
 The plugin was another difficult task, and I wanted to make something useful. The idea behind plugins is that you take a complex idea and have it available to code now, or in other projects. I really liked my idea of making a dotted border you can customize. It's not completely functional as a plugin, but it is a good start.
 
