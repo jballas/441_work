@@ -1,14 +1,12 @@
 $(document).ready(function(){
 
-  // this display a row of dots per my plugin in my border. I hardcoded the amount of images, otherwise I created too many and had to hide them with css.
+  // this display a row of customizaable dots using my plugin in my border.
     $(".border").dotted({
       spacing: 10,
       radius: 5,
       color: 'rgb(244, 178, 75)'
     }
     );
-
-
 
 var more_rocks = new Array();
 
