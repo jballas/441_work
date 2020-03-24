@@ -2,7 +2,7 @@ $(document).ready(function(){
 
   // this display a row of customizaable dots using my plugin in my border.
     $(".border").dotted({
-      spacing: 10,
+      spacing: 15,
       radius: 5,
       color: 'rgb(244, 178, 75)'
     }

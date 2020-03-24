@@ -29,8 +29,8 @@ $(document).ready(function(){
       spacing: settings.spacing,
       radius: settings.radius,
       color: settings.color,
-      height: settings.spacing + settings.radius, // this needs to have a minimum of 20px
-      overflow: "hidden"
+      height: settings.spacing, // this needs to have a minimum of 20px
+      overflow: "hidden",
     });
 
   };
