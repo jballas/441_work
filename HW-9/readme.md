@@ -24,9 +24,9 @@ Databases. This week we are collecting information from a datasource and display
 
 ![screenshot of errors](./images/screenshot_error-to-success.png)
 
-I started with a small json file and tried to display it. I ran straight into a 'cross-origin-request error'. Despite the fact I was using Firefox, it wanted my json to be a secure link, so I linked to the http:// at my github page. Then it still didn't work because I'd edited my json file and left out the end of a bracket. Cue the debugging music... I managed to find the problem by using the console-log, a debugging code from Jquery's website, and another json file. Finally, I got my data to display. It consisted of [object Object][object Object], which is not meaningful at all.
+I started with a small json file and ran straight into a 'cross-origin-request error'. Despite the fact I was using Firefox, it wanted my json to be a secure link, so I linked to the http:// at my github page. Then it still didn't work because I'd edited my json file and left out the end of a bracket. Cue the debugging music... I managed to fix the problem after using the console-log, a debugging code from Jquery's website, and another json file. Finally, I got my data to display. It consisted of [object Object][object Object], which is not meaningful at all.
 
-Below is my first attempt to make the data appear, based on studying jQuery's `getJSON()` (2) and `.each()` methods (3). I totally just guessed if I could use `field.name` to make the meteorite name appear, and was surprised it worked.
+Below is my first attempt to make the data appear, based on studying jQuery's `getJSON()` (2) and `.each()` methods (3). I totally just guessed if I could use `field.name` and was surprised it worked.
 ```javascript
 
   $("#show_information").append("Name: " + field.name + " Mass: " + field.mass + " Year: " + field.year.substr(0,4) + " Geolocation: " + field.geolocation.coordinates + "<br>" );
@@ -40,6 +40,7 @@ My second attempt to show the information, which is almost identical to the firs
           $("#geolocation").text(" Geolocation: " + field.geolocation.coordinates);
 */
 ```
+
 ![screenshot of too much data](./images/screenshot_text_wall.png)
 
 Initially, I could only get a wall of text to appear, but I took our teacher's advise and looked back into previous weeks to find a solution. Week 7 was especially helpful. I created a class named `Rock`, and an array named `more_rocks` to push the data into.
@@ -48,9 +49,9 @@ After that small success, I moved on to my jquery plugin.
 
 ### Plugin Experiments
 
-I wasn't having luck with my experiments. So, I took a break and added a different font. Its called 'Codystar' and is made of dots (or stars). Then I changed my border to `border: 1px dotted black`. It was a very ugly dotted border.
+First, I tried image resizing and image duplicating, but it wasn't working. So, I took a break and changed my fonts to one called 'Codystar', which is made of dots (or stars). Then I changed my border to `border: 1px dotted black`. It was a very ugly dotted border.
 
-So, I did some research into changing the dotted border and found out it isn't really possible to change with css.
+Next, I did some research into changing the dotted border, and discovered it isn't really possible to change with css.
 
 Ahha, a project for a plugin.
 ![screenshot of dotted lines](./images/screenshot_dotted.png)
@@ -62,11 +63,11 @@ The image above shows the font I wanted to base my project around. The second ar
 
 My dotted border plugin created all kinds of problems, mostly because I had to keep researching every little detail about it.
 
-I found an article on medium.com which suggested using a svg image file for your border.(5) But updating the color is only possible if you go back and change for actual image, so it is not ideal. Since it is possible to create svg images directly in html, I'm going to try to create a border I can manipulate. After borrowing some svg circle code from W3 schools, I adjusted the size and spacing to look more like a border.(6) Then I used a `for` loop to make it repeat inside the `<div>` tag 50 times.
+I found an article on medium.com which suggested using a svg image file for your border.(5) But updating the color is only possible if you go back and change for actual image, so it is not ideal. Since it is possible to create svg images directly in html, I'm going to try to create a border I can manipulate. After borrowing some svg circle code from w3 Schools, I adjusted the size and spacing.(6) Then I used a `for` loop to make it repeat inside the `<div>` tag 50 times.
 
-I made several attempts to have the dot pattern appear only in the border, like a repeating image, but this didn't work out. The `border-image-source` is designed to use an actual image file that you can slice and repeat.(7) I was trying to take one round image that you repeat over and over. Using a repeating background-image also did not work. So I had just left it as 50 images hardcoded and used `overflow: hidden` to hide the excess. It is not a good solution, but I'm at a loss at what else to try, so I'm going to leave it for now.
+I made several attempts to have the dot pattern appear inside a border, like a repeating image, but this didn't work out. The `border-image-source` is designed to use an actual image file that you can slice and repeat.(7) I was trying to take one round image that you repeat over and over. Using a repeating background-image also did not work. So I hardcoded 50 repeating images and used `overflow: hidden` to hide the excess. It is not a good solution, but I'm at a loss at what else to try, so I'm going to leave it for now.
 
-Initially, my plugin simply displays a specific row of black dots. But how do you customize it?
+Initially, my plugin simply displayed a specific row of black dots. But how do you customize it?
 
 ```js
 // My first jQuery plugin to create a dot, it is not customizable.
@@ -106,13 +107,13 @@ According to a jQuery tutorial, there is a way to add options to your plugin. (8
 
 I added the 3 options using jQuery's`.extend()`. Then I had to figure out where to put my variables, and where to put my circle and my `.append(circle)`
 
-Finally, something clicked and I knew right away I needed to have `setting.spacing` and other `setting.radius` in my variable and in the return section. I added comments throughout. There is still one major issues with it: controlling how many dots appear. That's where I'm stuck though and no idea what to try to fix that, but I'm very happy to see my `dotted()` plugin customizable.
+Finally, something clicked and I knew right away I needed to have `setting.spacing` `setting.color` and `setting.radius` in my variable and in the `this.return.css` section. I added comments throughout. There is still one major issues with it: controlling how many dots appear. That's where I'm stuck and I have no idea how to fix it, but I'm very happy to see my `dotted()` plugin customizable.
 
 ## Conclusion
 
-This week was hard because we had two very different tasks to work on and I was torn between which one to focus on. Displaying data in a meaningful way is much harder than I ever realized. I saw wonderful examples on youtube,(https://www.youtube.com/watch?v=qVh2Qw5KSFg) but I could only get the my data to display in a readable format. It is not exciting or meaningful.
+This week was hard because we had two very different tasks to work on and I was torn between them. Displaying data in a meaningful way is much harder than I ever realized. I saw wonderful examples on youtube,(https://www.youtube.com/watch?v=qVh2Qw5KSFg) but I could only get the my data to display in a readable format, which is not exciting or meaningful.
 
-The plugin was another difficult task, and I wanted to make something useful. The idea behind plugins is that you take a complex idea and simpfy it to make it easier to code now, or in other projects. I really liked my idea of making a dotted border you can customize. It's not a completely functional as a plugin, but it is a good start.
+The plugin was another difficult task, and I wanted to make something useful. The idea behind plugins is that you take a complex idea and have it available to code now, or in other projects. I really liked my idea of making a dotted border you can customize. It's not completely functional as a plugin, but it is a good start.
 
 ![screenshot of final site ](./images/screenshot_final_yellow.png)
 ## References
