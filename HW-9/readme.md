@@ -66,11 +66,31 @@ I found an article on medium.com which gave a solution for using a svg image fil
 
 I made several attempts to have the dot pattern appear only in the border, like a repeating image, but this didn't work out. The `border-image-source` is designed to use an actual image file that you can slice and repeat.(7) I was trying to take one round image that you repeat over and over. Using a repeating background-image also did not work. So I had just left it as 50 images hardcoded and used `overflow: hidden` to hide the excess. It is not a good solution, but I'm at a loss at what else to try, so I'm going to leave it for now.
 
-My plugin simply displays a specific row of black dots. But how do you customize it?  It appears it's possible to add options to your plugin, according to a Jquery tutorial. (8)
+Initially, my plugin simply displays a specific row of black dots. But how do you customize it?
 
-## Specific questions/concerns
+```js
+// My first jQuery plugin to create a dot, it is not customizable.
 
-I wanted to make my border customizable, like below:
+(function ($){
+
+  $.fn.dots = function(){
+    // SVG circle code adjusted from W3Schools tutorial: www.w3schools.com/graphics/svg_circle.asp
+
+    var circle = "<svg height='5' width='5'><circle cx='2' cy='2' r='2' fill='black'/></svg>"
+
+    for (i = 0; i < 50 ; i ++){
+        this.append(circle);
+        this.css("height", "20px")
+        this.css("overflow", "hidden")
+    }
+    return this;
+  };
+}(jQuery));
+```
+
+## A Customizable dotted line
+
+I wanted to make my border customizable, like this:
 
 ```jQuery
 //Ultimately this is what I want to code and make it display the image below.
@@ -82,13 +102,18 @@ $("div:).dots({
 ```
 ![screenshot of dotted lines](./images/screenshot_yellow_dot.png)
 
-I have no idea if it's possible as a plugin. I can do it by creating a class and JS objects, but not as a plugin.
+According to a Jquery tutorial, there is a way to add options to your plugin. (8) So that was my next attempt.
+
+I added the 3 options using jQuery's`.extend()`. Then I had to figure out where to put my variables, and where to put my circle and my `.append(circle)`
+
+Finally, something clicked and I knew right away I needed to have `setting.` in my variable and in the return section. I added comments throughout. There is still one major issues with it: controlling how many dots appear. That's where I'm stuck though and no idea what to try to fix that, but I'm very happy to see my `dotted()` plugin customizable.
+
 
 ## Conclusion
 
 This week was hard because we had two very different tasks to work on and I was torn between which one to focus on. Displaying data in a meaningful way is much harder than I ever realized. I saw wonderful examples on youtube,(https://www.youtube.com/watch?v=qVh2Qw5KSFg) but I could only get the my data to display in a readable format. It is not exciting or meaningful.
 
-The plugin was another difficult task, especially figuring out a useful plugin. I didn't want to make a meaningless update to my css. The idea behind plugins is that you take a complex idea and simpfy it to make it easier to code now, or in other projects. I really liked my idea of making a dotted border you can customize. It's not a very useful plugin as is, but it is a good start.
+The plugin was another difficult task, especially figuring out a useful plugin. I didn't want to make a meaningless update to my css. The idea behind plugins is that you take a complex idea and simpfy it to make it easier to code now, or in other projects. I really liked my idea of making a dotted border you can customize. It's not a completely functional as a plugin, but it is a good start.
 
 ![screenshot of final site ](./images/screenshot_final.png)
 
