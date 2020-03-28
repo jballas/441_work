@@ -22,8 +22,7 @@ $(document).ready(function(){
       }
 
   }
-//  let blue_bug = new Bug(x, y);
-//  blue_bug.create_square();
+
 
 var width = 50;
 var height = 50;
@@ -34,12 +33,14 @@ ctx.fillStyle = "rgb(22, 175, 195)";
 // creates a new bug from class
 function draw_square(){
 
-    ctx.fillRect(x,y,width,height);
-      x += -1;
+  let blue_bug = new Bug(x, y);
+  blue_bug.create_square();
+      x += 1;
       y += 1;
+
   if (x == canvas.width || y == canvas.height || x == 0 || y == 0){
-    x=canvas.width / 2;
-    y=canvas.width / 2;
+    x=0;
+    y=0;
   }
 }
 
