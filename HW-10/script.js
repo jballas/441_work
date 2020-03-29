@@ -50,8 +50,8 @@ $(document).ready(function(){
         return this.fill;
       }
 
-      set bfill(color){
-        this.fill = color;
+      set bfill(fill){
+        this.fill = fill;
       }
 
       create_square(){
@@ -63,24 +63,28 @@ $(document).ready(function(){
    }
 
 // Variables
-/*player_x =0;
+player_x =0;
 player_y = canvas.height - 100;
-var x = canvas.width/2;
-var y = canvas.height/2;*/
+player_width = 50;
+player_height = 100;
+bug_x = canvas.width/2;
+bug_y = canvas.height/2;
+bug_width = 20;
+bug_height = bug_width;
 var direction = 1;
 
 // create 2 objects
-var player_bug = new Bug(0, canvas.height - 100, 50, 100, "rgb(100, 31, 196)");
-var blue_bug = new Bug(canvas.width/2, canvas.height/2, 20, 20, "rgb(22, 175, 195)");
+var player_bug = new Bug(player_x, player_y, player_width, player_height, "rgb(100, 31, 196)");
+var blue_bug = new Bug(bug_x, bug_y, bug_width, bug_height, "rgb(22, 175, 195)");
 
 // Move square across the screen
-// example taken from https://p5js.org/examples/motion-bounce.html
+// example source code from https://p5js.org/examples/motion-bounce.html
 
 function move(object1){
   object1.x = object1.x + direction;
   object1.y = object1.y + direction;
 
-
+// square bounces if it hits the screen
   if (object1.x >= canvas.width || object1.y >= canvas.height || object1.x == 0 || object1.y == 0){
            direction *= -1;
          }
@@ -112,14 +116,16 @@ setInterval(update,1000/60);
     ;
     if (boxes_collide(blue_bug, player_bug)){
       change_background();
+      blue_bug.width = 30;
     }
   }
 
 
-// Move player draw_square
+// Move player by pressing keyboard
 
 $(this).keypress(function(event){
   getKey(event);
+  stay_in_bounds(player_bug);
 
 });
 
@@ -150,6 +156,24 @@ function getKey(event){
 
 }
 
+// keeps Player mostly on the Canvas
+function stay_in_bounds(object){
+   if (object.x >= canvas.width){
+     object.x = 1;
+   }
+   if (object.x < 0) {
+     object.x = canvas.width;
+   }
+
+      if (object.y >= canvas.height){
+     object.y = 1;
+   }
+   if (object.y < 0){
+     object.y = canvas.height;
+   }
+
+}
+
 // Collisions
 
 function boxes_collide(object1,object2){
@@ -161,7 +185,7 @@ function boxes_collide(object1,object2){
   );
 }
 
-
+// if Collisions are detected background color changes.
 function change_background(){
   let random_num = Math.floor(Math.random() * 255);
   let r = random_num ;
@@ -170,9 +194,9 @@ function change_background(){
   let b = 342;
 
   $('body').css("background-color", "rgb("+r+", "+g+", "+b+")");
-
-
 }
+
+
 
 
 })
