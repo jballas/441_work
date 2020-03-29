@@ -71,7 +71,8 @@ bug_x = canvas.width/2;
 bug_y = canvas.height/2;
 bug_width = 20;
 bug_height = bug_width;
-var direction = 1;
+var direction_x = 5;
+var direction_y = 2;
 
 // create 2 objects
 var player_bug = new Bug(player_x, player_y, player_width, player_height, "rgb(100, 31, 196)");
@@ -80,14 +81,21 @@ var blue_bug = new Bug(bug_x, bug_y, bug_width, bug_height, "rgb(22, 175, 195)")
 // Move square across the screen
 // example source code from https://p5js.org/examples/motion-bounce.html
 
-function move(object1){
-  object1.x = object1.x + direction;
-  object1.y = object1.y + direction;
+function move(object){
 
-// square bounces if it hits the screen
-  if (object1.x >= canvas.width || object1.y >= canvas.height || object1.x == 0 || object1.y == 0){
-           direction *= -1;
-         }
+  object.x = object.x + direction_x;
+  object.y = object.y + direction_y;
+
+ //square bounces if it hits the screen
+
+
+  if (object.x > canvas.width || object.x <= 0 ){
+      direction_x *= -1;
+      }
+  if (object.y >= canvas.height || object.y <= 0){
+    direction_y *= -1;
+  }
+
 }
 
 // draws a new bug from object we created above
@@ -112,91 +120,97 @@ setInterval(update,1000/60);
     ctx.clearRect(0,0,canvas.width,canvas.height);
     draw_square();
     player_square();
-    console.log(player_bug.y)
     ;
     if (boxes_collide(blue_bug, player_bug)){
       change_background();
-      blue_bug.width = 30;
+      grow_size(blue_bug);
     }
   }
 
 
 // Move player by pressing keyboard
-
 $(this).keypress(function(event){
-  getKey(event);
+  getKey(event, player_bug);
   stay_in_bounds(player_bug);
 
 });
 
 
 // Check if 'wsad' is pressed
-function getKey(event){
+function getKey(event, object){
 
   let speed = 20;
   var char = event.which || event.keyCode;
   var actualLetter = String.fromCharCode(char);
 
   if (actualLetter == "w"){
-    player_bug.y -= speed;
+    object.y -= speed;
 
   }
 
   if (actualLetter =="s"){
-    player_bug.y += speed;
+    object.y += speed;
   }
 
   if (actualLetter == "a"){
-    player_bug.x -= speed;
+    object.x -= speed;
   }
 
   if (actualLetter == "d"){
-    player_bug.x += speed;
+    object.x += speed;
+  }
+}
+
+  // keeps Player mostly on the Canvas
+  function stay_in_bounds(object){
+     if (object.x >= canvas.width){
+       object.x = 1;
+     }
+     if (object.x < 0) {
+       object.x = canvas.width;
+     }
+
+     if (object.y >= canvas.height){
+       object.y = 1;
+     }
+     if (object.y < 0){
+       object.y = canvas.height;
+     }
+
   }
 
-}
+  // Collisions
 
-// keeps Player mostly on the Canvas
-function stay_in_bounds(object){
-   if (object.x >= canvas.width){
-     object.x = 1;
-   }
-   if (object.x < 0) {
-     object.x = canvas.width;
-   }
+  function boxes_collide(object1,object2){
+    return !(
+      ((object1.y + object1.height) < (object2.y)) ||
+      (object1.y > (object2.y + object2.height)) ||
+      ((object1.x + object1.width) < object2.x) ||
+      (object1.x > (object2.x + object2.width))
+    );
+  }
 
-      if (object.y >= canvas.height){
-     object.y = 1;
-   }
-   if (object.y < 0){
-     object.y = canvas.height;
-   }
+  // if Collisions are detected background color changes.
+  function change_background(){
+    let random_num = Math.floor(Math.random() * 255);
+    let r = random_num ;
+    console.log(random_num)
+    let g = 80;
+    let b = 342;
 
-}
+    $('body').css("background-color", "rgb("+r+", "+g+", "+b+")");
+  }
 
-// Collisions
+  //object grows bigger when they collide.
+  function grow_size(object){
+        object.width += 3;
+        object.height += .5;
 
-function boxes_collide(object1,object2){
-  return !(
-    ((object1.y + object1.height) < (object2.y)) ||
-    (object1.y > (object2.y + object2.height)) ||
-    ((object1.x + object1.width) < object2.x) ||
-    (object1.x > (object2.x + object2.width))
-  );
-}
-
-// if Collisions are detected background color changes.
-function change_background(){
-  let random_num = Math.floor(Math.random() * 255);
-  let r = random_num ;
-  console.log(random_num)
-  let g = 80;
-  let b = 342;
-
-  $('body').css("background-color", "rgb("+r+", "+g+", "+b+")");
-}
-
-
+        if (object.width >= canvas.width){
+          object.width = 10;
+          object.height = object.width;
+        };
+    }
 
 
 })
