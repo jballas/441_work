@@ -14,6 +14,23 @@ $(document).ready(function(){
 
       }
 
+      get bug_x(){
+        return this.x;
+      }
+
+      set bug_x(){
+        this.bug_x = x;
+      }
+
+      get bug_y(){
+        return this.y;
+      }
+
+      set bug_y(){
+        this.bug_y = y;
+      }
+
+
       get width(){
         return this.width;
       }
@@ -21,6 +38,24 @@ $(document).ready(function(){
       set width(){
         this.width = width;
       }
+
+      get height(){
+        return this.height;
+      }
+
+      set height(){
+        this.height = height;
+      }
+
+      get fill(){
+        return this.fill;
+      }
+
+      set fill(){
+        this.fill = fill;
+      }
+
+
 
       create_square(){
         ctx.fillStyle = this.fill;
