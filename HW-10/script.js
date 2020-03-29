@@ -18,44 +18,41 @@ $(document).ready(function(){
         return this.x;
       }
 
-      set bug_x(){
-        this.bug_x = x;
+      set bug_x(x){
+        this.x = x;
       }
 
       get bug_y(){
         return this.y;
       }
 
-      set bug_y(){
-        this.bug_y = y;
+      set bug_y(y){
+        this.y = y;
       }
 
-
-      get width(){
+      get bwidth(){
         return this.width;
       }
 
-      set width(){
+      set bwidth(width){
         this.width = width;
       }
 
-      get height(){
+      get bheight(){
         return this.height;
       }
 
-      set height(){
+      set bheight(height){
         this.height = height;
       }
 
-      get fill(){
+      get bfill(){
         return this.fill;
       }
 
-      set fill(){
-        this.fill = fill;
+      set bfill(color){
+        this.fill = color;
       }
-
-
 
       create_square(){
         ctx.fillStyle = this.fill;
@@ -66,15 +63,15 @@ $(document).ready(function(){
    }
 
 // Variables
-player_x =0;
+/*player_x =0;
 player_y = canvas.height - 100;
 var x = canvas.width/2;
-var y = canvas.height/2;
+var y = canvas.height/2;*/
 var direction = 1;
 
 // create 2 objects
-var player_bug = new Bug(player_x, player_y, 50, 100, "rgb(100, 31, 196)");
-var blue_bug = new Bug(x, y, 10, 10, "rgb(22, 175, 195)");
+var player_bug = new Bug(0, canvas.height - 100, 50, 100, "rgb(100, 31, 196)");
+var blue_bug = new Bug(canvas.width/2, canvas.height/2, 20, 20, "rgb(22, 175, 195)");
 
 // Move square across the screen
 // example taken from https://p5js.org/examples/motion-bounce.html
@@ -84,7 +81,7 @@ function move(object1){
   object1.y = object1.y + direction;
 
 
-  if (object1.x >= canvas.width || y >= canvas.height || blue_bug.x == 0 || object1.y == 0){
+  if (object1.x >= canvas.width || object1.y >= canvas.height || object1.x == 0 || object1.y == 0){
            direction *= -1;
          }
 }
@@ -99,6 +96,7 @@ function draw_square(){
 
 function player_square(){
   player_bug.create_square();
+
 }
 
 // Call functions
@@ -110,11 +108,11 @@ setInterval(update,1000/60);
     ctx.clearRect(0,0,canvas.width,canvas.height);
     draw_square();
     player_square();
-
-    if (boxes_collide(blue_bug,player_bug)){
-      console.log('boxes collided!')
+    console.log(player_bug.y)
+    ;
+    if (boxes_collide(blue_bug, player_bug)){
+      change_background();
     }
-
   }
 
 
@@ -122,6 +120,7 @@ setInterval(update,1000/60);
 
 $(this).keypress(function(event){
   getKey(event);
+
 });
 
 
@@ -134,7 +133,7 @@ function getKey(event){
 
   if (actualLetter == "w"){
     player_bug.y -= speed;
-    console.log(player_y)
+
   }
 
   if (actualLetter =="s"){
@@ -145,10 +144,10 @@ function getKey(event){
     player_bug.x -= speed;
   }
 
-
   if (actualLetter == "d"){
     player_bug.x += speed;
   }
+
 }
 
 // Collisions
@@ -156,10 +155,23 @@ function getKey(event){
 function boxes_collide(object1,object2){
   return !(
     ((object1.y + object1.height) < (object2.y)) ||
-    (object2.y > (object2.y + object2.height)) ||
+    (object1.y > (object2.y + object2.height)) ||
     ((object1.x + object1.width) < object2.x) ||
-    (object1.x + (object2.y + object2.width))
+    (object1.x > (object2.x + object2.width))
   );
+}
+
+
+function change_background(){
+  let random_num = Math.floor(Math.random() * 255);
+  let r = random_num ;
+  console.log(random_num)
+  let g = 80;
+  let b = 342;
+
+  $('body').css("background-color", "rgb("+r+", "+g+", "+b+")");
+
+
 }
 
 
