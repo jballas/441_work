@@ -40,6 +40,7 @@ function draw_square(){
 
 
   // Move square across the screen
+  // https://p5js.org/examples/motion-bounce.html
     x = x + direction;
     y = y + direction;
 
