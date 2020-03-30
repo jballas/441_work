@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+window.alert("Warning: strobe effect in effect, proceed with caution! ")
+
   var canvas = document.getElementById('canvas');
   var ctx = canvas.getContext("2d");
 
@@ -194,7 +196,7 @@ function getKey(event, object){
   function change_background(){
     let random_num = Math.floor(Math.random() * 255);
     let r = random_num ;
-    console.log(random_num)
+    //console.log(random_num)
     let g = 80;
     let b = 342;
 
