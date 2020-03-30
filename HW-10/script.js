@@ -104,7 +104,7 @@ function move(object){
 // draws a new bug from object we created above
 function draw_square(){
   blue_bug.create_square();
-//  move(blue_bug);
+  move(blue_bug);
 }
 
 // Create second square from class.

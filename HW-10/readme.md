@@ -59,10 +59,10 @@ I had two major problems this week. One involved the collisions. I couldn't get 
 
 I had another simple error that was giving me problems with my animation. For some reason I changed my movement variable `direction` into a local variable and I could no longer get my object to bounce. I didn't realize why it stopped working, until I changed the variable back to a global variable and it worked.
 
-While, it was easy to get my audio into the screen, having it play was a different matter. I
+While it was easy to get my audio into the screen, having it play was a different matter. I couldn't use the full path, just the local one.
 
 ## Conclusion
-My final project is going to be a game, so I really wanted to get these code down. Instead, I felt rather unorganized and did not feel like I was making a game at all. It wasn't until I got the code to work that I came up with a game scenario. You have 2 bugs on screen. The player must to avoid the bouncing bug, or else they'll be eaten. That's the game. You can lose apparently, but not win. It's a bug eat bug world out there.
+My final project is going to be a game, so I really wanted to practice game mechanics. Instead, my coding felt unorganized and I did not feel like I was making a game at all. It wasn't until I got the code to work, then I came up with a game scenario. You have 2 bugs on screen. The player must to avoid the bouncing bug, or else they'll be eaten. That's the game. You can lose apparently, but not win. It's a bug eat bug world out there.
 
 Coding can only take a game so far, it needs to have a narrative of some kind in order to make it an acutal game.
 
