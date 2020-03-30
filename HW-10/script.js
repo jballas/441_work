@@ -90,7 +90,6 @@ function move(object){
 
  //square bounces if it hits the screen
 
-
   if (object.x > canvas.width || object.x <= 0 ){
       direction_x *= -1;
       }
@@ -122,10 +121,11 @@ setInterval(update,1000/60);
     ctx.clearRect(0,0,canvas.width,canvas.height);
     draw_square();
     player_square();
-    ;
+
     if (boxes_collide(blue_bug, player_bug)){
       change_background();
       grow_size(blue_bug);
+      shrink_size(player_bug);
     }
   }
 
@@ -183,16 +183,17 @@ function getKey(event, object){
 
   // Collisions
 
+  // This checks whether the boundaries of the boxes are overlapping. Each object's position, including their width and height must be checked against the other one. It's basically just comparing numbers.
   function boxes_collide(object1,object2){
     return !(
-      ((object1.y + object1.height) < (object2.y)) ||
+      ((object1.y + object1.height) < (object2.y)) || //
       (object1.y > (object2.y + object2.height)) ||
       ((object1.x + object1.width) < object2.x) ||
       (object1.x > (object2.x + object2.width))
     );
   }
 
-  // if Collisions are detected background color changes.
+  // if Collisions are detected the background color changes.
   function change_background(){
     let random_num = Math.floor(Math.random() * 255);
     let r = random_num ;
@@ -214,6 +215,16 @@ function getKey(event, object){
         };
     }
 
+    // object shrinks when they collide.
+    function shrink_size(object){
+          object.width -= .5;
+          object.height -= .5;
+
+          if (object.width <= 0 || object.height <= 0 ){
+            window.alert("Game Over! You were eaten!")
+
+          };
+      }
 
 })
 
