@@ -2,9 +2,11 @@ $(document).ready(function(){
 
 window.alert("Warning: strobe effect in effect, proceed with caution! ")
 
+  // Create my Canvas
   var canvas = document.getElementById('canvas');
   var ctx = canvas.getContext("2d");
 
+  // A Class to create 2 objects
   class Bug{
 
       constructor (x, y, width, height, fill){
@@ -102,7 +104,7 @@ function move(object){
 // draws a new bug from object we created above
 function draw_square(){
   blue_bug.create_square();
-  move(blue_bug);
+//  move(blue_bug);
 }
 
 // Create second square from class.
@@ -147,7 +149,6 @@ function getKey(event, object){
 
   if (actualLetter == "w"){
     object.y -= speed;
-
   }
 
   if (actualLetter =="s"){
