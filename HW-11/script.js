@@ -1,22 +1,22 @@
 $(document).ready(function(){
 
-var squares =  {"info":[{"x" : "0",
+var squares =  {"info":[{"x" : "10",
                          "y" : "0",
                          "width" : "5",
                          "height" : "5",
                          "color" : "rgb(228, 6, 231)"},
-           {"x" : "0",
+           {"x" : "10",
             "y" : "10",
             "width" : "5",
             "height" : "5",
             "color" : "rgb(35, 110, 37)"},
-            {"x" : "0",
+            {"x" : "10",
              "y" : "20",
              "width" : "5",
              "height" : "5",
              "color" : "rgb(209, 177, 23)"},
-             {"x" : "0",
-              "y" : "40",
+             {"x" : "10",
+              "y" : "30",
               "width" : "5",
               "height" : "5",
               "color" : "rgb(223, 148, 38)"}]};
@@ -36,30 +36,36 @@ class Fish {
 
   toString(){
     let str;
-    str = this.x + this.y + this.width + this.height
+    str = this.x + this.y + this.width + this.height + this.color
     return str;
   }
 }
 
     var canvas = document.getElementById("canvas");
      var ctx = canvas.getContext("2d");
-     ctx.fillStyle = squares.info[0].color;
 
     // var create_squid = new Fish(x,y,w,h);
 
-        var first = new Fish(squares.info[0].x, squares.info[0].y, squares.info[0].width, squares.info[0].height);
-        var second = new Fish(squares.info[1].x, squares.info[1].y, squares.info[1].width, squares.info[1].height);
-
-         squid.push(first);
-
-         squid.push(second);
-
-
-
-
+    function create_squid(){
+/*      var first = new Fish(squares.info[0].x, squares.info[0].y, squares.info[0].width, squares.info[0].height, squares.info[0].color
+);
+      var second = new Fish(squares.info[1].x, squares.info[1].y, squares.info[1].width, squares.info[1].height, squares.info[1].color
+);
+       squid.push(first);
+       squid.push(second);
+*/
 
 
+  for(let i = 0; i < 4; i ++){
+    let j = new Fish(squares.info[i].x, squares.info[i].y, squares.info[i].width, squares.info[i].height, squares.info[i].color
+    );
+    squid.push(j);
+    console.log(j);
+  }
 
+    }
+
+    create_squid();
      drawSquare();
 
      function update()
@@ -70,12 +76,14 @@ class Fish {
 
      function drawSquare()
      {
-      // ctx.fillRect(x,y,w,h);
-            for (let i = 0; i < squid.length; i ++){
-        ctx.fillRect(squid[0].x, squid[0].y, squid[0].width, squid[0].height);
+       for ( let i = 0; i < 4; i ++){
+         ctx.fillStyle = squid[i].color;
+        ctx.fillRect(squid[i].x, squid[i].y, squid[i].width, squid[i].height);
+
+       }
 
      }
-   }
+
 
 
 // KEY EVENT
