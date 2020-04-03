@@ -19,7 +19,12 @@ var squares =  {"info":[{"x" : 10,
               "y" : 30,
               "width" : 5,
               "height" : 5,
-              "color" : "rgb(223, 148, 38)"}]};
+              "color" : "rgb(223, 148, 38)"},
+              {"x" : 10,
+               "y" : 40,
+               "width" : 5,
+               "height" : 5,
+               "color" : "rgb(23, 99, 209)"}]};
 
 
 var squid = new Array();
@@ -73,12 +78,11 @@ class Fish {
        squid.push(second);
 */
 
-
-  for(let i = 0; i < 4; i ++){
+// create a new objects and push into an array
+  for(let i = 0; i < 5; i ++){
     let j = new Fish(squares.info[i].x, squares.info[i].y, squares.info[i].width, squares.info[i].height, squares.info[i].color
     );
     squid.push(j);
-    //console.log(j)
   }
 
     }
@@ -93,6 +97,7 @@ class Fish {
      }
 
      function drawSquare(){
+       // display the objects in the array
        for ( let i = 0; i < squid.length ; i ++){
          ctx.fillStyle = squid[i].color;
         ctx.fillRect(squid[i].x, squid[i].y, squid[i].width, squid[i].height);
