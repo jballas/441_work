@@ -65,19 +65,14 @@ class Vertibrate {
 }
 
     var canvas = document.getElementById("canvas");
-     var ctx = canvas.getContext("2d");
+    var ctx = canvas.getContext("2d");
 
-    // var create_squid = new Fish(x,y,w,h);
-
+    // create a new objects and push into an array
     function create_squid(){
-
-// create a new objects and push into an array
-  for(let i = 0; i < 5; i ++){
-    let j = new Fish(squares.info[i].x, squares.info[i].y, squares.info[i].width, squares.info[i].height, squares.info[i].color
-    );
-    squid.push(j);
-  }
-
+      for(let i = 0; i < 5; i ++){
+          let j = new Vertibrate(squares.info[i].x, squares.info[i].y, squares.info[i].width, squares.info[i].height, squares.info[i].color);
+          squid.push(j);
+      }
     }
 
     create_squid();
@@ -95,6 +90,7 @@ class Vertibrate {
          ctx.fillStyle = squid[i].color;
         ctx.fillRect(squid[i].x, squid[i].y, squid[i].width, squid[i].height);
         canvas_wall(squid[i]);
+        objects_bounce(squid[0], squid[1]);
        }
      }
 
@@ -132,13 +128,13 @@ class Vertibrate {
        }
      }
 
-
+// Keep the player objects within the canvas.
      function canvas_wall(object){
-       if (object.x >= canvas.width){
-         object.x = canvas.width;
+       if (object.x >= canvas.width - object.width){
+         object.x = canvas.width - object.width;
        }
-       if (object.y >= canvas.height){
-         object.y = canvas.height;
+       if (object.y >= canvas.height - object.height){
+         object.y = canvas.height - object.height;
        }
        if (object.x <= 0){
          object.x = 0;
@@ -147,5 +143,26 @@ class Vertibrate {
          object.y = 0;
        }
      }
+
+     // if objects collide, they should 'bounce'
+      function objects_bounce(object1, object2){
+
+        if(have_collided(object1, object2)){
+          let bounce = 5;
+          (object1.x - object2.width) - bounce;
+          (object1.y - object2.width) - bounce;
+        }
+      }
+
+     //Create object collision detection
+
+      function have_collided(object1,object2){
+        return !(
+          ((object1.y + object1.height) < (object2.y)) || //
+          (object1.y > (object2.y + object2.height)) ||
+          ((object1.x + object1.width) < object2.x) ||
+          (object1.x > (object2.x + object2.width))
+        );
+      }
 
 })
