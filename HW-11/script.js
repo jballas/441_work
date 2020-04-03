@@ -30,7 +30,7 @@ var squares =  {"info":[{"x" : 10,
 var squid = new Array();
 var player = 0;
 
-class Fish {
+class Vertibrate {
 
   constructor(x, y, width, height, color){
     this.x = x;
@@ -40,19 +40,19 @@ class Fish {
     this.color = color;
   }
 
-  get fishx(){
+  get vert_x(){
     return this.x;
   }
 
-  set fishx(x){
+  set vert_x(x){
     this.x = x;
   }
 
-  get fishy(){
+  get vert_y(){
     return this.y;
   }
 
-  set fishy(y){
+  set vert_y(y){
     this.y = y;
   }
 
@@ -70,13 +70,6 @@ class Fish {
     // var create_squid = new Fish(x,y,w,h);
 
     function create_squid(){
-/*      var first = new Fish(squares.info[0].x, squares.info[0].y, squares.info[0].width, squares.info[0].height, squares.info[0].color
-);
-      var second = new Fish(squares.info[1].x, squares.info[1].y, squares.info[1].width, squares.info[1].height, squares.info[1].color
-);
-       squid.push(first);
-       squid.push(second);
-*/
 
 // create a new objects and push into an array
   for(let i = 0; i < 5; i ++){
@@ -101,34 +94,35 @@ class Fish {
        for ( let i = 0; i < squid.length ; i ++){
          ctx.fillStyle = squid[i].color;
         ctx.fillRect(squid[i].x, squid[i].y, squid[i].width, squid[i].height);
+        canvas_wall(squid[i]);
        }
      }
 
 
 // KEY EVENT
      $(this).keypress(function(event){
-       getKey(event);
+       getKey(event, squid[player]);
        console.log(squid[player].x)
        console.log(player)
      });
 
-     function getKey(event){
+     function getKey(event, object){
 
        var speed = 10;
        var char = event.which || event.keyCode;
        var letter = String.fromCharCode(char);
 
        if(letter == "w"){
-         squid[player].y -= speed;
+         object.y -= speed;
        }
        if (letter == "s"){
-         squid[player].y += speed;
+         object.y += speed;
        }
        if (letter == "a"){
-         squid[player].x -= speed;
+         object.x -= speed;
        }
        if (letter == "d"){
-         squid[player].x += speed;
+         object.x += speed;
        }
        if (letter == "n"){
          player += 1;
@@ -139,6 +133,19 @@ class Fish {
      }
 
 
-
+     function canvas_wall(object){
+       if (object.x >= canvas.width){
+         object.x = canvas.width;
+       }
+       if (object.y >= canvas.height){
+         object.y = canvas.height;
+       }
+       if (object.x <= 0){
+         object.x = 0;
+       }
+       if (object.y <= 0){
+         object.y = 0;
+       }
+     }
 
 })
