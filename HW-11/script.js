@@ -160,16 +160,22 @@ function collisions(){
     }
   }
 
+  setTimeout(remove_food, 1000);
 
-  for (let i = 0; i < fish_food.length; i ++){
-    var test3 = have_collided(squid[player], fish_food[i])
-    if(test3){
+}
 
-      fish_food.splice;
-      console.log(fish_food.length)
+function remove_food(){
+  // I need to a statement to splice out collectable items...
+    for (let i = 0; i < fish_food.length; i ++){
+      var test3 = have_collided(squid[player], fish_food[i])
+
+      if(test3){
+
+        fish_food.splice(i, 1);
+        console.log(fish_food.length)
+      }
+
     }
-
-  }
 
 }
 
