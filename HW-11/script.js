@@ -47,9 +47,12 @@ var speed = 10;
     drawSquare();
     setInterval(update, 1000/60);
 
+
   function update() {
        ctx.clearRect(0,0,canvas.width,canvas.height);
          drawSquare();
+         collisions();
+
      }
 
   function drawSquare(){
@@ -59,8 +62,6 @@ var speed = 10;
         ctx.fillRect(squid[i].x, squid[i].y, squid[i].width, squid[i].height);
         canvas_wall(squid[i]);
        }
-       collisions();
-
      }
 
   // KEYPRESS EVENT
@@ -99,6 +100,7 @@ var speed = 10;
 
          }
        }
+
   }
 
 // this function tests for collision and if detected prevents objects from overlapping.
