@@ -137,7 +137,6 @@ function collisions(){
   // this variable will allow us to test if collision is true or false
  // var test = have_collided(squid[0], squid[1]);
   var test2 = false;
-
   // this will loop through my squid array to see if any objects are colliding
  for ( let i = 1; i < squid.length ; i ++){
      test2 = have_collided(squid[player], squid[i]);
@@ -160,6 +159,18 @@ function collisions(){
       left(squid[player]);
     }
   }
+
+
+  for (let i = 0; i < fish_food.length; i ++){
+    var test3 = have_collided(squid[player], fish_food[i])
+    if(test3){
+
+      fish_food.splice;
+      console.log(fish_food.length)
+    }
+
+  }
+
 }
 
 // These functions create movement up/down/left/moveRight.
