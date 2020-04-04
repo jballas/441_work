@@ -26,16 +26,14 @@ var squares =  {"info":[{"x" : 10,
                "height" : 5,
                "color" : "rgb(23, 99, 209)"}]};
 
-
+// VARIABLES
 var squid = new Array();
 var player = 0;
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
 
-
-    var canvas = document.getElementById("canvas");
-    var ctx = canvas.getContext("2d");
-
-    // create a new objects and push into an array
-    function create_squid(){
+// create new objects and push into an array
+  function create_squid(){
       for(let i = 0; i < 5; i ++){
           let j = new Vertibrate(squares.info[i].x, squares.info[i].y, squares.info[i].width, squares.info[i].height, squares.info[i].color);
           squid.push(j);
@@ -43,16 +41,16 @@ var player = 0;
     }
 
     create_squid();
-     drawSquare();
-     setInterval(update, 1000/60);
+    drawSquare();
+    setInterval(update, 1000/60);
 
-     function update() {
+  function update() {
        ctx.clearRect(0,0,canvas.width,canvas.height);
          drawSquare();
      }
 
-     function drawSquare(){
-       // display the objects in the array
+  function drawSquare(){
+       // for loop to display the objects in the array
        for ( let i = 0; i < squid.length ; i ++){
          ctx.fillStyle = squid[i].color;
         ctx.fillRect(squid[i].x, squid[i].y, squid[i].width, squid[i].height);
@@ -66,8 +64,6 @@ var player = 0;
         if (test2 == true){
           break; // if the objects overlap, then we break out of the loop.
         }
-
-
        }
      }
 
@@ -88,19 +84,19 @@ var player = 0;
        var letter = String.fromCharCode(char);
 
        if(letter == "w"){
-         object.y -= speed;
+         up(object);
          movement = "up";
        }
        if (letter == "s"){
-         object.y += speed;]
+         down(object);
          movement = "down";
        }
        if (letter == "a"){
-         object.x -= speed;
+         left(object);
          movement = "left"
        }
        if (letter == "d"){
-         object.x += speed;
+         right(object);
          movement = "right"
        }
        if (letter == "n"){
@@ -109,17 +105,31 @@ var player = 0;
            player = 0;
          }
        }
+
+       //
+       if (
+         movement == "up" ){
+
+       }
      }
 
-// This function will use collision test to move objects away from each another
+// These functions create movement up/down/left/moveRight.
+//We create seperate functions for these so we can reuse them with our collisions test above
+    function up(object){
+        object.y -= speed;
+    }
 
-function objects_collide(object1,object2){
-  if (have_collided(object1, object2) && movement == "up" ){
-    object1.y += speed;
-  }
+    function down(object){
+        object.y += speed;
+    }
 
-}
+    function left(object){
+         object.x -= speed;
+    }
 
+    function right(object){
+          object.x += speed;
+    }
 
 // Keep the player objects within the canvas.
      function canvas_wall(object){
