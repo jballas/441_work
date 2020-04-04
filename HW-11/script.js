@@ -34,7 +34,7 @@ var ctx = canvas.getContext("2d");
 var player = 0;
 var movement;
 var speed = 10;
-
+var score = 0;
 
 // create new objects and push into an array
   function create_squid(){
@@ -74,7 +74,7 @@ function create_food(){
        ctx.clearRect(0,0,canvas.width,canvas.height);
          drawSquare();
          collisions();
-         score();
+         create_score();
      }
 
   function drawSquare(){
@@ -94,9 +94,9 @@ function create_food(){
 
 // This will draw the score on the canvas
 // code source https://www.w3schools.com/graphics/canvas_text.asp
-function score(){
-  ctx.font = "2em monospace";
-  ctx.fillText("Score", 200,  20);
+function create_score(){
+
+  $("#score").html("Score: " + score);
 }
 
 
@@ -169,7 +169,6 @@ function collisions(){
   }
 //  This removes the collectable item after its spliced from the array.
   setTimeout(remove_food, 1000);
-
 }
 
 function remove_food(){
@@ -180,6 +179,7 @@ function remove_food(){
       if(test3){
         fish_food.splice(i, 1);
         console.log(fish_food.length)
+        score ++;
       }
     }
 }

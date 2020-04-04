@@ -1,6 +1,7 @@
 body{
-  background-color: purple;
-  background-color: rgb(145, 31, 228);
+  background-color: rgb(31, 54, 228);
+  width: 80%;
+  height: 50%;
 }
 
 
@@ -8,5 +9,13 @@ canvas{
   width: 80%;
   height: 50%;
   background-color: white;
-  border: 1px solid black;
+  border: 40px solid rgb(29, 72, 120);
+}
+
+#score{
+  float: right;
+  background-color: white;
+  width: 100px;
+  padding: 10px;
+  text-transform: capitalize;
 }
