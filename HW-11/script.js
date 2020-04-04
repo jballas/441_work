@@ -90,35 +90,51 @@ class Vertibrate {
          ctx.fillStyle = squid[i].color;
         ctx.fillRect(squid[i].x, squid[i].y, squid[i].width, squid[i].height);
         canvas_wall(squid[i]);
-        objects_bounce(squid[0], squid[1]);
+
+        // this variable will allow us to test if collision is true or false
+        var test = false;
+
+        // this will loop through my squid array to see if any objects are colliding
+        test = objects_collide(squid[player], squid[i]);
+        if (test2 == true){
+          break; // if the objects overlap, then we break out of the loop.
+        }
+
+
        }
      }
 
 
-// KEY EVENT
+
+     // KEYPRESS EVENT
      $(this).keypress(function(event){
        getKey(event, squid[player]);
-       console.log(squid[player].x)
-       console.log(player)
      });
 
+
+     // This function creates movement when a key is pressed
      function getKey(event, object){
 
        var speed = 10;
+       var movement;
        var char = event.which || event.keyCode;
        var letter = String.fromCharCode(char);
 
        if(letter == "w"){
          object.y -= speed;
+         movement = "up";
        }
        if (letter == "s"){
-         object.y += speed;
+         object.y += speed;]
+         movement = "down";
        }
        if (letter == "a"){
          object.x -= speed;
+         movement = "left"
        }
        if (letter == "d"){
          object.x += speed;
+         movement = "right"
        }
        if (letter == "n"){
          player += 1;
@@ -127,6 +143,16 @@ class Vertibrate {
          }
        }
      }
+
+// This function will use collision test to move objects away from each another
+
+function objects_collide(object1,object2){
+  if (have_collided(object1, object2) && movement == "up" ){
+    object1.y += speed;
+  }
+
+}
+
 
 // Keep the player objects within the canvas.
      function canvas_wall(object){
@@ -144,18 +170,7 @@ class Vertibrate {
        }
      }
 
-     // if objects collide, they should 'bounce'
-      function objects_bounce(object1, object2){
-
-        if(have_collided(object1, object2)){
-          let bounce = 5;
-          (object1.x - object2.width) - bounce;
-          (object1.y - object2.width) - bounce;
-        }
-      }
-
      //Create object collision detection
-
       function have_collided(object1,object2){
         return !(
           ((object1.y + object1.height) < (object2.y)) || //
