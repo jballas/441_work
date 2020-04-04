@@ -28,6 +28,7 @@ var squares =  {"info":[{"x" : 10,
 
 // VARIABLES
 var squid = new Array();
+var fish_food = new Array();
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 var player = 0;
@@ -43,26 +44,54 @@ var speed = 10;
       }
     }
 
+// full the information from a JSON and display it.
+function create_food(){
+  $.getJSON( "food.json", function(data) {
+    for(let i = 0; i < 3; i ++){
+        let j = new Vertibrate(data.info[i].x, data.info[i].y, data.info[i].width, data.info[i].height, data.info[i].color);
+        fish_food.push(j);
+      }
+  })
+   .done(function() { // Testing for errors during process.
+      console.log( "second success" );
+    })
+    .fail(function() {
+      console.log( "error" );
+    })
+    .always(function() {
+      console.log( "complete" );
+    });
+
+}
+
+
     create_squid();
+    create_food();
     drawSquare();
     setInterval(update, 1000/60);
-
 
   function update() {
        ctx.clearRect(0,0,canvas.width,canvas.height);
          drawSquare();
          collisions();
-
      }
 
   function drawSquare(){
        // for loop to display the objects in the array
        for ( let i = 0; i < squid.length ; i ++){
-         ctx.fillStyle = squid[i].color;
+        ctx.fillStyle = squid[i].color;
         ctx.fillRect(squid[i].x, squid[i].y, squid[i].width, squid[i].height);
         canvas_wall(squid[i]);
        }
+        // Draw the food objects
+       for ( let i = 0; i < fish_food.length ; i ++){
+        ctx.fillStyle = fish_food[i].color;
+        ctx.fillRect(fish_food[i].x, fish_food[i].y, fish_food[i].width, fish_food[i].height);
+
+       }
      }
+
+
 
   // KEYPRESS EVENT
      $(this).keypress(function(event){
@@ -97,7 +126,6 @@ var speed = 10;
          player += 1;
          if (player >= squid.length){
            player = 0;
-
          }
        }
 
@@ -150,7 +178,6 @@ function collisions(){
 
     function right(object){
           object.x += speed;
-          console.log(object.x);
     }
 
 // Keep the player objects within the canvas.

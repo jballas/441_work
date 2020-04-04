@@ -78,9 +78,13 @@ The code above only checks if the "player" has collided with the others. Not if 
 It is fascinating. I love seeing my squares fly across the screen! There is a game here somewhere.
 
 
-## Moving on
+## Moving on and collectable food
 
-I needed to have a new array with 'food' in it. So my squids can eat something and win scores.
+I needed to have a new array with 'food' in it. So my squids can eat something and increase a score.
+
+This time I created a json file and following the example 13 file, I attempted to make my food appear, and it worked after I made sure my coordinates were within the canvas. I had to make sure my json file was valid using https://jsonlint.com/. Then I used the error/testing code from jquery.com again.(api.jquery.com/jQuery.getJSON/)
+
+Collisions between the player and squid object came next.
 
 
 
@@ -88,6 +92,7 @@ I needed to have a new array with 'food' in it. So my squids can eat something a
 
 
 ## Problems or Issues this week
+
 
 ## Specific questions/concerns for next week
 
