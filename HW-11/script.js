@@ -74,6 +74,7 @@ function create_food(){
        ctx.clearRect(0,0,canvas.width,canvas.height);
          drawSquare();
          collisions();
+         score();
      }
 
   function drawSquare(){
@@ -91,6 +92,12 @@ function create_food(){
        }
      }
 
+// This will draw the score on the canvas
+// code source https://www.w3schools.com/graphics/canvas_text.asp
+function score(){
+  ctx.font = "2em monospace";
+  ctx.fillText("Score", 200,  20);
+}
 
 
   // KEYPRESS EVENT
@@ -145,6 +152,7 @@ function collisions(){
       }
 
   }
+  // if the collisions happen, then we push the player character back the opposite way.
   if (test2 ){
     if (movement =="up"){
       down(squid[player]);
@@ -159,7 +167,7 @@ function collisions(){
       left(squid[player]);
     }
   }
-
+//  This removes the collectable item after its spliced from the array.
   setTimeout(remove_food, 1000);
 
 }
@@ -170,14 +178,13 @@ function remove_food(){
       var test3 = have_collided(squid[player], fish_food[i])
 
       if(test3){
-
         fish_food.splice(i, 1);
         console.log(fish_food.length)
       }
-
     }
-
 }
+
+
 
 // These functions create movement up/down/left/moveRight.
 //We create seperate functions for these so we can reuse them with our collisions test above
