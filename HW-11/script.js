@@ -2,35 +2,38 @@ $(document).ready(function(){
 
 var squares =  {"info":[{"x" : 10,
                          "y" : 0,
-                         "width" : 5,
-                         "height" : 5,
+                         "width" : 20,
+                         "height" : 20,
                          "color" : "rgb(228, 6, 231)"},
            {"x" : 10,
-            "y" : 10,
-            "width" : 5,
-            "height" : 5,
+            "y" : 30,
+            "width" : 20,
+            "height" : 20,
             "color" : "rgb(35, 110, 37)"},
             {"x" : 10,
-             "y" : 20,
-             "width" : 5,
-             "height" : 5,
-             "color" : "rgb(209, 177, 23)"},
+             "y" : 60,
+             "width" : 20,
+             "height" : 20,
+             "color" : "rgb(253, 255, 0)"},
              {"x" : 10,
-              "y" : 30,
-              "width" : 5,
-              "height" : 5,
+              "y" : 90,
+              "width" : 20,
+              "height" : 20,
               "color" : "rgb(223, 148, 38)"},
               {"x" : 10,
-               "y" : 40,
-               "width" : 5,
-               "height" : 5,
+               "y" : 120,
+               "width" : 20,
+               "height" : 20,
                "color" : "rgb(23, 99, 209)"}]};
 
 // VARIABLES
 var squid = new Array();
-var player = 0;
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
+var player = 0;
+var movement;
+var speed = 10;
+
 
 // create new objects and push into an array
   function create_squid(){
@@ -55,63 +58,79 @@ var ctx = canvas.getContext("2d");
          ctx.fillStyle = squid[i].color;
         ctx.fillRect(squid[i].x, squid[i].y, squid[i].width, squid[i].height);
         canvas_wall(squid[i]);
-
-        // this variable will allow us to test if collision is true or false
-        var test = false;
-
-        // this will loop through my squid array to see if any objects are colliding
-        test = objects_collide(squid[player], squid[i]);
-        if (test2 == true){
-          break; // if the objects overlap, then we break out of the loop.
-        }
        }
+       collisions();
+
      }
 
-
-
-     // KEYPRESS EVENT
+  // KEYPRESS EVENT
      $(this).keypress(function(event){
-       getKey(event, squid[player]);
+       getKey(event);
      });
 
+// This function creates movement when a key is pressed
+  function getKey(event){
 
-     // This function creates movement when a key is pressed
-     function getKey(event, object){
-
-       var speed = 10;
-       var movement;
        var char = event.which || event.keyCode;
        var letter = String.fromCharCode(char);
 
        if(letter == "w"){
-         up(object);
+         up(squid[player]);
          movement = "up";
        }
        if (letter == "s"){
-         down(object);
+         down(squid[player]);
          movement = "down";
        }
        if (letter == "a"){
-         left(object);
+         left(squid[player]);
          movement = "left"
        }
        if (letter == "d"){
-         right(object);
+         right(squid[player]);
          movement = "right"
        }
+
+       // Switch which object is the "player"
        if (letter == "n"){
          player += 1;
          if (player >= squid.length){
            player = 0;
+
          }
        }
+  }
 
-       //
-       if (
-         movement == "up" ){
+// this function tests for collision and if detected prevents objects from overlapping.
+function collisions(){
 
-       }
-     }
+  // this variable will allow us to test if collision is true or false
+ // var test = have_collided(squid[0], squid[1]);
+  var test2 = false;
+
+  // this will loop through my squid array to see if any objects are colliding
+ for ( let i = 1; i < squid.length ; i ++){
+     test2 = have_collided(squid[player], squid[i]);
+        if (test2 == true){
+      break; // if the objects overlap, then we break out of the loop.
+      }
+
+  }
+  if (test2 ){
+    if (movement =="up"){
+      down(squid[player]);
+    }
+    else if(movement == "down"){
+      up(squid[player]);
+    }
+    else if (movement == "left"){
+      right(squid[player]);
+    }
+    else if (movement == "right"){
+      left(squid[player]);
+    }
+  }
+}
 
 // These functions create movement up/down/left/moveRight.
 //We create seperate functions for these so we can reuse them with our collisions test above
@@ -129,6 +148,7 @@ var ctx = canvas.getContext("2d");
 
     function right(object){
           object.x += speed;
+          console.log(object.x);
     }
 
 // Keep the player objects within the canvas.
