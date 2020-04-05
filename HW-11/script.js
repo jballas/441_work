@@ -92,8 +92,7 @@ function create_food(){
        }
      }
 
-// This will draw the score on the canvas
-// code source https://www.w3schools.com/graphics/canvas_text.asp
+// This will create the score
 function create_score(){
 
   $("#score").html("Score: " + score);
@@ -178,7 +177,6 @@ function remove_food(){
 
       if(test3){
         fish_food.splice(i, 1);
-        console.log(fish_food.length)
         score ++;
       }
     }

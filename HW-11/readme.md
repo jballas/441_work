@@ -24,8 +24,7 @@ Create another game involving 5 objects that interact with each other and a play
 - 1 object should move by player
   - can you switch between "player"?
 - Add collision between 5 objects
-
-- Add new 'food' array
+- create new 'food' array and JSON
 - Make food array collectable
 - Code a score that increased when you collect a piece of food.
 - separate files for my: JSON, class
@@ -64,7 +63,7 @@ In one version, I could only move my objects using the "n" key. The WASD buttons
 
 In my second experiment I put my collsions in my `drawSquare()` function. Now the first object in my array `squid[0]` - was also the 'player' -- and it could move around freely with WASD. But when I switched to a different object in the array, such as `squid[1]`, then the square zoomed to the edge of the screen. I have no idea why this was happening, but I find it wonderfully amusing. Collisions work only between the main `squid[0]` and other objects. For instance, `squid[1]` and `squid[2]` did not have collision detection.
 
-I beleive this is due to the fact that my collsion detection is written like this:
+I believe this is due to the fact that my collsion detection is written like this:
 
 ```JS
 for ( let i = 1; i < squid.length ; i ++){
@@ -84,10 +83,10 @@ I needed to have a new array with 'food' in it. So my squids can eat something a
 
 This time I created a json file and following the example 13 file, I attempted to make my food appear, and it worked after I made sure my coordinates were within the canvas. I had to make sure my json file was valid using https://jsonlint.com/. Then I used the error/testing code from jquery.com again.(api.jquery.com/jQuery.getJSON/)
 
-Collisions between the player and squid object came next.
+Collisions between the player and squid object came next. First I setup a new test variable and used `console.log(test3)` to make sure the collisions worked. Then I reminded myself how the array splice() method worked, by checking W3Schools website. I creating the splice method inside a `for` loop in order to target each piece of food and remove it when there was collision.
 
-
-
+## Readable Score
+Initially, I had the score appear on the canvas, but I disliked the display. So I briefly researched how to fix the blurry text and was bombarded with information about pixel ratio and screen ratio. Instead, I created a new `<div id="score">` and used jQuery to display it and a variable named `score` to track my score. Now, whenever the player splices a piece of food the score will also increase.
 
 
 
