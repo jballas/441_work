@@ -19,8 +19,8 @@ var score = 0;
               let j = new Vertibrate(data.squares[i].x, data.squares[i].y, data.squares[i].width, data.squares[i].height, data.squares[i].color);
               squid.push(j);
           }
-      })
-      .done(function() { // Testing for errors during process.
+      });
+/*      .done(function() { // Testing for errors during process.
          console.log( "second success" );
        })
        .fail(function() {
@@ -28,7 +28,7 @@ var score = 0;
        })
        .always(function() {
          console.log( "complete" );
-       });
+       });*/
   }
 
 // full the information from a JSON and display it.
@@ -38,8 +38,8 @@ function create_food(){
             let j = new Vertibrate(data.info[i].x, data.info[i].y, data.info[i].width, data.info[i].height, data.info[i].color);
             fish_food.push(j);
           }
-    })
-   .done(function() { // Testing for errors during process.
+    });
+/*   .done(function() { // Testing for errors during process.
       console.log( "second success" );
     })
     .fail(function() {
@@ -48,7 +48,7 @@ function create_food(){
     .always(function() {
       console.log( "complete" );
     });
-
+*/
 }
 
 
@@ -56,6 +56,7 @@ function create_food(){
     create_food();
     drawSquare();
     setInterval(update, 1000/60);
+    setInterval(switch_player, 3000);
 
   function update() {
        ctx.clearRect(0,0,canvas.width,canvas.height);
@@ -83,6 +84,11 @@ function create_food(){
 function create_score(){
 
   $("#score").html("Score: " + score);
+
+  if(score ===3){
+    $("#score").html("Score: " + score + "<br>You Win!");
+
+  }
 }
 
 
@@ -114,14 +120,22 @@ function create_score(){
          movement = "right"
        }
 
-       // Switch which object is the "player"
-       if (letter == "n"){
+       // Manually Switch which object is the "player"
+    /*   if (letter == "n"){
          player += 1;
          if (player >= squid.length){
            player = 0;
          }
-       }
+       }*/
 
+  }
+
+  // Function for automatic switch of player
+  function switch_player(){
+    player += 1;
+    if (player >= squid.length){
+      player = 0;
+    }
   }
 
 // this function tests for collision and if detected prevents objects from overlapping.
@@ -130,16 +144,17 @@ function collisions(){
   // this variable will allow us to test if collision is true or false
  // var test = have_collided(squid[0], squid[1]);
   var test2 = false;
+
   // this will loop through my squid array to see if any objects are colliding
  for ( let i = 1; i < squid.length ; i ++){
-     test2 = have_collided(squid[player], squid[i]);
+     test2 = have_collided(squid[0], squid[i]);
         if (test2 == true){
       break; // if the objects overlap, then we break out of the loop.
       }
 
   }
   // if the collisions happen, then we push the player character back the opposite way.
-  if (test2 ){
+  if (test2){
     if (movement =="up"){
       down(squid[player]);
     }

@@ -6,16 +6,20 @@ body{
 
 
 canvas{
-  width: 80%;
+  width: 70%;
   height: 50%;
   background-color: white;
   border: 40px solid rgb(29, 72, 120);
 }
 
-#score{
+div{
+  width: 20%;
   float: right;
   background-color: white;
-  width: 100px;
   padding: 10px;
-  text-transform: capitalize;
+
+}
+
+#score{
+  width: 100px;
 }

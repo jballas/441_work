@@ -9,8 +9,7 @@ We continue to study HTML5 and canvas, expanding on the idea of our game from la
 
 ## Projects
 
--
--
+- Fish game
 
 ## Assignment Details
 
@@ -27,11 +26,9 @@ Create another game involving 5 objects that interact with each other and a play
 - create new 'food' array and JSON
 - Make food array collectable
 - Code a score that increased when you collect a piece of food.
-- separate files for my: JSON, class
-  - add getJSON code
+- make separate files for my: JSON, class. Organize into data folder.
+  - getJSON code
 
-  - ADD HTML instructions and narrative
-  - change CSS to match game narrative
 
 ## Setup and squid objects.
 Setting up my new game this week, I followed along with the weekly exercises, and made good progress until I reached the collisions. I created an array called `squid` this week, which I hoped would give my game an ocean theme.
@@ -61,13 +58,13 @@ However, whenever I switched the player I ran into issues. First, I could no lon
 
 In one version, I could only move my objects using the "n" key. The WASD buttons became the direction keys, except they were backwards directions. You pressed "w" (for upward movement) and then "n" and the `squid[player]` moved one space down. Then you change direction and move the next `squid[player]` 1 space. So, it was like a strategy game.
 
-In my second experiment I put my collsions in my `drawSquare()` function. Now the first object in my array `squid[0]` - was also the 'player' -- and it could move around freely with WASD. But when I switched to a different object in the array, such as `squid[1]`, then the square zoomed to the edge of the screen. I have no idea why this was happening, but I find it wonderfully amusing. Collisions work only between the main `squid[0]` and other objects. For instance, `squid[1]` and `squid[2]` did not have collision detection.
+In my second experiment I put my collsions in my `drawSquare()` function. Now the first object in my array `squid[0]` - was also the 'player' -- and it could move around freely with WASD. But when I switched to a different object in the array, such as `squid[1]`, then the square zoomed to the edge of the screen. I have no idea why this was happening, but I find it wonderfully amusing. Collisions work only between the main `squid[0]` and other objects. For instance, `squid[1]` and `squid[2]` still do not have collision detection.
 
 I believe this is due to the fact that my collsion detection is written like this:
 
 ```JS
 for ( let i = 1; i < squid.length ; i ++){
-    test2 = have_collided(squid[player], squid[i]);
+    test2 = have_collided(squid[0], squid[i]);
        if (test2 == true){
      break; // if the objects overlap, then we break out of the loop.
      }
@@ -88,11 +85,15 @@ Collisions between the player and squid object came next. First I setup a new te
 ## Readable Score
 Initially, I had the score appear on the canvas, but I disliked the display. So I briefly researched how to fix the blurry text and was bombarded with information about pixel ratio and screen ratio. Instead, I created a new `<div id="score">` and used jQuery to display it and a variable named `score` to track my score. Now, whenever the player splices a piece of food the score will also increase.
 
-
-
 ## Problems or Issues this week
 
+There were definetly some tricky parts this week, but by far the hardest part seems to be making a narrative or a finished game. I might have all the necessary parts for my assignment, a moveable player, objects I can't collide with, collectables, and a score too, but there isn't a game here at all.
 
-## Specific questions/concerns for next week
+I wonder if I can make the other objects unable to collide with each other.
+Nope.
+I wonder if I can made the player switch after 3 seconds.
+I can do that... but they don't all collide with each other and I really wish they did.
 
 ## Conclusion
+
+I felt like I am beginning to set up my final game project. A lot of these game mechanics, like collecting and collisions will be used in my final project. I am very excited to study phaser.io ,and make some of these ideas simplier, so I can focus on the gameplay. 
