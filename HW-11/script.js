@@ -1,30 +1,5 @@
 $(document).ready(function(){
 
-var squares =  {"info":[{"x" : 10,
-                         "y" : 0,
-                         "width" : 20,
-                         "height" : 20,
-                         "color" : "rgb(228, 6, 231)"},
-           {"x" : 10,
-            "y" : 30,
-            "width" : 20,
-            "height" : 20,
-            "color" : "rgb(35, 110, 37)"},
-            {"x" : 10,
-             "y" : 60,
-             "width" : 20,
-             "height" : 20,
-             "color" : "rgb(253, 255, 0)"},
-             {"x" : 10,
-              "y" : 90,
-              "width" : 20,
-              "height" : 20,
-              "color" : "rgb(223, 148, 38)"},
-              {"x" : 10,
-               "y" : 120,
-               "width" : 20,
-               "height" : 20,
-               "color" : "rgb(23, 99, 209)"}]};
 
 // VARIABLES
 var squid = new Array();
@@ -38,20 +13,32 @@ var score = 0;
 
 // create new objects and push into an array
   function create_squid(){
-      for(let i = 0; i < 5; i ++){
-          let j = new Vertibrate(squares.info[i].x, squares.info[i].y, squares.info[i].width, squares.info[i].height, squares.info[i].color);
-          squid.push(j);
-      }
-    }
+// grab data from JSON file
+      $.getJSON("./data/squares.json", function(data){
+          for(let i = 0; i < 5; i ++){
+              let j = new Vertibrate(data.squares[i].x, data.squares[i].y, data.squares[i].width, data.squares[i].height, data.squares[i].color);
+              squid.push(j);
+          }
+      })
+      .done(function() { // Testing for errors during process.
+         console.log( "second success" );
+       })
+       .fail(function() {
+         console.log( "error" );
+       })
+       .always(function() {
+         console.log( "complete" );
+       });
+  }
 
 // full the information from a JSON and display it.
 function create_food(){
-  $.getJSON( "food.json", function(data) {
-    for(let i = 0; i < 3; i ++){
-        let j = new Vertibrate(data.info[i].x, data.info[i].y, data.info[i].width, data.info[i].height, data.info[i].color);
-        fish_food.push(j);
-      }
-  })
+    $.getJSON( "./data/food.json", function(data) {
+        for(let i = 0; i < 3; i ++){
+            let j = new Vertibrate(data.info[i].x, data.info[i].y, data.info[i].width, data.info[i].height, data.info[i].color);
+            fish_food.push(j);
+          }
+    })
    .done(function() { // Testing for errors during process.
       console.log( "second success" );
     })
@@ -173,7 +160,7 @@ function collisions(){
 function remove_food(){
   // I need to a statement to splice out collectable items...
     for (let i = 0; i < fish_food.length; i ++){
-      var test3 = have_collided(squid[player], fish_food[i])
+      var test3 = have_collided(squid[player], fish_food[i]);
 
       if(test3){
         fish_food.splice(i, 1);
