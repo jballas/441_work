@@ -8,7 +8,7 @@ var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 var player = 0;
 var movement;
-var speed = 10;
+var speed = 1;
 var score = 0;
 
 // create new objects and push into an array
@@ -130,7 +130,7 @@ function create_score(){
 
   }
 
-  // Function for automatic switch of player
+  // Function to automatically switch of player
   function switch_player(){
     player += 1;
     if (player >= squid.length){
@@ -138,11 +138,10 @@ function create_score(){
     }
   }
 
-// this function tests for collision and if detected prevents objects from overlapping.
+// this function tests for collision and if detected, prevents player object from overlapping.
 function collisions(){
 
   // this variable will allow us to test if collision is true or false
- // var test = have_collided(squid[0], squid[1]);
   var test2 = false;
 
   // this will loop through my squid array to see if any objects are colliding
