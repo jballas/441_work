@@ -9,7 +9,7 @@ We continue to study HTML5 and canvas, expanding on the idea of our game from la
 
 ## Projects
 
-- Fishy racing game
+- A Fishy racing game
 
 ## Assignment Details
 
@@ -86,14 +86,16 @@ Initially, I had the score appear on the canvas, but I disliked the result. So I
 
 ## Problems or Issues this week
 
-There were definetly some tricky parts this week, but by far the hardest part seems to be making a narrative or a finished game. I might have all the necessary parts for my assignment, a moveable player, objects I can't collide with, collectables, and a score too, but there isn't a game here at all.
+There were definetly some tricky parts this week, but by far the hardest part seems to be making a narrative or a finished game. I might have all the necessary parts for my assignment, a moveable player, objects I can't collide with, collectables, and a score too, but there isn't much of a game here.
 
-I wonder if I can make the other objects unable to collide with each other.
-Nope.
+I wonder if I can make the other objects collide with each other.
+Nope. I tried adding more variables, and repeating if statements, but it got too messy and it still didn't work for all of them. I'm missing something here.
 
-I wonder if I can made the player switch after 3 seconds.
-I can do that... but they don't all collide with each other and I really wish they did. That's where I got stuck this week.
+I wonder if I can make the player switch automatically after 3 seconds.
+I can do that... but they don't all collide with each other and I really wish they did. That would provide more obstacles in the race for the food.
 
-## Conclusion
+This is where I got stuck this week.
+
+## Final Thoughts
 
 I felt like I am beginning to set up my final game project this week, or else studying for my final project. A lot of these game mechanics, like collecting and collisions will be used in my final project. I am very excited to study phaser.io and make some of these ideas simplier, so I can focus on the gameplay and interactive storytelling parts.
