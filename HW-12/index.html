@@ -107,12 +107,16 @@ function create ()
         setXY: { x: 12, y: 0, stepX: 70 }
     });
 
+
     stars.children.iterate(function (child) {
 
         //  Give each star a slightly different bounce
-        child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
-
+        child.setBounceY(Phaser.Math.FloatBetween(0.7, 0.8));
+        // This gives each star less gravity, so the bounce will last longer on some of them
+        child.setGravityY(Phaser.Math.FloatBetween(.05,10));
     });
+
+
 
     bombs = this.physics.add.group();
 

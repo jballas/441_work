@@ -28,9 +28,18 @@ Player movement used a variable called `cursors`, which is assigned keyboard cur
 
 ### Gravity
 
-The next task was changing gravity. I began by reviewing the code to find the star's gravity inside the `function create()`. Initially, we had gravity, or setBounce at 0.4-0.8. I compared this to the bombs, which are set to bounce at 1. I figured lowering the bounce would make them heavity, increasing the bounce would make them lighter. Given the two options, I picked lighter and made an extreme adjustment. `Phaser.Math.FloatBetween(1.5-5)`
+The next task was create gravity. I began by reviewing the code to find the star's gravity inside the `function create()`. We had the stars bouncing, but where was the gravity. After revewing a Phaser example of different gravity, I found we had a gravity set in our `config` settings. (https://phaser.io/examples/v2/arcade-physics/gravity) Then realized I only needed to update the gravityY setting at the same place as the bounce. So I added this line of code.
+```JS
+// This gives each star less gravity, so the bounce will last longer on some of them
+child.setGravityY(Phaser.Math.FloatBetween(.05,10));
+```
+
+### Sprite spritesheet
+
+In order to change the sprite, I had to find a new one in the assets folder. I
 
 
+###
 ## Problems or Issues this week
 
 ## Specific questions/concerns for next week
