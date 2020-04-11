@@ -47,8 +47,15 @@ Before I tackled the saw's location and movement, I set up collision between pla
 
 Next, I researched how to fix the sprite's location. I needed an object that rotated. So I updated the `saw.angle`. (https://phaser.io/examples/v3/view/game-objects/sprites/sprite-rotation) Then I needed to move it. So i updated the `saw.x`, but it just flew off the screen. Could I make it collide against the world boundary
 
-I found an option to make the object wrap around. I added ` this.physics.world.wrap(saw, 0.2);` which looks great, only my collisions don't work anymore. 
-(https://rexrainbow.github.io/phaser3-rex-notes/docs/site/arcade-world/)
+I found an option to make the object wrap around.(https://rexrainbow.github.io/phaser3-rex-notes/docs/site/arcade-world/)
+ I added ` this.physics.world.wrap(saw, 0.2);` which looks great, only my collisions don't work anymore.
+
+ So I tried a couple of things. When I create it as
+ `saw = this.physics.add.sprite( 600, 550, 'saw');` and it collides, but the gravity still effects it, so it falls from the sky.
+
+So I tried:`  saw.body.setAllowGravity(false);` and the saw moved correctly, but I could also make the panda push it around. When the panda jumped on it, the saw fell through the ground, because it didn't have gravity, and because it wraps when it hits the boundary of the world, it came falling from the sky and hit the panda on the head and 'game over'. So collisions worked, as long as the panda wasn't moving.
+
+Next, I added a collision between the saw and the platform, and changed the Y value so it appears above the platform, instead of half way inside and now it is a giant rotating death trap, forcing the player to move quickly in the beginning to avoid it.
 
 
 ## Problems or Issues this week

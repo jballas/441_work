@@ -132,7 +132,8 @@ function create ()
     bombs = this.physics.add.group();
 
     // add rotating saw danger on bottom
-    saw = this.add.sprite( 600, 550, 'saw');
+    saw = this.physics.add.sprite( 700, 475, 'saw');
+    // saw.body.setAllowGravity(false);
 
     //  The score
     scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
@@ -141,7 +142,10 @@ function create ()
     this.physics.add.collider(player, platforms);
     this.physics.add.collider(stars, platforms);
     this.physics.add.collider(bombs, platforms);
-  //  this.physics.add.collider(saw, platforms);
+    this.physics.add.collider(saw, platforms);
+
+  // Collide player and saw
+    this.physics.add.collider(player, saw);
 
 
     //  Checks to see if the player overlaps with any of the stars if he does call the collectStar function
@@ -149,7 +153,7 @@ function create ()
 
     this.physics.add.collider(player, bombs, hitBomb, null, this);
 
-    this.physics.add.overlap(player, saw, hitSaw, null, this);
+    this.physics.add.collider(player, saw, hitSaw, null, this);
 
 }
 
@@ -186,7 +190,7 @@ function update ()
 
     // rotate saw image
     saw.angle +=1;
-    saw.x - = 1;
+    saw.x -= 1;
     // This will make the saw wrap around.
     this.physics.world.wrap(saw, 0.2);
 
