@@ -35,6 +35,7 @@ var config = {
 var player;
 var stars;
 var bombs;
+var saw;
 var platforms;
 var cursors;
 var score = 0;
@@ -49,6 +50,7 @@ function preload ()
     this.load.image('ground', 'assets/platform.png');
     this.load.image('star', 'assets/star.png');
     this.load.image('bomb', 'assets/bomb.png');
+    this.load.image('saw', 'assets/saw.png');
     this.load.spritesheet('dude', 'assets/dude.png', { frameWidth: 32,
     frameHeight: 48 });
     this.load.spritesheet('panda', 'assets/pipo-nekonin018.png', { frameWidth: 32, frameHeight: 32, endFrame: 11});
@@ -99,6 +101,13 @@ function create ()
         repeat: -1
     });
 
+    this.anims.create({
+      key: 'spin',
+      frames: this.anims.generateFrameNumbers('panda', {start:1, end: 11}),
+      frameRate: 60,
+      repeat:-1
+    })
+
     //  Input Events
     cursors = this.input.keyboard.createCursorKeys();
 
@@ -122,6 +131,9 @@ function create ()
 
     bombs = this.physics.add.group();
 
+    // add rotating saw danger on bottom
+    saw = this.add.sprite( 600, 550, 'saw');
+
     //  The score
     scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
 
@@ -129,11 +141,16 @@ function create ()
     this.physics.add.collider(player, platforms);
     this.physics.add.collider(stars, platforms);
     this.physics.add.collider(bombs, platforms);
+  //  this.physics.add.collider(saw, platforms);
+
 
     //  Checks to see if the player overlaps with any of the stars if he does call the collectStar function
     this.physics.add.overlap(player, stars, collectStar, null, this);
 
     this.physics.add.collider(player, bombs, hitBomb, null, this);
+
+    this.physics.add.overlap(player, saw, hitSaw, null, this);
+
 }
 
 function update ()
@@ -166,6 +183,14 @@ function update ()
     {
         player.setVelocityY(-330);
     }
+
+    // rotate saw image
+    saw.angle +=1;
+    saw.x - = 1;
+    // This will make the saw wrap around.
+    this.physics.world.wrap(saw, 0.2);
+
+
 }
 
 function collectStar (player, star)
@@ -205,6 +230,18 @@ function hitBomb (player, bomb)
     player.anims.play('turn');
 
     gameOver = true;
+
+    gameOvertext = this.add.text(150, 200, 'Game Over', { fontSize: '100px', fill: '#000' });
+}
+
+function hitSaw(player, saw){
+  this.physics.pause();
+
+  player.anims.play('spin');
+
+  gameOver = true;
+
+  gameOvertext = this.add.text(150, 200, 'Game Over', { fontSize: '100px', fill: '#000' });
 }
 
 </script>

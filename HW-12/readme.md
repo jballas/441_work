@@ -40,8 +40,15 @@ In order to change the sprite, I had to find a new one in the assets folder. I f
 
 I added the new image to my `preload()` with the new dimensions of 32 x 32. I was concerned because of the layout, but after reviewing some examples, it didn't matter as long as I selected the correct frame.(https://phaser.io/examples/v3/view/animation/single-sprite-sheet)
 
-###
+### Spiky saw
+I preloaded a new image called saw, then added as a sprite to the game world. At first I could only get it to land on top of the platform, but my goal was to have it rotate and move back and forth along the bottom.
 
+Before I tackled the saw's location and movement, I set up collision between player and saw, and a new animation and game over sequence.
+
+Next, I researched how to fix the sprite's location. I needed an object that rotated. So I updated the `saw.angle`. (https://phaser.io/examples/v3/view/game-objects/sprites/sprite-rotation) Then I needed to move it. So i updated the `saw.x`, but it just flew off the screen. Could I make it collide against the world boundary
+
+I found an option to make the object wrap around. I added ` this.physics.world.wrap(saw, 0.2);` which looks great, only my collisions don't work anymore. 
+(https://rexrainbow.github.io/phaser3-rex-notes/docs/site/arcade-world/)
 
 
 ## Problems or Issues this week
