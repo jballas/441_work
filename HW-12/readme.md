@@ -36,10 +36,14 @@ child.setGravityY(Phaser.Math.FloatBetween(.05,10));
 
 ### Sprite spritesheet
 
-In order to change the sprite, I had to find a new one in the assets folder. I
+In order to change the sprite, I had to find a new one in the assets folder. I found a cute panda, 32 x 32, with a completely different grid layout. The panda had 3 x 4 grid and could essentially walk in 3 dimensions, but I only needed to have a forward facing, a walking left and walking right.
 
+I added the new image to my `preload()` with the new dimensions of 32 x 32. I was concerned because of the layout, but after reviewing some examples, it didn't matter as long as I selected the correct frame.(https://phaser.io/examples/v3/view/animation/single-sprite-sheet)
 
 ###
+
+
+
 ## Problems or Issues this week
 
 ## Specific questions/concerns for next week
