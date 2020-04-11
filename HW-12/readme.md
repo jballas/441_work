@@ -57,7 +57,16 @@ So I tried:`  saw.body.setAllowGravity(false);` and the saw moved correctly, but
 
 Next, I added a collision between the saw and the platform, and changed the Y value so it appears above the platform, instead of half way inside and now it is a giant rotating death trap, forcing the player to move quickly in the beginning to avoid it.
 
+Then I realized I had 2 collisions and they were perhaps interfering with each other. I removed `this.physics.add.collider(player, saw);` and kept the gravity from before, fixed my y position. With only one collision: `this.physics.add.collider(player, saw, hitSaw, null, this);` it seems to work like I wanted. It immediately made the game harder to test.
 
-## Problems or Issues this week
+### New Level.
+
+I added some more variables called `level` and `levelText`, and then used a % equation so that if the score is divisible by 120, then the player has reached a new level.
+
 
 ## Specific questions/concerns for next week
+None. I'm going to continue researching the game physics and options available to me in Phaser, since I was planning to make my final a phaser game.
+
+## Conclusion
+
+Phaser is a fascinating game engine, I love that makes collisions easier, but you also have to use the code correctly to make it work. But I had so much more fun experimenting with the logic within phaser, than with vanilla javascript. I loved seeing strange things happen that I was no expecting. The tricky part with be getting familiar with the game engine enough to make my own game.

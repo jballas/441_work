@@ -39,8 +39,10 @@ var saw;
 var platforms;
 var cursors;
 var score = 0;
+var level = 0;
 var gameOver = false;
 var scoreText;
+var levelText;
 
 var game = new Phaser.Game(config);
 
@@ -72,6 +74,7 @@ function create ()
     platforms.create(600, 400, 'ground');
     platforms.create(50, 250, 'ground');
     platforms.create(750, 220, 'ground');
+    platforms.create(-100, 100, 'ground');
 
     // The player and its settings
     player = this.physics.add.sprite(100, 450, 'panda');
@@ -104,9 +107,10 @@ function create ()
     this.anims.create({
       key: 'spin',
       frames: this.anims.generateFrameNumbers('panda', {start:1, end: 11}),
-      frameRate: 60,
+      frameRate: 30,
       repeat:-1
-    })
+    });
+
 
     //  Input Events
     cursors = this.input.keyboard.createCursorKeys();
@@ -127,33 +131,29 @@ function create ()
         child.setGravityY(Phaser.Math.FloatBetween(.05,10));
     });
 
-
-
     bombs = this.physics.add.group();
 
     // add rotating saw danger on bottom
-    saw = this.physics.add.sprite( 700, 475, 'saw');
-    // saw.body.setAllowGravity(false);
+    saw = this.physics.add.sprite( 700, 550, 'saw');
+     saw.body.setAllowGravity(false);
 
     //  The score
     scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+
+    levelText = this.add.text(600, 16, 'Level: 0', { fontSize: '32px', fill: '#000'});
 
     //  Collide the player and the stars with the platforms
     this.physics.add.collider(player, platforms);
     this.physics.add.collider(stars, platforms);
     this.physics.add.collider(bombs, platforms);
-    this.physics.add.collider(saw, platforms);
-
-  // Collide player and saw
-    this.physics.add.collider(player, saw);
-
 
     //  Checks to see if the player overlaps with any of the stars if he does call the collectStar function
     this.physics.add.overlap(player, stars, collectStar, null, this);
 
     this.physics.add.collider(player, bombs, hitBomb, null, this);
 
-    this.physics.add.collider(player, saw, hitSaw, null, this);
+    this.physics.add.collider(player, saw, hitSaw, null, this); // They only need to collide once!
+
 
 }
 
@@ -182,7 +182,7 @@ function update ()
 
         player.anims.play('turn');
     }
-
+// the space bar allows you to jump
     if (cursors.space.isDown && player.body.touching.down)
     {
         player.setVelocityY(-330);
@@ -191,9 +191,9 @@ function update ()
     // rotate saw image
     saw.angle +=1;
     saw.x -= 1;
-    // This will make the saw wrap around.
-    this.physics.world.wrap(saw, 0.2);
 
+    // This will make the saw wrap around the game world.
+    this.physics.world.wrap(saw, 0.2);
 
 }
 
@@ -204,6 +204,12 @@ function collectStar (player, star)
     //  Add and update the score
     score += 10;
     scoreText.setText('Score: ' + score);
+
+    // when player collects all the stars, they reach the next level.
+    if (score % 120 === 0){
+      level ++;
+      levelText.setText('Level:' + level)
+    }
 
     if (stars.countActive(true) === 0)
     {
@@ -247,6 +253,7 @@ function hitSaw(player, saw){
 
   gameOvertext = this.add.text(150, 200, 'Game Over', { fontSize: '100px', fill: '#000' });
 }
+
 
 </script>
 
