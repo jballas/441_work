@@ -5,7 +5,7 @@
 
 ## Overview
 
-This week was an Introduction to Phaser 3.0
+This week was an Introduction to Phaser 3
 
 ## Projects
 
@@ -13,16 +13,16 @@ This week was an Introduction to Phaser 3.0
 
 ## Assignment Details
 
-Modify the phaser tutorial from the weekly lesson.
+Modify the Phaser 3 tutorial from the weekly lesson.
 
 ## Weekly Report
 
-This week we focus on the javascript library known as Phaser, version 3.0. It aids in creating HTML5 based webgames. We followed a tutorial in class in order to create the basic game elements, movement and animation. Now we have to figure out how to modify the code to change up the gameplay.
+This week we focus on the javascript library known as Phaser, version 3. It aids in creating HTML5 based webgames. We followed a tutorial in class in order to create the basic game elements, movement and animation. Now we have to figure out how to modify the code to change up the gameplay.
 
 ### Jump
-Changing the jump method required changing the `function update()`. Phaser works by preloading elements of the game, then creating those elements and lastly updating them as the game is played.
+Changing the jump method required changing the `function update()`. Phaser 3 works by preloading elements of the game, then creating those elements and lastly updating them as the game is played.
 
-In order to make sure I was updating with the correct terminology, I began by researching Phaser's documentation, but their search method wasn't giving me any answers. Instead, I googled 'createCursorKeys() phaser 3' and got my information.
+In order to make sure I was updating with the correct terminology, I began by researching Phaser 3's documentation, but their search method wasn't giving me any answers. Instead, I googled 'createCursorKeys() phaser 3' and got my information.
 
 Player movement used a variable called `cursors`, which is assigned keyboard cursors. Instead of referncing the `.up` key, we had make it `cusors.space.isDown`.
 
@@ -59,7 +59,7 @@ Next, I added a collision between the saw and the platform, and changed the Y va
 
 Then I realized I had 2 collisions and they were perhaps interfering with each other. I removed `this.physics.add.collider(player, saw);` and kept the gravity from before, fixed my y position. With only one collision: `this.physics.add.collider(player, saw, hitSaw, null, this);` it seems to work like I wanted. It immediately made the game harder to test.
 
-### New Level.
+### New Level
 
 I added some more variables called `level` and `levelText`, and then used a % equation so that if the score is divisible by 120, then the player has reached a new level.
 
@@ -69,4 +69,4 @@ None. I'm going to continue researching the game physics and options available t
 
 ## Conclusion
 
-Phaser is a fascinating game engine, I love that makes collisions easier, but you also have to use the code correctly to make it work. But I had so much more fun experimenting with the logic within phaser, than with vanilla javascript. I loved seeing strange things happen that I was no expecting. The tricky part with be getting familiar with the game engine enough to make my own game.
+Phaser 3 is a fascinating game engine. I love that makes collisions easier, but you also have to use the code correctly to make it work. I had so much more fun experimenting with the logic within Phaser 3 than with vanilla javascript. I loved seeing strange things happen that I was no expecting. The tricky part with be getting familiar with the game engine enough to make my own game.
