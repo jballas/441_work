@@ -11,13 +11,17 @@ scene.background = new THREE.Color( 'rgb(235, 30, 208)' );
 
 
 // Create Cube Shape
-  var geometry = new THREE.TorusGeometry(5, 1.5, 8, 50 );
+  var geometry = new THREE.TorusGeometry(2.5, .5, 8, 25 );
   var material = new THREE.MeshBasicMaterial({
-      color: 0xffaaff // Color of cube
+      color: 0xdacd1a // Color of cube
   });
   // Create material to make cube visible
   var torus = new THREE.Mesh(geometry, material);
   scene.add(torus);
+
+  var torus2 = new THREE.Mesh(geometry, material);
+  scene.add(torus2);
+
 
   // Control Camera
   camera.position.z = 15;
@@ -28,6 +32,8 @@ scene.background = new THREE.Color( 'rgb(235, 30, 208)' );
       // Include rotation, otherwise, we can't see the 3D effect.
       torus.rotation.x += 0.01;
       torus.rotation.y += 0.01;
+      torus2.rotation.x -= 0.02;
+      torus2.rotation.y -= 0.02;
       renderer.render( scene, camera );
   }
   animate();
