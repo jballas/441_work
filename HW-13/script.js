@@ -1,10 +1,12 @@
 // Set up Scene
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-
 var renderer = new THREE.WebGLRenderer();
+ renderer.setClearColor(0xdddddd);
 renderer.setSize( window.innerWidth, window.innerHeight );
-document.body.appendChild( renderer.domElement );
+document.body.appendChild(renderer.domElement)
+
+var loader = new OBJLoader();
 
 // New background Color
 scene.background = new THREE.Color( 'rgb(235, 30, 208)' );
@@ -22,8 +24,19 @@ scene.background = new THREE.Color( 'rgb(235, 30, 208)' );
   var torus2 = new THREE.Mesh(geometry, material);
   scene.add(torus2);
 
+  // Adding 3D models
+      loader.load('models/pine.obj', function(obj) {
 
-  // Control Camera
+          scene.add(obj.scene);
+
+      }, undefined, function(error) {
+
+          console.error(error);
+        });
+
+
+  // Camera
+  camera.posistion.x = 100;
   camera.position.z = 15;
 
   // Animate the scene, and render it
@@ -37,3 +50,22 @@ scene.background = new THREE.Color( 'rgb(235, 30, 208)' );
       renderer.render( scene, camera );
   }
   animate();
+
+  // Rotate Models
+  var rotation = 0
+
+        function spinCamera() {
+            rotation += 0.001
+            camera.position.z = Math.sin(rotation) * 80;
+            camera.position.x = Math.cos(rotation) * 80;
+            camera.lookAt(scene.position)
+        }
+        var render = function() {
+
+            requestAnimationFrame(render);
+            spinCamera();
+
+            renderer.render(scene, camera);
+        };
+
+        render();
