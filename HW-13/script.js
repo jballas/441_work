@@ -23,8 +23,9 @@ scene.background = new THREE.Color( 'rgb(235, 30, 208)' );
   scene.add(torus2);
 */
   // Adding 3D models
-  var loader = new THREE.GLTFLoader();
-
+  var THREE = window.THREE = require('three');
+  require('three/examples/js/loaders/GLTFLoader');
+  
   loader.load('pine.gltf', function(gltf) {
 
       scene.add(gltf.scene);
@@ -38,8 +39,11 @@ scene.background = new THREE.Color( 'rgb(235, 30, 208)' );
 
 
   // Camera
-  camera.posistion.x = 100;
-  camera.position.z = 15;
+//  camera.position.z = 15;
+
+camera.position.x = 100
+     camera.position.y = -100
+     camera.position.z = 590
 
   // Animate the shapes, and render it
   function animate() {
