@@ -13,6 +13,7 @@
     </head>
     <body>
         <script src="js/three.js"></script>
+        <script src="js/GLTFLader.js"></script>
         <script>
         // Set up Scene
         var scene = new THREE.Scene();
@@ -39,7 +40,6 @@
           scene.add(torus2);
         */
           // Adding 3D models
-          import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
           loader.load('pine.gltf', function(gltf) {
 
