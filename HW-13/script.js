@@ -4,12 +4,12 @@ var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHe
 var renderer = new THREE.WebGLRenderer();
  renderer.setClearColor(0xdddddd);
 renderer.setSize( window.innerWidth, window.innerHeight );
-//document.body.appendChild(renderer.domElement)
+document.body.appendChild(renderer.domElement)
 
 // New background Color
 scene.background = new THREE.Color( 'rgb(235, 30, 208)' );
 
-/*
+
 // Create Cube Shape
   var geometry = new THREE.TorusGeometry(2.5, .5, 8, 25 );
   var material = new THREE.MeshBasicMaterial({
@@ -21,12 +21,11 @@ scene.background = new THREE.Color( 'rgb(235, 30, 208)' );
 
   var torus2 = new THREE.Mesh(geometry, material);
   scene.add(torus2);
-*/
+
   // Adding 3D models
-  var THREE = window.THREE = require('three');
-  require('three/examples/js/loaders/GLTFLoader');
-  
-  loader.load('pine.gltf', function(gltf) {
+  var loader = new THREE.GLTFLoader();
+
+  loader.load('models/pine.glb', function(gltf) {
 
       scene.add(gltf.scene);
 
@@ -42,7 +41,7 @@ scene.background = new THREE.Color( 'rgb(235, 30, 208)' );
 //  camera.position.z = 15;
 
 camera.position.x = 100
-     camera.position.y = -100
+  //   camera.position.y = -100
      camera.position.z = 590
 
   // Animate the shapes, and render it
@@ -58,7 +57,7 @@ camera.position.x = 100
   animate();
 
   // Rotate Models
-/*  var rotation = 0
+  var rotation = 0
 
         function spinCamera() {
             rotation += 0.001
@@ -73,5 +72,5 @@ camera.position.x = 100
 
             renderer.render(scene, camera);
         };
-*/
+
         render();
