@@ -2,9 +2,9 @@
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 var renderer = new THREE.WebGLRenderer();
- renderer.setClearColor(0xdddddd);
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild(renderer.domElement)
+renderer.outputEncoding = THREE.sRGBEncoding;
 
 // New background Color
 scene.background = new THREE.Color( 'rgb(235, 30, 208)' );
@@ -28,6 +28,7 @@ scene.background = new THREE.Color( 'rgb(235, 30, 208)' );
   loader.load('models/pine.glb', function(gltf) {
 
       scene.add(gltf.scene);
+		    gltf.scale.set(2,2,2); // Object
 
   }, undefined, function(error) {
 
@@ -36,13 +37,13 @@ scene.background = new THREE.Color( 'rgb(235, 30, 208)' );
   });
 
 
-
   // Camera
 //  camera.position.z = 15;
 
-camera.position.x = 100
-  //   camera.position.y = -100
-     camera.position.z = 590
+
+//  camera.position.x = 1000
+//     camera.position.y = -20
+//    camera.position.z = 5900
 
   // Animate the shapes, and render it
   function animate() {
