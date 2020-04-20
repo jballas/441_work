@@ -30,19 +30,21 @@ My only experiments with 3D models was creating one in photoshop once, but since
 
 The screenshot above shows the 3D model tree was not green and it was huge compared to my rings. It was also displayed in the same position as the rings and not a below. I needed to fixt these three things.
 
-- color
+- color FIXED
+ by adding in some Directional Light
 - size/ scale FIXED
-
+- position FIXED
+Thanks to reviewing the information on this site.
 https://discourse.threejs.org/t/solved-glb-model-is-very-dark/6258
-
-- position
-- camera angle
+- camera angle FIXED
 
 
 ## TEXT for Invitation
 I needed a script font, so I converted one of google's free fonts named Kaushan Regular into a json file. I used this free website to do the conversion.
 
 https://gero3.github.io/facetype.js/
+
+I had some trouble loading it, but worked off the example on your weekly lesson and got it to display. But it is positioned in the middle of the page and not readable. Not that text would ever be readable in 3D. I need to adjust its posistion above, somehow.
 
 ## Problems or Issues this week
 
