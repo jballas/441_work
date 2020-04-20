@@ -32,7 +32,7 @@ var model = load_model();
 
       scene.add(gltf.scene);
       gltf.scene.scale.set(.15,.15,.15); // THIS fixes the scale of model
-        gltf.scene.position.set(0, -40, 0); // This moves the position
+        gltf.scene.position.set(0, -40, 0); // This moves the position of the model
 
   }, undefined, function(error) {
       console.error(error);
@@ -40,43 +40,51 @@ var model = load_model();
   }
 
 // TEXT
+var text;
     loadFont()
 
 function loadFont() {
             var loader = new THREE.FontLoader();
 
+            // This loads our font information as a json
               loader.load('js/Kaushan_Script_Regular.json', function(res){
                 font = res;
-                createText();
+                createText(); // This creates the text from details in the function below.
             });
         }
 
         function createText() {
-                    // change the text here
+                    // This creates text shapes from the Json file.
                     textGeo = new THREE.TextGeometry( ' You\nAre\nInvited!\nMiranda\nand\nJason', {
                           font: font,
-                          size: 5,
-                          height: 5,
-                          curveSegments: 12,
+                          size: 6,
+                          height: 2.5,
+                          curveSegments: 6,
                           bevelEnabled: false,
-                          bevelThickness: 10,
-                          bevelSize: 8,
+                          bevelThickness: 0,
+                          bevelSize: 0,
                           bevelOffset: 0,
-                          bevelSegments: 3
+                          bevelSegments: 0
                     });
+                    //
                     textGeo.computeBoundingBox();
                     textGeo.computeVertexNormals();
 
-                    // change the color here
-                    var color = new THREE.Color(0x07280a);
+
+                    // This will adjust the color of the text
+                    var color = new THREE.Color(0x062502);
                     var textMaterial = new THREE.MeshBasicMaterial({
-                        color: color
+                        color: color // Text color is a material
                     });
-                    var text = new THREE.Mesh(textGeo, textMaterial)
+
+                    text = new THREE.Mesh(textGeo, textMaterial)
                     text.position.x = -textGeo.boundingBox.max.x / 2;
                     text.castShadow = true;
+                    text.position.set(0,20,10);
                     scene.add(text)
                 }
+// move the position of the text?
+
 
 // Camera
      camera.position.y = -20
