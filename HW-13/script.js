@@ -39,8 +39,46 @@ var model = load_model();
   });
   }
 
+// TEXT
+    loadFont()
 
-  // Camera
+function loadFont() {
+            var loader = new THREE.FontLoader();
+
+              loader.load('js/Kaushan_Script_Regular.json', function(res){
+                font = res;
+                createText();
+            });
+        }
+
+        function createText() {
+                    // change the text here
+                    textGeo = new THREE.TextGeometry( ' You\nAre\nInvited!\nMiranda\nand\nJason', {
+                          font: font,
+                          size: 5,
+                          height: 5,
+                          curveSegments: 12,
+                          bevelEnabled: false,
+                          bevelThickness: 10,
+                          bevelSize: 8,
+                          bevelOffset: 0,
+                          bevelSegments: 3
+                    });
+                    textGeo.computeBoundingBox();
+                    textGeo.computeVertexNormals();
+
+                    // change the color here
+                    var color = new THREE.Color(0x07280a);
+                    var textMaterial = new THREE.MeshBasicMaterial({
+                        color: color
+                    });
+                    var text = new THREE.Mesh(textGeo, textMaterial)
+                    text.position.x = -textGeo.boundingBox.max.x / 2;
+                    text.castShadow = true;
+                    scene.add(text)
+                }
+
+// Camera
      camera.position.y = -20
 
 // Lighting
