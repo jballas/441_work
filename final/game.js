@@ -26,21 +26,21 @@ var hunger;
 var game_over = false;
 var menu;
 
-var game = new Phaser.Game(config);
+const game = new Phaser.Game(config);
 
 function preload(){
-  this.load.image('bus', 'assets/bus_backgrounds.png');
-  this.load.tilemap('mtn', 'assets/mtn_map.json', null, Phaser.Tilemap.TILED_JSON);
-  this.load.image('forest', 'Forest_Tileset.png');
-  this.load.spritesheet('rosie', 'assets/rosie.png', { frameWidth: 32, frameHeight: 32, endFrame: 11});
+  //this.load.image('bus', 'assets/bus_background.png');
+  this.load.image('tiles', 'assets/Forest_Tileset.png');
+  this.load.tilemapTiledJSON('mtn_map', 'assets/mtn_map.json');
+  //this.load.spritesheet('rosie', 'assets/rosie.png', { frameWidth: 32, frameHeight: 32, endFrame: 11});
 }
 
 function create() {
-  this.map = this.add.tilemap('mtn', 32, 32, 36, 77);
-   this.map.createLayer("background").resizeWorld();
-  this.map.createLayer('trees');
+  var map = this.make.tilemap({ key: 'mtn_map', tileWidth: 32, tileHeight: 32});
+  var tiles = map.addTilesetImage('Forest_Tileset', 'tiles')
 
-  this.game.camera.x = this.map.layers[0].widthInPixels / 2;
+  var layer = map.createStaticLayer(0, tiles, 0,0);
+
 
 }
 
