@@ -66,14 +66,20 @@ function loadFont() {
                           bevelOffset: 0,
                           bevelSegments: 0
                     });
+                    //
+                  //  textGeo.computeBoundingBox(); // This keeps the text in the middle of the scene
+                  //  textGeo.computeVertexNormals();
+
 
                     // This will adjust the color of the text
                     var color = new THREE.Color(0x062502);
                     var textMaterial = new THREE.MeshBasicMaterial({
-                        color: color // Text color created as a material
+                        color: color // Text color as a material
                     });
 
                     text = new THREE.Mesh(textGeo, textMaterial)
+                  //  text.position.x = -textGeo.boundingBox.max.x / 2;
+                    text.castShadow = true;
                     text.position.set(0,20,10); // moves the position of the text
                     scene.add(text)
                 }
