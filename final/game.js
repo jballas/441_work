@@ -2,15 +2,14 @@
 var config = {
     type: Phaser.AUTO,
     width: 1152,
-    height: 2464,
+    height: 2496,
     parent: "game-container",
     pixelArt: true,
     physics: {
         default: 'arcade',
         arcade: {
             gravity: {
-                y: 0 },
-            debug: false
+                y: 0 }
         }
     },
     scene: {
@@ -28,6 +27,7 @@ var health;
 var hunger;
 var game_over = false;
 var menu;
+let showDebug = false;
 
 const game = new Phaser.Game(config);
 
@@ -39,20 +39,26 @@ function preload(){
 }
 
 function create() {
+
   // displays the tilemap from the tileset
-  var map = this.make.tilemap({ key: 'mtn_map', tileWidth: 32, tileHeight: 32});
+  var map = this.make.tilemap({ key: 'mtn_map'});
   var tiles = map.addTilesetImage('Forest_Tileset', 'tiles')
 
   // my tilemap has 2 layers, these are both static images
   var bg_layer = map.createStaticLayer("background", tiles, 0,0);
   var tree_layer = map.createStaticLayer("trees", tiles, 0,0);
 
-
   // Creates Collisions with any tile that has been marked
   tree_layer.setCollisionByProperty({collision: true});
 
+// Control Camera position
+var camera = this.cameras.main;
+
+// camera size
+camera.setSize(640, 800)
+
 // displays player sprite
-player = this.physics.add.sprite(100,800, 'rosie');
+player = this.physics.add.sprite(50,2400, 'rosie');
 
 // Keeps player within world boundary
   player.setCollideWorldBounds(true);
