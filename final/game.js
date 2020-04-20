@@ -1,8 +1,8 @@
 // Setup game details
 var config = {
     type: Phaser.AUTO,
-    width: 1125,
-    height: 2436,
+    width: 1152,
+    height: 2464,
     parent: "game-container",
     pixelArt: true,
     physics: {
@@ -97,7 +97,7 @@ this.anims.create({
 // check if player and objects have collided
 this.physics.add.collider(player, tree_layer);
 
-// Camera
+// Camera details
 
 camera = this.cameras.main;
 
@@ -109,28 +109,29 @@ function update(){
 /*      if (gameOver) {
           return;
       } */
+      let speed = 160;
 
       if (cursors.left.isDown)
       {
-          player.setVelocityX(-160);
+          player.setVelocityX(-speed);
 
           player.anims.play('left', true);
       }
       else if (cursors.right.isDown)
       {
-          player.setVelocityX(160);
+          player.setVelocityX(speed);
 
           player.anims.play('right', true);
       }
       else if (cursors.up.isDown)
       {
-          player.setVelocityY(-160);
+          player.setVelocityY(-speed);
 
           player.anims.play('up', true);
       }
       else if (cursors.down.isDown)
       {
-          player.setVelocityY(160);
+          player.setVelocityY(speed);
 
           player.anims.play('down', true);
       }
@@ -142,7 +143,8 @@ function update(){
 
           player.anims.play('turn');
       }
-
+      // This will help with the player's diagonal velocity. It scales down the velocity
+      player.body.velocity.normalize().scale(speed);
 
 
 }

@@ -33,13 +33,20 @@ The idea behind my game is a love of picking huckleberries in the summer with my
 
 ## Artwork
 
-Some of the artwork I created myself, some of it I sourced from free vector sites, and the tilemap was designed by Art by Elthan from itch.io's free game assets store. The mood needs to capture the adventurous spirit of the game, since you'll be climbing a mountain, on an RPG like map. There's cliffs and a river to cross and a mountaintop to reach. Tiled is a program that allows you to make maps based on pixel art. It is a visual program but it exports as a json file. You can also attach properties to the map, such as whether there are collisions. (1)
+Some of the artwork I created myself, some of it I sourced from free vector sites, and the tilemap was designed by Art by Elthan from itch.io's free game assets store. The mood needs to capture the adventurous spirit of the game, since you'll be climbing a mountain, on an RPG like map. There's cliffs and a river to cross and a mountaintop to reach. *Tiled* is a program that allows you to make maps based on pixel art. It is a visual program but it exports as a json file. You can also attach properties that will make collisions occur with certain tiles. (1)
 
 ## Coding
 
-### TileMap and Collisions
- After creating my map, I wanted to see how collisions would work. So, I started off with a simple phaser program, much like what we created in week 12. 
+### TileMap and Player
+After creating my map, I wanted to get it up on screen. So, I started off with a simple phaser program, much like what we created in week 12. Michael West Hadley has a fantastic tutorial on tilemaps within Phaser and with that as my guide, I set about getting my map to show.
 
+It shows only the top section of my map, so I have some camera a position. I want the player to appear in the bottom of the map, and then make their way up the mountain road, finding berries and getting stuck at the river. Then using a "ladder" to get past the river.
+
+The collisions don't work either, even though the JSON file shows I have certain tiles marked with a collision property. Phaser was supposed to make collisions easier, but I guess it won't ever by that easy.
+
+Research
+Camera and more on maps
+research collisions
 
 
 ## Conclusion
