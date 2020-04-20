@@ -25,16 +25,21 @@ scene.background = new THREE.Color( 'rgb(235, 30, 208)' );
   // Adding 3D models
   var loader = new THREE.GLTFLoader();
 
-  loader.load('models/pine.glb', function(gltf) {
+var model = load_model();
+
+  function load_model(){
+    loader.load('models/pine.glb', function(gltf) {
 
       scene.add(gltf.scene);
-		    gltf.scale.set(2,2,2); // Object
+      gltf.scene.scale.set(.1,.1,.1);
+        gltf.scene.position.set(0, -1.25, 0);
 
   }, undefined, function(error) {
 
       console.error(error);
 
   });
+  }
 
 
   // Camera
