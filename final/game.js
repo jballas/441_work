@@ -32,15 +32,22 @@ function preload(){
   //this.load.image('bus', 'assets/bus_background.png');
   this.load.image('tiles', 'assets/Forest_Tileset.png');
   this.load.tilemapTiledJSON('mtn_map', 'assets/mtn_map.json');
-  //this.load.spritesheet('rosie', 'assets/rosie.png', { frameWidth: 32, frameHeight: 32, endFrame: 11});
+  this.load.spritesheet('rosie', 'assets/rosie.png', { frameWidth: 32, frameHeight: 32, endFrame: 11});
 }
 
 function create() {
+  // displays the tilemap from the tileset
   var map = this.make.tilemap({ key: 'mtn_map', tileWidth: 32, tileHeight: 32});
   var tiles = map.addTilesetImage('Forest_Tileset', 'tiles')
 
-  var layer = map.createStaticLayer(0, tiles, 0,0);
+  // my tilemap has 2 layers, these are both static images
+  var bg_layer = map.createStaticLayer("background", tiles, 0,0);
+  var tree_layer = map.createStaticLayer("trees", tiles, 0,0);
 
+  // Creates Collisions with any tile that has been marked
+  bg_layer.setCollisionByProperty({collision: true});
+
+// displays player sprite
 
 }
 
