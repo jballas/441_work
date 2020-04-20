@@ -4,7 +4,7 @@
      "export":
         {
          "format":"json",
-         "target":"mtn_map.json"
+         "target":"..\/..\/..\/..\/Users\/jball\/Documents\/MEDIA_ARTS\/2020Sprin&Fall\/441WebTech\/final\/map\/mtn_map.json"
         }
     },
  "height":77,
@@ -44,11 +44,11 @@
         {
          "columns":19,
          "firstgid":1,
-         "image":"..\/Forest Tileset.png",
+         "image":"Forest_Tileset.png",
          "imageheight":544,
          "imagewidth":639,
          "margin":0,
-         "name":"Ethan's forest tileset",
+         "name":"Forest_Tileset",
          "spacing":0,
          "tilecount":323,
          "tileheight":32,
