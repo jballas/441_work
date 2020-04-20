@@ -79,6 +79,6 @@ Luckily, after I took a break, I was able to come back with fresh eyes and find 
 
 ## Conclusion
 
-Once I started playing with the shapes and created two revolving rings, I knew immediately what I wanted to create. A 3D wedding invitation, but having this vision limited me. I couldn't just experiment and see what might happen. I had no flexibility with this project. I needed to make sure the tree was exactly where I wanted and at the right size, so I struggled trying to make this happen. Sometimes, I think I enjoy art when I experiment and do have any expectations for the result.
+Once I started playing with the shapes and created two revolving rings, I knew immediately what I wanted to create. A 3D wedding invitation, but having this vision limited me. I couldn't just experiment and see what might happen. I had no flexibility with this project. I needed to make sure the tree was exactly where I wanted and at the right size, so I struggled trying to make this happen. Sometimes, I think I enjoy art more when I experiment and don't have any expectations for the result.
 
  ![Mockup 3D Wedding invitation](screenshot_final.png)
