@@ -31,8 +31,8 @@ var model = load_model();
     loader.load('models/pine.glb', function(gltf) {
 
       scene.add(gltf.scene);
-      gltf.scene.scale.set(.1,.1,.1); // THIS fixes the scale of model
-        gltf.scene.position.set(0, -27.25, 0); // This moves the position
+      gltf.scene.scale.set(.15,.15,.15); // THIS fixes the scale of model
+        gltf.scene.position.set(0, -40, 0); // This moves the position
 
   }, undefined, function(error) {
       console.error(error);
@@ -41,12 +41,12 @@ var model = load_model();
 
 
   // Camera
-//  camera.position.z = 15;
+     camera.position.y = -20
 
+// Lighting
+var light = new THREE.DirectionalLight(0xf3d2f9, 3);
 
-//  camera.position.x = 1000
-//     camera.position.y = -20
-//    camera.position.z = 5900
+scene.add(light);
 
   // Animate the shapes, and render it
   function animate() {
