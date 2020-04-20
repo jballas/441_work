@@ -3,10 +3,13 @@ var config = {
     type: Phaser.AUTO,
     width: 1125,
     height: 2436,
+    parent: "game-container",
+    pixelArt: true,
     physics: {
         default: 'arcade',
         arcade: {
-            gravity: 0,
+            gravity: {
+                y: 0 },
             debug: false
         }
     },
@@ -44,13 +47,102 @@ function create() {
   var bg_layer = map.createStaticLayer("background", tiles, 0,0);
   var tree_layer = map.createStaticLayer("trees", tiles, 0,0);
 
+
   // Creates Collisions with any tile that has been marked
-  bg_layer.setCollisionByProperty({collision: true});
+  tree_layer.setCollisionByProperty({collision: true});
 
 // displays player sprite
+player = this.physics.add.sprite(100,800, 'rosie');
 
+// Keeps player within world boundary
+  player.setCollideWorldBounds(true);
+
+// Player animations
+this.anims.create({
+    key: 'left',
+    frames: this.anims.generateFrameNumbers('rosie', { start: 3, end: 5 }),
+    frameRate: 10,
+    repeat: -1
+});
+
+this.anims.create({
+    key: 'turn',
+    frames: [ { key: 'rosie', frame: 1 } ],
+    frameRate: 20
+});
+
+this.anims.create({
+    key: 'right',
+    frames: this.anims.generateFrameNumbers('rosie', { start: 6, end: 8 }),
+    frameRate: 10,
+    repeat: -1
+});
+
+this.anims.create({
+    key: 'up',
+    frames: this.anims.generateFrameNumbers('rosie', { start: 9, end: 11 }),
+    frameRate: 10,
+    repeat: -1
+});
+this.anims.create({
+    key: 'down',
+    frames: this.anims.generateFrameNumbers('rosie', { start: 0, end: 2 }),
+    frameRate: 10,
+    repeat: -1
+});
+
+// Movement with keyboard Input
+    cursors = this.input.keyboard.createCursorKeys();
+
+// check if player and objects have collided
+this.physics.add.collider(player, tree_layer);
+
+// Camera
+
+camera = this.cameras.main;
+
+camera.startFollow(player);
+camera.setBounds(0,0, map.widthInPixels, map.heightInPixels);
 }
 
 function update(){
+/*      if (gameOver) {
+          return;
+      } */
+
+      if (cursors.left.isDown)
+      {
+          player.setVelocityX(-160);
+
+          player.anims.play('left', true);
+      }
+      else if (cursors.right.isDown)
+      {
+          player.setVelocityX(160);
+
+          player.anims.play('right', true);
+      }
+      else if (cursors.up.isDown)
+      {
+          player.setVelocityY(-160);
+
+          player.anims.play('up', true);
+      }
+      else if (cursors.down.isDown)
+      {
+          player.setVelocityY(160);
+
+          player.anims.play('down', true);
+      }
+
+      else
+      {
+          player.setVelocityX(0);
+          player.setVelocityY(0);
+
+          player.anims.play('turn');
+      }
+
+
 
 }
