@@ -78,12 +78,11 @@ function loadFont() {
                     });
 
                     text = new THREE.Mesh(textGeo, textMaterial)
-                    text.position.x = -textGeo.boundingBox.max.x / 2;
+                  //  text.position.x = -textGeo.boundingBox.max.x / 2;
                     text.castShadow = true;
-                    text.position.set(0,20,10);
+                    text.position.set(0,20,10); // moves the position of the text
                     scene.add(text)
                 }
-// move the position of the text?
 
 
 // Camera
