@@ -40,16 +40,21 @@ function preload(){
 
 function create() {
 
-  // displays the tilemap from the tileset
+  // uses the JSON data to make a tilemap
   var map = this.make.tilemap({ key: 'mtn_map'});
-  var tiles = map.addTilesetImage('Forest_Tileset', 'tiles')
+  // adds the image of the tileset and attaches it to the JSON data
+  var tileset = map.addTilesetImage('Forest_Tileset', 'tiles')
 
   // my tilemap has 2 layers, these are both static images
-  var bg_layer = map.createStaticLayer("background", tiles, 0,0);
-  var tree_layer = map.createStaticLayer("trees", tiles, 0,0);
+  var bg_layer = map.createStaticLayer("background", tileset, 0,0);
+  var tree_layer = map.createStaticLayer("trees", tileset, 0,0);
 
+
+
+  //Not working//
   // Creates Collisions with any tile that has been marked
-  tree_layer.setCollisionByProperty({collision: true});
+ tree_layer.setCollisionByProperty({collides: true});
+
 
 // Control Camera position
 var camera = this.cameras.main;
