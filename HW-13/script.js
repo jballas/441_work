@@ -31,13 +31,11 @@ var model = load_model();
     loader.load('models/pine.glb', function(gltf) {
 
       scene.add(gltf.scene);
-      gltf.scene.scale.set(.1,.1,.1);
-        gltf.scene.position.set(0, -1.25, 0);
+      gltf.scene.scale.set(.1,.1,.1); // THIS fixes the scale of model
+        gltf.scene.position.set(0, -27.25, 0); // This moves the position
 
   }, undefined, function(error) {
-
       console.error(error);
-
   });
   }
 
