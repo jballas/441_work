@@ -36,6 +36,7 @@ function preload(){
   this.load.image('tiles', 'assets/Forest_Tileset.png');
   this.load.tilemapTiledJSON('mtn_map', 'assets/mtn_map.json');
   this.load.spritesheet('rosie', 'assets/rosie.png', { frameWidth: 32, frameHeight: 32, endFrame: 11});
+  this.load.spritesheet('food', 'assets/game-icons.png', {frameWidth: 32, frameHeight: 32, endFrame: 8});
 }
 
 function create() {
@@ -49,14 +50,9 @@ function create() {
   var bg_layer = map.createStaticLayer("background", tileset, 0,0);
   var tree_layer = map.createStaticLayer("trees", tileset, 0,0);
 
-  // Creates Collisions with any tile that has been marked
+  // Creates Collisions with any tile that has been marked collides
  tree_layer.setCollisionByProperty({collides: true});
 
-// Control Camera position
-var camera = this.cameras.main;
-
-// camera size
-camera.setSize(640, 800)
 
 // displays player sprite
 player = this.physics.add.sprite(50,2400, 'rosie');
@@ -106,9 +102,24 @@ this.anims.create({
 // Camera details
 
 camera = this.cameras.main;
-
+// camera size
+//camera.setSize(640, 800)
 camera.startFollow(player);
 camera.setBounds(0,0, map.widthInPixels, map.heightInPixels);
+
+// Collectables
+
+berry = this.physics.add.group({
+  key: 'food',
+  frame: [0,0,0,0,0,0] ,
+  setXY:{
+    x: 100,
+    y: 2300,
+    stepX: 100,
+    stepY: -200
+  }
+})
+
 }
 
 function update(){
