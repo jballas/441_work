@@ -42,11 +42,12 @@ After creating my map, I wanted to get it up on screen. So, I started off with a
 
 It shows only the top section of my map, so I have some camera a position. I want the player to appear in the bottom of the map, and then make their way up the mountain road, finding berries and getting stuck at the river. Then using a "ladder" to get past the river.
 
-The collisions don't work either, even though the JSON file shows I have certain tiles marked with a collision property. Phaser was supposed to make collisions easier, but I guess it won't ever by that easy.
+However, the collisions don't work, even though the JSON file shows I have certain tiles marked with a collision property. Phaser was supposed to make collisions easier, but I guess it won't ever by that easy. In order to get my collisions to work I fixed by json file, moving all the collisions to one layer. Then, when I moved this collider code `  this.physics.add.collider(player, tree_layer);` above my player animations suddenly they worked. It it is still not quite there, since the player walks over the top of the trees, so I'll have to update my map yet again.
 
-Research
-Camera and more on maps
-research collisions
+To do:
+update map to make a toplayer above the player!
+create berries to pickup and make them collectable
+
 
 
 ## Conclusion
