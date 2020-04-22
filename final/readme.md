@@ -46,13 +46,30 @@ However, the collisions don't work, even though the JSON file shows I have certa
 
 ### Berry Collection
 
+In order to have a large group of berries appear, I ended up using a `frameQuantity`, then I had them appear randomly within the game's boundaries by creating a rectangle.(4) Once they appeared on the screen I made them collectable. I still need to tweak this, since the berries appear on top of water, but I should be able to create an `if statement` to prevent that.
+
 ### Ladder
 
 To do:
-update map to make a toplayer above the player! Then I can also hide a ladder somewhere
-create berries to pickup and make them collectable
+- update map to make a top layer above the player!
+- create or find art
+    - Ladder
+    - bucket
+    - Toilet paper
 
+- Prevent berries from appearing on top of the water
 
+- make the collect function more generic, so I can collect anything I want inside my inventory, such as a ladder.
+
+Tomorrow
+- add a new scene, such as game start screen
+- create bus interior scene and add items to interact with
+  - food cans
+  - apple
+  - Ladder
+  - bucket
+- Start page goes to the bus, and the bus connects forest
+-
 
 ## Conclusion
 
@@ -64,15 +81,20 @@ medium.com/@michaelwesthadley/modular-game-worlds-in-phaser-3-tilemaps-1-958fc7e
 
 3)"Phaser 3 Game Tutorial 10 Tilemaps" jest array. YouTube.com. www.youtube.com/watch?v=uznkhVMbVr8
 
+4) Phaser Examples: Random Rectangle. Phaser.com phaser.io/examples/v3/view/actions/random-rectangle
 
 ## credits
+### Audio
 Sneaky Adventure by Kevin MacLeod
 Link: https://incompetech.filmmusic.io/song/4383-sneaky-adventure
 License: http://creativecommons.org/licenses/by/4.0/
 
+### Artwork
 <a href="https://www.vecteezy.com/free-vector/camp-food">Camp Food Vectors by Vecteezy</a>
+<a href="https://www.vecteezy.com/free-vector/berry">Berry Vectors by Vecteezy</a>
 
 https://www.patreon.com/elthen
 https://elthen.itch.io/2d-pixel-art-forest-tileset
 
+### Tiled program for creating maps
 https://thorbjorn.itch.io/tiled
