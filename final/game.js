@@ -21,13 +21,15 @@ var config = {
 
 // GLOBAL VARIABLES
 var player;
-var berries;
 var cursors;
 var health;
 var hunger;
 var game_over = false;
 var menu;
 let showDebug = false;
+var ripe_berries;
+var berry_inventory = 0;
+var berry_text;
 
 const game = new Phaser.Game(config);
 
@@ -103,7 +105,7 @@ this.anims.create({
 
 camera = this.cameras.main;
 // camera size
-//camera.setSize(640, 800)
+camera.setSize(640, 800)
 camera.startFollow(player);
 camera.setBounds(0,0, map.widthInPixels, map.heightInPixels);
 
@@ -111,13 +113,30 @@ camera.setBounds(0,0, map.widthInPixels, map.heightInPixels);
 
 ripe_berries = this.physics.add.group({
   key: 'food',
-  frame: [1] ,
-  frameQuantity: 20
-  
+  frame: [0] ,
+  frameQuantity: 10
+
 });
 
 var rect = new Phaser.Geom.Rectangle(0,0, map.widthInPixels, map.heightInPixels)
 Phaser.Actions.RandomRectangle(ripe_berries.getChildren(), rect);
+
+var green_berries = this.physics.add.group({
+  key: 'food',
+  frame: [1] ,
+  frameQuantity: 20
+
+});
+
+var rect = new Phaser.Geom.Rectangle(0,0, map.widthInPixels, map.heightInPixels)
+Phaser.Actions.RandomRectangle(green_berries.getChildren(), rect);
+
+this.physics.add.overlap(player, ripe_berries, collect, null, this);
+
+// Inventory
+
+berry_text = this.add.text( 16, 2450, 'Berries: 0', {
+   fontSize: '32px', fill: '#000' })
 
 }
 
@@ -162,5 +181,13 @@ function update(){
       // This will help with the player's diagonal velocity. It scales down the velocity
       player.body.velocity.normalize().scale(speed);
 
+
+}
+
+function collect(player, ripe_berries){
+  ripe_berries.disableBody(true, true);
+
+  berry_inventory +=1
+  berry_text.setText('Berries:' + berry_inventory);
 
 }
