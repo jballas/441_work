@@ -49,12 +49,8 @@ function create() {
   var bg_layer = map.createStaticLayer("background", tileset, 0,0);
   var tree_layer = map.createStaticLayer("trees", tileset, 0,0);
 
-
-
-  //Not working//
   // Creates Collisions with any tile that has been marked
  tree_layer.setCollisionByProperty({collides: true});
-
 
 // Control Camera position
 var camera = this.cameras.main;
@@ -67,6 +63,8 @@ player = this.physics.add.sprite(50,2400, 'rosie');
 
 // Keeps player within world boundary
   player.setCollideWorldBounds(true);
+  // check if player and objects have collided. IT WORKS! I have no idea why
+  this.physics.add.collider(player, tree_layer);
 
 // Player animations
 this.anims.create({
@@ -104,9 +102,6 @@ this.anims.create({
 
 // Movement with keyboard Input
     cursors = this.input.keyboard.createCursorKeys();
-
-// check if player and objects have collided
-this.physics.add.collider(player, tree_layer);
 
 // Camera details
 
