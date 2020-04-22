@@ -109,18 +109,15 @@ camera.setBounds(0,0, map.widthInPixels, map.heightInPixels);
 
 // Collectables
 
-berry_num = Phaser.Math.Between(0,2);
-console.log(berry_num);
-berry = this.physics.add.group({
+ripe_berries = this.physics.add.group({
   key: 'food',
-  frame: [berry_num,berry_num,berry_num,berry_num,berry_num,berry_num] ,
-  setXY:{
-    x: 100,
-    y: 2300,
-    stepX: 100,
-    stepY: -200
-  }
-})
+  frame: [1] ,
+  frameQuantity: 20
+  
+});
+
+var rect = new Phaser.Geom.Rectangle(0,0, map.widthInPixels, map.heightInPixels)
+Phaser.Actions.RandomRectangle(ripe_berries.getChildren(), rect);
 
 }
 
