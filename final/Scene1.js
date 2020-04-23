@@ -6,23 +6,20 @@ class Scene1 extends Phaser.Scene{
 
   create(){
 
-    this.add.text( 200, 200, 'Start Game...', {
+    this.add.text( 200, 200, 'X to Start Game...', {
        font: '45px Arial', fill: 'white' });
 
 
     cursors = this.input.keyboard.createCursorKeys();
 
-
   }
 
-  /*update(){
-    if (cursors.x.isDown){
-      this.scene.start('Scene2');
+  update(){
+
+    this.input.keyboard.on('keydown_X', function (event) {
+      this.scene.add('Scene2');
+      });
+
     }
-  }
-*/
-start_game(){
-    this.scene.start('Scene2');
-  };
 
 }
