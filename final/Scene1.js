@@ -6,13 +6,21 @@ class Scene1 extends Phaser.Scene{
 
   create(){
 
-    this.add.text( 20, 20, 'Start Game...', {
-       fontSize: '32px', fill: '0x000000' });
+    this.add.text( 200, 200, 'Start Game...', {
+       font: '45px Arial', fill: 'white' });
 
-//    var start_button = scene.add.rectangle(20,200, 100, 20, fillColor: 0x000000 );
+
+    cursors = this.input.keyboard.createCursorKeys();
+
 
   }
 
+  /*update(){
+    if (cursors.x.isDown){
+      this.scene.start('Scene2');
+    }
+  }
+*/
 start_game(){
     this.scene.start('Scene2');
   };

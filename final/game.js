@@ -3,7 +3,7 @@ var config = {
     type: Phaser.AUTO,
     width: 1152,
     height: 2496,
-    backgroundColor: 0xFFFFFF,
+    backgroundColor: 0x000000,
     parent: "game-container",
     pixelArt: true,
     physics: {
