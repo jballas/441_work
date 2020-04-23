@@ -3,6 +3,7 @@ var config = {
     type: Phaser.AUTO,
     width: 1152,
     height: 2496,
+    backgroundColor: 0xFFFFFF,
     parent: "game-container",
     pixelArt: true,
     physics: {
@@ -12,10 +13,10 @@ var config = {
                 y: 0 }
         }
     },
-    scene: {
+    scene: [
         Scene1,
         Scene2
-    }
+    ]
 };
 
 // GLOBAL VARIABLES
