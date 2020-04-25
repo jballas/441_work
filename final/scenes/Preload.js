@@ -26,12 +26,12 @@ class Preload extends Phaser.Scene{
 
     this.anims.create({
         key: 'faces',
-        frames: this.anims.generateFrameNumbers('emotions', { start: 0, end: 8 }),
-        frameRate: 10,
-        repeat: 1
+        frames: this.anims.generateFrameNumbers('emotions', { start: 0, end: 7 }),
+        frameRate: 1,
+        repeat: -1
     });
 
-    this.anims.play('faces', )
+face.anims.play('faces');
 
 //    this.add.image(50,300, 'emotions').setScale(10);
 
