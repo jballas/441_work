@@ -48,13 +48,19 @@ However, the collisions don't work, even though the JSON file shows I have certa
 
 In order to have a large group of berries appear, I ended up using a `frameQuantity`, then I had them appear randomly within the game's boundaries by creating a rectangle.(4) Once they appeared on the screen I made them collectable. I still need to tweak this, since the berries appear on top of water, but I should be able to create an `if statement` to prevent that.
 
-### scenes
+### Connecting Scenes
 
-In order to make my code flow better I needed to have multiple files that connect. Phaser 3 does this with scenes, and connecting those scenes. For some reason I couldn't figure this out, and I spent hours looking at different tutorials, only to discover I had put a comma in the wrong place. So, with my config fixed, my loading screen would appear, and preload events.
+In order to make my code flow better I needed to have multiple files that connect. Phaser 3 does this with scenes and connecting those scenes. (5) For some reason I couldn't figure this out, and I spent hours looking at different tutorials, ultimately I discovered I had put a comma in the wrong place. So, with my config fixed, my loading screen would appear, and preload the assets.
 
-I still have errors, of course, when it tries to load the game, but now I'm switching gears myself and going to work on art.
+I still have errors, of course, when it tries to load the game. The camera size and posistion is different in my forest map, compared to my title. So, I have to figure out how to change the camera for a scene only.
 
-I have new artwork for my title/loading page.
+There is now new artwork for my title/loading page. It's like the opening of an animated cartoon, except with Rosie the Bear emotes. This is the code that makes it play. `face.anims.play('faces');`
+
+DONE
+- Create title page artwork
+- Start page goes to the bus, and the bus connects forest
+
+
 
 To do:
 - update map to make a top layer above the player!
@@ -65,16 +71,13 @@ To do:
 
 - Prevent berries from appearing on top of the water
 
-- make the collect function more generic, so I can collect anything I want inside my inventory, such as a ladder.
+- make the collect function more generic, so I can collect one or two things inside my inventory, such as a ladder or a bucket. But not both. Because this is not a magic unlimited inventory pocket.
 
-Tomorrow
-- add a new scene, such as game start screen
 - create bus interior scene and add items to interact with
   - food cans
   - apple
   - Ladder
   - bucket
-- Start page goes to the bus, and the bus connects forest
 -
 
 ## Conclusion
@@ -90,6 +93,7 @@ medium.com/@michaelwesthadley/modular-game-worlds-in-phaser-3-tilemaps-1-958fc7e
 4) Phaser Examples: Random Rectangle. Phaser.com phaser.io/examples/v3/view/actions/random-rectangle
 
 5) "Part 2: Phaser Scenes - Getting Started with Phaser 3". Luis Zuno. YouTube. www.youtube.com/watch?v=gFXx7lgxK9A
+6)
 ## credits
 ### Audio
 Sneaky Adventure by Kevin MacLeod
