@@ -1,22 +1,19 @@
-// Setup game details
 var config = {
     type: Phaser.AUTO,
     width: 1152,
     height: 2496,
-    backgroundColor: 0x000000,
-    parent: "game-container",
-    pixelArt: true,
     physics: {
         default: 'arcade',
         arcade: {
             gravity: {
                 y: 0 }
         }
-    },
+      },
     scene: [
-        Scene1,
-        Scene2
-    ]
+          Preload,
+          Scene2
+          ]
+
 };
 
 // GLOBAL VARIABLES

@@ -1,8 +1,9 @@
 class Scene2 extends Phaser.Scene{
 
     constructor(){
-      super('Scene2')
+      super('Scene2');
     }
+
     preload(){
       //this.load.image('bus', 'assets/bus_background.png');
       this.load.image('tiles', 'assets/Forest_Tileset.png');
@@ -12,7 +13,7 @@ class Scene2 extends Phaser.Scene{
     }
 
     create() {
-
+console.log("scene 2 loading...");
       // uses the JSON data to make a tilemap
       var map = this.make.tilemap({ key: 'mtn_map'});
       // adds the image of the tileset and attaches it to the JSON data
@@ -73,7 +74,7 @@ class Scene2 extends Phaser.Scene{
 
     // Camera details
 
-    camera = this.cameras.main;
+    var camera = this.cameras.main;
     // camera size? position?
 
     camera.startFollow(player);
@@ -152,14 +153,14 @@ class Scene2 extends Phaser.Scene{
           // This will help with the player's diagonal velocity. It scales down the velocity
           player.body.velocity.normalize().scale(speed);
 
-
     }
-
-    collect(player, ripe_berries){
+    
+    this.scene.collect = function(player, ripe_berries){
       ripe_berries.disableBody(true, true);
 
       berry_inventory +=1
       berry_text.setText('Berries:' + berry_inventory);
 
     }
+
 }
