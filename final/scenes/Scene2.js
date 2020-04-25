@@ -5,12 +5,7 @@ class Scene2 extends Phaser.Scene{
     }
 
     preload(){
-      //this.load.image('bus', 'assets/bus_background.png');
-      this.load.image('tiles', 'assets/Forest_Tileset.png');
-      this.load.tilemapTiledJSON('mtn_map', 'assets/mtn_map.json');
-      this.load.spritesheet('rosie', 'assets/rosie.png', { frameWidth: 32, frameHeight: 32, endFrame: 11});
-      this.load.spritesheet('food', 'assets/game-icons.png', {frameWidth: 32, frameHeight: 32, endFrame: 8});
-    }
+  }
 
     create() {
 console.log("scene 2 loading...");
@@ -79,6 +74,7 @@ console.log("scene 2 loading...");
 
     camera.startFollow(player);
     camera.setBounds(0,0, map.widthInPixels, map.heightInPixels);
+    //camera.position(map.widthInPixels, map.heightInPixels)
 
     // Collectables
 
@@ -154,13 +150,12 @@ console.log("scene 2 loading...");
           player.body.velocity.normalize().scale(speed);
 
     }
-    
+    /*
     this.scene.collect = function(player, ripe_berries){
       ripe_berries.disableBody(true, true);
 
       berry_inventory +=1
       berry_text.setText('Berries:' + berry_inventory);
-
     }
-
+*/
 }
