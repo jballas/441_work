@@ -74,7 +74,8 @@ console.log("scene 2 loading...");
 
     camera.startFollow(player);
     camera.setBounds(0,0, map.widthInPixels, map.heightInPixels);
-    //camera.position(map.widthInPixels, map.heightInPixels)
+    camera.setZoom(1.5)
+    camera.setPosition(map.widthInPixels - 400, map.heightInPixels-600)
 
     // Collectables
 
@@ -98,7 +99,7 @@ console.log("scene 2 loading...");
     var rect = new Phaser.Geom.Rectangle(0,0, map.widthInPixels, map.heightInPixels)
     Phaser.Actions.RandomRectangle(green_berries.getChildren(), rect);
 
-    this.physics.add.overlap(player, ripe_berries, collect, null, this);
+    //this.physics.add.overlap(player, ripe_berries, collect, null, this);
 
     // Inventory
 
