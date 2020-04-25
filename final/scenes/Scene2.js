@@ -74,7 +74,10 @@ console.log("scene 2 loading...");
 
     camera.startFollow(player);
     camera.setBounds(0,0, map.widthInPixels, map.heightInPixels);
-    camera.setZoom(1.5)
+    console.log(map.widthInPixels)
+    console.log(map.heightInPixels)
+
+//    camera.setZoom(1.5)
     camera.setPosition(map.widthInPixels - 400, map.heightInPixels-600)
 
     // Collectables

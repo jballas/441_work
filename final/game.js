@@ -1,7 +1,7 @@
 var config = {
     type: Phaser.AUTO,
-    width: 1152,
-    height: 2496,
+    width: 640,
+    height: 800,
     pixelArt: true,
     physics: {
         default: 'arcade',
@@ -12,6 +12,7 @@ var config = {
       },
     scene: [
           Preload,
+          Scene1,
           Scene2
           ]
 

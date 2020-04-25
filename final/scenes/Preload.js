@@ -17,11 +17,13 @@ class Preload extends Phaser.Scene{
 
   create(){
 
+// This is basically my titlepage, it also preloads all my images and assets.
     let background = this.add.image(0,30,'title_background').setOrigin(0,0);
     console.log(background.displayWidth);
 
     this.add.text( 20, 10, 'Click to Start Game...');
 
+// animated face
     var face = this.physics.add.sprite(300,450, 'emotions').setScale(10);
 
     this.anims.create({
@@ -31,17 +33,16 @@ class Preload extends Phaser.Scene{
         repeat: -1
     });
 
+// this plays the animations we created above
 face.anims.play('faces');
-
-//    this.add.image(50,300, 'emotions').setScale(10);
-
 
   }
 
   update(){
 
+    // if you click the mouse, then the game begins.
     this.input.once('pointerdown', function () {
-          this.scene.start('Scene2');
+          this.scene.start('Scene2'); // This will start a new scene, closing the current one.
             }, this);
 
   }
