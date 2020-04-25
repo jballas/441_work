@@ -85,10 +85,11 @@ medium.com/@michaelwesthadley/modular-game-worlds-in-phaser-3-tilemaps-1-958fc7e
 
 2) "Tiled Map Editor Tutorial Series" Games from Scratch.com www.gamefromscratch.com/post/2015/10/14/Tiled-Map-Editor-Tutorial-Series.aspx
 
-3)"Phaser 3 Game Tutorial 10 Tilemaps" jest array. YouTube.com. www.youtube.com/watch?v=uznkhVMbVr8
+3)"Phaser 3 Game Tutorial 10 Tilemaps" jest array. YouTube. www.youtube.com/watch?v=uznkhVMbVr8
 
 4) Phaser Examples: Random Rectangle. Phaser.com phaser.io/examples/v3/view/actions/random-rectangle
 
+5) "Part 2: Phaser Scenes - Getting Started with Phaser 3". Luis Zuno. YouTube. www.youtube.com/watch?v=gFXx7lgxK9A
 ## credits
 ### Audio
 Sneaky Adventure by Kevin MacLeod
