@@ -48,7 +48,13 @@ However, the collisions don't work, even though the JSON file shows I have certa
 
 In order to have a large group of berries appear, I ended up using a `frameQuantity`, then I had them appear randomly within the game's boundaries by creating a rectangle.(4) Once they appeared on the screen I made them collectable. I still need to tweak this, since the berries appear on top of water, but I should be able to create an `if statement` to prevent that.
 
-### Ladder
+### scenes
+
+In order to make my code flow better I needed to have multiple files that connect. Phaser 3 does this with scenes, and connecting those scenes. For some reason I couldn't figure this out, and I spent hours looking at different tutorials, only to discover I had put a comma in the wrong place. So, with my config fixed, my loading screen would appear, and preload events.
+
+I still have errors, of course, when it tries to load the game, but now I'm switching gears myself and going to work on art.
+
+I have new artwork for my title/loading page.
 
 To do:
 - update map to make a top layer above the player!
