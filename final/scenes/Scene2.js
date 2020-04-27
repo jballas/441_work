@@ -97,7 +97,7 @@ class Scene2 extends Phaser.Scene{
     var rect = new Phaser.Geom.Rectangle(0,0, map.widthInPixels, map.heightInPixels)
     Phaser.Actions.RandomRectangle(green_berries.getChildren(), rect);
 
-    //this.physics.add.overlap(player, ripe_berries, collect, null, this);
+    this.physics.add.overlap(player, ripe_berries, collect, null, this);
 
     // Inventory
 
@@ -150,12 +150,14 @@ class Scene2 extends Phaser.Scene{
           player.body.velocity.normalize().scale(speed);
 
     }
-    /*
-    this.scene.collect = function(player, ripe_berries){
-      ripe_berries.disableBody(true, true);
 
-      berry_inventory +=1
-      berry_text.setText('Berries:' + berry_inventory);
-    }
-*/
+
+
+}
+
+function collect(player, ripe_berries){
+  ripe_berries.disableBody(true, true);
+
+  berry_inventory +=1
+  berry_text.setText('Berries:' + berry_inventory);
 }
