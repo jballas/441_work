@@ -8,7 +8,7 @@ class Scene2 extends Phaser.Scene{
   }
 
     create() {
-console.log("scene 2 loading...");
+      console.log("scene 2 loading...");
       // uses the JSON data to make a tilemap
       var map = this.make.tilemap({ key: 'mtn_map'});
       // adds the image of the tileset and attaches it to the JSON data
@@ -72,13 +72,8 @@ console.log("scene 2 loading...");
     var camera = this.cameras.main;
     // camera size? position?
 
-    camera.startFollow(player);
+//    camera.startFollow(player);
     camera.setBounds(0,0, map.widthInPixels, map.heightInPixels);
-    console.log(map.widthInPixels)
-    console.log(map.heightInPixels)
-
-//    camera.setZoom(1.5)
-    camera.setPosition(map.widthInPixels - 400, map.heightInPixels-600)
 
     // Collectables
 
@@ -116,7 +111,8 @@ console.log("scene 2 loading...");
     /*      if (gameOver) {
               return;
           } */
-          let speed = 160;
+
+      let speed = 160;
 
           if (cursors.left.isDown)
           {

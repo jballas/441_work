@@ -8,7 +8,7 @@ class Preload extends Phaser.Scene{
           this.load.image('title_background', 'assets/Title_page.png');
           this.load.spritesheet('emotions', 'assets/rosie-emotes.png', {frameWidth: 32, frameHeight: 32, endFrame:8});
           this.load.image('camper', 'assets/camper.png');
-          this.load.image('tiles', 'assets/Forest_Tileset.png');
+          this.load.image('tiles', 'assets/Forest_Tileset.png', { frameWidth: 32, frameHeight: 32});
           this.load.tilemapTiledJSON('mtn_map', 'assets/mtn_map.json');
           this.load.spritesheet('rosie', 'assets/rosie.png', { frameWidth: 32, frameHeight: 32, endFrame: 11});
           this.load.spritesheet('berries', 'assets/berries32x32.png', {frameWidth: 32, frameHeight: 32, endFrame: 4});
@@ -22,6 +22,8 @@ class Preload extends Phaser.Scene{
     console.log(background.displayWidth);
 
     this.add.text( 20, 10, 'Click to Start Game...');
+
+    this.add.text(125,100, 'UNBEARABLE', { fontFamily: 'monospace', fontSize: 64, color: '#472f0a' })
 
 // animated face
     var face = this.physics.add.sprite(300,450, 'emotions').setScale(10);

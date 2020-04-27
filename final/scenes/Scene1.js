@@ -26,13 +26,13 @@ class Scene1 extends Phaser.Scene{
       var toilet_paper = this.add.sprite(170, 350, 'icons');
       toilet_paper.setFrame(3);
 
-      var bucket = this.add.sprite(250, 300, 'icons');
+      bucket = this.add.sprite(250, 300, 'icons');
       bucket.setFrame(5);
 
       var diary = this.add.sprite(270, 200, 'icons');
         diary.setFrame(6);
 
-        show_text = this.add.text(300, 100, 'Should I eat something?');
+        show_text = this.add.text(375, 100, 'Should I eat something?');
 
         show_text.setVisible(false);
   }
@@ -44,7 +44,7 @@ class Scene1 extends Phaser.Scene{
     });
 
     cans.on('pointerdown', function(){
-      this.add.text(250, 10, "I'm starving!");
+      this.add.text(250, 10, "I'm still starving!");
       cans.setFrame(2)}, this);
 
     cans.on('pointerover', function(){
@@ -55,12 +55,13 @@ class Scene1 extends Phaser.Scene{
           show_text.setVisible(false);
         }, this);
 
+    bucket.setInteractive({
+            useHandCursor: true
+        });
 
-
-
-//      bucket.on('pointerover', function(){
-//        this.add.text(250, 20)
-//      })
+    bucket.on('pointerdown', function(){
+          this.scene.start('Scene2'); // Begin playing berry game
+          }, this);
 
   }
 }

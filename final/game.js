@@ -1,7 +1,7 @@
 var config = {
     type: Phaser.AUTO,
-    width: 640,
-    height: 832,
+    width: 639,
+    height: 1088,
     pixelArt: true,
     physics: {
         default: 'arcade',
@@ -31,6 +31,7 @@ var berry_inventory = 0;
 var berry_text;
 
 var cans;
+var bucket;
 var show_text;
 
 const game = new Phaser.Game(config);
