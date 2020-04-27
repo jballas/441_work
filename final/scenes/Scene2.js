@@ -83,7 +83,7 @@ console.log("scene 2 loading...");
     // Collectables
 
     ripe_berries = this.physics.add.group({
-      key: 'food',
+      key: 'berries',
       frame: [0] ,
       frameQuantity: 10
 
@@ -93,7 +93,7 @@ console.log("scene 2 loading...");
     Phaser.Actions.RandomRectangle(ripe_berries.getChildren(), rect);
 
     var green_berries = this.physics.add.group({
-      key: 'food',
+      key: 'berries',
       frame: [1] ,
       frameQuantity: 20
 

@@ -11,8 +11,8 @@ class Preload extends Phaser.Scene{
           this.load.image('tiles', 'assets/Forest_Tileset.png');
           this.load.tilemapTiledJSON('mtn_map', 'assets/mtn_map.json');
           this.load.spritesheet('rosie', 'assets/rosie.png', { frameWidth: 32, frameHeight: 32, endFrame: 11});
-          this.load.spritesheet('icons', 'assets/game-icons.png', {frameWidth: 32, frameHeight: 32, endFrame: 11});
-
+          this.load.spritesheet('berries', 'assets/berries32x32.png', {frameWidth: 32, frameHeight: 32, endFrame: 4});
+          this.load.spritesheet('icons', 'assets/game-icons.png', {frameWidth: 64, frameHeight: 64, endFrame: 8});
   }
 
   create(){
