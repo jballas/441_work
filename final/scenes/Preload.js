@@ -7,11 +7,11 @@ class Preload extends Phaser.Scene{
   preload(){
           this.load.image('title_background', 'assets/Title_page.png');
           this.load.spritesheet('emotions', 'assets/rosie-emotes.png', {frameWidth: 32, frameHeight: 32, endFrame:8});
-          //this.load.image('bus', 'assets/bus_background.png');
+          this.load.image('camper', 'assets/camper.png');
           this.load.image('tiles', 'assets/Forest_Tileset.png');
           this.load.tilemapTiledJSON('mtn_map', 'assets/mtn_map.json');
           this.load.spritesheet('rosie', 'assets/rosie.png', { frameWidth: 32, frameHeight: 32, endFrame: 11});
-          this.load.spritesheet('food', 'assets/game-icons.png', {frameWidth: 32, frameHeight: 32, endFrame: 8});
+          this.load.spritesheet('icons', 'assets/game-icons.png', {frameWidth: 32, frameHeight: 32, endFrame: 11});
 
   }
 
@@ -42,7 +42,7 @@ face.anims.play('faces');
 
     // if you click the mouse, then the game begins.
     this.input.once('pointerdown', function () {
-          this.scene.start('Scene2'); // This will start a new scene, closing the current one.
+          this.scene.start('Scene1'); // This will start a new scene, closing the current one.
             }, this);
 
   }
