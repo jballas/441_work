@@ -8,7 +8,7 @@ class Scene2 extends Phaser.Scene{
   }
 
     create() {
-      console.log("scene 2 loading...");
+
       // uses the JSON data to make a tilemap
       var map = this.make.tilemap({ key: 'mtn_map'});
       // adds the image of the tileset and attaches it to the JSON data
@@ -18,14 +18,17 @@ class Scene2 extends Phaser.Scene{
       var bg_layer = map.createStaticLayer("background", tileset, 0,0);
       var tree_layer = map.createStaticLayer("trees", tileset, 0,0);
 
+      // This makes sure the world size is the map size.
+      this.physics.world.bounds.width = map.widthInPixels;
+      this.physics.world.bounds.height = map.heightInPixels;
+
       // Creates Collisions with any tile that has been marked collides
      tree_layer.setCollisionByProperty({collides: true});
-
 
     // displays player sprite
     player = this.physics.add.sprite(50,2400, 'rosie');
 
-    // Keeps player within world boundary
+      // Keeps player within world boundary
       player.setCollideWorldBounds(true);
       // check if player and objects have collided. IT WORKS! I have no idea why
       this.physics.add.collider(player, tree_layer);
@@ -65,15 +68,12 @@ class Scene2 extends Phaser.Scene{
     });
 
     // Movement with keyboard Input
-        cursors = this.input.keyboard.createCursorKeys();
+      cursors = this.input.keyboard.createCursorKeys();
 
     // Camera details
-
     var camera = this.cameras.main;
-    // camera size? position?
-
-//    camera.startFollow(player);
     camera.setBounds(0,0, map.widthInPixels, map.heightInPixels);
+    camera.startFollow(player);
 
     // Collectables
 
