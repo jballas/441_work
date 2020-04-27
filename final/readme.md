@@ -65,7 +65,33 @@ Next up I tried adding some events. Phaser 3 lets you make sprite (objects) inte
 
 By my second week, I feel like I am finally getting the hang of the documentation for Phaser 3.
 
+### Camera
+Today's major goal was the fix the camera so that the forest RPG scene would display properly. After researching the camera, I found a tutorial that provided my solution.(6) I needed to set the `world.bounds.width` to the `map.widthInPixels`. This fixed my map, and with the camera following my player, the player shows up exactly where I want it. Now, I have my locations I just need to make a game from this.
 
+### Enemies
+
+I desperately need enemies. The forest RPG game is so deadly boring as a pick up game. The collisions are still weird, but I'm leaving them. And there is no 'end', you just get stuck at the water. But enemies, or conflict. How do I add in enemies? I need a health/hunger status that will be effected by the
+
+This means a UI display of some kind to show the hearts and pickups.
+
+To do:
+Make a UI to show berry count/health , AND figure out how to take the berry count home and add text to diary.
+
+enemies
+- Figure out how to get Rosie home after she reaches the impassable water.
+- How to tell the player how to move
+- create a hunger bar
+- add emotions to encounters in forest, this could be part of the UI.
+
+- Put a Ladder somewhere and make it available for pickup.
+
+
+if I have time
+- update map to make a top layer above the player!
+
+- Prevent berries from appearing on top of the water
+
+- make the collect function more generic, so I can collect one or two things inside my inventory, such as a ladder or a bucket. But not both. Because this is not a magic unlimited inventory pocket?
 
 DONE
 - Create title page artwork
@@ -77,20 +103,8 @@ DONE
 - create bus interior scene and add items to interact with
       - food cans
       - bucket
-
-To do:
 - Fix CAMERA in forest
 - Add a scene switch( or scene2 start), so that you can click on the bucket it goes to the forest RPG setting to collect  berries.
-- create a hunger bar
-
-- Put a Ladder somewhere and make it available for pickup.
-
-if I have time
-- update map to make a top layer above the player!
-
-- Prevent berries from appearing on top of the water
-
-- make the collect function more generic, so I can collect one or two things inside my inventory, such as a ladder or a bucket. But not both. Because this is not a magic unlimited inventory pocket?
 
 
 
@@ -107,8 +121,9 @@ medium.com/@michaelwesthadley/modular-game-worlds-in-phaser-3-tilemaps-1-958fc7e
 4) Phaser Examples: Random Rectangle. Phaser.com phaser.io/examples/v3/view/actions/random-rectangle
 
 5) "Part 2: Phaser Scenes - Getting Started with Phaser 3". Luis Zuno. YouTube. www.youtube.com/watch?v=gFXx7lgxK9A
-6)
-## credits
+6)"How to Create a Turn-Basd-RPG in Phaser3 - part 1" GameDev Academy. Zenva. gamedevacademy.org/how-to-create-a-turn-based-rpg-game-in-phaser-3-part-1/
+
+## Credits
 ### Audio
 Sneaky Adventure by Kevin MacLeod
 Link: https://incompetech.filmmusic.io/song/4383-sneaky-adventure
@@ -116,12 +131,16 @@ License: http://creativecommons.org/licenses/by/4.0/
 
 ### Artwork
 <a href="https://www.vecteezy.com/free-vector/camp-food">Camp Food Vectors by Vecteezy</a>
+
 <a href="https://www.vecteezy.com/free-vector/berry">Berry Vectors by Vecteezy</a>
+
 <a href="https://www.vecteezy.com/vector-art/137848-free-hand-drawn-wild-life-background">Wild Life Background Vectors by Vecteezy</a>
+
 <a href="https://www.vecteezy.com/free-vector/diary">Diary Vectors by Vecteezy</a>
 
-https://www.patreon.com/elthen
-https://elthen.itch.io/2d-pixel-art-forest-tileset
+Elthen <a href ="https://elthen.itch.io/2d-pixel-art-forest-tileset
+"> created the forest pixel art.</a>
 
-### Tiled program for creating maps
-https://thorbjorn.itch.io/tiled
+Pipoya <a href="https://pipoya.itch.io/pipoya-free-rpg-character-sprites-nekonin"> designed the bear character sprite and animation. </a>
+
+I used the program <a href="https://thorbjorn.itch.io/tiled">Tiled program to create my RPG map.</a>
