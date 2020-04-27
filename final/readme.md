@@ -15,7 +15,7 @@ Final project for MART 441.50
 
 ## Assignment Details
 
-Using javascript, jQuery and Phaser 3, I created an HTML5 webgame.
+Using javascript and Phaser 3, I created an HTML5 webgame.
 
 ## Progress
 
@@ -56,29 +56,43 @@ I still have errors, of course, when it tries to load the game. The camera size 
 
 There is now new artwork for my title/loading page. It's like the opening of an animated cartoon, except with Rosie the Bear emotes. This is the code that makes it play. `face.anims.play('faces');`
 
+
+## Camper
+
+I began my camper scene today. I added artwork and because I didn't know what I was doing I kept having to add more artwork and update it dozens of times to get the sizing correct. I wanted them to be interactive, so they had to be sprites. I figured out how to add and image or sprite from a sprite sheet. As long as you upload the spritesheet and specify the frame width and height, then when you add it to your scene, tou use `setFrame()` to select which frame is used.
+
+Next up I tried adding some events. Phaser 3 lets you make sprite (objects) interactive. Then you can attach an event to the object such as: `pointerdown` is an event when the mouse is clicked, `pointerover` is like a hover feature. I used `setVisible(false)` to make some invisible text that reveals when you hover over an object. It would be better if I could have an `if/else` statement though.
+
+By my second week, I feel like I am finally getting the hang of the documentation for Phaser 3.
+
+
+
 DONE
 - Create title page artwork
 - Start page goes to the bus, and the bus connects forest
-
-
-
-To do:
-- update map to make a top layer above the player!
 - create or find art
     - Ladder
     - bucket
     - Toilet paper
+- create bus interior scene and add items to interact with
+      - food cans
+      - bucket
+
+To do:
+- Fix CAMERA in forest
+- Add a scene switch( or scene2 start), so that you can click on the bucket it goes to the forest RPG setting to collect  berries.
+- create a hunger bar
+
+- Put a Ladder somewhere and make it available for pickup.
+
+if I have time
+- update map to make a top layer above the player!
 
 - Prevent berries from appearing on top of the water
 
-- make the collect function more generic, so I can collect one or two things inside my inventory, such as a ladder or a bucket. But not both. Because this is not a magic unlimited inventory pocket.
+- make the collect function more generic, so I can collect one or two things inside my inventory, such as a ladder or a bucket. But not both. Because this is not a magic unlimited inventory pocket?
 
-- create bus interior scene and add items to interact with
-  - food cans
-  - apple
-  - Ladder
-  - bucket
--
+
 
 ## Conclusion
 
@@ -103,6 +117,8 @@ License: http://creativecommons.org/licenses/by/4.0/
 ### Artwork
 <a href="https://www.vecteezy.com/free-vector/camp-food">Camp Food Vectors by Vecteezy</a>
 <a href="https://www.vecteezy.com/free-vector/berry">Berry Vectors by Vecteezy</a>
+<a href="https://www.vecteezy.com/vector-art/137848-free-hand-drawn-wild-life-background">Wild Life Background Vectors by Vecteezy</a>
+<a href="https://www.vecteezy.com/free-vector/diary">Diary Vectors by Vecteezy</a>
 
 https://www.patreon.com/elthen
 https://elthen.itch.io/2d-pixel-art-forest-tileset
