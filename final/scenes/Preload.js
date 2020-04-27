@@ -18,7 +18,7 @@ class Preload extends Phaser.Scene{
   create(){
 
 // This is basically my titlepage, it also preloads all my images and assets.
-    let background = this.add.image(0,30,'title_background').setOrigin(0,0);
+    let background = this.add.image(0,32,'title_background').setOrigin(0,0);
     console.log(background.displayWidth);
 
     this.add.text( 20, 10, 'Click to Start Game...');
