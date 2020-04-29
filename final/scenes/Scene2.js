@@ -78,7 +78,7 @@ class Scene2 extends Phaser.Scene{
     // Collectables
 
     ripe_berries = this.physics.add.group({
-      key: 'berries',
+      key: 'sprites',
       frame: [0] ,
       frameQuantity: 10
 
@@ -88,7 +88,7 @@ class Scene2 extends Phaser.Scene{
     Phaser.Actions.RandomRectangle(ripe_berries.getChildren(), rect);
 
     var green_berries = this.physics.add.group({
-      key: 'berries',
+      key: 'sprites',
       frame: [1] ,
       frameQuantity: 20
 

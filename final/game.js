@@ -31,7 +31,20 @@ var berry_inventory = 0;
 var berry_text;
 
 var cans;
+var peppers;
+var toilet_paper;
 var bucket;
-var show_text;
+var diary
+
+var cans_text;
+var peppers_text;
+var toilet_paper_text;
+var bucket_text;
+var diary_text;
+
+
+// Didn't work like I wanted it to.
+var bus_text = {cans: "Should I eat something?", peppers: "Papa's favorite", toilet_paper: "I don't need to go", bucket: "Should I go pick some berries?", diary: "Read something?"};
+
 
 const game = new Phaser.Game(config);
