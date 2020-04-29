@@ -104,15 +104,15 @@ function change_the_mouse(object){
       useHandCursor: true
   });
 }
- Didn't work like I wanted it to
+ //Didn't work like I wanted it to
 function show_text(object){
 
   object.on('pointerover', function(){
-      object + '_text' + .setVisible(true);
+      object + '_text' + setVisible(true);
     }, this);
 
   object.on('pointerout', function(){
-        object + '_text' + .setVisible(false);
+        object + '_text' + setVisible(false);
       }, this);
 
 }

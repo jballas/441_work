@@ -81,7 +81,6 @@ class Scene2 extends Phaser.Scene{
       key: 'sprites',
       frame: [0] ,
       frameQuantity: 10
-
     });
 
     var rect = new Phaser.Geom.Rectangle(0,0, map.widthInPixels, map.heightInPixels)
@@ -98,6 +97,49 @@ class Scene2 extends Phaser.Scene{
     Phaser.Actions.RandomRectangle(green_berries.getChildren(), rect);
 
     this.physics.add.overlap(player, ripe_berries, collect, null, this);
+
+    // ENEMIES
+    bees = this.add.sprite(200, 2400, 'sprites').setFrame(2); // Bees
+    butterfly = this.add.sprite(100,2400, 'butterfly');
+
+    // Butterfly Animation
+    this.anims.create({
+        key: 'fly_turn',
+        frames: [ { key: 'butterfly', frame: 1 } ],
+        frameRate: 20
+    });
+
+    this.anims.create({
+        key: 'fly_up',
+        frames: this.anims.generateFrameNumbers('butterfly', { start: 0, end: 2 }),
+        frameRate: 5,
+        repeat: -1
+    });
+
+    this.anims.create({
+        key: 'fly_down',
+        frames: this.anims.generateFrameNumbers('butterfly', { start: 6, end: 8 }),
+        frameRate: 5,
+        repeat: -1
+    });
+
+    this.anims.create({
+        key: 'fly_left',
+        frames: this.anims.generateFrameNumbers('butterfly', { start: 9, end: 11 }),
+        frameRate: 5,
+        repeat: -1
+    });
+
+    this.anims.create({
+        key: 'fly_right',
+        frames: this.anims.generateFrameNumbers('butterfly', { start: 3, end: 5 }),
+        frameRate: 5,
+        repeat: -1
+    });
+
+      // create enemy animations
+
+        butterfly.anims.play('fly_right');
 
     // Inventory
 
@@ -148,6 +190,9 @@ class Scene2 extends Phaser.Scene{
           }
           // This will help with the player's diagonal velocity. It scales down the velocity
           player.body.velocity.normalize().scale(speed);
+
+          butterfly.x += .2;
+          this.physics.world.wrap(butterfly, 0.2);
 
     }
 

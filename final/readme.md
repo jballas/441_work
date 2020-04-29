@@ -70,17 +70,16 @@ Today's major goal was the fix the camera so that the forest RPG scene would dis
 
 ### Enemies
 
-I desperately need enemies. The forest RPG game is so deadly boring as a pick up game. The collisions are still weird, but I'm leaving them. And there is no 'end', you just get stuck at the water. But enemies, or conflict. How do I add in enemies? I need a health/hunger status that will be effected by the
+I desperately need enemies. The forest RPG game is so deadly boring as a pick up game. The collisions are still weird, but I'm leaving them. And there is no 'end', you just get stuck at the water. But enemies, or conflict. How do I add in enemies? I'll need a health/hunger status that will be effected by the enemies attacking you. So, creating enemy movement is my next challenge. I have 2 enemies, a strange mystic butterfly and bees. The butterflies could temporarily reverse your movement, while bees can hurt you.
+Definetely need to make the health meter next.
 
-This means a UI display of some kind to show the hearts and pickups.
 
 To do:
 Make a UI to show berry count/health , AND figure out how to take the berry count home and add text to diary.
 
-enemies
-- Figure out how to get Rosie home after she reaches the impassable water.
+- Figure out how to get Rosie home after she reaches the impassable water. I.E Ends the level
 - How to tell the player how to move
-- create a hunger bar
+- create a hunger bar / Health bar
 - add emotions to encounters in forest, this could be part of the UI.
 
 - Put a Ladder somewhere and make it available for pickup.
@@ -94,6 +93,8 @@ if I have time
 - make the collect function more generic, so I can collect one or two things inside my inventory, such as a ladder or a bucket. But not both. Because this is not a magic unlimited inventory pocket?
 
 DONE
+- add more text interaction
+- Find enemies artwork and add to scene 2
 - Create title page artwork
 - Start page goes to the bus, and the bus connects forest
 - create or find art
@@ -143,4 +144,8 @@ Elthen <a href ="https://elthen.itch.io/2d-pixel-art-forest-tileset
 
 Pipoya <a href="https://pipoya.itch.io/pipoya-free-rpg-character-sprites-nekonin"> designed the bear character sprite and animation. </a>
 
-I used the program <a href="https://thorbjorn.itch.io/tiled">Tiled program to create my RPG map.</a>
+Deer by Calciumtrice, usable under Creative Commons Attribution 3.0 license. (https://opengameart.org/content/deer)
+CC Butterfly Created by Jordan Irwin (AntumDeluge) (https://opengameart.org/content/butterfly)
+wolf by Segel2D (https://opengameart.org/content/wolf-game-character)
+
+I used <a href="https://thorbjorn.itch.io/tiled">Tiled to create my RPG map.</a>
