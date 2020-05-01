@@ -92,7 +92,7 @@ class Scene2 extends Phaser.Scene{
       frameQuantity: 20
 
     });
-
+    // create a bunch of green berries within rectangle
     var rect = new Phaser.Geom.Rectangle(0,0, map.widthInPixels, map.heightInPixels)
     Phaser.Actions.RandomRectangle(green_berries.getChildren(), rect);
 
@@ -103,7 +103,21 @@ class Scene2 extends Phaser.Scene{
     // Creates a larger collision box, with object in the center
     bees.setSize(300, 260, true);
 
-    butterfly = this.physics.add.sprite(100,2400, 'butterfly');
+//    var random_x = Phaser.Math.Between(-1, 640);
+  //  var random_y = Phaser.Math.Between(100, 832);
+
+    butterfly = this.physics.add.group({
+      key: 'butterfly',
+      repeat: 20
+
+    });
+
+    // create a bunch of butterflies
+    var rect = new Phaser.Geom.Rectangle(0,0, map.widthInPixels, map.heightInPixels)
+    Phaser.Actions.RandomRectangle(butterfly.getChildren(), rect);
+
+
+     this.physics.add.sprite(100,2400, 'butterfly');
 
     // Butterfly Animation
     this.anims.create({
@@ -141,21 +155,21 @@ class Scene2 extends Phaser.Scene{
     });
 
       // create enemy animations
-        butterfly.anims.play('fly_right');
-      //    this.physics.world.wrap(butterfly, 0.2);
-      // Bees could accelerate to an xy coordinate
-    //   this.accelerateTo(bees, 200, 2000, 60, 100, 100)
+        butterfly.children.iterate(function (child){
+            butterfly.playAnimation('fly_right');
+          //this.physics.world.wrap(child, 0.2);
 
-    // Create random speed for x and y
-       var speed_x = Phaser.Math.Between(-4,4);
-       var speed_y = Phaser.Math.Between(-10,10);
+          // Create random speed for x and y
+             var speed_x = Phaser.Math.Between(-8,4);
+             var speed_y = Phaser.Math.Between(-4,8);
 
-       console.log(speed_y);
+             // Assign random number to butterfly's location
+             //Assign random velocity to butterfly
+             child.setVelocityX(speed_x );
+             child.setVelocityY( speed_y);
 
-       // Assign random number to butterfly's location
-       //Assign random velocity to butterfly
-       butterfly.setVelocityX(speed_x );
-       butterfly.setVelocityY( speed_y);
+        });
+
 
       // when player and bees overlap, the bees accelerate toward the player to cause damage
         this.physics.add.overlap(player, bees, bee_movement, null, this);
@@ -212,12 +226,8 @@ update(){
           player.body.velocity.normalize().scale(speed);
 
           //butterfly.x += .2;
+          // butterfly.setVelocity(speed_x, speed_y);
 
-
-
-            // butterfly.setVelocity(speed_x, speed_y);
-// Phaser.Math.Between(-1, 640)
-//Phaser.Math.Between(100, 832
     }
 
 
