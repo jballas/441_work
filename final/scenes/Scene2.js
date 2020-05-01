@@ -100,7 +100,10 @@ class Scene2 extends Phaser.Scene{
 
     // ENEMIES
     bees = this.add.sprite(200, 2400, 'sprites').setFrame(2); // Bees
-    butterfly = this.add.sprite(100,2400, 'butterfly');
+    // Creates a larger collision box, with object in the center
+    bees.setSize(300, 260, true);
+
+    butterfly = this.physics.add.sprite(100,2400, 'butterfly');
 
     // Butterfly Animation
     this.anims.create({
@@ -138,8 +141,25 @@ class Scene2 extends Phaser.Scene{
     });
 
       // create enemy animations
-
         butterfly.anims.play('fly_right');
+      //    this.physics.world.wrap(butterfly, 0.2);
+      // Bees could accelerate to an xy coordinate
+    //   this.accelerateTo(bees, 200, 2000, 60, 100, 100)
+
+    // Create random speed for x and y
+       var speed_x = Phaser.Math.Between(-4,4);
+       var speed_y = Phaser.Math.Between(-10,10);
+
+       console.log(speed_y);
+
+       // Assign random number to butterfly's location
+       //Assign random velocity to butterfly
+       butterfly.setVelocityX(speed_x );
+       butterfly.setVelocityY( speed_y);
+
+      // when player and bees overlap, the bees accelerate toward the player to cause damage
+        this.physics.add.overlap(player, bees, bee_movement, null, this);
+
 
     // Inventory
 
@@ -147,9 +167,9 @@ class Scene2 extends Phaser.Scene{
        fontSize: '32px', fill: '#000' })
        .setScrollFactor(1);
 
-    }
+}
 
-    update(){
+update(){
     /*      if (gameOver) {
               return;
           } */
@@ -191,9 +211,13 @@ class Scene2 extends Phaser.Scene{
           // This will help with the player's diagonal velocity. It scales down the velocity
           player.body.velocity.normalize().scale(speed);
 
-          butterfly.x += .2;
-          this.physics.world.wrap(butterfly, 0.2);
+          //butterfly.x += .2;
 
+
+
+            // butterfly.setVelocity(speed_x, speed_y);
+// Phaser.Math.Between(-1, 640)
+//Phaser.Math.Between(100, 832
     }
 
 
@@ -205,4 +229,10 @@ function collect(player, ripe_berries){
 
   berry_inventory +=1
   berry_text.setText('Berries:' + berry_inventory);
+}
+
+function bee_movement(){
+let speed = -1
+      bees.x *= speed;
+      bees.y *= speed;
 }
