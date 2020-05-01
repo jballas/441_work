@@ -99,17 +99,21 @@ class Scene2 extends Phaser.Scene{
     this.physics.add.overlap(player, ripe_berries, collect, null, this);
 
     // ENEMIES
-    bees = this.add.sprite(200, 2400, 'sprites').setFrame(2); // Bees
+    bees = this.physics.add.sprite(200, 2400, 'sprites').setFrame(2); // Bees
     // Creates a larger collision box, with object in the center
-    bees.setSize(300, 260, true);
+    bees.setSize(64, 64, true);
+    bees.setCollideWorldBounds(true);
+                //    var random_x = Phaser.Math.Between(-1, 640);
+                  //  var random_y = Phaser.Math.Between(100, 832);
 
-//    var random_x = Phaser.Math.Between(-1, 640);
-  //  var random_y = Phaser.Math.Between(100, 832);
+
+      // when player and bees overlap, the bees accelerate toward the player to cause damage
+        this.physics.add.overlap(player, bees, bee_movement, null, this);
+
 
     butterfly = this.physics.add.group({
       key: 'butterfly',
       repeat: 20
-
     });
 
     // create a bunch of butterflies
@@ -117,7 +121,7 @@ class Scene2 extends Phaser.Scene{
     Phaser.Actions.RandomRectangle(butterfly.getChildren(), rect);
 
 
-     this.physics.add.sprite(100,2400, 'butterfly');
+     //this.physics.add.sprite(100,2400, 'butterfly');
 
     // Butterfly Animation
     this.anims.create({
@@ -157,7 +161,6 @@ class Scene2 extends Phaser.Scene{
       // create enemy animations
         butterfly.children.iterate(function (child){
             butterfly.playAnimation('fly_right');
-          //this.physics.world.wrap(child, 0.2);
 
           // Create random speed for x and y
              var speed_x = Phaser.Math.Between(-8,4);
@@ -169,11 +172,6 @@ class Scene2 extends Phaser.Scene{
              child.setVelocityY( speed_y);
 
         });
-
-
-      // when player and bees overlap, the bees accelerate toward the player to cause damage
-        this.physics.add.overlap(player, bees, bee_movement, null, this);
-
 
     // Inventory
 
@@ -225,9 +223,6 @@ update(){
           // This will help with the player's diagonal velocity. It scales down the velocity
           player.body.velocity.normalize().scale(speed);
 
-          //butterfly.x += .2;
-          // butterfly.setVelocity(speed_x, speed_y);
-
     }
 
 
@@ -242,7 +237,10 @@ function collect(player, ripe_berries){
 }
 
 function bee_movement(){
-let speed = -1
-      bees.x *= speed;
-      bees.y *= speed;
+  console.log('ouch');
+let speed = 1
+      bees.x += speed;
+      bees.y += speed;
+
+      
 }
