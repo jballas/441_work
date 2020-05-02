@@ -177,7 +177,12 @@ class Scene2 extends Phaser.Scene{
         // if player and child overlap,
         this.physics.add.overlap(player, butterfly, enemy_attack, null, this);
 
+        // CAMPER
+        camper = this.physics.add.sprite(200,2450, 'bus_icons');
+        camper.setFrame(8);
 
+        // if player and camper overlap, you'll return to scene 1.
+        this.physics.add.overlap(player, camper, return_home, null, this);
 
         // UI details
       healthbar = this.add.image(320,40, 'healthbar').setScrollFactor(0);
@@ -263,15 +268,14 @@ function enemy_attack(){
       health -= 10;
       health_text.setText('Health:' + health);
 
-      if (health == 0 ){
+      if (health <= 0 ){
         player.anims.play('turn');
         game_over = true;
         this.add.text(150, 200, 'Game Over', { fontSize: '100px', fill: '#000' });
         this.scene.start('Scene1', { berries: berry_inventory});
-        // setInterval(return_home, 4000);
       }
 }
-
+/*// This was a method for changing the energy bar, but it didn't work like I wanted
 function energy_drain(){
       energymask.x -= 1;
 
@@ -280,10 +284,16 @@ function energy_drain(){
         game_over = true;
         this.add.text(150, 200, 'Game Over', { fontSize: '100px', fill: '#000' });
         this.scene.start('Scene1');
-        // setInterval(return_home, 4000);
       }
-}
+}*/
 
 function return_home(){
-      this.scene.start('Scene1');
+  console.log('I am home');
+      health -= 400;
+      if (health <= 0 ){
+        player.anims.play('turn');
+        game_over = true;
+        this.add.text(150, 200, 'Game Over', { fontSize: '100px', fill: '#000' });
+        this.scene.start('Scene1', { berries: berry_inventory});
+      }
 }

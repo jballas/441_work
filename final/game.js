@@ -32,7 +32,7 @@ var cursors;
 var game_over = false;
 var ripe_berries;
 var berry_inventory = 0;
-var health = 300;
+var health = 400;
 var health_text;
 var berry_text;
 var healthbar;
@@ -46,6 +46,7 @@ var toilet_paper;
 var bucket;
 var diary;
 var ladder;
+var camper;
 
 var cans_text;
 var peppers_text;
