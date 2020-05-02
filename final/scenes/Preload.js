@@ -15,6 +15,7 @@ class Preload extends Phaser.Scene{
           this.load.spritesheet('rosie', 'assets/rosie.png', { frameWidth: 32, frameHeight: 32, endFrame: 11});
           this.load.spritesheet('sprites', 'assets/collectables-enemies.png', {frameWidth: 32, frameHeight: 32, endFrame: 4});
           this.load.spritesheet('butterfly', 'assets/butterfly.png', {frameWidth: 16, frameHeight: 16, endFrame: 11});
+          this.load.image('energybar', 'assets/energy-bar.png')
           //AUDIO
   }
 

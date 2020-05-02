@@ -14,8 +14,8 @@ var config = {
         default: 'arcade',
         arcade: {
             gravity: {
-                y: 0 },
-                debug: true
+                y: 0 }
+              //  debug: true
         }
       },
     scene: [
@@ -35,7 +35,7 @@ var berry_inventory = 0;
 var health = 300;
 var health_text;
 var berry_text;
-var top_rect;
+var energybar;
 //var hunger;
 
 var cans;

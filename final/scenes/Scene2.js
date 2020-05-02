@@ -179,8 +179,9 @@ class Scene2 extends Phaser.Scene{
 
 
 
-// UI details
-
+        // UI details
+// why doesn't the bar show up
+  //     energybar = this.add.image(50,16, 'energybar').setScrollFactor(0);
 
         //Berry's collected
         berry_text = this.add.text( 16, 16, 'Berries: 0', {
