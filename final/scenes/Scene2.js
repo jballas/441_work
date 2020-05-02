@@ -180,8 +180,14 @@ class Scene2 extends Phaser.Scene{
 
 
         // UI details
-// why doesn't the bar show up
-  //     energybar = this.add.image(50,16, 'energybar').setScrollFactor(0);
+      healthbar = this.add.image(320,40, 'healthbar').setScrollFactor(0);
+      energybar = this.add.image(320,healthbar.y+28, 'energybar').setScrollFactor(0);
+      energymask = this.add.image(320,energybar.y, 'energybar').setScrollFactor(0).setVisible(false);
+
+      energybar.mask = new Phaser.Display.Masks.BitmapMask(this, this.energymask);
+
+      // Emotes
+      var face = this.physics.add.sprite(320,42, 'emotions').setFrame(0).setScale(3).setScrollFactor(0);
 
         //Berry's collected
         berry_text = this.add.text( 16, 16, 'Berries: 0', {
@@ -256,14 +262,25 @@ function enemy_attack(){
       health -= 10;
       health_text.setText('Health:' + health);
 
-      if (health == 0){
+      if (health == 0 ){
         player.anims.play('turn');
         game_over = true;
         this.add.text(150, 200, 'Game Over', { fontSize: '100px', fill: '#000' });
         this.scene.start('Scene1');
         // setInterval(return_home, 4000);
       }
+}
 
+function energy_drain(){
+      energymask.x -= 1;
+
+      if (energymask.x <= 0 ){
+        player.anims.play('turn');
+        game_over = true;
+        this.add.text(150, 200, 'Game Over', { fontSize: '100px', fill: '#000' });
+        this.scene.start('Scene1');
+        // setInterval(return_home, 4000);
+      }
 }
 
 function return_home(){

@@ -35,7 +35,9 @@ var berry_inventory = 0;
 var health = 300;
 var health_text;
 var berry_text;
+var healthbar;
 var energybar;
+var energymask;
 //var hunger;
 
 var cans;
