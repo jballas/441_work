@@ -108,7 +108,7 @@ class Scene2 extends Phaser.Scene{
     let random_y = Phaser.Math.Between(-20, 10);
 
     this.physics.accelerateToObject(bees, player, 10, 30, 30);
-//    bees.setVelocityY(random_y);
+    //    bees.setVelocityY(random_y);
 
       // when player and bees overlap, the bees accelerate toward the player to cause damage
       this.physics.add.overlap(player, bees, bee_movement, null, this);
@@ -195,7 +195,7 @@ class Scene2 extends Phaser.Scene{
 update(){
          if (game_over) {
               return;
-              this.scene.start('Scene1');
+
           }
 
       let speed = 160;
@@ -254,12 +254,18 @@ function bee_movement(){
 //let speed = 1;
 
 
-      health_text -= 1;
+      health -= 1;
       berry_text.setText('Health:' + health);
 
       if (health === 0){
         player.anims.play('turn');
         game_over = true;
+        this.add.text(150, 200, 'Game Over', { fontSize: '100px', fill: '#000' });
+        this.scene.start('Scene1');
+        // setInterval(return_home, 4000);
       }
 
+}
+function return_home(){
+      this.scene.start('Scene1');
 }
