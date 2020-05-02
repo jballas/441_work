@@ -118,6 +118,7 @@ class Scene2 extends Phaser.Scene{
       repeat: 20
     });
 
+
     // create a bunch of butterflies
     var rect = new Phaser.Geom.Rectangle(0,0, map.widthInPixels, map.heightInPixels)
     Phaser.Actions.RandomRectangle(butterfly.getChildren(), rect);
@@ -159,7 +160,7 @@ class Scene2 extends Phaser.Scene{
         repeat: -1
     });
 
-      // create enemy animations
+      // create butterfly animations
         butterfly.children.iterate(function (child){
             butterfly.playAnimation('fly_right');
 
@@ -173,8 +174,8 @@ class Scene2 extends Phaser.Scene{
              child.setVelocityY( speed_y);
 
         });
-        // if player and child collide,
-        this.physics.add.collider(player, butterfly, enemy_attack, null, this);
+        // if player and child overlap,
+        this.physics.add.overlap(player, butterfly, enemy_attack, null, this);
 
 
 
@@ -186,7 +187,7 @@ class Scene2 extends Phaser.Scene{
            fontSize: '32px', fill: '#000000', backgroundColor: 'white' }).setScrollFactor(0);
 
         // Health
-        health_text = this.add.text(450, 16, 'Health: 300',{
+        health_text = this.add.text(400, 16, 'Health: 300',{
           fontSize: '32px', fill: '#000000', backgroundColor: 'white' }).setScrollFactor(0); // This keeps the text stationary, it scrolls with the camera
 
 }

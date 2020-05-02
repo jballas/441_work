@@ -13,7 +13,7 @@ class Preload extends Phaser.Scene{
           this.load.tilemapTiledJSON('mtn_map', 'assets/mtn_map.json');
           this.load.spritesheet('rosie', 'assets/rosie.png', { frameWidth: 32, frameHeight: 32, endFrame: 11});
           this.load.spritesheet('sprites', 'assets/collectables-enemies.png', {frameWidth: 32, frameHeight: 32, endFrame: 4});
-          this.load.spritesheet('butterfly', 'assets/butterfly.png', {frameWidth: 16, frameHeight: 32, endFrame: 11});
+          this.load.spritesheet('butterfly', 'assets/butterfly.png', {frameWidth: 16, frameHeight: 16, endFrame: 11});
   }
 
   create(){
