@@ -111,8 +111,7 @@ class Scene2 extends Phaser.Scene{
     //    bees.setVelocityY(random_y);
 
       // when player and bees overlap, the bees accelerate toward the player to cause damage
-      this.physics.add.overlap(player, bees, bee_movement, null, this);
-
+      this.physics.add.overlap(player, bees, enemy_attack, null, this);
 
     butterfly = this.physics.add.group({
       key: 'butterfly',
@@ -122,7 +121,6 @@ class Scene2 extends Phaser.Scene{
     // create a bunch of butterflies
     var rect = new Phaser.Geom.Rectangle(0,0, map.widthInPixels, map.heightInPixels)
     Phaser.Actions.RandomRectangle(butterfly.getChildren(), rect);
-
 
      //this.physics.add.sprite(100,2400, 'butterfly');
 
@@ -175,20 +173,21 @@ class Scene2 extends Phaser.Scene{
              child.setVelocityY( speed_y);
 
         });
+        // if player and child collide,
+        this.physics.add.collider(player, butterfly, enemy_attack, null, this);
+
+
 
 // UI details
-      // UI bar at top
-      var header = new Phaser.Geom.Rectangle(0,0, 640, 25, 0x000000);
-    //  header.setScrollFactor(0);
-  //    var graphics =
+
 
         //Berry's collected
         berry_text = this.add.text( 16, 16, 'Berries: 0', {
-           fontSize: '20px', fill: '#000000' }).setScrollFactor(0);
+           fontSize: '32px', fill: '#000000', backgroundColor: 'white' }).setScrollFactor(0);
 
         // Health
-        health_text = this.add.text(500, 16, 'Health: 3',{
-          fontSize: '20px', fill: '#000000' }).setScrollFactor(0); // This keeps the text stationary, it scrolls with the camera
+        health_text = this.add.text(450, 16, 'Health: 300',{
+          fontSize: '32px', fill: '#000000', backgroundColor: 'white' }).setScrollFactor(0); // This keeps the text stationary, it scrolls with the camera
 
 }
 
@@ -249,15 +248,13 @@ function collect(player, ripe_berries){
 }
 
 
-function bee_movement(){
-  console.log('ouch');
-//let speed = 1;
+function enemy_attack(){
+    console.log('ouch');
 
+      health -= 10;
+      health_text.setText('Health:' + health);
 
-      health -= 1;
-      berry_text.setText('Health:' + health);
-
-      if (health === 0){
+      if (health == 0){
         player.anims.play('turn');
         game_over = true;
         this.add.text(150, 200, 'Game Over', { fontSize: '100px', fill: '#000' });
@@ -266,6 +263,7 @@ function bee_movement(){
       }
 
 }
+
 function return_home(){
       this.scene.start('Scene1');
 }

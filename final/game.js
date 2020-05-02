@@ -11,8 +11,8 @@ var config = {
         default: 'arcade',
         arcade: {
             gravity: {
-                y: 0 }
-              //  debug: true
+                y: 0 },
+                debug: true
         }
       },
     scene: [
@@ -29,16 +29,18 @@ var cursors;
 var game_over = false;
 var ripe_berries;
 var berry_inventory = 0;
-var health = 3;
+var health = 300;
 var health_text;
 var berry_text;
+var top_rect;
 //var hunger;
 
 var cans;
 var peppers;
 var toilet_paper;
 var bucket;
-var diary
+var diary;
+var ladder;
 
 var cans_text;
 var peppers_text;

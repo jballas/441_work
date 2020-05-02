@@ -29,6 +29,9 @@ class Scene1 extends Phaser.Scene{
       diary = this.add.sprite(270, 200, 'bus_icons');
         diary.setFrame(6);
 
+      ladder = this.add.sprite(270, 650, 'bus_icons');
+        ladder.setFrame(4);
+
       cans_text = this.add.text(375, 400, "Should I eat something?").setVisible(false);
       peppers_text = this.add.text(375, 425, "Papa's favorite...").setVisible(false);
       toilet_paper_text = this.add.text(375, 350, "I don't need to go...").setVisible(false);
@@ -43,6 +46,9 @@ class Scene1 extends Phaser.Scene{
     change_the_mouse(toilet_paper);
     change_the_mouse(bucket);
     change_the_mouse(diary);
+  //  change_the_mouse(ladder);
+
+  //  show_hidden(ladder);
 
     // More Object interaction
     cans.on('pointerdown', function(){
@@ -56,6 +62,10 @@ class Scene1 extends Phaser.Scene{
       cans.on('pointerout', function(){
         cans_text.setVisible(false);
       }, this);
+
+      peppers.on('pointerdown', function(){
+        peppers_text.setText("Ah so yummy!");
+        peppers.setFrame(2)}, this);
 
       peppers.on('pointerover', function(){
           peppers_text.setVisible(true);
@@ -82,6 +92,9 @@ class Scene1 extends Phaser.Scene{
               }, this);
 
             bucket.on('pointerdown', function(){
+                bucket_text.setText("Let's head out!");
+                game_over = false;
+                health = 300;
                 this.scene.start('Scene2'); // Begin playing berry game
               }, this);
 
@@ -105,14 +118,14 @@ function change_the_mouse(object){
   });
 }
  //Didn't work like I wanted it to
-function show_text(object){
+function show_hidden(object){
 
   object.on('pointerover', function(){
-      this.text.setVisible(true);
+      object.setVisible(true);
     }, this);
 
   object.on('pointerout', function(){
-        this.text.setVisible(false);
+        object.setVisible(false);
       }, this);
 
 }
