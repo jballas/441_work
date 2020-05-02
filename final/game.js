@@ -52,6 +52,7 @@ var peppers_text;
 var toilet_paper_text;
 var bucket_text;
 var diary_text;
+var ladder_text;
 
 var butterfly;
 var bees;

@@ -38,7 +38,9 @@ class Scene1 extends Phaser.Scene{
       peppers_text = this.add.text(375, 425, "Papa's favorite...").setVisible(false);
       toilet_paper_text = this.add.text(375, 350, "I don't need to go...").setVisible(false);
       bucket_text = this.add.text(375, 250, "Should I pick some berries?").setVisible(false);
+      ladder_text = this.add.text(375, 650, "Should I use the ladder?").setVisible(false);
 
+      // If you collect berries, then the diary text changes.
         if(this.berries >= 1){
           diary_text = this.add.text(375,200, "Berries collected:" + this.berries);
         }
@@ -53,7 +55,7 @@ class Scene1 extends Phaser.Scene{
     change_the_mouse(toilet_paper);
     change_the_mouse(bucket);
     change_the_mouse(diary);
-  //  change_the_mouse(ladder);
+
 
   //  show_hidden(ladder);
 
@@ -105,7 +107,6 @@ class Scene1 extends Phaser.Scene{
                 this.scene.start('Scene2'); // Begin playing berry game
               }, this);
 
-
           diary.on('pointerover', function(){
               diary_text.setVisible(true);
             }, this);
@@ -114,6 +115,26 @@ class Scene1 extends Phaser.Scene{
                 diary_text.setVisible(false);
               }, this);
 
+          // If you collect enough berries, the ladder becomes available
+        if(this.berries > 2){
+          change_the_mouse(ladder);
+
+          ladder.on('pointerover', function(){
+              ladder_text.setVisible(true);
+            }, this);
+
+          ladder.on('pointerout', function(){
+                  ladder_text.setVisible(false);
+                }, this);
+/* // I want the ladder to be clickable, and it takes you to scene2,
+  //except now you can pass through the water blockade.
+          ladder.on('pointerdown', function(){
+              bucket_text.setText("Let's head out!");
+              game_over = false;
+              health = 300;
+              this.scene.start('Scene2', {bridge:}); // Begin playing berry game
+            }, this);*/
+        }
 
   }
 }
