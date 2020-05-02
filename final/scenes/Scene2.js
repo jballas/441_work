@@ -101,14 +101,17 @@ class Scene2 extends Phaser.Scene{
     // ENEMIES
     bees = this.physics.add.sprite(200, 2400, 'sprites').setFrame(2); // Bees
     // Creates a larger collision box, with object in the center
-    bees.setSize(64, 64, true);
     bees.setCollideWorldBounds(true);
-                //    var random_x = Phaser.Math.Between(-1, 640);
-                  //  var random_y = Phaser.Math.Between(100, 832);
 
+    // Bee movement
+    let random_x = Phaser.Math.Between(-10, 2);
+    let random_y = Phaser.Math.Between(-20, 10);
+
+    this.physics.accelerateToObject(bees, player, 10, 30, 30);
+//    bees.setVelocityY(random_y);
 
       // when player and bees overlap, the bees accelerate toward the player to cause damage
-        this.physics.add.overlap(player, bees, bee_movement, null, this);
+      this.physics.add.overlap(player, bees, bee_movement, null, this);
 
 
     butterfly = this.physics.add.group({
@@ -173,18 +176,27 @@ class Scene2 extends Phaser.Scene{
 
         });
 
-    // Inventory
+// UI details
+      // UI bar at top
+      var header = new Phaser.Geom.Rectangle(0,0, 640, 25, 0x000000);
+    //  header.setScrollFactor(0);
+  //    var graphics =
 
-    berry_text = this.add.text( 16, 2450, 'Berries: 0', {
-       fontSize: '32px', fill: '#000' })
-       .setScrollFactor(1);
+        //Berry's collected
+        berry_text = this.add.text( 16, 16, 'Berries: 0', {
+           fontSize: '20px', fill: '#000000' }).setScrollFactor(0);
+
+        // Health
+        health_text = this.add.text(500, 16, 'Health: 3',{
+          fontSize: '20px', fill: '#000000' }).setScrollFactor(0); // This keeps the text stationary, it scrolls with the camera
 
 }
 
 update(){
-    /*      if (gameOver) {
+         if (game_over) {
               return;
-          } */
+              this.scene.start('Scene1');
+          }
 
       let speed = 160;
 
@@ -236,11 +248,18 @@ function collect(player, ripe_berries){
   berry_text.setText('Berries:' + berry_inventory);
 }
 
+
 function bee_movement(){
   console.log('ouch');
-let speed = 1
-      bees.x += speed;
-      bees.y += speed;
+//let speed = 1;
 
-      
+
+      health_text -= 1;
+      berry_text.setText('Health:' + health);
+
+      if (health === 0){
+        player.anims.play('turn');
+        game_over = true;
+      }
+
 }

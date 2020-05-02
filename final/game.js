@@ -2,13 +2,17 @@ var config = {
     type: Phaser.AUTO,
     width: 640,
     height: 832,
+    scale: {
+        mode: Phaser.Scale.FIT, // This makes the game mobile responsive
+        autoCenter: Phaser.Scale.CENTER_BOTH
+    },
     pixelArt: true,
     physics: {
         default: 'arcade',
         arcade: {
             gravity: {
-                y: 0 },   
-                debug: true
+                y: 0 }
+              //  debug: true
         }
       },
     scene: [
@@ -22,14 +26,13 @@ var config = {
 // GLOBAL VARIABLES
 var player;
 var cursors;
-var health;
-var hunger;
 var game_over = false;
-var menu;
-let showDebug = false;
 var ripe_berries;
 var berry_inventory = 0;
+var health = 3;
+var health_text;
 var berry_text;
+//var hunger;
 
 var cans;
 var peppers;
@@ -42,7 +45,6 @@ var peppers_text;
 var toilet_paper_text;
 var bucket_text;
 var diary_text;
-
 
 var butterfly;
 var bees;

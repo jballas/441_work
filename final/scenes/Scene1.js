@@ -108,11 +108,11 @@ function change_the_mouse(object){
 function show_text(object){
 
   object.on('pointerover', function(){
-      object + '_text' + setVisible(true);
+      this.text.setVisible(true);
     }, this);
 
   object.on('pointerout', function(){
-        object + '_text' + setVisible(false);
+        this.text.setVisible(false);
       }, this);
 
 }
