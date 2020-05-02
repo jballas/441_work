@@ -50,7 +50,7 @@ face.anims.play('faces');
 
     // if you click the mouse, then the game begins.
     this.input.once('pointerdown', function () {
-          this.scene.start('Scene1', {berries: 0}); // This will start a new scene, closing the current one.
+          this.scene.start('Scene1', {berries: 0, diary_ending: 0}); // This will start a new scene, closing the current one.
             }, this);
 
   }

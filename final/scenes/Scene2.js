@@ -104,6 +104,8 @@ class Scene2 extends Phaser.Scene{
 
     this.physics.add.overlap(player, ripe_berries, collect, null, this);
 
+    this.physics.add.overlap(player, green_berries, bad_collect, null, this);
+
     // ENEMIES
     bees = this.physics.add.sprite(200, 2400, 'sprites').setFrame(2); // Bees
     // Creates a larger collision box, with object in the center
@@ -194,7 +196,7 @@ class Scene2 extends Phaser.Scene{
         ranger = this.physics.add.sprite(1000, 500, 'sprites').setFrame(3);
 
         // If the player finds the Forest Ranger, then they return home
-        this.physics.add.overlap(player, ranger, return_home, null, this);
+        this.physics.add.overlap(player, ranger, finale, null, this);
 
         // UI details
       healthbar = this.add.image(320,40, 'healthbar').setScrollFactor(0);
@@ -204,11 +206,11 @@ class Scene2 extends Phaser.Scene{
       energybar.mask = new Phaser.Display.Masks.BitmapMask(this, this.energymask); // making a mask from an image.
 
       // Emotes
-      // idealy, these emotes would change when you eat something or get hurt.
+      // Idealy, these emotes would change when you eat something or get hurt.
       var face = this.physics.add.sprite(320,42, 'emotions').setFrame(0).setScale(3).setScrollFactor(0);
 
         //Berry's collected
-        berry_text = this.add.text( 16, 16, 'Berries: 0', {
+        berry_text = this.add.text( 16, 16, 'Berries:' + berry_inventory, {
            fontSize: '32px', fill: '#000000', backgroundColor: 'white' }).setScrollFactor(0);
 
         // Health
@@ -220,7 +222,6 @@ class Scene2 extends Phaser.Scene{
 update(){
          if (game_over) {
               return;
-
           }
 
       let speed = 160;
@@ -259,10 +260,7 @@ update(){
           }
           // This will help with the player's diagonal velocity. It scales down the velocity
           player.body.velocity.normalize().scale(speed);
-
     }
-
-
 
 }
 
@@ -270,6 +268,13 @@ function collect(player, ripe_berries){
   ripe_berries.disableBody(true, true);
 
   berry_inventory +=1
+  berry_text.setText('Berries:' + berry_inventory);
+}
+
+function bad_collect(player, green_berries){
+  green_berries.disableBody(true, true);
+
+  berry_inventory -=1
   berry_text.setText('Berries:' + berry_inventory);
 }
 
@@ -284,7 +289,7 @@ function enemy_attack(){
         player.anims.play('turn');
         game_over = true;
         this.add.text(150, 200, 'Game Over', { fontSize: '100px', fill: '#000' });
-        this.scene.start('Scene1', { berries: berry_inventory});
+        this.scene.start('Scene1', { berries: berry_inventory, diary_ending: 0});
       }
 }
 /*// This was a method for changing the energy bar, but it didn't work like I wanted
@@ -306,6 +311,17 @@ function return_home(){
         player.anims.play('turn');
         game_over = true;
         this.add.text(150, 200, 'Game Over', { fontSize: '100px', fill: '#000' });
-        this.scene.start('Scene1', { berries: berry_inventory, diary_ending: true});
+        this.scene.start('Scene1', { berries: berry_inventory, diary_ending: 0});
+      }
+}
+
+function finale(){
+  console.log('Curse is broken');
+      health -= 400;
+      if (health <= 0 ){
+        player.anims.play('turn');
+        game_over = true;
+        this.add.text(150, 200, 'Game Over', { fontSize: '100px', fill: '#000' });
+        this.scene.start('Scene1', { berries: berry_inventory, diary_ending: 1});
       }
 }
