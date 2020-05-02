@@ -54,6 +54,9 @@ class Scene1 extends Phaser.Scene{
         if (this.berries > 10 && this.diary_ending ==1){
           diary_text = this.add.text(375,240, 'Wow you must love berries')
         }
+        if (this.berries < -3 && this.diary_ending ==0){
+          diary_text = this.add.text(375,240, 'Do you hate berries?')
+        }
         else{
           diary_text = this.add.text(375, 200, "I'll write something later...").setVisible(false);
         }
