@@ -28,13 +28,10 @@ class Scene2 extends Phaser.Scene{
       // Creates Collisions with any tile that has been marked collides
      tree_layer.setCollisionByProperty({collides: true});
 
-     //Player's XY data needs to be a variable, so we can load it from scene1
+     //Player's XY data needs to be a variable, so we can load it from scene1 and adjust as needed
      player = this.physics.add.sprite(this.playerX, this.playerY, 'rosie');
 
-    // displays player sprite
-//    player = this.physics.add.sprite(50,2400, 'rosie');
-
-      // Keeps player within world boundary
+    // Keeps player within world boundary
       player.setCollideWorldBounds(true);
       // check if player and objects have collided. IT WORKS! I have no idea why
       this.physics.add.collider(player, tree_layer);
@@ -107,25 +104,19 @@ class Scene2 extends Phaser.Scene{
     this.physics.add.overlap(player, green_berries, bad_collect, null, this);
 
     // ENEMIES
-    bees = this.physics.add.sprite(200, 2400, 'sprites').setFrame(2); // Bees
-    // Creates a larger collision box, with object in the center
-    bees.setCollideWorldBounds(true);
+    bees = this.physics.add.sprite(200, 2400, 'sprites').setFrame(2);
+    bees.setCollideWorldBounds(true)
 
-    // Bee movement
-    let random_x = Phaser.Math.Between(-10, 2);
-    let random_y = Phaser.Math.Between(-20, 10);
-
+    // Bee movement toward player
     this.physics.accelerateToObject(bees, player, 10, 30, 30);
-    //    bees.setVelocityY(random_y);
 
-      // when player and bees overlap, the bees accelerate toward the player to cause damage
+      // when player and bees overlap, the bees attack
       this.physics.add.overlap(player, bees, enemy_attack, null, this);
 
     butterfly = this.physics.add.group({
       key: 'butterfly',
       repeat: 20
     });
-
 
     // create a bunch of butterflies
     var rect = new Phaser.Geom.Rectangle(0,0, map.widthInPixels, map.heightInPixels)
@@ -182,7 +173,7 @@ class Scene2 extends Phaser.Scene{
              child.setVelocityY( speed_y);
 
         });
-        // if player and child overlap,
+        // if player and butterfly overlap, you get hurt
         this.physics.add.overlap(player, butterfly, enemy_attack, null, this);
 
         // CAMPER
@@ -195,7 +186,7 @@ class Scene2 extends Phaser.Scene{
         // Forest Ranger
         ranger = this.physics.add.sprite(1000, 500, 'sprites').setFrame(3);
 
-        // If the player finds the Forest Ranger, then they return home
+        // If the player finds the Forest Ranger, then they return home with an extra diary entry, depending on how many berries they have collected
         this.physics.add.overlap(player, ranger, finale, null, this);
 
         // UI details
@@ -305,7 +296,7 @@ function energy_drain(){
 }*/
 
 function return_home(){
-  console.log('I am home');
+  //console.log('I am home');
       health -= 400;
       if (health <= 0 ){
         player.anims.play('turn');
@@ -316,7 +307,7 @@ function return_home(){
 }
 
 function finale(){
-  console.log('Curse is broken');
+  //console.log('Curse is broken');
       health -= 400;
       if (health <= 0 ){
         player.anims.play('turn');
