@@ -5,7 +5,7 @@ class Preload extends Phaser.Scene{
   }
 
   preload(){
-          this.load.image('title_background', 'assets/Title_page.png');
+          this.load.image('title_background', 'assets/title_page.png');
           this.load.spritesheet('emotions', 'assets/rosie-emotes.png', {frameWidth: 32, frameHeight: 32, endFrame:8});
           this.load.image('camper', 'assets/camper.png');
           this.load.spritesheet('bus_icons', 'assets/game-icons.png', {frameWidth: 64, frameHeight: 64, endFrame: 8});
