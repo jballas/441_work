@@ -190,6 +190,12 @@ class Scene2 extends Phaser.Scene{
         // if player and camper overlap, you'll return to scene 1.
         this.physics.add.overlap(player, camper, return_home, null, this);
 
+        // Forest Ranger
+        ranger = this.physics.add.sprite(1000, 500, 'sprites').setFrame(3);
+
+        // If the player finds the Forest Ranger, then they return home
+        this.physics.add.overlap(player, ranger, return_home, null, this);
+
         // UI details
       healthbar = this.add.image(320,40, 'healthbar').setScrollFactor(0);
       energybar = this.add.image(320,healthbar.y+28, 'energybar').setScrollFactor(0);
@@ -300,6 +306,6 @@ function return_home(){
         player.anims.play('turn');
         game_over = true;
         this.add.text(150, 200, 'Game Over', { fontSize: '100px', fill: '#000' });
-        this.scene.start('Scene1', { berries: berry_inventory});
+        this.scene.start('Scene1', { berries: berry_inventory, diary_ending: true});
       }
 }
