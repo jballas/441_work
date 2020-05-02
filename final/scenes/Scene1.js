@@ -46,7 +46,7 @@ class Scene1 extends Phaser.Scene{
 
     // More Object interaction
     cans.on('pointerdown', function(){
-      this.add.text(250, 10, "I'm still starving!");
+      cans_text.setText("I'm still starving!");
       cans.setFrame(2)}, this);
 
       cans.on('pointerover', function(){
