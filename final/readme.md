@@ -95,30 +95,28 @@ This code lets me change things based on how many berries you collected. So, now
 
 ### Level 2 Using the ladder
 
-My goal is to make the ladder clickable, then you go to the Scene 2 with more of the map suddenly available, because you can bridge over the water.
+My goal is to make the ladder clickable, then you go to the Scene 2 with more of the map suddenly available, because... now you can use the ladder as a bridge over the water. But how do I make the code do this? It would also be nice to start the player at a different location, near the water. Or even past the water. Let's try making the player's x,y location a variable and then pass that data from scene 1 to scene 2.
 
 ### Feedback
 
 It look a while, but I got some feedback on my game. I was worried they wouldn't be able to find the forest, but they clicked so much on the camper page it loaded for them. Then they got some berries, and realized they had to avoid the bees. They suggested I add a camper to the forest scene, so you can get back to the camper without dying. It's a really good idea I'm going to try to impliment.
 
 To do:
-- create a Health bar
-
-- Figure out how to get Rosie home after she reaches the impassable water. I.E Ends the level
+- When you click the Ladder, can I load the player at a different spot? How do I make the player's location an object I can pass through data?
 - How to tell the player how to move
-
-- Put a Ladder somewhere and make it available for pickup, after the first time through?
-
 
 if I have time
 - add emotions to encounters in forest, this could be part of the UI.
+- create a Health bar, that drains
 - update map to make a top layer above the player!
 
-- Prevent berries from appearing on top of the water
+- Prevent berries from appearing on top of the water or anywhere you can't get
 
-- make the collect function more generic, so I can collect one or two things inside my inventory, such as a ladder or a bucket. But not both. Because this is not a magic unlimited inventory pocket?
 
 DONE
+- Put a Ladder somewhere and make it available for pickup, after the first time through
+- Figure out how to get Rosie home after she reaches the impassable water. I.E Ends the level
+- added camper, to return to scene1
 -Make a UI to show berry count/health , AND figure out how to take the berry count home and add text to diary.
 - add more text interaction
 - Find enemies artwork and add to scene 2
