@@ -16,7 +16,6 @@ class Scene1 extends Phaser.Scene{
       this.add.image(160,405, 'bus_icons').setFrame(0); // fork and spoon
 
       // Add interactive sprites
-
       cans = this.add.sprite(100,425, 'bus_icons');
       cans.setFrame(1);
 
@@ -69,9 +68,6 @@ class Scene1 extends Phaser.Scene{
     change_the_mouse(bucket);
     change_the_mouse(diary);
 
-
-  //  show_hidden(ladder);
-
     // More Object interaction
     cans.on('pointerdown', function(){
       cans_text.setText("I'm still starving!");
@@ -120,15 +116,15 @@ class Scene1 extends Phaser.Scene{
                 this.scene.start('Scene2', {playerX: 50, playerY: 2400}); // Begin playing berry game
               }, this);
 
-          diary.on('pointerover', function(){
-              diary_text.setVisible(true);
-            }, this);
+              diary.on('pointerover', function(){
+                  diary_text.setVisible(true);
+                }, this);
 
-          diary.on('pointerout', function(){
-                diary_text.setVisible(false);
-              }, this);
+              diary.on('pointerout', function(){
+                    diary_text.setVisible(false);
+                  }, this);
 
-          // If you collect enough berries, the ladder becomes available
+        // If you collect enough berries, the ladder becomes available
         if(this.berries > 2){
           change_the_mouse(ladder);
 
