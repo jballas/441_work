@@ -104,7 +104,7 @@ class Scene1 extends Phaser.Scene{
                 bucket_text.setText("Let's head out!");
                 game_over = false;
                 health = 300;
-                this.scene.start('Scene2'); // Begin playing berry game
+                this.scene.start('Scene2', {playerX: 50, playerY: 2400}); // Begin playing berry game
               }, this);
 
           diary.on('pointerover', function(){
@@ -126,14 +126,14 @@ class Scene1 extends Phaser.Scene{
           ladder.on('pointerout', function(){
                   ladder_text.setVisible(false);
                 }, this);
-/* // I want the ladder to be clickable, and it takes you to scene2,
+ // I want the ladder to be clickable, and it takes you to scene2,
   //except now you can pass through the water blockade.
           ladder.on('pointerdown', function(){
               bucket_text.setText("Let's head out!");
               game_over = false;
               health = 300;
-              this.scene.start('Scene2', {bridge:}); // Begin playing berry game
-            }, this);*/
+              this.scene.start('Scene2', {playerX: 850, playerY: 1040}); // Begin playing berry game at level 2
+            }, this);
         }
 
   }

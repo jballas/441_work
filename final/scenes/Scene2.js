@@ -4,7 +4,10 @@ class Scene2 extends Phaser.Scene{
       super('Scene2');
     }
 
-    preload(){
+    init(data){
+      console.log('init', data);
+      this.playerX = data.playerX;
+      this.playerY = data.playerY;
   }
 
     create() {
@@ -25,8 +28,11 @@ class Scene2 extends Phaser.Scene{
       // Creates Collisions with any tile that has been marked collides
      tree_layer.setCollisionByProperty({collides: true});
 
+     //Player's XY data needs to be a variable, so we can load it from scene1
+     player = this.physics.add.sprite(this.playerX, this.playerY, 'rosie');
+
     // displays player sprite
-    player = this.physics.add.sprite(50,2400, 'rosie');
+//    player = this.physics.add.sprite(50,2400, 'rosie');
 
       // Keeps player within world boundary
       player.setCollideWorldBounds(true);
