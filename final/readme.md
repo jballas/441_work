@@ -79,13 +79,30 @@ Definetely need to make the health meter next.
 ### Health and UI
 As I tackle my next problem, I'm also faced with perhaps needing to have a UI display of some kind, this can show the berries you pickup and how much health you have left. There are so fancy examples with actual health bars, but I just want to keep this as a simple text display. The trick is how can I show this.
 
-One way is to create yet another scene to display over the top of my scene 2. This is probably my best solution.
+I settled on making
+I also attempted one of the fancy health bars, but I couldn't get the bar to actually change its width. The numbers work. It would be better if there was some indication you were getting hurt, like the face changing.
 
-Otherwise, I
+Mostly importantly, I figured out how to move data between scenes. You have to pass the data through using the scene start. So, in scene 2, when you "die", this code is called. `this.scene.start('Scene1', { berries: berry_inventory});` The data is 'berries' and it keeps track of how many berries you've collected.
+Then in Scene 1 there is an `init()` which makes the data from the previous scene available.
+```
+init(data){
+  console.log('init', data);
+  this.berries = data.berries
+}
+```
+
+This code lets me change things based on how many berries you collected. So, now if you collect anything the diary changes and shows how many you collected. And if you collect more than 2 the ladder is suddenly available.
+
+### Level 2 Using the ladder
+
+My goal is to make the ladder clickable, then you go to the Scene 2 with more of the map suddenly available, because you can bridge over the water.
+
+### Feedback
+
+It look a while, but I got some feedback on my game. I was worried they wouldn't be able to find the forest, but they clicked so much on the camper page it loaded for them. Then they got some berries, and realized they had to avoid the bees. They suggested I add a camper to the forest scene, so you can get back to the camper without dying. It's a really good idea I'm going to try to impliment.
 
 To do:
-- create a hunger bar / Health bar
-Make a UI to show berry count/health , AND figure out how to take the berry count home and add text to diary.
+- create a Health bar
 
 - Figure out how to get Rosie home after she reaches the impassable water. I.E Ends the level
 - How to tell the player how to move
@@ -102,6 +119,7 @@ if I have time
 - make the collect function more generic, so I can collect one or two things inside my inventory, such as a ladder or a bucket. But not both. Because this is not a magic unlimited inventory pocket?
 
 DONE
+-Make a UI to show berry count/health , AND figure out how to take the berry count home and add text to diary.
 - add more text interaction
 - Find enemies artwork and add to scene 2
 - Create title page artwork
@@ -133,6 +151,7 @@ medium.com/@michaelwesthadley/modular-game-worlds-in-phaser-3-tilemaps-1-958fc7e
 5) "Part 2: Phaser Scenes - Getting Started with Phaser 3". Luis Zuno. YouTube. www.youtube.com/watch?v=gFXx7lgxK9A
 6)"How to Create a Turn-Basd-RPG in Phaser3 - part 1" GameDev Academy. Zenva. gamedevacademy.org/how-to-create-a-turn-based-rpg-game-in-phaser-3-part-1/
 7) P5.js Particles Example https://p5js.org/examples/simulate-particles.html
+8) https://www.emanueleferonato.com/2019/04/24/add-a-nice-time-bar-energy-bar-mana-bar-whatever-bar-to-your-html5-games-using-phaser-3-masks/
 ## Credits
 ### Audio
 Sneaky Adventure by Kevin MacLeod
@@ -153,8 +172,8 @@ Elthen <a href ="https://elthen.itch.io/2d-pixel-art-forest-tileset
 
 Pipoya <a href="https://pipoya.itch.io/pipoya-free-rpg-character-sprites-nekonin"> designed the bear character sprite and animation. </a>
 
-Deer by Calciumtrice, usable under Creative Commons Attribution 3.0 license. (https://opengameart.org/content/deer)
+<a href="https://www.vecteezy.com/free-vector/camper">Classic Camper Vectors by Vecteezy</a>
+
 CC Butterfly Created by Jordan Irwin (AntumDeluge) (https://opengameart.org/content/butterfly)
-wolf by Segel2D (https://opengameart.org/content/wolf-game-character)
 
 I used <a href="https://thorbjorn.itch.io/tiled">Tiled to create my RPG map.</a>
