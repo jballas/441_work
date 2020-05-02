@@ -43,7 +43,7 @@ class Scene1 extends Phaser.Scene{
 
       // If you collect berries, then the diary text changes.
         if(this.berries >= 1){
-          diary_text = this.add.text(375,150, "Berries collected:" + this.berries);
+          diary_text = this.add.text(375,140, "Berries collected:" + this.berries);
         }
         if(this.berries> 1 && this.diary_ending == 1){
             diary_text = this.add.text(375, 200, "Today I met a Forest Ranger.");
@@ -58,7 +58,7 @@ class Scene1 extends Phaser.Scene{
           diary_text = this.add.text(375,240, 'Do you hate berries?')
         }
         else{
-          diary_text = this.add.text(375, 200, "I'll write something later...").setVisible(false);
+          diary_text = this.add.text(375, 180, "I'll write something later...").setVisible(false);
         }
   }
   update(){
