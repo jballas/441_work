@@ -7,6 +7,9 @@ var config = {
         autoCenter: Phaser.Scale.CENTER_BOTH
     },
     pixelArt: true,
+    audio: {
+       disableWebAudio: true
+     },
     physics: {
         default: 'arcade',
         arcade: {
