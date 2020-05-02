@@ -4,7 +4,9 @@ class Scene1 extends Phaser.Scene{
       super('Scene1');
     }
 
-    preload(){
+    init(data){
+      console.log('init', data);
+      this.berries = data.berries
   }
 
     create() {
@@ -36,8 +38,13 @@ class Scene1 extends Phaser.Scene{
       peppers_text = this.add.text(375, 425, "Papa's favorite...").setVisible(false);
       toilet_paper_text = this.add.text(375, 350, "I don't need to go...").setVisible(false);
       bucket_text = this.add.text(375, 250, "Should I pick some berries?").setVisible(false);
-      diary_text = this.add.text(375, 200, "I'll write something later...").setVisible(false);
 
+        if(this.berries >= 1){
+          diary_text = this.add.text(375,200, "Berries collected:" + this.berries);
+        }
+        else{
+          diary_text = this.add.text(375, 200, "I'll write something later...").setVisible(false);
+        }
   }
   update(){
 

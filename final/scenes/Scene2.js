@@ -182,11 +182,12 @@ class Scene2 extends Phaser.Scene{
         // UI details
       healthbar = this.add.image(320,40, 'healthbar').setScrollFactor(0);
       energybar = this.add.image(320,healthbar.y+28, 'energybar').setScrollFactor(0);
-      energymask = this.add.image(320,energybar.y, 'energybar').setScrollFactor(0).setVisible(false);
+      energymask = this.add.image(320,energybar.y, 'energybar').setScrollFactor(0).setVisible(false);// this mask should be draining when you get hit, but it doesn't work.
 
-      energybar.mask = new Phaser.Display.Masks.BitmapMask(this, this.energymask);
+      energybar.mask = new Phaser.Display.Masks.BitmapMask(this, this.energymask); // making a mask from an image.
 
       // Emotes
+      // idealy, these emotes would change when you eat something or get hurt.
       var face = this.physics.add.sprite(320,42, 'emotions').setFrame(0).setScale(3).setScrollFactor(0);
 
         //Berry's collected
@@ -266,7 +267,7 @@ function enemy_attack(){
         player.anims.play('turn');
         game_over = true;
         this.add.text(150, 200, 'Game Over', { fontSize: '100px', fill: '#000' });
-        this.scene.start('Scene1');
+        this.scene.start('Scene1', { berries: berry_inventory});
         // setInterval(return_home, 4000);
       }
 }
