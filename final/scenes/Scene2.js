@@ -209,8 +209,11 @@ class Scene2 extends Phaser.Scene{
           fontSize: '32px', fill: '#000000', backgroundColor: 'white' }).setScrollFactor(0); // This keeps the text stationary, it scrolls with the camera
 
         //AUDIO
-        bg_music = this.sound.add('sneaky', {loop: true});
+        bg_music = this.sound.add('sneaky_music', {loop: true});
         bg_music.play();
+        pickup_sound = this.sound.add('pickup_sound');
+        bad_pickup_sound = this.sound.add('bad_pickup_sound');
+        hit_sound = this.sound.add('hit_sound');
 
 }
 
@@ -261,14 +264,14 @@ update(){
 
 function collect(player, ripe_berries){
   ripe_berries.disableBody(true, true);
-
+  pickup_sound.play();
   berry_inventory +=1
   berry_text.setText('Berries:' + berry_inventory);
 }
 
 function bad_collect(player, green_berries){
   green_berries.disableBody(true, true);
-
+  bad_pickup_sound.play();
   berry_inventory -=1
   berry_text.setText('Berries:' + berry_inventory);
 }
@@ -279,6 +282,7 @@ function enemy_attack(){
 
       health -= 10;
       health_text.setText('Health:' + health);
+      hit_sound.play();
 
       if (health <= 0 ){
         player.anims.play('turn');

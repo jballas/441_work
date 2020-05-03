@@ -21,7 +21,10 @@ class Preload extends Phaser.Scene{
           //AUDIO
           this.load.audio('title', 'assets/audio/title.wav');
           this.load.audio('radio', 'assets/audio/Julia-Florida.mp3');
-          this.load.audio('sneaky', 'assets/audio/sneaky-adventure-by-kevin-macleod-from-filmmusic-io.mp3');
+          this.load.audio('sneaky_music', 'assets/audio/sneaky-adventure-by-kevin-macleod-from-filmmusic-io.mp3');
+          this.load.audio('pickup_sound', 'assets/audio/pickup.wav');
+          this.load.audio('bad_pickup_sound', 'assets/audio/bad_pickup.mp3');
+          this.load.audio('hit_sound', 'assets/audio/hit.wav');
   }
 
   create(){

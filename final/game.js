@@ -38,10 +38,13 @@ var berry_text;
 var healthbar;
 var energybar;
 var energymask;
+
 var music;
 var radio;
 var bg_music;
-//var hunger;
+var pickup_sound;
+var bad_pickup_sound
+var hit_sound;
 
 var cans;
 var peppers;
