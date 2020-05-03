@@ -10,39 +10,49 @@ Final project for MART 441.50
 
 ## Projects
 
-- phaser game
--
+- Unbearable, a Phaser v3 game
 
 ## Assignment Details
 
-Using javascript and Phaser 3, I created an HTML5 webgame.
+Using javascript and Phaser v3, I created an HTML5 webgame.
 
 ## Progress
 
 1. Research and Game design
 2. Artwork
 3. Coding basis gameplay
-4. adding more gameplay elements
+  - player
+  - collisions
+  - collectables
+4. adding more scenes and objects
 5. Add audio
 6. Add in narrative elements, such as a diary
 7. Testing and revisions
 
 ## Research and Game Design
 
-The idea behind my game is a love of picking huckleberries in the summer with my family. We spend the afternoon driving up into the mountains, our favorite location is of course a secret. The forest road winds upward, and we hike a little and spend a few hours picking huckleberries. Would that make a game? I wondered. I wanted this to be a cross between Celeste and Animal Crossing, but with a bittersweet story about a young girl living in the woods and trying to survive by picking huckleberries. She's cursed, and has been transformed into a bear. The goal of the game is to survive and discover a way up the mountain, but also to solve the mystery of her curse.
+I wanted to make a game about picking huckleberries, because every summer in August I love to do this with my family. We spend the afternoon driving up into the mountains, our favorite location is, of course, a secret. The forest road winds upward, and we hike a little ways and spend a few hours picking huckleberries. Would that make a game? I wondered. I wanted this to be a cross between Celeste and Animal Crossing, but with a bittersweet story about a young girl living in the woods and trying to survive by picking huckleberries. She's cursed, and has been transformed into a bear. The goal of the game is to survive and discover a way up the mountain. It's basically a pickup game, with a little mystery.
 
 ## Artwork
 
-Some of the artwork I created myself, some of it I sourced from free vector sites, and the tilemap was designed by Art by Elthan from itch.io's free game assets store. The mood needs to capture the adventurous spirit of the game, since you'll be climbing a mountain, on an RPG like map. There's cliffs and a river to cross and a mountaintop to reach. *Tiled* is a program that allows you to make maps based on pixel art. It is a visual program but it exports as a json file. You can also attach properties that will make collisions occur with certain tiles.
+Some of the artwork I created myself, some of it I sourced from free vector sites, and the tilemap was designed by Art by Elthan from itch.io's free game assets store. It is 8bit pixel style. The mood should be adventurous, since you'll be climbing a mountain, like an RPG map. There are cliffs and a river to cross and a mountaintop to reach. *Tiled* is a program that allows you to make maps based on pixel art. It is a visual program, but it exports as a json file. You can also attach properties that will make collisions occur with certain tiles. Then you load this map into your Phaser 3 game.
+
+```
+// uses the JSON data to make a tilemap
+var map = this.make.tilemap({ key: 'mtn_map'});
+// adds the image of the tileset and attaches it to the JSON data
+var tileset = map.addTilesetImage('Forest_Tileset', 'tiles')
+```
 
 ## Coding
 
 ### TileMap and Player
-After creating my map, I wanted to get it up on screen. So, I started off with a simple phaser program, much like what we created in week 12. Michael West Hadley has a fantastic tutorial on tilemaps within Phaser and with that as my guide, I set about getting my map to show. (1)
+After creating my map, I wanted to get it up on screen and make it playable. So, I started off with a simple phaser program, much like what we created in week 12. Michael West Hadley has a fantastic tutorial on tilemaps within Phaser and with that as my guide, I set about getting my map to show. (1)
 
-It shows only the top section of my map, so I have some camera a position. I want the player to appear in the bottom of the map, and then make their way up the mountain road, finding berries and getting stuck at the river. Then using a "ladder" to get past the river.
+At first I could only get the top half. But I wanted the player to appear in the bottom of the map, and then make their way up the mountain road, finding berries and getting stuck at the river. Then using a "ladder" to get past the river.
 
-However, the collisions don't work, even though the JSON file shows I have certain tiles marked with a collision property. Phaser was supposed to make collisions easier, but I guess it won't ever by that easy. So I began to research and dig around for examples of tilemaps and tutorials on Tiled.(2)(3) In order to get my collisions to work I fixed by json file, moving all the collisions to one layer. Then, when I moved my collider code `  this.physics.add.collider(player, tree_layer);` above my player animations, suddenly it worked. It is still not quite where I want it, since the player walks over the top of the trees, so I'll have to update my map yet again, but I have collisions! Now, the player can't get past the water!
+Then came the struggle with collisions.
+My JSON file shows I have certain tiles marked with a collision property, and Phaser was supposed to make collisions easier, but I guess it won't ever by that easy. So I began to research and dig around for examples of tilemaps and tutorials on Tiled.(2)(3) In order to get my collisions to work I fixed by json file, moving all the collisions to one layer. Then, when I moved my collider code `  this.physics.add.collider(player, tree_layer);` above my player animations, suddenly it worked. It is still not quite where I want it, since the player walks over the top of the trees, so if I have time I'll update my map yet again, but I have collisions! Now, the player can't get past the water!
 
 ### Berry Collection
 
@@ -103,7 +113,7 @@ I was able to add the player data into the scene, so now when you click on the b
 
 It look a while, but I got some feedback on my game. I was worried they wouldn't be able to find the forest, but they clicked so much on the camper page it loaded for them. Then they got some berries, and realized they had to avoid the bees. They suggested I add a camper to the forest scene, so you can get back to the camper without dying. It's a really good idea I'm going to try to impliment.
 
-The other major problem is loading. One of my testers had the game crash on her, and the loading time takes 30 seconds or longer inbetween scenes. She suggested adding loading text. We tested it on Firefox and that's where the loading was troublesome, and it wouldn't work at all in Edge. 
+The other major problem is loading. One of my testers had the game crash on her, and the loading time takes 30 seconds or longer inbetween scenes. She suggested adding loading text. We tested it on Firefox and that's where the loading was troublesome, and it wouldn't work at all in Edge.
 
 ### Time Delay on start screen, to allow for assets to load.
 
@@ -124,6 +134,9 @@ I planned to do the audio last and now I know exactly why this was a good idea. 
 
 To do:
 - How to tell the player how to move with arrows...
+- lower volume on background music to .5
+- Add more text to the last diary entry, using n\ "Thanks for playing my game!"
+- fix json data map.. make it simplier if possible...
 - mute button?
 
 if I have time
