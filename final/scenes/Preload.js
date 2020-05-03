@@ -27,8 +27,6 @@ class Preload extends Phaser.Scene{
     let background = this.add.image(0,32,'title_background').setOrigin(0,0);
     //console.log(background.displayWidth);
 
-    this.add.text( 20, 10, 'Click to Start Game...');
-
     this.add.text(125,100, 'UNBEARABLE', { fontFamily: 'monospace', fontSize: 64, color: '#472f0a' })
 
 // animated face
@@ -44,7 +42,9 @@ class Preload extends Phaser.Scene{
 // this plays the animations we created above
 face.anims.play('faces');
 
-  }
+this.time.addEvent({delay: 3000, callback: loading_delay, callbackScope: this, loop: false});
+
+}
 
   update(){
 
@@ -54,4 +54,8 @@ face.anims.play('faces');
             }, this);
 
   }
+}
+
+function loading_delay(){
+  this.add.text( 175, 50, 'Click to Start Game...', { fontSize: 20, color: '#472f0a' }) ;
 }
