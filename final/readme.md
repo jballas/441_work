@@ -97,23 +97,44 @@ This code lets me change things based on how many berries you collected. So, now
 
 My goal is to make the ladder clickable, then you go to the Scene 2 with more of the map suddenly available, because... now you can use the ladder as a bridge over the water. But how do I make the code do this? It would also be nice to start the player at a different location, near the water. Or even past the water. Let's try making the player's x,y location a variable and then pass that data from scene 1 to scene 2.
 
+I was able to add the player data into the scene, so now when you click on the bucket it loads you in the bottom corner, and when you get access to the ladder it loads you past the water.
+
 ### Feedback
 
 It look a while, but I got some feedback on my game. I was worried they wouldn't be able to find the forest, but they clicked so much on the camper page it loaded for them. Then they got some berries, and realized they had to avoid the bees. They suggested I add a camper to the forest scene, so you can get back to the camper without dying. It's a really good idea I'm going to try to impliment.
 
+The other major problem is loading. One of my testers had the game crash on her, and the loading time takes 30 seconds or longer inbetween scenes. She suggested adding loading text. We tested it on Firefox and that's where the loading was troublesome, and it wouldn't work at all in Edge. 
+
+### Time Delay on start screen, to allow for assets to load.
+
+It was a little tricky, but I added a time event that works like javascript's `setTimeout()`.
+Instead it gives you some other options, such as looping.
+`this.time.addEvent({delay: 3000, callback: loading_delay, callbackScope: this, loop: false});
+`
+and its tied to a function I created that simply loads the text.
+```
+function loading_delay(){
+  this.add.text( 175, 50, 'Click to Start Game...', { fontSize: 20, color: '#472f0a' }) ;
+}
+```
+
+### AUDIO
+
+I planned to do the audio last and now I know exactly why this was a good idea. I have to test play the game constantly, after every update to the code, and if I had to listen to the audio every single time I'd go crazy. Luckily audio is pretty straightforward. You preload it, add a sound and then play that sound wherever you need it for a sound effect, or as a background loop. I made sure to reduce my file sizes before using them. But I'm wondering if I need a mute button somewhere on screen...
+
 To do:
-- When you click the Ladder, can I load the player at a different spot? How do I make the player's location an object I can pass through data?
-- How to tell the player how to move
+- How to tell the player how to move with arrows...
+- mute button?
 
 if I have time
-- add emotions to encounters in forest, this could be part of the UI.
-- create a Health bar, that drains
-- update map to make a top layer above the player!
+- add emotions to encounters in forest, this could be part of the UI, ideally they'd work like sound effects.
+- create a Health bar that drains, instead of numbers
 
 - Prevent berries from appearing on top of the water or anywhere you can't get
 
 
 DONE
+- When you click the Ladder, can I load the player at a different spot? How do I make the player's location an object I can pass through data?
 - Put a Ladder somewhere and make it available for pickup, after the first time through
 - Figure out how to get Rosie home after she reaches the impassable water. I.E Ends the level
 - added camper, to return to scene1
@@ -151,6 +172,8 @@ medium.com/@michaelwesthadley/modular-game-worlds-in-phaser-3-tilemaps-1-958fc7e
 7) P5.js Particles Example https://p5js.org/examples/simulate-particles.html
 8) https://www.emanueleferonato.com/2019/04/24/add-a-nice-time-bar-energy-bar-mana-bar-whatever-bar-to-your-html5-games-using-phaser-3-masks/
 9) http://phaser.io/examples/v3/view/time/remove-timer-event
+10) "Audio- Getting Started with Phaser 3" Luis Zuno https://www.youtube.com/watch?v=COncYQLGJS8&t=17s
+
 ## Credits
 ### Audio
 Sneaky Adventure by Kevin MacLeod

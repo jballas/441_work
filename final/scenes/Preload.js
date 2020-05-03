@@ -48,9 +48,10 @@ class Preload extends Phaser.Scene{
 // this plays the animations we created above
 face.anims.play('faces');
 
-// PLAY AUDIO
+// AUDIO
+pickup_sound = this.sound.add('pickup_sound');
 music = this.sound.add('title', {loop: true});
-music.play();
+//music.play();
 
 // This delays the text about starting the screen, so there is more time to load images and audio...
 this.time.addEvent({delay: 3000, callback: loading_delay, callbackScope: this, loop: false});
@@ -62,6 +63,7 @@ this.time.addEvent({delay: 3000, callback: loading_delay, callbackScope: this, l
     // if you click the mouse, then the game begins.
     this.input.once('pointerdown', function () {
           this.scene.start('Scene1', {berries: 0, diary_ending: 0}); // This will start a new scene, closing the current one.
+          pickup_sound.play();
           music.stop();
             }, this);
 
