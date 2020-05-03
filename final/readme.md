@@ -56,44 +56,44 @@ My JSON file shows I have certain tiles marked with a collision property, and Ph
 
 ### Berry Collection
 
-In order to have a large group of berries appear, I ended up using a `frameQuantity`, then I had them appear randomly within the game's boundaries by creating a rectangle.(4) Once they appeared on the screen I made them collectable. I still need to tweak this, since the berries appear on top of water, but I should be able to create an `if statement` to prevent that.
+In order to have a large group of berries appear, I ended up creating a group and then using a variable called  `frameQuantity`. This allowed me to create berries randomly within the game's boundaries.(4) Once they appeared on the screen I made them collectable.
 
 ### Connecting Scenes
 
-In order to make my code flow better I needed to have multiple files that connect. Phaser 3 does this with scenes and connecting those scenes. (5) For some reason I couldn't figure this out, and I spent hours looking at different tutorials, ultimately I discovered I had put a comma in the wrong place. So, with my config fixed, my loading screen would appear, and preload the assets.
+In order to make my code readable I needed seperate my files and connect them. Phaser 3 does this with scenes. (5) For some reason I couldn't figure this out, and I spent hours looking at different tutorials, ultimately I discovered I had put a comma in the wrong place. So, with my config fixed, my loading screen would appear, and preload the assets. From there it takes you to the camper, where you'll be able to interact with objects and load the game's forest map I created earlier.
 
-I still have errors, of course, when it tries to load the game. The camera size and posistion is different in my forest map, compared to my title. So, I have to figure out how to change the camera for a scene only.
+I still many errors, of course. When it tries to load the game the camera size and posistion was different in my forest map, compared to my title. So, I have to figure out how to change the camera around and figure out what size my art is, verus my game width.
 
-There is now new artwork for my title/loading page. It's like the opening of an animated cartoon, except with Rosie the Bear emotes. This is the code that makes it play. `face.anims.play('faces');`
-
+I created a simple title screen. It's like the opening of an animated cartoon, except with it shows all of Rosie the Bear different emotions. This is the code that makes the animation play. `face.anims.play('faces');`
 
 ## Camper
 
-I began my camper scene today. I added artwork and because I didn't know what I was doing I kept having to add more artwork and update it dozens of times to get the sizing correct. I wanted them to be interactive, so they had to be sprites. I figured out how to add and image or sprite from a sprite sheet. As long as you upload the spritesheet and specify the frame width and height, then when you add it to your scene, tou use `setFrame()` to select which frame is used.
+I began working on my camper scene today. I added background artwork and then updating it dozens of times to get the sizing correct. I wanted the objects in the camper to be interactive, so they had to be sprites and the most efficent way is to use a spritesheet. But you need to select a specific frame from your sheet and I wasn't sure how to do that when its not being animated. It turns out, as long as you upload the spritesheet and specify the frame width and height, then when you add it to your scene, you use `setFrame()` to select which frame is used.
 
-Next up I tried adding some events. Phaser 3 lets you make sprite (objects) interactive. Then you can attach an event to the object such as: `pointerdown` is an event when the mouse is clicked, `pointerover` is like a hover feature. I used `setVisible(false)` to make some invisible text that reveals when you hover over an object. It would be better if I could have an `if/else` statement though.
+Next up, I tried adding some events. Phaser 3 lets you make sprite (objects) interactive. Then you can attach an event to the object such as: `pointerdown` which is an event when the mouse is clicked, `pointerover` is like a hover feature. I used `setVisible(false)` to make some invisible text that then reveals when you hover over an object. It would be better if I could have an `if/else` statement but the method I created didn't work.
 
-By my second week, I feel like I am finally getting the hang of the documentation for Phaser 3.
+By my second week, I feel like I am finally getting the hang reading the documentation pages for Phaser 3.
 
 ### Camera
-Today's major goal was the fix the camera so that the forest RPG scene would display properly. After researching the camera, I found a tutorial that provided my solution.(6) I needed to set the `world.bounds.width` to the `map.widthInPixels`. This fixed my map, and with the camera following my player, the player shows up exactly where I want it. Now, I have my locations I just need to make a game from this.
+
+Today's major goal was the fix the camera so that the forest RPG scene would display properly. After researching the camera, I found a tutorial that provided my solution.(6) I needed to set the `world.bounds.width` to the `map.widthInPixels`. This fixed my map, and with the camera following my player, the player shows up exactly where I want it. Now, I have my locations I just need to make some obstacles for my player.
 
 ### Enemies
 
-I desperately need enemies. The forest RPG game is so deadly boring as a pick up game. The collisions are still weird, but I'm leaving them. And there is no 'end', you just get stuck at the water. But enemies, or conflict. How do I add in enemies? I'll need a health/hunger status that will be effected by the enemies attacking you. So, creating enemy movement is my next challenge. I have 2 enemies, a strange mystic butterfly and bees. The butterflies could temporarily reverse your movement, while bees can hurt you.
+I desperately need enemies. The forest RPG game is so deadly boring as a pick up game. The collisions are still weird, but I'm leaving them. And there is no 'end' to this game yet, you just get stuck at the water. But enemies are important... How do I add in enemies? If I have enemies I'll need a health status that will be effected by their attacking you. So, creating enemy movement is my next challenge. I have 2 enemies, a strange mystic butterfly and bees.
 
-Creating my butterflies took forever for some reason, like I forgot I'd already solved how to animate something and how to make a group of things move. I got one animated, then I created some random movement based ona  p5.js project(7). I wanted them to have an erratic pattern to their flight and it worked like I wanted.   The bees I setup to respond when the player gets close. I extended their hit box and when the player overlaps with that they start moving away. I'm not sure how I feel about that action.
+Creating my butterflies took forever for some reason. It's like I forgot I'd already solved how to animate something and how to make a group of things move. Once I resued some of the previous code, I got one butterfly animated, then I created some random movement based on a p5.js project(7). I wanted them to have an erratic pattern to their flight and it worked to add `var speed_x = Phaser.Math.Between(-8,4);`. The tricky part was making sure this movement applied to all the children in my butterfly group. The bees I setup to target the player. For now, I only have one swarm of bees, that's plenty. They're the first thing to attack you when the forest scene begins.
 
-Definetely need to make the health meter next.
+Next up the health meter.
 
 ### Health and UI
-As I tackle my next problem, I'm also faced with perhaps needing to have a UI display of some kind, this can show the berries you pickup and how much health you have left. There are so fancy examples with actual health bars, but I just want to keep this as a simple text display. The trick is how can I show this.
+As I tackle my next problem, I'm also faced with needing to have a UI display of some kind. This will show the berries you pickup and how much health you have left. There are some fancy examples with actual health bars, but I just want to keep this as a simple text display for now. After struggling with displaying rectangles, I finally realized I could just add a white background to my text. To make sure my text displayed I used `.setScrollFactor(0)`. When you set the scrollFactor to zero, this prevents the object from moving with the camera.
 
-I settled on making
-I also attempted one of the fancy health bars, but I couldn't get the bar to actually change its width. The numbers work. It would be better if there was some indication you were getting hurt, like the face changing.
+I also attempted one of the fancy health bars, but I couldn't get the bar to actually change its length. The numbers work though, so I'm leaving the numbers. It would be better if there was some indication you were getting hurt, but the audio should help.
 
-Mostly importantly, I figured out how to move data between scenes. You have to pass the data through using the scene start. So, in scene 2, when you "die", this code is called. `this.scene.start('Scene1', { berries: berry_inventory});` The data is 'berries' and it keeps track of how many berries you've collected.
+Mostly importantly, today I figured out how to move data between scenes. You have to pass the data through using the scene start. So, in scene 2, when you "die", this code is called. `this.scene.start('Scene1', { berries: berry_inventory});` The data is 'berries' and it keeps track of how many berries you've collected.
 Then in Scene 1 there is an `init()` which makes the data from the previous scene available.
+
 ```
 init(data){
   console.log('init', data);
@@ -113,7 +113,7 @@ I was able to add the player data into the scene, so now when you click on the b
 
 It look a while, but I got some feedback on my game. I was worried they wouldn't be able to find the forest, but they clicked so much on the camper page it loaded for them. Then they got some berries, and realized they had to avoid the bees. They suggested I add a camper to the forest scene, so you can get back to the camper without dying. It's a really good idea I'm going to try to impliment.
 
-The other major problem is loading. One of my testers had the game crash on her, and the loading time takes 30 seconds or longer inbetween scenes. She suggested adding loading text. We tested it on Firefox and that's where the loading was troublesome, and it wouldn't work at all in Edge.
+The other major problem is loading. One of my testers had the game crash on her, and the loading time takes 30 seconds or longer inbetween scenes. She suggested adding loading text. We tested it on Firefox and that's where the loading was troublesome, and it wouldn't work at all in Edge. So I need to add more delay methods before the scene loads. Her last suggestion was to add more text at the very end, so it feels like the ending to the game.
 
 ### Time Delay on start screen, to allow for assets to load.
 
@@ -132,17 +132,18 @@ function loading_delay(){
 
 I planned to do the audio last and now I know exactly why this was a good idea. I have to test play the game constantly, after every update to the code, and if I had to listen to the audio every single time I'd go crazy. Luckily audio is pretty straightforward. You preload it, add a sound and then play that sound wherever you need it for a sound effect, or as a background loop. I made sure to reduce my file sizes before using them. But I'm wondering if I need a mute button somewhere on screen...
 
+
+
 To do:
-- How to tell the player how to move with arrows...
+- How to tell the player how to move with arrows... (add note with loading text? or instruction on title page)
 - lower volume on background music to .5
 - Add more text to the last diary entry, using n\ "Thanks for playing my game!"
 - fix json data map.. make it simplier if possible...
-- mute button?
 
 if I have time
+- add a mute button
 - add emotions to encounters in forest, this could be part of the UI, ideally they'd work like sound effects.
 - create a Health bar that drains, instead of numbers
-
 - Prevent berries from appearing on top of the water or anywhere you can't get
 
 
