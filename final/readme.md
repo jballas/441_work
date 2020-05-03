@@ -150,11 +150,16 @@ medium.com/@michaelwesthadley/modular-game-worlds-in-phaser-3-tilemaps-1-958fc7e
 6)"How to Create a Turn-Basd-RPG in Phaser3 - part 1" GameDev Academy. Zenva. gamedevacademy.org/how-to-create-a-turn-based-rpg-game-in-phaser-3-part-1/
 7) P5.js Particles Example https://p5js.org/examples/simulate-particles.html
 8) https://www.emanueleferonato.com/2019/04/24/add-a-nice-time-bar-energy-bar-mana-bar-whatever-bar-to-your-html5-games-using-phaser-3-masks/
+9) http://phaser.io/examples/v3/view/time/remove-timer-event
 ## Credits
 ### Audio
 Sneaky Adventure by Kevin MacLeod
 Link: https://incompetech.filmmusic.io/song/4383-sneaky-adventure
 License: http://creativecommons.org/licenses/by/4.0/
+
+Julia Florida (Barcarolle) by Agustin Pi Barrioers Mangore
+Performed by Jorge de la Cruz
+CC By-nc 3.0 https://musopen.org/music/13022-julia-florida-barcarolle/
 
 ### Artwork
 <a href="https://www.vecteezy.com/free-vector/camp-food">Camp Food Vectors by Vecteezy</a>

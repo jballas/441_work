@@ -42,6 +42,7 @@ class Preload extends Phaser.Scene{
 // this plays the animations we created above
 face.anims.play('faces');
 
+// This delays the text about starting the screen, so there is more time to load images and audio...
 this.time.addEvent({delay: 3000, callback: loading_delay, callbackScope: this, loop: false});
 
 }

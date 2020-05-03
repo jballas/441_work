@@ -5,7 +5,7 @@ class Scene2 extends Phaser.Scene{
     }
 
     init(data){
-      console.log('init', data);
+      //console.log('init', data);
       this.playerX = data.playerX;
       this.playerY = data.playerY;
   }
