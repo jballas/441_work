@@ -15,10 +15,13 @@ class Preload extends Phaser.Scene{
           this.load.spritesheet('rosie', 'assets/rosie.png', { frameWidth: 32, frameHeight: 32, endFrame: 11});
           this.load.spritesheet('sprites', 'assets/collectables-enemies.png', {frameWidth: 32, frameHeight: 32, endFrame: 4});
           this.load.spritesheet('butterfly', 'assets/butterfly.png', {frameWidth: 16, frameHeight: 16, endFrame: 11});
-          this.load.image('healthbar', 'assets/health.png')
-          this.load.image('energybar', 'assets/energy-bar.png')
+          this.load.image('healthbar', 'assets/health.png');
+          this.load.image('energybar', 'assets/energy-bar.png');
 
           //AUDIO
+          this.load.audio('title', 'assets/audio/title.wav');
+          this.load.audio('radio', 'assets/audio/Julia-Florida.mp3');
+          this.load.audio('sneaky', 'assets/audio/sneaky-adventure-by-kevin-macleod-from-filmmusic-io.mp3');
   }
 
   create(){
@@ -42,6 +45,10 @@ class Preload extends Phaser.Scene{
 // this plays the animations we created above
 face.anims.play('faces');
 
+// PLAY AUDIO
+music = this.sound.add('title', {loop: true});
+music.play();
+
 // This delays the text about starting the screen, so there is more time to load images and audio...
 this.time.addEvent({delay: 3000, callback: loading_delay, callbackScope: this, loop: false});
 
@@ -52,6 +59,7 @@ this.time.addEvent({delay: 3000, callback: loading_delay, callbackScope: this, l
     // if you click the mouse, then the game begins.
     this.input.once('pointerdown', function () {
           this.scene.start('Scene1', {berries: 0, diary_ending: 0}); // This will start a new scene, closing the current one.
+          music.stop();
             }, this);
 
   }

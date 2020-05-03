@@ -38,6 +38,9 @@ var berry_text;
 var healthbar;
 var energybar;
 var energymask;
+var music;
+var radio;
+var bg_music;
 //var hunger;
 
 var cans;

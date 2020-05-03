@@ -48,7 +48,7 @@ class Scene1 extends Phaser.Scene{
             diary_text = this.add.text(375, 200, "Today I met a Forest Ranger.");
         }
         if (this.berries > 5 && this.diary_ending ==1){
-          diary_text = this.add.text(375,220, 'He is going to help me.')
+          diary_text = this.add.text(375,220, "He is going to help me." )
         }
         if (this.berries > 10 && this.diary_ending ==1){
           diary_text = this.add.text(375,240, 'Wow you must love berries')
@@ -59,6 +59,11 @@ class Scene1 extends Phaser.Scene{
         else{
           diary_text = this.add.text(375, 180, "I'll write something later...").setVisible(false);
         }
+
+//      PLAY AUDIO
+        radio = this.sound.add('radio', {loop: true});
+        radio.play();
+
   }
   update(){
 
@@ -114,6 +119,7 @@ class Scene1 extends Phaser.Scene{
                 game_over = false;
                 health = 300;
                 this.scene.start('Scene2', {playerX: 50, playerY: 2400}); // Begin playing berry game
+                radio.stop();
               }, this);
 
               diary.on('pointerover', function(){
@@ -142,6 +148,7 @@ class Scene1 extends Phaser.Scene{
               game_over = false;
               health = 300;
               this.scene.start('Scene2', {playerX: 850, playerY: 1040}); // Begin playing berry game at level 2
+              radio.stop();
             }, this);
         }
 
