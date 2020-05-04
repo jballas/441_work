@@ -65,8 +65,5 @@ var butterfly;
 var bees;
 var ranger;
 
-// Didn't work like I wanted it to.
-var bus_text = {cans: "Should I eat something?", peppers: "Papa's favorite", toilet_paper: "I don't need to go", bucket: "Should I go pick some berries?", diary: "Read something?"};
-
 
 const game = new Phaser.Game(config);

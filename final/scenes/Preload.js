@@ -62,7 +62,11 @@ this.time.addEvent({delay: 3000, callback: loading_delay, callbackScope: this, l
 
     // if you click the mouse, then the game begins.
     this.input.once('pointerdown', function () {
-          this.scene.start('Scene1', {berries: 0, diary_ending: 0}); // This will start a new scene, closing the current one.
+
+      this.add.text(190, 320, 'Loading...', { fontSize: 20, color: '#472f0a' }) ;
+      // This will delay the start of the next scene slightly, so the loading text shows up first.
+      this.time.addEvent({delay: 1000, callback: start_game, callbackScope: this, loop: false});
+
           pickup_sound.play();
           music.stop();
             }, this);
@@ -72,4 +76,8 @@ this.time.addEvent({delay: 3000, callback: loading_delay, callbackScope: this, l
 
 function loading_delay(){
   this.add.text( 175, 50, 'Click to Start Game...', { fontSize: 20, color: '#472f0a' }) ;
+}
+
+function start_game(){
+    this.scene.start('Scene1', {berries: 0, diary_ending: 0}); // This will start a new scene, closing the current one.
 }

@@ -48,19 +48,19 @@ class Scene1 extends Phaser.Scene{
             diary_text = this.add.text(375, 200, "Today I met a Forest Ranger.");
         }
         if (this.berries > 5 && this.diary_ending ==1){
-          diary_text = this.add.text(375,220, "He is going to help me." )
+          diary_text = this.add.text(375,220, "He is going to help me\n climb the mountain\n and break my curse.\nThat's a story for another game.\n Thanks for playing! " )
         }
         if (this.berries > 10 && this.diary_ending ==1){
-          diary_text = this.add.text(375,240, 'Wow you must love berries')
+          diary_text = this.add.text(375,100, 'Wow you must love berries')
         }
         if (this.berries < -3 && this.diary_ending ==0){
-          diary_text = this.add.text(375,240, 'Do you hate berries?')
+          diary_text = this.add.text(375,160, 'Do you hate berries?')
         }
         else{
           diary_text = this.add.text(375, 180, "I'll write something later...").setVisible(false);
         }
 
-//      PLAY AUDIO
+        // PLAY AUDIO
         radio = this.sound.add('radio', {loop: true});
         radio.play();
 
@@ -118,8 +118,11 @@ class Scene1 extends Phaser.Scene{
                 bucket_text.setText("Let's head out!");
                 game_over = false;
                 health = 300;
-                this.scene.start('Scene2', {playerX: 50, playerY: 2000}); // Begin playing berry game
                 radio.stop();
+              //  this.scene.start('Scene2', {playerX: 50, playerY: 2000}); // Begin playing berry game
+
+                this.add.text(375, 270, 'Loading...') ;
+                this.time.addEvent({delay: 1000, callback: start_level1, callbackScope: this, loop: false});
               }, this);
 
               diary.on('pointerover', function(){
@@ -142,13 +145,14 @@ class Scene1 extends Phaser.Scene{
                   ladder_text.setVisible(false);
                 }, this);
  // I want the ladder to be clickable, and it takes you to scene2,
-  //except now you can pass through the water blockade.
           ladder.on('pointerdown', function(){
-              bucket_text.setText("Let's head out!");
+
               game_over = false;
               health = 300;
-              this.scene.start('Scene2', {playerX: 850, playerY: 640}); // Begin playing berry game at level 2
               radio.stop();
+              this.add.text(375, 670, 'Loading...', { fontSize: 20, color: '#white' }) ;
+              this.time.addEvent({delay: 1000, callback: start_level2, callbackScope: this, loop: false});
+            //  this.scene.start('Scene2', {playerX: 850, playerY: 640}); // Begin playing berry game at level 2
             }, this);
         }
 
@@ -161,15 +165,11 @@ function change_the_mouse(object){
       useHandCursor: true
   });
 }
- //Didn't work like I wanted it to
-function show_hidden(object){
+ //this will start the next scene, with scene listed and parameters
+ function start_level1(){
+   this.scene.start('Scene2', {playerX: 50, playerY: 2000}); // Begin playing berry game
+ }
 
-  object.on('pointerover', function(){
-      object.setVisible(true);
-    }, this);
-
-  object.on('pointerout', function(){
-        object.setVisible(false);
-      }, this);
-
+function start_level2(){
+  this.scene.start('Scene2', {playerX: 850, playerY: 640});
 }

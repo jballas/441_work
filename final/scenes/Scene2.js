@@ -292,17 +292,6 @@ function enemy_attack(){
         this.scene.start('Scene1', { berries: berry_inventory, diary_ending: 0});
       }
 }
-/*// This was a method for changing the energy bar, but it didn't work like I wanted
-function energy_drain(){
-      energymask.x -= 1;
-
-      if (energymask.x <= 0 ){
-        player.anims.play('turn');
-        game_over = true;
-        this.add.text(150, 200, 'Game Over', { fontSize: '100px', fill: '#000' });
-        this.scene.start('Scene1');
-      }
-}*/
 
 function return_home(){
   //console.log('I am home');
