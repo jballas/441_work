@@ -76,6 +76,7 @@ this.time.addEvent({delay: 3000, callback: loading_delay, callbackScope: this, l
 
 function loading_delay(){
   this.add.text( 175, 50, 'Click to Start Game...', { fontSize: 20, color: '#472f0a' }) ;
+      this.add.text(220, 750, 'arrow keys to move', { fontSize: 20, color: '#472f0a' }) ;
 }
 
 function start_game(){

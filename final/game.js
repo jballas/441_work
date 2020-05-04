@@ -15,7 +15,7 @@ var config = {
         arcade: {
             gravity: {
                 y: 0 }
-              //  debug: true
+                //debug: true
         }
       },
     scene: [
@@ -37,7 +37,7 @@ var health_text;
 var berry_text;
 var healthbar;
 var energybar;
-var energymask;
+var emote;
 
 var music;
 var radio;

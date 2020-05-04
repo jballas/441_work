@@ -18,8 +18,8 @@ class Scene2 extends Phaser.Scene{
       var tileset = map.addTilesetImage('Forest_Tileset', 'tiles')
 
       // my tilemap has 2 layers, these are both static images
-      var bg_layer = map.createStaticLayer("background", tileset, 0,0);
-      var tree_layer = map.createStaticLayer("trees", tileset, 0,0);
+      var bg_layer = map.createDynamicLayer("background", tileset, 0,0);
+      var tree_layer = map.createDynamicLayer("trees", tileset, 0,0);
 
       // This makes sure the world size is the map size.
       this.physics.world.bounds.width = map.widthInPixels;
@@ -178,7 +178,7 @@ class Scene2 extends Phaser.Scene{
 
         // CAMPER
         camper = this.physics.add.sprite(200,2050, 'bus_icons');
-        camper.setFrame(8);
+        camper.setFrame(8).setSize(62,40);
 
         // if player and camper overlap, you'll return to scene 1.
         this.physics.add.overlap(player, camper, return_home, null, this);
@@ -192,13 +192,11 @@ class Scene2 extends Phaser.Scene{
         // UI details
       healthbar = this.add.image(320,40, 'healthbar').setScrollFactor(0);
       energybar = this.add.image(320,healthbar.y+28, 'energybar').setScrollFactor(0);
-      energymask = this.add.image(320,energybar.y, 'energybar').setScrollFactor(0).setVisible(false);// this mask should be draining when you get hit, but it doesn't work.
-
-      energybar.mask = new Phaser.Display.Masks.BitmapMask(this, this.energymask); // making a mask from an image.
 
       // Emotes
       // Idealy, these emotes would change when you eat something or get hurt.
-      var face = this.physics.add.sprite(320,42, 'emotions').setFrame(0).setScale(3).setScrollFactor(0);
+      emote = 0;
+      var face = this.physics.add.sprite(320,42, 'emotions').setFrame(emote).setScale(3).setScrollFactor(0);
 
         //Berry's collected
         berry_text = this.add.text( 16, 16, 'Berries:' + berry_inventory, {
