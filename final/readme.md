@@ -65,7 +65,7 @@ In order to make my code readable I needed to seperate my files and connect them
 
 I created a simple title screen. It's like the opening of an animated cartoon, except with it shows all of Rosie the Bear different emotions. This is the code that makes the animation play. `face.anims.play('faces');`
 
-## Camper
+### Camper
 
 I began working on my camper scene today. I added background artwork and then updated it dozens of times to get the sizing correct. I wanted the objects in the camper to be interactive, so they had to be sprites and the most efficent way is to use a spritesheet. But you need to select a specific frame from your sheet and I wasn't sure how to do that when it was not being animated. It turns out, as long as you upload the spritesheet and specify the frame width and height, then when you add it to your scene, you use `setFrame()` to select which frame is used.
 
