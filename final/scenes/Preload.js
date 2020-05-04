@@ -7,15 +7,15 @@ class Preload extends Phaser.Scene{
   preload(){
     // check preloading
 this.load.on('progress', function (value) {
-    console.log(value);
+    console.log(value); // This shows the progress of my assets loading.
 });
 
 this.load.on('fileprogress', function (file) {
-    console.log(file.src);
+    console.log(file.src); // this logs which files have loaded.
 });
 
 this.load.on('complete', function () {
-    console.log('complete');
+    console.log('complete'); // this appears after the loading process is finished. It takes 2-3 seconds.
 });
           //ART
           this.load.image('title_background', 'assets/title_page.png');
@@ -57,16 +57,16 @@ this.load.on('complete', function () {
         repeat: -1
     });
 
-// this plays the animations we created above
-face.anims.play('faces');
+  // this plays the animations we created above
+  face.anims.play('faces');
 
-// AUDIO
-pickup_sound = this.sound.add('pickup_sound');
-music = this.sound.add('title', {loop: true});
-//music.play();
+  // AUDIO
+  pickup_sound = this.sound.add('pickup_sound');
+  music = this.sound.add('title', {loop: true});
+  //music.play();
 
-// This delays the text about starting the screen, so there is more time to load images and audio...
-this.time.addEvent({delay: 3000, callback: loading_delay, callbackScope: this, loop: false});
+  // This delays the text about starting the screen, so there is more time to load images and audio...
+  this.time.addEvent({delay: 3000, callback: loading_delay, callbackScope: this, loop: false});
 
 }
 
