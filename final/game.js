@@ -3,7 +3,7 @@ var config = {
     width: 640,
     height: 832,
     scale: {
-        mode: Phaser.Scale.FIT, // This makes the game mobile responsive
+        mode: Phaser.Scale.FIT, // This makes the game more responsive
         autoCenter: Phaser.Scale.CENTER_BOTH
     },
     pixelArt: true,

@@ -9,20 +9,9 @@ class Scene1 extends Phaser.Scene{
       this.berries = data.berries;
       this.diary_ending = data.diary_ending;
   }
-  
+
   preload(){
-      // check preloading
-  this.load.on('progress', function (value) {
-      console.log(value);
-  });
 
-  this.load.on('fileprogress', function (file) {
-      console.log(file.src);
-  });
-
-  this.load.on('complete', function () {
-      console.log('complete');
-  });
   }
     create() {
       // Add background image
@@ -142,7 +131,7 @@ class Scene1 extends Phaser.Scene{
                 radio.stop();
               //  this.scene.start('Scene2', {playerX: 50, playerY: 2000}); // Begin playing berry game
 
-                this.add.text(375, 310, 'Loading...') ;
+                this.add.text(375, 330, 'Loading...') ;
                 this.time.addEvent({delay: 1000, callback: start_level1, callbackScope: this, loop: false});
               }, this);
 

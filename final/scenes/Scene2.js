@@ -11,18 +11,6 @@ class Scene2 extends Phaser.Scene{
   }
 
   preload(){
-      // check preloading
-  this.load.on('progress', function (value) {
-      console.log(value);
-  });
-
-  this.load.on('fileprogress', function (file) {
-      console.log(file.src);
-  });
-
-  this.load.on('complete', function () {
-      console.log('complete');
-  });
   }
     create() {
 
