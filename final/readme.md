@@ -111,7 +111,7 @@ It worked! I was able to add the player data into the scene, so now when you cli
 
 ### AUDIO
 
-I planned to do the audio last, and now I know exactly why this was a good idea. I have to test play the game constantly, after every update to the code, and if I had to listen to the audio every single time I'd go crazy. Luckily, audio is pretty straightforward. You preload it, add a sound and then play that sound wherever you need it for a sound effect, or as a background loop. I made sure to reduce my file sizes before loading them.
+I planned to do the audio last, and now I know exactly why this was a good idea. I have to test play the game constantly, after every update to the code, and if I had to listen to the audio every single time I'd go crazy. Luckily, audio is pretty straightforward. You preload it, add a sound and then play that sound wherever you need it for a sound effect, or as a background loop.(9) I made sure to reduce my file sizes before loading them.
 
 ### Feedback
 
@@ -122,7 +122,7 @@ The other major problem is loading. One of my testers had the game crash on her,
 ### Time Delays and trying to fix loading issues
 
 It was a little tricky, but I added a time event that works like javascript's `setTimeout()`.
-Phaser v3 has a `time.addEvent` that gives you other options, such as looping. This is the code:
+Phaser v3 has a `time.addEvent` that gives you other options, such as looping.(10) This is the code:
 `this.time.addEvent({delay: 3000, callback: loading_delay, callbackScope: this, loop: false});`
 and its tied to a function I created, which simply loads the text after a 3 second delay.
 ```
@@ -142,21 +142,21 @@ I'm feeling somewhat bittersweet about it all, because I wasn't able to fully re
 
 ## References
 1) Hadley, West Michael. "Modular Game Worlds in Phaser 3(Tilemaps #1 - static maps)". Medium.com
-medium.com/@michaelwesthadley/modular-game-worlds-in-phaser-3-tilemaps-1-958fc7e6bbd6
+http://medium.com/@michaelwesthadley/modular-game-worlds-in-phaser-3-tilemaps-1-958fc7e6bbd6
 
 2) "Tiled Map Editor Tutorial Series" Games from Scratch.com www.gamefromscratch.com/post/2015/10/14/Tiled-Map-Editor-Tutorial-Series.aspx
 
-3)"Phaser 3 Game Tutorial 10 Tilemaps" jest array. YouTube. www.youtube.com/watch?v=uznkhVMbVr8
+3) "Phaser 3 Game Tutorial 10 Tilemaps" jest array. YouTube. www.youtube.com/watch?v=uznkhVMbVr8
 
-4) Phaser Examples: Random Rectangle. Phaser.com phaser.io/examples/v3/view/actions/random-rectangle
+4) Phaser Examples: Random Rectangle. Phaser.com http://phaser.io/examples/v3/view/actions/random-rectangle
 
 5) "Part 2: Phaser Scenes - Getting Started with Phaser 3". Luis Zuno. YouTube. www.youtube.com/watch?v=gFXx7lgxK9A
-6) "How to Create a Turn-Basd-RPG in Phaser3 - part 1" GameDevAcademy.com Zenva Pty Ltd. gamedevacademy.org/how-to-create-a-turn-based-rpg-game-in-phaser-3-part-1/
+6) "How to Create a Turn-Basd-RPG in Phaser3 - part 1" GameDevAcademy.com Zenva Pty Ltd. http://gamedevacademy.org/how-to-create-a-turn-based-rpg-game-in-phaser-3-part-1/
 7) P5.js Particles Example https://p5js.org/examples/simulate-particles.html
-8) Feronato, Emanuel. "Add a nice Time bar energy mana bar whatever to your HTML5 game using phaser 3 Maskes" www.emanueleferonato.com/2019/04/24/add-a-nice-time-bar-energy-bar-mana-bar-whatever-bar-to-your-html5-games-using-phaser-3-masks/
-9) http://phaser.io/examples/v3/view/time/remove-timer-event
-10) "Audio- Getting Started with Phaser 3" Luis Zuno Youtube.com www.youtube.com/watch?v=COncYQLGJS8&t=17s
-11) Westover, Scott. "Creating a prelading Screen in Phaser 3" GameDevAcademy.com. Zenva Pty Ltd. gamedevacademy.org/creating-a-preloading-screen-in-phaser-3/
+8) Feronato, Emanuel. "Add a nice Time bar energy mana bar whatever to your HTML5 game using phaser 3 Maskes" http://www.emanueleferonato.com/2019/04/24/add-a-nice-time-bar-energy-bar-mana-bar-whatever-bar-to-your-html5-games-using-phaser-3-masks/
+9) "Audio- Getting Started with Phaser 3" Luis Zuno Youtube.com www.youtube.com/watch?v=COncYQLGJS8&t=17s
+10) "Remove Timer Event" Phaser 3 example. phaser.io/examples/v3/view/time/remove-timer-event
+11) Westover, Scott. "Creating a prelading Screen in Phaser 3" GameDevAcademy.com. Zenva Pty Ltd. http://gamedevacademy.org/creating-a-preloading-screen-in-phaser-3/
 
 ## Credits
 ### Audio
@@ -164,9 +164,9 @@ Sneaky Adventure by Kevin MacLeod
 Link: https://incompetech.filmmusic.io/song/4383-sneaky-adventure
 License: http://creativecommons.org/licenses/by/4.0/
 
-Julia Florida (Barcarolle) by Agustin Pi Barrioers Mangore
-Performed by Jorge de la Cruz
-CC By-nc 3.0 https://musopen.org/music/13022-julia-florida-barcarolle/
+Julia Florida (Barcarolle) by Agustin Pi Barrioers Mangore,
+Performed by Jorge de la Cruz,
+CC By-NC 3.0 https://musopen.org/music/13022-julia-florida-barcarolle/
 
 ### Artwork
 <a href="https://www.vecteezy.com/free-vector/camp-food">Camp Food Vectors by Vecteezy</a>
