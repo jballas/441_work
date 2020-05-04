@@ -104,7 +104,7 @@ class Scene2 extends Phaser.Scene{
     this.physics.add.overlap(player, green_berries, bad_collect, null, this);
 
     // ENEMIES
-    bees = this.physics.add.sprite(200, 2400, 'sprites').setFrame(2);
+    bees = this.physics.add.sprite(200, 2010, 'sprites').setFrame(2);
     bees.setCollideWorldBounds(true)
 
     // Bee movement toward player
@@ -122,7 +122,7 @@ class Scene2 extends Phaser.Scene{
     var rect = new Phaser.Geom.Rectangle(0,0, map.widthInPixels, map.heightInPixels)
     Phaser.Actions.RandomRectangle(butterfly.getChildren(), rect);
 
-     //this.physics.add.sprite(100,2400, 'butterfly');
+     //this.physics.add.sprite(100,2000, 'butterfly');
 
     // Butterfly Animation
     this.anims.create({
@@ -177,14 +177,14 @@ class Scene2 extends Phaser.Scene{
         this.physics.add.overlap(player, butterfly, enemy_attack, null, this);
 
         // CAMPER
-        camper = this.physics.add.sprite(200,2450, 'bus_icons');
+        camper = this.physics.add.sprite(200,2050, 'bus_icons');
         camper.setFrame(8);
 
         // if player and camper overlap, you'll return to scene 1.
         this.physics.add.overlap(player, camper, return_home, null, this);
 
         // Forest Ranger
-        ranger = this.physics.add.sprite(1000, 500, 'sprites').setFrame(3);
+        ranger = this.physics.add.sprite(1000, 130, 'sprites').setFrame(3);
 
         // If the player finds the Forest Ranger, then they return home with an extra diary entry, depending on how many berries they have collected
         this.physics.add.overlap(player, ranger, finale, null, this);

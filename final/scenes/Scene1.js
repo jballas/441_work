@@ -118,7 +118,7 @@ class Scene1 extends Phaser.Scene{
                 bucket_text.setText("Let's head out!");
                 game_over = false;
                 health = 300;
-                this.scene.start('Scene2', {playerX: 50, playerY: 2400}); // Begin playing berry game
+                this.scene.start('Scene2', {playerX: 50, playerY: 2000}); // Begin playing berry game
                 radio.stop();
               }, this);
 
@@ -147,7 +147,7 @@ class Scene1 extends Phaser.Scene{
               bucket_text.setText("Let's head out!");
               game_over = false;
               health = 300;
-              this.scene.start('Scene2', {playerX: 850, playerY: 1040}); // Begin playing berry game at level 2
+              this.scene.start('Scene2', {playerX: 850, playerY: 640}); // Begin playing berry game at level 2
               radio.stop();
             }, this);
         }
