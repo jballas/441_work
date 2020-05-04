@@ -9,7 +9,21 @@ class Scene1 extends Phaser.Scene{
       this.berries = data.berries;
       this.diary_ending = data.diary_ending;
   }
+  
+  preload(){
+      // check preloading
+  this.load.on('progress', function (value) {
+      console.log(value);
+  });
 
+  this.load.on('fileprogress', function (file) {
+      console.log(file.src);
+  });
+
+  this.load.on('complete', function () {
+      console.log('complete');
+  });
+  }
     create() {
       // Add background image
       this.add.image(0,0, 'camper').setOrigin(0,0);
@@ -123,7 +137,6 @@ class Scene1 extends Phaser.Scene{
               }, this);
 
             bucket.on('pointerdown', function(){
-                bucket_text.setText("Let's head out!");
                 game_over = false;
                 health = 300;
                 radio.stop();

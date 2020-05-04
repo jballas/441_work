@@ -10,6 +10,20 @@ class Scene2 extends Phaser.Scene{
       this.playerY = data.playerY;
   }
 
+  preload(){
+      // check preloading
+  this.load.on('progress', function (value) {
+      console.log(value);
+  });
+
+  this.load.on('fileprogress', function (file) {
+      console.log(file.src);
+  });
+
+  this.load.on('complete', function () {
+      console.log('complete');
+  });
+  }
     create() {
 
       // uses the JSON data to make a tilemap
@@ -302,7 +316,6 @@ function enemy_attack(){
         player.anims.play('turn');
         game_over = true;
         bg_music.stop();
-        this.add.text(150, 200, 'Game Over', { fontSize: '100px', fill: '#000' });
         this.scene.start('Scene1', { berries: berry_inventory, diary_ending: 0});
       }
 }

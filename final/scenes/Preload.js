@@ -5,6 +5,18 @@ class Preload extends Phaser.Scene{
   }
 
   preload(){
+    // check preloading
+this.load.on('progress', function (value) {
+    console.log(value);
+});
+
+this.load.on('fileprogress', function (file) {
+    console.log(file.src);
+});
+
+this.load.on('complete', function () {
+    console.log('complete');
+});
           //ART
           this.load.image('title_background', 'assets/title_page.png');
           this.load.spritesheet('emotions', 'assets/rosie-emotes.png', {frameWidth: 32, frameHeight: 32, endFrame:8});
