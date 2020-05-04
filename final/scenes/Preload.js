@@ -63,7 +63,7 @@ this.time.addEvent({delay: 3000, callback: loading_delay, callbackScope: this, l
     // if you click the mouse, then the game begins.
     this.input.once('pointerdown', function () {
 
-      this.add.text(190, 320, 'Loading...', { fontSize: 20, color: '#472f0a' }) ;
+      this.add.text(220, 320, 'Loading...', { fontSize: 20, color: '#472f0a' }) ;
       // This will delay the start of the next scene slightly, so the loading text shows up first.
       this.time.addEvent({delay: 1000, callback: start_game, callbackScope: this, loop: false});
 

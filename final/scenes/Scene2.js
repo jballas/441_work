@@ -209,11 +209,27 @@ class Scene2 extends Phaser.Scene{
           fontSize: '32px', fill: '#000000', backgroundColor: 'white' }).setScrollFactor(0); // This keeps the text stationary, it scrolls with the camera
 
         //AUDIO
-        bg_music = this.sound.add('sneaky_music', {loop: true});
+        bg_music = this.sound.add('sneaky_music',{
+            mute: false,
+            volume: .2,
+            rate: 1,
+            detune: 0,
+            seek: 0,
+            loop: true,
+            delay: 0
+        });
         bg_music.play();
         pickup_sound = this.sound.add('pickup_sound');
         bad_pickup_sound = this.sound.add('bad_pickup_sound');
-        hit_sound = this.sound.add('hit_sound');
+        hit_sound = this.sound.add('hit_sound',{
+            mute: false,
+            volume: .05,
+            rate: 1,
+            detune: 0,
+            seek: 0,
+            loop: false,
+            delay: 0
+        });
 
 }
 

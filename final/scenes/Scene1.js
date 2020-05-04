@@ -37,7 +37,7 @@ class Scene1 extends Phaser.Scene{
       cans_text = this.add.text(375, 400, "Should I eat something?").setVisible(false);
       peppers_text = this.add.text(375, 425, "Papa's favorite...").setVisible(false);
       toilet_paper_text = this.add.text(375, 350, "I don't need to go...").setVisible(false);
-      bucket_text = this.add.text(375, 250, "Should I pick some berries?").setVisible(false);
+      bucket_text = this.add.text(375, 310, "Should I pick some berries?").setVisible(false);
       ladder_text = this.add.text(375, 650, "Should I use the ladder?").setVisible(false);
 
       // If you collect berries, then the diary text changes.
@@ -48,10 +48,10 @@ class Scene1 extends Phaser.Scene{
             diary_text = this.add.text(375, 200, "Today I met a Forest Ranger.");
         }
         if (this.berries > 5 && this.diary_ending ==1){
-          diary_text = this.add.text(375,220, "He is going to help me\n climb the mountain\n and break my curse.\nThat's a story for another game.\n Thanks for playing! " )
+          diary_text = this.add.text(375,220, "He is going to help me\n climb the mountain\n and break my curse.\nThat's a story\n for another game.\n Thanks for playing! " )
         }
         if (this.berries > 10 && this.diary_ending ==1){
-          diary_text = this.add.text(375,100, 'Wow you must love berries')
+          diary_text = this.add.text(375,120, 'Wow you must love berries')
         }
         if (this.berries < -3 && this.diary_ending ==0){
           diary_text = this.add.text(375,160, 'Do you hate berries?')
@@ -61,7 +61,15 @@ class Scene1 extends Phaser.Scene{
         }
 
         // PLAY AUDIO
-        radio = this.sound.add('radio', {loop: true});
+        radio = this.sound.add('radio', {
+            mute: false,
+            volume: .2,
+            rate: 1,
+            detune: 0,
+            seek: 0,
+            loop: true,
+            delay: 0
+        });
         radio.play();
 
   }
@@ -121,7 +129,7 @@ class Scene1 extends Phaser.Scene{
                 radio.stop();
               //  this.scene.start('Scene2', {playerX: 50, playerY: 2000}); // Begin playing berry game
 
-                this.add.text(375, 270, 'Loading...') ;
+                this.add.text(375, 310, 'Loading...') ;
                 this.time.addEvent({delay: 1000, callback: start_level1, callbackScope: this, loop: false});
               }, this);
 
@@ -150,7 +158,7 @@ class Scene1 extends Phaser.Scene{
               game_over = false;
               health = 300;
               radio.stop();
-              this.add.text(375, 670, 'Loading...', { fontSize: 20, color: '#white' }) ;
+              this.add.text(375, 670, 'Loading...');
               this.time.addEvent({delay: 1000, callback: start_level2, callbackScope: this, loop: false});
             //  this.scene.start('Scene2', {playerX: 850, playerY: 640}); // Begin playing berry game at level 2
             }, this);
