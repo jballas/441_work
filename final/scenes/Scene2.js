@@ -315,7 +315,6 @@ function return_home(){
         player.anims.play('turn');
         game_over = true;
         bg_music.stop();
-        this.add.text(150, 200, 'Game Over', { fontSize: '100px', fill: '#000' });
         this.scene.start('Scene1', { berries: berry_inventory, diary_ending: 0});
       }
 }
@@ -327,7 +326,6 @@ function finale(){
         player.anims.play('turn');
         game_over = true;
         bg_music.stop();
-        this.add.text(150, 200, 'Game Over', { fontSize: '100px', fill: '#000' });
         this.scene.start('Scene1', { berries: berry_inventory, diary_ending: 1});
       }
 }

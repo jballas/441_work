@@ -31,11 +31,11 @@ Using javascript and Phaser v3, I created an HTML5 webgame.
 
 ## Research and Game Design
 
-I wanted to make a game about picking huckleberries, because every summer in August I love to do this with my family. We spend the afternoon driving up into the mountains, our favorite location is, of course, a secret. The forest road winds upward, and we hike a little ways and spend a few hours picking huckleberries. Would that make a game? I wondered. I dreamed of it as a cross between *Celeste* and *Animal Crossing*, but with a bittersweet story about a young girl living in the woods and surviving by picking huckleberries. She's cursed, and has been transformed into a bear. The goal of the game is to survive and discover a way up the mountain. It's basically a pickup game, with a little mystery.
+I wanted to make a game about picking huckleberries, because every summer in August I love to do this with my family. We spend the afternoon driving up into the mountains. Our favorite location is, of course, a secret. The forest road winds upward, and we hike a little ways and spend a few hours picking huckleberries. Would that make a game? I wondered. I dreamed of it as a cross between *Celeste* and *Animal Crossing*, but with a bittersweet story about a young girl living in the woods and surviving by picking huckleberries. She's cursed, and has been transformed into a bear. The goal of the game is to survive and discover a way up the mountain. It's basically a pickup game, with a little mystery.
 
 ## Artwork
 
-Some of the artwork I created myself, some I sourced from free vector sites, and the sprites for the tilemap were designed by *Art by Elthan* from itch.io's free game assets store. The game has an 8bit pixel style. The mood should be adventurous, since you'll be climbing a mountain, exploring an RPG-style map. There are cliffs and a river to cross and a mountaintop to reach. *Tiled* is a program that allows you to make maps based on pixel art. It has a graphic interface, but it exports as a json file. You can also attach properties to tiles that will make collisions occur. Once you design your map, you load the json into your Phaser v3 game.
+Some of the artwork I created myself, some I sourced from free vector sites, and the sprites for the tilemap were designed by *Art by Elthan* from itch.io's free game assets store. The game has an 8bit pixel style. I want the mood to be adventurous, like you're exploring in an RPG. There are cliffs and a river to cross and a mountaintop to reach. *Tiled* is a program that allows you to make maps based on pixel art. It has a graphic interface, but it exports as a json file. You can also attach properties to tiles that will make collisions occur. Once you design your map, you load the json into your Phaser v3 game like so:
 
 ```
 // uses the JSON data to make a tilemap
@@ -47,12 +47,13 @@ var tileset = map.addTilesetImage('Forest_Tileset', 'tiles')
 ## Coding
 
 ### TileMap and Player
-After creating my map, I immediately wanted a player on screen to explore it. So, I started off with a simple phaser program, much like what we created in week 12. Michael West Hadley has a fantastic tutorial on tilemaps within Phaser and with that as my guide, I set about getting my map to show. (1)
+After creating my map, I immediately wanted a player on screen to explore it. So, I started off with a simple phaser program, much like what we created in week 12. I followed a fantastic tutorial on tilemaps within Phaser. (1)
 
-At first I could only get the top half. But I wanted the player to appear in the bottom of the map, and then make their way up the mountain road, finding berries and getting stuck at the river. Then using a "ladder" to get past the river.
+At first I could only get the top half of my map to show. And I wanted the player to appear in the bottom of the map, and then make their way up the mountain road, finding berries and getting stuck at the river. Then using a "ladder" to get past the river. Finally, I got the player to appear where I wanted them.
 
 Then came the struggle with collisions.
-My JSON file showed I had certain tiles marked with a collision property, and Phaser v3 is supposed to make collisions easier, but it wasn't working. So I began to research and dig around for examples of tilemaps and tutorials on Tiled.(2)(3) In order to get my collisions to work I fixed by json file, moving all the collisions to one layer. Then, when I moved my collider code `  this.physics.add.collider(player, tree_layer);` above my player animations, suddenly it worked. It is still not quite where I want it, since the player walks over the top of the trees, so if I have time I'll update my map yet again, but I have collisions! Now, the player can't get past the water!
+
+My JSON file showed I had certain tiles marked with a collision property, and Phaser v3 is supposed to make collisions easier, but it wasn't working. So I began to research and dig around for examples of tilemaps and tutorials on Tiled.(2)(3) In order to get my collisions to work I moved all the tiles with collisions to a layer above a background layer. Then, when I moved my collider code `  this.physics.add.collider(player, tree_layer);` above my player animations, suddenly it worked. It is still not quite where I want it, since the player walks over the top of the trees, so if I have time I'll update my map yet again, but I have collisions! Now, the player can't get past the water!
 
 ### Berry Collection
 
@@ -118,7 +119,7 @@ It look a while, but I got some feedback on my game. I was worried they wouldn't
 
 The other major problem is loading. One of my testers had the game crash on her, and the loading time took 30 seconds or longer inbetween scenes. She suggested adding loading text. We tested it on Firefox and that's where the loading was troublesome, and it wouldn't work at all in Edge. So I need to add delay methods before the scene loads. Her last suggestion was to add more text so when you reach the Forest Ranger, and have collected enough berries, then it feels like the ending to the game. My last tester couldn't even get the game to load at all!
 
-### Time Delays and fixing my loading issues
+### Time Delays and trying to fix loading issues
 
 It was a little tricky, but I added a time event that works like javascript's `setTimeout()`.
 Phaser v3 has a `time.addEvent` that gives you other options, such as looping. This is the code:
@@ -129,15 +130,15 @@ function loading_delay(){
   this.add.text( 175, 50, 'Click to Start Game...', { fontSize: 20, color: '#472f0a' }) ;
 }
 ```
-So to deal with my loading problem, I tried a couple of things. I changed my map from a static layer to a dynamic layer, and I added in the preload() function, even though I don't use it in my scenes. I remaped by tilemap, making it slightly smaller, which hopefully reduced the json data size. I cleaned up the code, removing older experiments, such as masking on the health bar image. I tested how long it takes to preload my assets and found out it happens in 2-3 seconds. The testing code came from a tutorial about (11) Lastly, I added messages about loading into the game.
+So to deal with my loading problem, I tried a couple of things. I changed my map from a static layer to a dynamic layer, and I added in the preload() function, even though I don't use it in my scenes. I remaped by tilemap, making it slightly smaller, which hopefully reduced the json data size. I cleaned up the code, removing older experiments, such as masking on the health bar image. I tested how long it takes to preload my assets and found out it happens in 2-3 seconds. The testing code came from a tutorial about (11), so that's not the problem. The issues is loading inbetween scenes. Lastly, I added messages about loading into the game.
 
-I used the same time delay code above to delay my the game scene for 1 second. This allowed the game to display some loading text right before it starts actually loading. Hopefully, this will help.
+I used the same time delay code above to delay my the game scene for 1 second. This allowed the game to display some loading text right before it starts actually loading. Hopefully, this will help. Hopefully, the game doesn't freeze when my teacher plays it.
 
 ## Conclusion
 
-Having finally reached the end of my project, I am exhausted and yet satisfied by my accomplishment. I didn't think I would ever make it to the end. But I create a plan, setup a timeline and then followed along until I had a game. This involved a massive todo list, but by tackling each problem one at a one and slowly moving forward I was able to create something much bigger. Having a game with progression is a first for me. I only wish the game play was more exciting, and I wish I could have expanded the story.
+Having finally reached the end of my project, I am mentally exhausted, yet proud of my accomplishment. I didn't think I would ever make it to the end. But I created a plan, with a firm deadline and then followed along until I had this game. It involved a massive todo list, but by tackling each problem one at a one and slowly moving forward I was able to create something much bigger. This is my first game with multiple scenes and progression. But I wish the gameplay was more exciting, and I wish I could have expanded the story.
 
-I wasn't able to fully realize this game. Was it a survival game? Or a point and click adventure? Did it tell an interactive story? I'm not so sure. I learned a lot about making games with this project, from the importance of pre-planning, designing game art, but most importantly was understanding the game's core experience and making obstacles for your player! My next game will be even better.
+I'm feeling somewhat bittersweet about it all, because I wasn't able to fully realize this game. Was it a survival game? Or a point and click adventure? Did it tell an interactive story? I'm not so sure. I learned a lot about making games with this project, from the importance of pre-planning, designing game art, but most importantly was understanding the game's core experience and making obstacles for your player! My next game will be even better.
 
 ## References
 1) Hadley, West Michael. "Modular Game Worlds in Phaser 3(Tilemaps #1 - static maps)". Medium.com
