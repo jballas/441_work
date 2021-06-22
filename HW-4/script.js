@@ -165,9 +165,9 @@ function picked_desire(desire){
       }
   }
 //Because I needed a loop. I can't figure out how else to implement one into the story. If I try to put a loop withh a document.getElementById you don't see it change 7 times. If I try to do it by document.getByClassName I already have to have information for it to change. But my information doesn't appear until you click a button, so I just get an error.
-
+// Seven times is WAY too many for a joke. I'm switching it to 2 times
 function fancy_loop(){
-  for (var i = 0; i < 7; i++ ){
+  for (var i = 0; i < 2; i++ ){
     window.alert("You discovered a new universe!");
   }
 }
@@ -200,7 +200,7 @@ function picked_action(action){
   }
 
   else if (action === 4){
-    document.getElementById("story").innerHTML = "<h2 class='act'> Act Three </h2>" + name + " and Tommy escape from the city into the countryside. Unfortunately, they are captured by the AI. Tommy is injured and dying, and you makes deal with the AI in order to save his life. Tommy becomes a cyborg and you must work for the AI in the themepark Quarkland. For more of your adventures see <em>Multiverse</em>.<br>";
+    document.getElementById("story").innerHTML = "<h2 class='act'> Act Three </h2>" + name + " and Tommy escape from the city into the countryside. Unfortunately, they are captured by the AI. Tommy is injured and dying, and you make a deal with the AI in order to save his life. Tommy becomes a cyborg and you must work for the AI in the themepark Quarkland. For more of your adventures see <em>Multiverse</em>.<br>";
     new_universe();
 
     start_button();
